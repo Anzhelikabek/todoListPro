@@ -1,0 +1,110 @@
+.p-dropdown {
+  width: 100%;
+}
+
+.p-dialog-content {
+  overflow-y: inherit;
+}
+
+.delete-selected {
+  margin-left: 10px
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+}
+.p-password-panel .p-password-meter {
+  margin-top: 10px;
+}
+
+.p-password-panel .p-password-strength {
+  height: 5px;
+  border-radius: 5px;
+}
+
+.p-password-strength.weak {
+  background-color: #ff4d4f; // Красный для слабого пароля
+}
+
+.p-password-strength.medium {
+  background-color: #ffec3d; // Жёлтый для среднего пароля
+}
+
+.p-password-strength.strong {
+  background-color: #52c41a; // Зелёный для сильного пароля
+}
+
+.container {
+  padding: 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 1140px;
+  margin: 50px auto 0;
+}
+:host ::ng-deep .p-dialog {
+  border-radius: 10px;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-footer {
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+:host ::ng-deep .p-field label {
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+.p-inputtext {
+  width: 100%;
+}
+.field{
+  margin-bottom: 15px;
+}
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status-completed {
+  background-color: #4caf50; /* Зелёный */
+  color: white;
+}
+
+.status-pending {
+  background-color: #f44336; /* Красный */
+  color: white;
+}
+.p-button.p-button-warning, .p-button-group.p-button-warning > .p-button, .p-splitbutton.p-button-warning > .p-button{
+  background-color: #d32f2f;
+  border: #d32f2f;
+  margin-left: 8px;
+  color: white;
+}
+@media screen and (max-width: 870px) {
+  .button-group {
+    height: 147px;
+    align-items: center;
+  }
+ .buttons .p-button .p-button-label {
+    font-size: 12px !important;
+  }
+}
+
+@media screen and (max-width: 673px) {
+  .p-datatable .p-datatable-thead > tr > th {
+    font-size: 14px;
+  }
+
+}
+
+

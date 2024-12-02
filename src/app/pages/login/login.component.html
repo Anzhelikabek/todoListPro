@@ -1,0 +1,50 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="title">Login</h2>
+    <p class="subtitle">
+    Don't have an account?
+    <a [routerLink]="['/register']" class="create-now">Create Now</a>
+  </p>
+
+    <!-- Email Input -->
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">
+        <i class="pi pi-envelope"></i>
+      </span>
+      <input
+        type="text"
+        pInputText
+        placeholder="Email"
+        class="input-field"
+        [(ngModel)]="email" />
+    </div>
+
+    <!-- Password Input -->
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">
+        <i class="pi pi-lock"></i>
+      </span>
+      <input
+        [type]="hidePassword ? 'password' : 'text'"
+        placeholder="Password"
+        pInputText
+        class="input-field"
+        [(ngModel)]="password" />
+      <button
+        pButton
+        type="button"
+        icon="pi pi-eye"
+        class="toggle-password-button"
+        (click)="togglePasswordVisibility()"></button>
+    </div>
+
+    <!-- Login Button -->
+    <button
+      pButton
+      type="button"
+      label="Login"
+      class="login-button"
+      (click)="onLogin()"></button>
+
+  </div>
+</div>

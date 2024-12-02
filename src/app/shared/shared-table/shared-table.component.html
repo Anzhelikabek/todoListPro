@@ -1,0 +1,62 @@
+<p-table
+  [value]="data"
+  [paginator]="true"
+  [rows]="rows"
+  [rowHover]="true"
+  [(selection)]="selectedItems"
+  selectionMode="multiple"
+  dataKey="id"
+  (selectionChange)="onRowSelect($event)"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngIf="isAdmin" style="width: 3rem">
+        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+      </th>
+      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+        {{ col.header }}
+        <p-sortIcon [field]="col.field"></p-sortIcon>
+      </th>
+      <th *ngIf="isAdmin" style="width: 2rem"></th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-item>
+    <tr>
+      <td *ngIf="isAdmin">
+        <p-tableCheckbox [value]="item"></p-tableCheckbox>
+      </td>
+      <td *ngFor="let col of columns"
+          [ngClass]="{
+            'status-false': col.field === 'status' && !item[col.field],
+            'status-true': col.field === 'status' && item[col.field]
+          }">
+        <!-- Проверка поля 'status' -->
+        <ng-container *ngIf="col.field === 'status'">
+          {{ item[col.field] ? 'Выполнено' : 'Не выполнено' }}
+        </ng-container>
+        <!-- Вывод остальных данных -->
+        <ng-container *ngIf="col.field !== 'status'">
+          {{ item[col.field] }}
+        </ng-container>
+      </td>
+
+      <td *ngIf="isAdmin" class="button-group">
+        <button
+          pButton
+          pRipple
+          icon="pi pi-pencil"
+          class="p-button-rounded p-button-success mr-2"
+          (click)="onEdit(item)"
+        ></button>
+        <button
+          pButton
+          pRipple
+          icon="pi pi-trash"
+          class="p-button-rounded p-button-warning"
+          (click)="onDelete(item)"
+        ></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

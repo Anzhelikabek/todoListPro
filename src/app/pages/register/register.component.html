@@ -1,0 +1,54 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="title">Register</h2>
+    <p class="subtitle">
+      Already have an account? <a [routerLink]="['/login']" class="create-now">Login Now</a>
+    </p>
+
+    <form (ngSubmit)="onRegister()">
+      <!-- Email Input -->
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+          <i class="pi pi-envelope"></i>
+        </span>
+        <input
+          type="text"
+          pInputText
+          placeholder="Email"
+          class="input-field"
+          [(ngModel)]="email"
+          name="email"
+          required />
+      </div>
+
+      <!-- Password Input -->
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+          <i class="pi pi-lock"></i>
+        </span>
+        <input
+          [type]="hidePassword ? 'password' : 'text'"
+          pPassword
+          placeholder="Password"
+          class="input-field"
+          [feedback]="true"
+          [(ngModel)]="password"
+          name="password"
+          required />
+        <button
+          pButton
+          type="button"
+          icon="pi pi-eye"
+          class="toggle-password-button"
+          (click)="togglePasswordVisibility()"></button>
+      </div>
+
+      <!-- Register Button -->
+      <button
+        pButton
+        type="submit"
+        label="Register"
+        class="login-button"></button>
+    </form>
+  </div>
+</div>
