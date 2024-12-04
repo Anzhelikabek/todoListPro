@@ -1,170 +1,56 @@
 <div class="container">
-  <div class="p-field">
-    <div class="grid">
-      <div class="col-12">
-          <p-tabView>
-              <p-tabPanel header="Мои задачи">
-                  <div class="card px-6 py-6">
-                      <p-toast></p-toast>
-                      <p-toolbar styleClass="mb-4">
-                          <ng-template pTemplate="right">
-                              <div class="my-2 buttons">
-                                  <button *ngIf="isAdmin" pButton pRipple label="Создать" icon="pi pi-plus" class="p-button-success mr-2"
-                                          (click)="openNew()"></button>
-                                  <button
-                                          *ngIf="isAdmin"
-                                          pButton
-                                          pRipple
-                                          label="Удалить"
-                                          icon="pi pi-trash"
-                                          class="p-button-danger ml-5 delete-selected"
-                                          (click)="deleteSelectedProducts()"
-                                          [disabled]="!selectedProducts || !selectedProducts.length"
-                                  ></button>
-                                  <button
-                                          pButton
-                                          type="button"
-                                          icon="pi pi-sign-out"
-                                          label="Logout"
-                                          class="logout-button"
-                                          (click)="onLogout()">
-                                  </button>
-                              </div>
-                          </ng-template>
+    <div class="p-field">
+        <div class="grid">
+            <div class="col-12">
+                <div class="header-content">
+                    <h1>Привет, {{ userName }}!</h1>
+                    <button
+                            pButton
+                            type="button"
+                            icon="pi pi-sign-out"
+                            label="Logout"
+                            class="logout-button"
+                            (click)="onLogout()">
+                    </button>
+                </div>
 
-                          <ng-template pTemplate="left">
-                              <h2>Запиши И Заверши!</h2>
-                          </ng-template>
-                      </p-toolbar>
-
-                      <app-shared-table
-                              [data]="products"
-                              [columns]="cols"
-                              [rows]="5"
-                              [isAdmin]="isAdmin"
-                              [(selectedItems)]="selectedProducts"
-                              (edit)="editProduct($event)"
-                              (delete)="deleteProduct($event)"
-                      ></app-shared-table>
-                  </div>
-
-                  <!-- Модальное окно для создания/редактирования -->
-                  <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Подробности задачи" [modal]="true">
-                      <ng-template class="creat-edit-modal" pTemplate="content">
-                          <div class="field">
-                              <label for="name">Заголовок</label>
-                              <input type="text" id="name" pInputText [(ngModel)]="product.name" required>
-                          </div>
-                          <div class="field">
-                              <label for="description">Описание</label>
-                              <textarea id="description" pInputTextarea [(ngModel)]="product.description" required rows="3"></textarea>
-                          </div>
-                          <p-dropdown
-                                  [(ngModel)]="product.status"
-                                  [options]="statusOptions"
-                                  optionLabel="label"
-                                  optionValue="value"
-                                  placeholder="Выберите статус"
-                                  required
-                                  [ngClass]="{ 'ng-invalid ng-dirty': submitted && !product.status }"
-                          ></p-dropdown>
-                          <span
-                                  *ngIf="product.status !== undefined"
-                                  class="status-badge"
-                                  [ngClass]="{ 'status-true': product.status, 'status-false': !product.status }"
-                          >
-  </span>
-                          <small *ngIf="submitted && !product.status" class="p-error">Статус обязателен для выбора.</small>
-
-                      </ng-template>
-                      <ng-template pTemplate="footer">
-                          <button pButton pRipple label="Отмена" icon="pi pi-times" class="p-button-text"
-                                  (click)="hideDialog()"></button>
-                          <button pButton pRipple label="Сохранить" icon="pi pi-check" class="p-button-text"
-                                  (click)="saveProduct()"></button>
-                      </ng-template>
-                  </p-dialog>
-
-                  <!-- Диалог подтверждения удаления -->
-                  <p-dialog
-                          [(visible)]="deleteProductsDialog"
-                          [style]="{ width: '400px' }"
-                          header="Подтверждение"
-                          [modal]="true"
-                          [closable]="false"
-                  >
-                      <div class="flex align-items-center justify-content-center">
-                          <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem;"></i>
-                          <span *ngIf="selectedProducts.length === 1">
-      Вы уверены, что хотите удалить <b>{{ selectedProducts[0]?.name }}</b>?
-    </span>
-                          <span *ngIf="selectedProducts.length > 1">
-    Вы уверены, что хотите удалить выбранные задачи?
-    </span>
-                      </div>
-
-                      <ng-template pTemplate="footer">
-                          <button
-                                  pButton
-                                  pRipple
-                                  icon="pi pi-times"
-                                  label="Нет"
-                                  class="p-button-text"
-                                  (click)="deleteProductsDialog = false"
-                          ></button>
-                          <button
-                                  pButton
-                                  pRipple
-                                  icon="pi pi-check"
-                                  label="Да"
-                                  class="p-button-text"
-                                  (click)="confirmDeleteSelected()"
-                          ></button>
-                      </ng-template>
-                  </p-dialog>
-                  <p-dialog
-                          [(visible)]="deleteProductDialog"
-                          [style]="{ width: '400px' }"
-                          header="Подтверждение"
-                          [modal]="true"
-                          [closable]="false"
-                  >
-                      <div class="flex align-items-center justify-content-center">
-                          <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem;"></i>
-                          <span *ngIf="product">Вы уверены, что хотите удалить задачу <b>{{ product.name }}</b>?</span>
-                      </div>
-                      <ng-template pTemplate="footer">
-                          <button
-                                  pButton
-                                  pRipple
-                                  icon="pi pi-times"
-                                  label="Нет"
-                                  class="p-button-text"
-                                  (click)="deleteProductDialog = false"
-                          ></button>
-                          <button
-                                  pButton
-                                  pRipple
-                                  icon="pi pi-check"
-                                  label="Да"
-                                  class="p-button-text"
-                                  (click)="confirmDelete()"
-                          ></button>
-                      </ng-template>
-                  </p-dialog>
-
-              </p-tabPanel>
-              <p-tabPanel header="Список пользователей">
-                  Список пользователей
-              </p-tabPanel>
-              <p-tabPanel header="Список задач всех пользователй">
-                 Список задач всех пользователй
-              </p-tabPanel>
-          </p-tabView>
-
-      </div>
+                <p-tabView>
+                    <p-tabPanel header="Мои задачи">
+                        <app-todos/>
+                    </p-tabPanel>
+                    <p-tabPanel header="Список пользователей">
+                        <app-users/>
+                    </p-tabPanel>
+                    <p-tabPanel header="Список задач всех пользователей">
+                        <app-users-tasks/>
+                    </p-tabPanel>
+                </p-tabView>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+
+<p-dialog [(visible)]="displayModal" [modal]="true" [closable]="true" header="Подтверждение выхода">
+    <p>Вы действительно хотите выйти, <b>{{ userEmail }}</b>?</p>
+    <ng-template pTemplate="footer">
+        <button
+                pButton
+                pRipple
+                icon="pi pi-times"
+                label="Нет"
+                class="p-button-text"
+                (click)="displayModal = false"
+        ></button>
+        <button
+                pButton
+                pRipple
+                icon="pi pi-check"
+                label="Да"
+                class="p-button-text"
+                (click)="performLogout()"
+        ></button>
+    </ng-template>
+</p-dialog>
+
 
 

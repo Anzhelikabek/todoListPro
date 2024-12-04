@@ -1,47 +1,60 @@
 import {
-  ChevronDownIcon,
+  Calendar,
+  CalendarModule
+} from "./chunk-HMEZWHHR.js";
+import "./chunk-DUEB6LSW.js";
+import {
+  InputNumber,
+  InputNumberModule,
+  Paginator,
+  PaginatorModule
+} from "./chunk-YI7GHLZT.js";
+import {
+  ButtonDirective,
+  ButtonModule
+} from "./chunk-UJGDPBYX.js";
+import {
+  InputText,
+  InputTextModule
+} from "./chunk-MIFBALRS.js";
+import {
   Dropdown,
   DropdownModule,
   Scroller,
   ScrollerModule
-} from "./chunk-4FYVAB7Z.js";
-import {
-  InputText,
-  InputTextModule
-} from "./chunk-K7JKF3SD.js";
+} from "./chunk-YYHXNRX2.js";
+import "./chunk-R4DPWVOJ.js";
+import "./chunk-UJQ36SK6.js";
 import {
   CheckIcon
-} from "./chunk-E3XCY5UE.js";
-import {
-  ButtonDirective,
-  ButtonModule
-} from "./chunk-KVEIXO53.js";
-import {
-  SpinnerIcon
-} from "./chunk-MPQRJRDB.js";
-import {
-  AutoFocus,
-  AutoFocusModule
-} from "./chunk-TTKTSHFP.js";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon
-} from "./chunk-SNQSN7MO.js";
-import "./chunk-WSHXXEX3.js";
+} from "./chunk-4RTBLTU7.js";
 import {
   TimesIcon
-} from "./chunk-4ENNA6CS.js";
+} from "./chunk-OU2BY4IK.js";
+import {
+  SpinnerIcon
+} from "./chunk-74JX3K2Q.js";
 import {
   Ripple,
   RippleModule
-} from "./chunk-FXHWBJVT.js";
+} from "./chunk-PFYPGCM7.js";
+import {
+  AutoFocus,
+  AutoFocusModule
+} from "./chunk-FGEHQPW4.js";
 import {
   BaseIcon
-} from "./chunk-3VIAOSSR.js";
+} from "./chunk-U7BGZH7Q.js";
 import {
   ConnectedOverlayScrollHandler,
   DomHandler
 } from "./chunk-BUGEQH7Q.js";
+import {
+  FormsModule,
+  NG_VALUE_ACCESSOR,
+  NgControlStatus,
+  NgModel
+} from "./chunk-RHHXR5VX.js";
 import {
   FilterMatchMode,
   FilterOperator,
@@ -54,25 +67,17 @@ import {
   TranslationKeys,
   UniqueComponentId,
   zindexutils
-} from "./chunk-GXTVBV2C.js";
-import {
-  FormsModule,
-  NG_VALUE_ACCESSOR,
-  NgControl,
-  NgControlStatus,
-  NgModel
-} from "./chunk-72Z3NCM4.js";
+} from "./chunk-POA3PGMA.js";
 import {
   animate,
-  state,
   style,
   transition,
   trigger
-} from "./chunk-PAT7Q2J5.js";
+} from "./chunk-O6MY2CLN.js";
 import {
   DomSanitizer
-} from "./chunk-X3EUXANA.js";
-import "./chunk-GO4NFPTM.js";
+} from "./chunk-Y33XJ3I5.js";
+import "./chunk-VKDGGU4P.js";
 import {
   CommonModule,
   DOCUMENT,
@@ -84,7 +89,7 @@ import {
   NgSwitchCase,
   NgTemplateOutlet,
   isPlatformBrowser
-} from "./chunk-3LXEKS4V.js";
+} from "./chunk-6AQLICZM.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -97,7 +102,6 @@ import {
   HostListener,
   Inject,
   Injectable,
-  Injector,
   Input,
   NgModule,
   NgZone,
@@ -139,8 +143,6 @@ import {
   ɵɵloadQuery,
   ɵɵnamespaceSVG,
   ɵɵnextContext,
-  ɵɵprojection,
-  ɵɵprojectionDef,
   ɵɵproperty,
   ɵɵpureFunction0,
   ɵɵpureFunction1,
@@ -163,5276 +165,18 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1,
-  ɵɵtextInterpolate2,
-  ɵɵtwoWayBindingSet,
-  ɵɵtwoWayListener,
-  ɵɵtwoWayProperty,
   ɵɵviewQuery
-} from "./chunk-QHX4NRAB.js";
+} from "./chunk-SUIQAVP4.js";
+import "./chunk-YSN7JSTZ.js";
+import "./chunk-P4UHYYRR.js";
 import {
   Subject
-} from "./chunk-D6KKAYXW.js";
+} from "./chunk-IGY35UNU.js";
 import "./chunk-IYEYSCYL.js";
 import {
   __spreadProps,
   __spreadValues
 } from "./chunk-5K356HEJ.js";
-
-// node_modules/primeng/fesm2022/primeng-icons-chevronup.mjs
-var ChevronUpIcon = class _ChevronUpIcon extends BaseIcon {
-  static ɵfac = /* @__PURE__ */ (() => {
-    let ɵChevronUpIcon_BaseFactory;
-    return function ChevronUpIcon_Factory(__ngFactoryType__) {
-      return (ɵChevronUpIcon_BaseFactory || (ɵChevronUpIcon_BaseFactory = ɵɵgetInheritedFactory(_ChevronUpIcon)))(__ngFactoryType__ || _ChevronUpIcon);
-    };
-  })();
-  static ɵcmp = ɵɵdefineComponent({
-    type: _ChevronUpIcon,
-    selectors: [["ChevronUpIcon"]],
-    standalone: true,
-    features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-    decls: 2,
-    vars: 5,
-    consts: [["width", "14", "height", "14", "viewBox", "0 0 14 14", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M12.2097 10.4113C12.1057 10.4118 12.0027 10.3915 11.9067 10.3516C11.8107 10.3118 11.7237 10.2532 11.6506 10.1792L6.93602 5.46461L2.22139 10.1476C2.07272 10.244 1.89599 10.2877 1.71953 10.2717C1.54307 10.2556 1.3771 10.1808 1.24822 10.0593C1.11933 9.93766 1.035 9.77633 1.00874 9.6011C0.982477 9.42587 1.0158 9.2469 1.10338 9.09287L6.37701 3.81923C6.52533 3.6711 6.72639 3.58789 6.93602 3.58789C7.14565 3.58789 7.3467 3.6711 7.49502 3.81923L12.7687 9.09287C12.9168 9.24119 13 9.44225 13 9.65187C13 9.8615 12.9168 10.0626 12.7687 10.2109C12.616 10.3487 12.4151 10.4207 12.2097 10.4113Z", "fill", "currentColor"]],
-    template: function ChevronUpIcon_Template(rf, ctx) {
-      if (rf & 1) {
-        ɵɵnamespaceSVG();
-        ɵɵelementStart(0, "svg", 0);
-        ɵɵelement(1, "path", 1);
-        ɵɵelementEnd();
-      }
-      if (rf & 2) {
-        ɵɵclassMap(ctx.getClassNames());
-        ɵɵattribute("aria-label", ctx.ariaLabel)("aria-hidden", ctx.ariaHidden)("role", ctx.role);
-      }
-    },
-    encapsulation: 2
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ChevronUpIcon, [{
-    type: Component,
-    args: [{
-      selector: "ChevronUpIcon",
-      standalone: true,
-      imports: [BaseIcon],
-      template: `
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" [attr.aria-label]="ariaLabel" [attr.aria-hidden]="ariaHidden" [attr.role]="role" [class]="getClassNames()">
-            <path
-                d="M12.2097 10.4113C12.1057 10.4118 12.0027 10.3915 11.9067 10.3516C11.8107 10.3118 11.7237 10.2532 11.6506 10.1792L6.93602 5.46461L2.22139 10.1476C2.07272 10.244 1.89599 10.2877 1.71953 10.2717C1.54307 10.2556 1.3771 10.1808 1.24822 10.0593C1.11933 9.93766 1.035 9.77633 1.00874 9.6011C0.982477 9.42587 1.0158 9.2469 1.10338 9.09287L6.37701 3.81923C6.52533 3.6711 6.72639 3.58789 6.93602 3.58789C7.14565 3.58789 7.3467 3.6711 7.49502 3.81923L12.7687 9.09287C12.9168 9.24119 13 9.44225 13 9.65187C13 9.8615 12.9168 10.0626 12.7687 10.2109C12.616 10.3487 12.4151 10.4207 12.2097 10.4113Z"
-                fill="currentColor"
-            />
-        </svg>
-    `
-    }]
-  }], null, null);
-})();
-
-// node_modules/primeng/fesm2022/primeng-icons-calendar.mjs
-var CalendarIcon = class _CalendarIcon extends BaseIcon {
-  static ɵfac = /* @__PURE__ */ (() => {
-    let ɵCalendarIcon_BaseFactory;
-    return function CalendarIcon_Factory(__ngFactoryType__) {
-      return (ɵCalendarIcon_BaseFactory || (ɵCalendarIcon_BaseFactory = ɵɵgetInheritedFactory(_CalendarIcon)))(__ngFactoryType__ || _CalendarIcon);
-    };
-  })();
-  static ɵcmp = ɵɵdefineComponent({
-    type: _CalendarIcon,
-    selectors: [["CalendarIcon"]],
-    standalone: true,
-    features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-    decls: 2,
-    vars: 5,
-    consts: [["width", "14", "height", "14", "viewBox", "0 0 14 14", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M10.7838 1.51351H9.83783V0.567568C9.83783 0.417039 9.77804 0.272676 9.6716 0.166237C9.56516 0.0597971 9.42079 0 9.27027 0C9.11974 0 8.97538 0.0597971 8.86894 0.166237C8.7625 0.272676 8.7027 0.417039 8.7027 0.567568V1.51351H5.29729V0.567568C5.29729 0.417039 5.2375 0.272676 5.13106 0.166237C5.02462 0.0597971 4.88025 0 4.72973 0C4.5792 0 4.43484 0.0597971 4.3284 0.166237C4.22196 0.272676 4.16216 0.417039 4.16216 0.567568V1.51351H3.21621C2.66428 1.51351 2.13494 1.73277 1.74467 2.12305C1.35439 2.51333 1.13513 3.04266 1.13513 3.59459V11.9189C1.13513 12.4709 1.35439 13.0002 1.74467 13.3905C2.13494 13.7807 2.66428 14 3.21621 14H10.7838C11.3357 14 11.865 13.7807 12.2553 13.3905C12.6456 13.0002 12.8649 12.4709 12.8649 11.9189V3.59459C12.8649 3.04266 12.6456 2.51333 12.2553 2.12305C11.865 1.73277 11.3357 1.51351 10.7838 1.51351ZM3.21621 2.64865H4.16216V3.59459C4.16216 3.74512 4.22196 3.88949 4.3284 3.99593C4.43484 4.10237 4.5792 4.16216 4.72973 4.16216C4.88025 4.16216 5.02462 4.10237 5.13106 3.99593C5.2375 3.88949 5.29729 3.74512 5.29729 3.59459V2.64865H8.7027V3.59459C8.7027 3.74512 8.7625 3.88949 8.86894 3.99593C8.97538 4.10237 9.11974 4.16216 9.27027 4.16216C9.42079 4.16216 9.56516 4.10237 9.6716 3.99593C9.77804 3.88949 9.83783 3.74512 9.83783 3.59459V2.64865H10.7838C11.0347 2.64865 11.2753 2.74831 11.4527 2.92571C11.6301 3.10311 11.7297 3.34371 11.7297 3.59459V5.67568H2.27027V3.59459C2.27027 3.34371 2.36993 3.10311 2.54733 2.92571C2.72473 2.74831 2.96533 2.64865 3.21621 2.64865ZM10.7838 12.8649H3.21621C2.96533 12.8649 2.72473 12.7652 2.54733 12.5878C2.36993 12.4104 2.27027 12.1698 2.27027 11.9189V6.81081H11.7297V11.9189C11.7297 12.1698 11.6301 12.4104 11.4527 12.5878C11.2753 12.7652 11.0347 12.8649 10.7838 12.8649Z", "fill", "currentColor"]],
-    template: function CalendarIcon_Template(rf, ctx) {
-      if (rf & 1) {
-        ɵɵnamespaceSVG();
-        ɵɵelementStart(0, "svg", 0);
-        ɵɵelement(1, "path", 1);
-        ɵɵelementEnd();
-      }
-      if (rf & 2) {
-        ɵɵclassMap(ctx.getClassNames());
-        ɵɵattribute("aria-label", ctx.ariaLabel)("aria-hidden", ctx.ariaHidden)("role", ctx.role);
-      }
-    },
-    encapsulation: 2
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CalendarIcon, [{
-    type: Component,
-    args: [{
-      selector: "CalendarIcon",
-      standalone: true,
-      imports: [BaseIcon],
-      template: `
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" [attr.aria-label]="ariaLabel" [attr.aria-hidden]="ariaHidden" [attr.role]="role" [class]="getClassNames()">
-            <path
-                d="M10.7838 1.51351H9.83783V0.567568C9.83783 0.417039 9.77804 0.272676 9.6716 0.166237C9.56516 0.0597971 9.42079 0 9.27027 0C9.11974 0 8.97538 0.0597971 8.86894 0.166237C8.7625 0.272676 8.7027 0.417039 8.7027 0.567568V1.51351H5.29729V0.567568C5.29729 0.417039 5.2375 0.272676 5.13106 0.166237C5.02462 0.0597971 4.88025 0 4.72973 0C4.5792 0 4.43484 0.0597971 4.3284 0.166237C4.22196 0.272676 4.16216 0.417039 4.16216 0.567568V1.51351H3.21621C2.66428 1.51351 2.13494 1.73277 1.74467 2.12305C1.35439 2.51333 1.13513 3.04266 1.13513 3.59459V11.9189C1.13513 12.4709 1.35439 13.0002 1.74467 13.3905C2.13494 13.7807 2.66428 14 3.21621 14H10.7838C11.3357 14 11.865 13.7807 12.2553 13.3905C12.6456 13.0002 12.8649 12.4709 12.8649 11.9189V3.59459C12.8649 3.04266 12.6456 2.51333 12.2553 2.12305C11.865 1.73277 11.3357 1.51351 10.7838 1.51351ZM3.21621 2.64865H4.16216V3.59459C4.16216 3.74512 4.22196 3.88949 4.3284 3.99593C4.43484 4.10237 4.5792 4.16216 4.72973 4.16216C4.88025 4.16216 5.02462 4.10237 5.13106 3.99593C5.2375 3.88949 5.29729 3.74512 5.29729 3.59459V2.64865H8.7027V3.59459C8.7027 3.74512 8.7625 3.88949 8.86894 3.99593C8.97538 4.10237 9.11974 4.16216 9.27027 4.16216C9.42079 4.16216 9.56516 4.10237 9.6716 3.99593C9.77804 3.88949 9.83783 3.74512 9.83783 3.59459V2.64865H10.7838C11.0347 2.64865 11.2753 2.74831 11.4527 2.92571C11.6301 3.10311 11.7297 3.34371 11.7297 3.59459V5.67568H2.27027V3.59459C2.27027 3.34371 2.36993 3.10311 2.54733 2.92571C2.72473 2.74831 2.96533 2.64865 3.21621 2.64865ZM10.7838 12.8649H3.21621C2.96533 12.8649 2.72473 12.7652 2.54733 12.5878C2.36993 12.4104 2.27027 12.1698 2.27027 11.9189V6.81081H11.7297V11.9189C11.7297 12.1698 11.6301 12.4104 11.4527 12.5878C11.2753 12.7652 11.0347 12.8649 10.7838 12.8649Z"
-                fill="currentColor"
-            />
-        </svg>
-    `
-    }]
-  }], null, null);
-})();
-
-// node_modules/primeng/fesm2022/primeng-calendar.mjs
-var _c0 = ["container"];
-var _c1 = ["inputfield"];
-var _c2 = ["contentWrapper"];
-var _c3 = [[["p-header"]], [["p-footer"]]];
-var _c4 = ["p-header", "p-footer"];
-var _c5 = (a0, a1, a2, a3, a4) => ({
-  "p-calendar": true,
-  "p-input-icon-right": a0,
-  "p-calendar-w-btn": a1,
-  "p-calendar-timeonly": a2,
-  "p-calendar-disabled": a3,
-  "p-focus": a4
-});
-var _c6 = (a0) => ({
-  clickCallBack: a0
-});
-var _c7 = (a0) => ({
-  "p-datepicker-icon": a0
-});
-var _c8 = (a0, a1, a2, a3, a4, a5) => ({
-  "p-datepicker p-component": true,
-  "p-datepicker-inline": a0,
-  "p-disabled": a1,
-  "p-datepicker-timeonly": a2,
-  "p-datepicker-multiple-month": a3,
-  "p-datepicker-monthpicker": a4,
-  "p-datepicker-touch-ui": a5
-});
-var _c9 = (a0, a1) => ({
-  showTransitionParams: a0,
-  hideTransitionParams: a1
-});
-var _c10 = (a0) => ({
-  value: "visibleTouchUI",
-  params: a0
-});
-var _c11 = (a0) => ({
-  value: "visible",
-  params: a0
-});
-var _c12 = (a0) => ({
-  $implicit: a0
-});
-var _c13 = (a0, a1) => ({
-  "p-datepicker-other-month": a0,
-  "p-datepicker-today": a1
-});
-var _c14 = (a0, a1) => ({
-  "p-highlight p-datepicker-current-day": a0,
-  "p-disabled": a1
-});
-var _c15 = (a0, a1) => ({
-  "p-highlight": a0,
-  "p-disabled": a1
-});
-var _c16 = (a0) => [a0];
-function Calendar_ng_template_2_ng_container_2_TimesIcon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r3 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "TimesIcon", 11);
-    ɵɵlistener("click", function Calendar_ng_template_2_ng_container_2_TimesIcon_1_Template_TimesIcon_click_0_listener() {
-      ɵɵrestoreView(_r3);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.clear());
-    });
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    ɵɵproperty("styleClass", "p-calendar-clear-icon");
-  }
-}
-function Calendar_ng_template_2_ng_container_2_span_2_1_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_ng_template_2_ng_container_2_span_2_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_ng_template_2_ng_container_2_span_2_1_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_ng_template_2_ng_container_2_span_2_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r4 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "span", 12);
-    ɵɵlistener("click", function Calendar_ng_template_2_ng_container_2_span_2_Template_span_click_0_listener() {
-      ɵɵrestoreView(_r4);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.clear());
-    });
-    ɵɵtemplate(1, Calendar_ng_template_2_ng_container_2_span_2_1_Template, 1, 0, null, 13);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.clearIconTemplate);
-  }
-}
-function Calendar_ng_template_2_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, Calendar_ng_template_2_ng_container_2_TimesIcon_1_Template, 1, 1, "TimesIcon", 9)(2, Calendar_ng_template_2_ng_container_2_span_2_Template, 2, 1, "span", 10);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.clearIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.clearIconTemplate);
-  }
-}
-function Calendar_ng_template_2_button_3_span_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "span", 16);
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵproperty("ngClass", ctx_r1.icon);
-  }
-}
-function Calendar_ng_template_2_button_3_ng_container_2_CalendarIcon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "CalendarIcon");
-  }
-}
-function Calendar_ng_template_2_button_3_ng_container_2_2_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_ng_template_2_button_3_ng_container_2_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_ng_template_2_button_3_ng_container_2_2_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_ng_template_2_button_3_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, Calendar_ng_template_2_button_3_ng_container_2_CalendarIcon_1_Template, 1, 0, "CalendarIcon", 7)(2, Calendar_ng_template_2_button_3_ng_container_2_2_Template, 1, 0, null, 13);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.triggerIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.triggerIconTemplate);
-  }
-}
-function Calendar_ng_template_2_button_3_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r5 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 14);
-    ɵɵlistener("click", function Calendar_ng_template_2_button_3_Template_button_click_0_listener($event) {
-      ɵɵrestoreView(_r5);
-      ɵɵnextContext();
-      const inputfield_r6 = ɵɵreference(1);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.onButtonClick($event, inputfield_r6));
-    });
-    ɵɵtemplate(1, Calendar_ng_template_2_button_3_span_1_Template, 1, 1, "span", 15)(2, Calendar_ng_template_2_button_3_ng_container_2_Template, 3, 2, "ng-container", 7);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    let tmp_6_0;
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵproperty("disabled", ctx_r1.disabled);
-    ɵɵattribute("aria-label", ctx_r1.iconButtonAriaLabel)("aria-expanded", (tmp_6_0 = ctx_r1.overlayVisible) !== null && tmp_6_0 !== void 0 ? tmp_6_0 : false)("aria-controls", ctx_r1.overlayVisible ? ctx_r1.panelId : null);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.icon);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.icon);
-  }
-}
-function Calendar_ng_template_2_ng_container_4_CalendarIcon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r7 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "CalendarIcon", 19);
-    ɵɵlistener("click", function Calendar_ng_template_2_ng_container_4_CalendarIcon_1_Template_CalendarIcon_click_0_listener($event) {
-      ɵɵrestoreView(_r7);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onButtonClick($event));
-    });
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵproperty("ngClass", ɵɵpureFunction1(1, _c7, ctx_r1.showOnFocus));
-  }
-}
-function Calendar_ng_template_2_ng_container_4_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Calendar_ng_template_2_ng_container_4_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, Calendar_ng_template_2_ng_container_4_CalendarIcon_1_Template, 1, 3, "CalendarIcon", 17)(2, Calendar_ng_template_2_ng_container_4_ng_container_2_Template, 1, 0, "ng-container", 18);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.inputIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.inputIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(3, _c6, ctx_r1.onButtonClick.bind(ctx_r1)));
-  }
-}
-function Calendar_ng_template_2_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r1 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "input", 6, 1);
-    ɵɵlistener("focus", function Calendar_ng_template_2_Template_input_focus_0_listener($event) {
-      ɵɵrestoreView(_r1);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.onInputFocus($event));
-    })("keydown", function Calendar_ng_template_2_Template_input_keydown_0_listener($event) {
-      ɵɵrestoreView(_r1);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.onInputKeydown($event));
-    })("click", function Calendar_ng_template_2_Template_input_click_0_listener() {
-      ɵɵrestoreView(_r1);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.onInputClick());
-    })("blur", function Calendar_ng_template_2_Template_input_blur_0_listener($event) {
-      ɵɵrestoreView(_r1);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.onInputBlur($event));
-    })("input", function Calendar_ng_template_2_Template_input_input_0_listener($event) {
-      ɵɵrestoreView(_r1);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.onUserInput($event));
-    });
-    ɵɵelementEnd();
-    ɵɵtemplate(2, Calendar_ng_template_2_ng_container_2_Template, 3, 2, "ng-container", 7)(3, Calendar_ng_template_2_button_3_Template, 3, 6, "button", 8)(4, Calendar_ng_template_2_ng_container_4_Template, 3, 5, "ng-container", 7);
-  }
-  if (rf & 2) {
-    let tmp_15_0;
-    const ctx_r1 = ɵɵnextContext();
-    ɵɵclassMap(ctx_r1.inputStyleClass);
-    ɵɵproperty("value", ctx_r1.inputFieldValue)("readonly", ctx_r1.readonlyInput)("ngStyle", ctx_r1.inputStyle)("placeholder", ctx_r1.placeholder || "")("disabled", ctx_r1.disabled)("ngClass", ctx_r1.inputClass)("autofocus", ctx_r1.autofocus);
-    ɵɵattribute("id", ctx_r1.inputId)("name", ctx_r1.name)("required", ctx_r1.required)("aria-required", ctx_r1.required)("aria-expanded", (tmp_15_0 = ctx_r1.overlayVisible) !== null && tmp_15_0 !== void 0 ? tmp_15_0 : false)("aria-controls", ctx_r1.overlayVisible ? ctx_r1.panelId : null)("aria-labelledby", ctx_r1.ariaLabelledBy)("aria-label", ctx_r1.ariaLabel)("tabindex", ctx_r1.tabindex)("inputmode", ctx_r1.touchUI ? "off" : null);
-    ɵɵadvance(2);
-    ɵɵproperty("ngIf", ctx_r1.showClear && !ctx_r1.disabled && ctx_r1.value != null);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.showIcon && ctx_r1.iconDisplay === "button");
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.iconDisplay === "input" && ctx_r1.showIcon);
-  }
-}
-function Calendar_div_3_ng_container_3_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_button_2_ChevronLeftIcon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "ChevronLeftIcon", 40);
-  }
-  if (rf & 2) {
-    ɵɵproperty("styleClass", "p-datepicker-prev-icon");
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_button_2_span_2_1_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_div_3_ng_container_4_div_2_button_2_span_2_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_div_3_ng_container_4_div_2_button_2_span_2_1_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_button_2_span_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "span", 41);
-    ɵɵtemplate(1, Calendar_div_3_ng_container_4_div_2_button_2_span_2_1_Template, 1, 0, null, 13);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(5);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.previousIconTemplate);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_button_2_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r10 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 38);
-    ɵɵlistener("keydown", function Calendar_div_3_ng_container_4_div_2_button_2_Template_button_keydown_0_listener($event) {
-      ɵɵrestoreView(_r10);
-      const ctx_r1 = ɵɵnextContext(4);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("click", function Calendar_div_3_ng_container_4_div_2_button_2_Template_button_click_0_listener($event) {
-      ɵɵrestoreView(_r10);
-      const ctx_r1 = ɵɵnextContext(4);
-      return ɵɵresetView(ctx_r1.onPrevButtonClick($event));
-    });
-    ɵɵtemplate(1, Calendar_div_3_ng_container_4_div_2_button_2_ChevronLeftIcon_1_Template, 1, 1, "ChevronLeftIcon", 35)(2, Calendar_div_3_ng_container_4_div_2_button_2_span_2_Template, 2, 1, "span", 39);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(4);
-    ɵɵattribute("aria-label", ctx_r1.prevIconAriaLabel);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.previousIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.previousIconTemplate);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_button_4_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r11 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 42);
-    ɵɵlistener("click", function Calendar_div_3_ng_container_4_div_2_button_4_Template_button_click_0_listener($event) {
-      ɵɵrestoreView(_r11);
-      const ctx_r1 = ɵɵnextContext(4);
-      return ɵɵresetView(ctx_r1.switchToMonthView($event));
-    })("keydown", function Calendar_div_3_ng_container_4_div_2_button_4_Template_button_keydown_0_listener($event) {
-      ɵɵrestoreView(_r11);
-      const ctx_r1 = ɵɵnextContext(4);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    });
-    ɵɵtext(1);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const month_r12 = ɵɵnextContext().$implicit;
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵproperty("disabled", ctx_r1.switchViewButtonDisabled());
-    ɵɵattribute("aria-label", ctx_r1.getTranslation("chooseMonth"));
-    ɵɵadvance();
-    ɵɵtextInterpolate1(" ", ctx_r1.getMonthName(month_r12.month), " ");
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_button_5_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r13 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 43);
-    ɵɵlistener("click", function Calendar_div_3_ng_container_4_div_2_button_5_Template_button_click_0_listener($event) {
-      ɵɵrestoreView(_r13);
-      const ctx_r1 = ɵɵnextContext(4);
-      return ɵɵresetView(ctx_r1.switchToYearView($event));
-    })("keydown", function Calendar_div_3_ng_container_4_div_2_button_5_Template_button_keydown_0_listener($event) {
-      ɵɵrestoreView(_r13);
-      const ctx_r1 = ɵɵnextContext(4);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    });
-    ɵɵtext(1);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const month_r12 = ɵɵnextContext().$implicit;
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵproperty("disabled", ctx_r1.switchViewButtonDisabled());
-    ɵɵattribute("aria-label", ctx_r1.getTranslation("chooseYear"));
-    ɵɵadvance();
-    ɵɵtextInterpolate1(" ", ctx_r1.getYear(month_r12), " ");
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_span_6_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(5);
-    ɵɵadvance();
-    ɵɵtextInterpolate2("", ctx_r1.yearPickerValues()[0], " - ", ctx_r1.yearPickerValues()[ctx_r1.yearPickerValues().length - 1], "");
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_span_6_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_span_6_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "span", 44);
-    ɵɵtemplate(1, Calendar_div_3_ng_container_4_div_2_span_6_ng_container_1_Template, 2, 2, "ng-container", 7)(2, Calendar_div_3_ng_container_4_div_2_span_6_ng_container_2_Template, 1, 0, "ng-container", 18);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(4);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.decadeTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.decadeTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(3, _c12, ctx_r1.yearPickerValues));
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_ChevronRightIcon_8_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "ChevronRightIcon", 40);
-  }
-  if (rf & 2) {
-    ɵɵproperty("styleClass", "p-datepicker-next-icon");
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_span_9_1_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_div_3_ng_container_4_div_2_span_9_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_div_3_ng_container_4_div_2_span_9_1_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_span_9_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "span", 45);
-    ɵɵtemplate(1, Calendar_div_3_ng_container_4_div_2_span_9_1_Template, 1, 0, null, 13);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(4);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.nextIconTemplate);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_th_4_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "th", 51)(1, "span");
-    ɵɵtext(2);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(5);
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(ctx_r1.getTranslation("weekHeader"));
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_th_5_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "th", 52)(1, "span");
-    ɵɵtext(2);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const weekDay_r14 = ctx.$implicit;
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(weekDay_r14);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "td", 55)(1, "span", 56);
-    ɵɵtext(2);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const j_r15 = ɵɵnextContext().index;
-    const month_r12 = ɵɵnextContext(2).$implicit;
-    ɵɵadvance(2);
-    ɵɵtextInterpolate1(" ", month_r12.weekNumbers[j_r15], " ");
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const date_r17 = ɵɵnextContext(2).$implicit;
-    ɵɵadvance();
-    ɵɵtextInterpolate(date_r17.day);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_ng_container_3_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_ng_container_3_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_ng_container_3_ng_container_1_Template, 1, 0, "ng-container", 18);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const date_r17 = ɵɵnextContext(2).$implicit;
-    const ctx_r1 = ɵɵnextContext(6);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.dateTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c12, date_r17));
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_ng_container_4_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_ng_container_4_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_ng_container_4_ng_container_1_Template, 1, 0, "ng-container", 18);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const date_r17 = ɵɵnextContext(2).$implicit;
-    const ctx_r1 = ɵɵnextContext(6);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.disabledDateTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c12, date_r17));
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_div_5_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div", 59);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const date_r17 = ɵɵnextContext(2).$implicit;
-    ɵɵadvance();
-    ɵɵtextInterpolate1(" ", date_r17.day, " ");
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r16 = ɵɵgetCurrentView();
-    ɵɵelementContainerStart(0);
-    ɵɵelementStart(1, "span", 57);
-    ɵɵlistener("click", function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_Template_span_click_1_listener($event) {
-      ɵɵrestoreView(_r16);
-      const date_r17 = ɵɵnextContext().$implicit;
-      const ctx_r1 = ɵɵnextContext(6);
-      return ɵɵresetView(ctx_r1.onDateSelect($event, date_r17));
-    })("keydown", function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_Template_span_keydown_1_listener($event) {
-      ɵɵrestoreView(_r16);
-      const date_r17 = ɵɵnextContext().$implicit;
-      const i_r18 = ɵɵnextContext(3).index;
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onDateCellKeydown($event, date_r17, i_r18));
-    });
-    ɵɵtemplate(2, Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_ng_container_2_Template, 2, 1, "ng-container", 7)(3, Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_ng_container_3_Template, 2, 4, "ng-container", 7)(4, Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_ng_container_4_Template, 2, 4, "ng-container", 7);
-    ɵɵelementEnd();
-    ɵɵtemplate(5, Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_div_5_Template, 2, 1, "div", 58);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const date_r17 = ɵɵnextContext().$implicit;
-    const ctx_r1 = ɵɵnextContext(6);
-    ɵɵadvance();
-    ɵɵproperty("ngClass", ɵɵpureFunction2(6, _c14, ctx_r1.isSelected(date_r17) && date_r17.selectable, !date_r17.selectable));
-    ɵɵattribute("data-date", ctx_r1.formatDateKey(ctx_r1.formatDateMetaToDate(date_r17)));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.dateTemplate && (date_r17.selectable || !ctx_r1.disabledDateTemplate));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", date_r17.selectable || !ctx_r1.disabledDateTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !date_r17.selectable);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.isSelected(date_r17));
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "td", 16);
-    ɵɵtemplate(1, Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_ng_container_1_Template, 6, 9, "ng-container", 7);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const date_r17 = ctx.$implicit;
-    const ctx_r1 = ɵɵnextContext(6);
-    ɵɵproperty("ngClass", ɵɵpureFunction2(3, _c13, date_r17.otherMonth, date_r17.today));
-    ɵɵattribute("aria-label", date_r17.day);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", date_r17.otherMonth ? ctx_r1.showOtherMonths : true);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_tr_7_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "tr");
-    ɵɵtemplate(1, Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_1_Template, 3, 1, "td", 53)(2, Calendar_div_3_ng_container_4_div_2_div_10_tr_7_td_2_Template, 2, 6, "td", 54);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const week_r19 = ctx.$implicit;
-    const ctx_r1 = ɵɵnextContext(5);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.showWeek);
-    ɵɵadvance();
-    ɵɵproperty("ngForOf", week_r19);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_div_10_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div", 46)(1, "table", 47)(2, "thead")(3, "tr");
-    ɵɵtemplate(4, Calendar_div_3_ng_container_4_div_2_div_10_th_4_Template, 3, 1, "th", 48)(5, Calendar_div_3_ng_container_4_div_2_div_10_th_5_Template, 3, 1, "th", 49);
-    ɵɵelementEnd()();
-    ɵɵelementStart(6, "tbody");
-    ɵɵtemplate(7, Calendar_div_3_ng_container_4_div_2_div_10_tr_7_Template, 3, 2, "tr", 50);
-    ɵɵelementEnd()()();
-  }
-  if (rf & 2) {
-    const month_r12 = ɵɵnextContext().$implicit;
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵadvance(4);
-    ɵɵproperty("ngIf", ctx_r1.showWeek);
-    ɵɵadvance();
-    ɵɵproperty("ngForOf", ctx_r1.weekDays);
-    ɵɵadvance(2);
-    ɵɵproperty("ngForOf", month_r12.dates);
-  }
-}
-function Calendar_div_3_ng_container_4_div_2_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r9 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 27)(1, "div", 28);
-    ɵɵtemplate(2, Calendar_div_3_ng_container_4_div_2_button_2_Template, 3, 3, "button", 29);
-    ɵɵelementStart(3, "div", 30);
-    ɵɵtemplate(4, Calendar_div_3_ng_container_4_div_2_button_4_Template, 2, 3, "button", 31)(5, Calendar_div_3_ng_container_4_div_2_button_5_Template, 2, 3, "button", 32)(6, Calendar_div_3_ng_container_4_div_2_span_6_Template, 3, 5, "span", 33);
-    ɵɵelementEnd();
-    ɵɵelementStart(7, "button", 34);
-    ɵɵlistener("keydown", function Calendar_div_3_ng_container_4_div_2_Template_button_keydown_7_listener($event) {
-      ɵɵrestoreView(_r9);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("click", function Calendar_div_3_ng_container_4_div_2_Template_button_click_7_listener($event) {
-      ɵɵrestoreView(_r9);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onNextButtonClick($event));
-    });
-    ɵɵtemplate(8, Calendar_div_3_ng_container_4_div_2_ChevronRightIcon_8_Template, 1, 1, "ChevronRightIcon", 35)(9, Calendar_div_3_ng_container_4_div_2_span_9_Template, 2, 1, "span", 36);
-    ɵɵelementEnd()();
-    ɵɵtemplate(10, Calendar_div_3_ng_container_4_div_2_div_10_Template, 8, 3, "div", 37);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const i_r18 = ctx.index;
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵadvance(2);
-    ɵɵproperty("ngIf", i_r18 === 0);
-    ɵɵadvance(2);
-    ɵɵproperty("ngIf", ctx_r1.currentView === "date");
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.currentView !== "year");
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.currentView === "year");
-    ɵɵadvance();
-    ɵɵstyleProp("display", ctx_r1.numberOfMonths === 1 ? "inline-flex" : i_r18 === ctx_r1.numberOfMonths - 1 ? "inline-flex" : "none");
-    ɵɵattribute("aria-label", ctx_r1.nextIconAriaLabel);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.nextIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.nextIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.currentView === "date");
-  }
-}
-function Calendar_div_3_ng_container_4_div_3_span_1_div_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div", 59);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const m_r22 = ɵɵnextContext().$implicit;
-    ɵɵadvance();
-    ɵɵtextInterpolate1(" ", m_r22, " ");
-  }
-}
-function Calendar_div_3_ng_container_4_div_3_span_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r20 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "span", 62);
-    ɵɵlistener("click", function Calendar_div_3_ng_container_4_div_3_span_1_Template_span_click_0_listener($event) {
-      const i_r21 = ɵɵrestoreView(_r20).index;
-      const ctx_r1 = ɵɵnextContext(4);
-      return ɵɵresetView(ctx_r1.onMonthSelect($event, i_r21));
-    })("keydown", function Calendar_div_3_ng_container_4_div_3_span_1_Template_span_keydown_0_listener($event) {
-      const i_r21 = ɵɵrestoreView(_r20).index;
-      const ctx_r1 = ɵɵnextContext(4);
-      return ɵɵresetView(ctx_r1.onMonthCellKeydown($event, i_r21));
-    });
-    ɵɵtext(1);
-    ɵɵtemplate(2, Calendar_div_3_ng_container_4_div_3_span_1_div_2_Template, 2, 1, "div", 58);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const m_r22 = ctx.$implicit;
-    const i_r21 = ctx.index;
-    const ctx_r1 = ɵɵnextContext(4);
-    ɵɵproperty("ngClass", ɵɵpureFunction2(3, _c15, ctx_r1.isMonthSelected(i_r21), ctx_r1.isMonthDisabled(i_r21)));
-    ɵɵadvance();
-    ɵɵtextInterpolate1(" ", m_r22, " ");
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.isMonthSelected(i_r21));
-  }
-}
-function Calendar_div_3_ng_container_4_div_3_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div", 60);
-    ɵɵtemplate(1, Calendar_div_3_ng_container_4_div_3_span_1_Template, 3, 6, "span", 61);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵadvance();
-    ɵɵproperty("ngForOf", ctx_r1.monthPickerValues());
-  }
-}
-function Calendar_div_3_ng_container_4_div_4_span_1_div_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div", 59);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const y_r24 = ɵɵnextContext().$implicit;
-    ɵɵadvance();
-    ɵɵtextInterpolate1(" ", y_r24, " ");
-  }
-}
-function Calendar_div_3_ng_container_4_div_4_span_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r23 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "span", 65);
-    ɵɵlistener("click", function Calendar_div_3_ng_container_4_div_4_span_1_Template_span_click_0_listener($event) {
-      const y_r24 = ɵɵrestoreView(_r23).$implicit;
-      const ctx_r1 = ɵɵnextContext(4);
-      return ɵɵresetView(ctx_r1.onYearSelect($event, y_r24));
-    })("keydown", function Calendar_div_3_ng_container_4_div_4_span_1_Template_span_keydown_0_listener($event) {
-      const y_r24 = ɵɵrestoreView(_r23).$implicit;
-      const ctx_r1 = ɵɵnextContext(4);
-      return ɵɵresetView(ctx_r1.onYearCellKeydown($event, y_r24));
-    });
-    ɵɵtext(1);
-    ɵɵtemplate(2, Calendar_div_3_ng_container_4_div_4_span_1_div_2_Template, 2, 1, "div", 58);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const y_r24 = ctx.$implicit;
-    const ctx_r1 = ɵɵnextContext(4);
-    ɵɵproperty("ngClass", ɵɵpureFunction2(3, _c15, ctx_r1.isYearSelected(y_r24), ctx_r1.isYearDisabled(y_r24)));
-    ɵɵadvance();
-    ɵɵtextInterpolate1(" ", y_r24, " ");
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.isYearSelected(y_r24));
-  }
-}
-function Calendar_div_3_ng_container_4_div_4_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div", 63);
-    ɵɵtemplate(1, Calendar_div_3_ng_container_4_div_4_span_1_Template, 3, 6, "span", 64);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵadvance();
-    ɵɵproperty("ngForOf", ctx_r1.yearPickerValues());
-  }
-}
-function Calendar_div_3_ng_container_4_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵelementStart(1, "div", 23);
-    ɵɵtemplate(2, Calendar_div_3_ng_container_4_div_2_Template, 11, 10, "div", 24);
-    ɵɵelementEnd();
-    ɵɵtemplate(3, Calendar_div_3_ng_container_4_div_3_Template, 2, 1, "div", 25)(4, Calendar_div_3_ng_container_4_div_4_Template, 2, 1, "div", 26);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵadvance(2);
-    ɵɵproperty("ngForOf", ctx_r1.months);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.currentView === "month");
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.currentView === "year");
-  }
-}
-function Calendar_div_3_div_5_ChevronUpIcon_3_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "ChevronUpIcon");
-  }
-}
-function Calendar_div_3_div_5_4_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_div_3_div_5_4_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_div_3_div_5_4_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_div_3_div_5_ng_container_6_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1, "0");
-    ɵɵelementContainerEnd();
-  }
-}
-function Calendar_div_3_div_5_ChevronDownIcon_9_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "ChevronDownIcon");
-  }
-}
-function Calendar_div_3_div_5_10_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_div_3_div_5_10_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_div_3_div_5_10_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_div_3_div_5_ChevronUpIcon_16_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "ChevronUpIcon");
-  }
-}
-function Calendar_div_3_div_5_17_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_div_3_div_5_17_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_div_3_div_5_17_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_div_3_div_5_ng_container_19_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1, "0");
-    ɵɵelementContainerEnd();
-  }
-}
-function Calendar_div_3_div_5_ChevronDownIcon_22_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "ChevronDownIcon");
-  }
-}
-function Calendar_div_3_div_5_23_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_div_3_div_5_23_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_div_3_div_5_23_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_div_3_div_5_div_24_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div", 69)(1, "span");
-    ɵɵtext(2);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(ctx_r1.timeSeparator);
-  }
-}
-function Calendar_div_3_div_5_div_25_ChevronUpIcon_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "ChevronUpIcon");
-  }
-}
-function Calendar_div_3_div_5_div_25_3_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_div_3_div_5_div_25_3_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_div_3_div_5_div_25_3_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_div_3_div_5_div_25_ng_container_5_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1, "0");
-    ɵɵelementContainerEnd();
-  }
-}
-function Calendar_div_3_div_5_div_25_ChevronDownIcon_8_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "ChevronDownIcon");
-  }
-}
-function Calendar_div_3_div_5_div_25_9_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_div_3_div_5_div_25_9_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_div_3_div_5_div_25_9_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_div_3_div_5_div_25_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r26 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 74)(1, "button", 68);
-    ɵɵlistener("keydown", function Calendar_div_3_div_5_div_25_Template_button_keydown_1_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("keydown.enter", function Calendar_div_3_div_5_div_25_Template_button_keydown_enter_1_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.incrementSecond($event));
-    })("keydown.space", function Calendar_div_3_div_5_div_25_Template_button_keydown_space_1_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.incrementSecond($event));
-    })("mousedown", function Calendar_div_3_div_5_div_25_Template_button_mousedown_1_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseDown($event, 2, 1));
-    })("mouseup", function Calendar_div_3_div_5_div_25_Template_button_mouseup_1_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.enter", function Calendar_div_3_div_5_div_25_Template_button_keyup_enter_1_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.space", function Calendar_div_3_div_5_div_25_Template_button_keyup_space_1_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("mouseleave", function Calendar_div_3_div_5_div_25_Template_button_mouseleave_1_listener() {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseLeave());
-    });
-    ɵɵtemplate(2, Calendar_div_3_div_5_div_25_ChevronUpIcon_2_Template, 1, 0, "ChevronUpIcon", 7)(3, Calendar_div_3_div_5_div_25_3_Template, 1, 0, null, 13);
-    ɵɵelementEnd();
-    ɵɵelementStart(4, "span");
-    ɵɵtemplate(5, Calendar_div_3_div_5_div_25_ng_container_5_Template, 2, 0, "ng-container", 7);
-    ɵɵtext(6);
-    ɵɵelementEnd();
-    ɵɵelementStart(7, "button", 68);
-    ɵɵlistener("keydown", function Calendar_div_3_div_5_div_25_Template_button_keydown_7_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("keydown.enter", function Calendar_div_3_div_5_div_25_Template_button_keydown_enter_7_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.decrementSecond($event));
-    })("keydown.space", function Calendar_div_3_div_5_div_25_Template_button_keydown_space_7_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.decrementSecond($event));
-    })("mousedown", function Calendar_div_3_div_5_div_25_Template_button_mousedown_7_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseDown($event, 2, -1));
-    })("mouseup", function Calendar_div_3_div_5_div_25_Template_button_mouseup_7_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.enter", function Calendar_div_3_div_5_div_25_Template_button_keyup_enter_7_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.space", function Calendar_div_3_div_5_div_25_Template_button_keyup_space_7_listener($event) {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("mouseleave", function Calendar_div_3_div_5_div_25_Template_button_mouseleave_7_listener() {
-      ɵɵrestoreView(_r26);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseLeave());
-    });
-    ɵɵtemplate(8, Calendar_div_3_div_5_div_25_ChevronDownIcon_8_Template, 1, 0, "ChevronDownIcon", 7)(9, Calendar_div_3_div_5_div_25_9_Template, 1, 0, null, 13);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵadvance();
-    ɵɵattribute("aria-label", ctx_r1.getTranslation("nextSecond"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.incrementIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.incrementIconTemplate);
-    ɵɵadvance(2);
-    ɵɵproperty("ngIf", ctx_r1.currentSecond < 10);
-    ɵɵadvance();
-    ɵɵtextInterpolate(ctx_r1.currentSecond);
-    ɵɵadvance();
-    ɵɵattribute("aria-label", ctx_r1.getTranslation("prevSecond"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.decrementIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.decrementIconTemplate);
-  }
-}
-function Calendar_div_3_div_5_div_26_ChevronUpIcon_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "ChevronUpIcon");
-  }
-}
-function Calendar_div_3_div_5_div_26_3_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_div_3_div_5_div_26_3_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_div_3_div_5_div_26_3_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_div_3_div_5_div_26_ChevronDownIcon_7_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "ChevronDownIcon");
-  }
-}
-function Calendar_div_3_div_5_div_26_8_ng_template_0_Template(rf, ctx) {
-}
-function Calendar_div_3_div_5_div_26_8_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Calendar_div_3_div_5_div_26_8_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Calendar_div_3_div_5_div_26_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r27 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 75)(1, "button", 76);
-    ɵɵlistener("keydown", function Calendar_div_3_div_5_div_26_Template_button_keydown_1_listener($event) {
-      ɵɵrestoreView(_r27);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("click", function Calendar_div_3_div_5_div_26_Template_button_click_1_listener($event) {
-      ɵɵrestoreView(_r27);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.toggleAMPM($event));
-    })("keydown.enter", function Calendar_div_3_div_5_div_26_Template_button_keydown_enter_1_listener($event) {
-      ɵɵrestoreView(_r27);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.toggleAMPM($event));
-    });
-    ɵɵtemplate(2, Calendar_div_3_div_5_div_26_ChevronUpIcon_2_Template, 1, 0, "ChevronUpIcon", 7)(3, Calendar_div_3_div_5_div_26_3_Template, 1, 0, null, 13);
-    ɵɵelementEnd();
-    ɵɵelementStart(4, "span");
-    ɵɵtext(5);
-    ɵɵelementEnd();
-    ɵɵelementStart(6, "button", 76);
-    ɵɵlistener("keydown", function Calendar_div_3_div_5_div_26_Template_button_keydown_6_listener($event) {
-      ɵɵrestoreView(_r27);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("click", function Calendar_div_3_div_5_div_26_Template_button_click_6_listener($event) {
-      ɵɵrestoreView(_r27);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.toggleAMPM($event));
-    })("keydown.enter", function Calendar_div_3_div_5_div_26_Template_button_keydown_enter_6_listener($event) {
-      ɵɵrestoreView(_r27);
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.toggleAMPM($event));
-    });
-    ɵɵtemplate(7, Calendar_div_3_div_5_div_26_ChevronDownIcon_7_Template, 1, 0, "ChevronDownIcon", 7)(8, Calendar_div_3_div_5_div_26_8_Template, 1, 0, null, 13);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵadvance();
-    ɵɵattribute("aria-label", ctx_r1.getTranslation("am"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.incrementIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.incrementIconTemplate);
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(ctx_r1.pm ? "PM" : "AM");
-    ɵɵadvance();
-    ɵɵattribute("aria-label", ctx_r1.getTranslation("pm"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.decrementIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.decrementIconTemplate);
-  }
-}
-function Calendar_div_3_div_5_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r25 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 66)(1, "div", 67)(2, "button", 68);
-    ɵɵlistener("keydown", function Calendar_div_3_div_5_Template_button_keydown_2_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("keydown.enter", function Calendar_div_3_div_5_Template_button_keydown_enter_2_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.incrementHour($event));
-    })("keydown.space", function Calendar_div_3_div_5_Template_button_keydown_space_2_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.incrementHour($event));
-    })("mousedown", function Calendar_div_3_div_5_Template_button_mousedown_2_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseDown($event, 0, 1));
-    })("mouseup", function Calendar_div_3_div_5_Template_button_mouseup_2_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.enter", function Calendar_div_3_div_5_Template_button_keyup_enter_2_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.space", function Calendar_div_3_div_5_Template_button_keyup_space_2_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("mouseleave", function Calendar_div_3_div_5_Template_button_mouseleave_2_listener() {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseLeave());
-    });
-    ɵɵtemplate(3, Calendar_div_3_div_5_ChevronUpIcon_3_Template, 1, 0, "ChevronUpIcon", 7)(4, Calendar_div_3_div_5_4_Template, 1, 0, null, 13);
-    ɵɵelementEnd();
-    ɵɵelementStart(5, "span");
-    ɵɵtemplate(6, Calendar_div_3_div_5_ng_container_6_Template, 2, 0, "ng-container", 7);
-    ɵɵtext(7);
-    ɵɵelementEnd();
-    ɵɵelementStart(8, "button", 68);
-    ɵɵlistener("keydown", function Calendar_div_3_div_5_Template_button_keydown_8_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("keydown.enter", function Calendar_div_3_div_5_Template_button_keydown_enter_8_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.decrementHour($event));
-    })("keydown.space", function Calendar_div_3_div_5_Template_button_keydown_space_8_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.decrementHour($event));
-    })("mousedown", function Calendar_div_3_div_5_Template_button_mousedown_8_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseDown($event, 0, -1));
-    })("mouseup", function Calendar_div_3_div_5_Template_button_mouseup_8_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.enter", function Calendar_div_3_div_5_Template_button_keyup_enter_8_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.space", function Calendar_div_3_div_5_Template_button_keyup_space_8_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("mouseleave", function Calendar_div_3_div_5_Template_button_mouseleave_8_listener() {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseLeave());
-    });
-    ɵɵtemplate(9, Calendar_div_3_div_5_ChevronDownIcon_9_Template, 1, 0, "ChevronDownIcon", 7)(10, Calendar_div_3_div_5_10_Template, 1, 0, null, 13);
-    ɵɵelementEnd()();
-    ɵɵelementStart(11, "div", 69)(12, "span");
-    ɵɵtext(13);
-    ɵɵelementEnd()();
-    ɵɵelementStart(14, "div", 70)(15, "button", 68);
-    ɵɵlistener("keydown", function Calendar_div_3_div_5_Template_button_keydown_15_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("keydown.enter", function Calendar_div_3_div_5_Template_button_keydown_enter_15_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.incrementMinute($event));
-    })("keydown.space", function Calendar_div_3_div_5_Template_button_keydown_space_15_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.incrementMinute($event));
-    })("mousedown", function Calendar_div_3_div_5_Template_button_mousedown_15_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseDown($event, 1, 1));
-    })("mouseup", function Calendar_div_3_div_5_Template_button_mouseup_15_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.enter", function Calendar_div_3_div_5_Template_button_keyup_enter_15_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.space", function Calendar_div_3_div_5_Template_button_keyup_space_15_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("mouseleave", function Calendar_div_3_div_5_Template_button_mouseleave_15_listener() {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseLeave());
-    });
-    ɵɵtemplate(16, Calendar_div_3_div_5_ChevronUpIcon_16_Template, 1, 0, "ChevronUpIcon", 7)(17, Calendar_div_3_div_5_17_Template, 1, 0, null, 13);
-    ɵɵelementEnd();
-    ɵɵelementStart(18, "span");
-    ɵɵtemplate(19, Calendar_div_3_div_5_ng_container_19_Template, 2, 0, "ng-container", 7);
-    ɵɵtext(20);
-    ɵɵelementEnd();
-    ɵɵelementStart(21, "button", 68);
-    ɵɵlistener("keydown", function Calendar_div_3_div_5_Template_button_keydown_21_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("keydown.enter", function Calendar_div_3_div_5_Template_button_keydown_enter_21_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.decrementMinute($event));
-    })("keydown.space", function Calendar_div_3_div_5_Template_button_keydown_space_21_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.decrementMinute($event));
-    })("mousedown", function Calendar_div_3_div_5_Template_button_mousedown_21_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseDown($event, 1, -1));
-    })("mouseup", function Calendar_div_3_div_5_Template_button_mouseup_21_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.enter", function Calendar_div_3_div_5_Template_button_keyup_enter_21_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("keyup.space", function Calendar_div_3_div_5_Template_button_keyup_space_21_listener($event) {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseUp($event));
-    })("mouseleave", function Calendar_div_3_div_5_Template_button_mouseleave_21_listener() {
-      ɵɵrestoreView(_r25);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTimePickerElementMouseLeave());
-    });
-    ɵɵtemplate(22, Calendar_div_3_div_5_ChevronDownIcon_22_Template, 1, 0, "ChevronDownIcon", 7)(23, Calendar_div_3_div_5_23_Template, 1, 0, null, 13);
-    ɵɵelementEnd()();
-    ɵɵtemplate(24, Calendar_div_3_div_5_div_24_Template, 3, 1, "div", 71)(25, Calendar_div_3_div_5_div_25_Template, 10, 8, "div", 72)(26, Calendar_div_3_div_5_div_26_Template, 9, 7, "div", 73);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵadvance(2);
-    ɵɵattribute("aria-label", ctx_r1.getTranslation("nextHour"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.incrementIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.incrementIconTemplate);
-    ɵɵadvance(2);
-    ɵɵproperty("ngIf", ctx_r1.currentHour < 10);
-    ɵɵadvance();
-    ɵɵtextInterpolate(ctx_r1.currentHour);
-    ɵɵadvance();
-    ɵɵattribute("aria-label", ctx_r1.getTranslation("prevHour"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.decrementIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.decrementIconTemplate);
-    ɵɵadvance(3);
-    ɵɵtextInterpolate(ctx_r1.timeSeparator);
-    ɵɵadvance(2);
-    ɵɵattribute("aria-label", ctx_r1.getTranslation("nextMinute"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.incrementIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.incrementIconTemplate);
-    ɵɵadvance(2);
-    ɵɵproperty("ngIf", ctx_r1.currentMinute < 10);
-    ɵɵadvance();
-    ɵɵtextInterpolate(ctx_r1.currentMinute);
-    ɵɵadvance();
-    ɵɵattribute("aria-label", ctx_r1.getTranslation("prevMinute"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.decrementIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.decrementIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.showSeconds);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.showSeconds);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.hourFormat == "12");
-  }
-}
-function Calendar_div_3_div_6_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r28 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 77)(1, "button", 78);
-    ɵɵlistener("keydown", function Calendar_div_3_div_6_Template_button_keydown_1_listener($event) {
-      ɵɵrestoreView(_r28);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("click", function Calendar_div_3_div_6_Template_button_click_1_listener($event) {
-      ɵɵrestoreView(_r28);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onTodayButtonClick($event));
-    });
-    ɵɵelementEnd();
-    ɵɵelementStart(2, "button", 78);
-    ɵɵlistener("keydown", function Calendar_div_3_div_6_Template_button_keydown_2_listener($event) {
-      ɵɵrestoreView(_r28);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onContainerButtonKeydown($event));
-    })("click", function Calendar_div_3_div_6_Template_button_click_2_listener($event) {
-      ɵɵrestoreView(_r28);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onClearButtonClick($event));
-    });
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵadvance();
-    ɵɵproperty("label", ctx_r1.getTranslation("today"))("ngClass", ɵɵpureFunction1(4, _c16, ctx_r1.todayButtonStyleClass));
-    ɵɵadvance();
-    ɵɵproperty("label", ctx_r1.getTranslation("clear"))("ngClass", ɵɵpureFunction1(6, _c16, ctx_r1.clearButtonStyleClass));
-  }
-}
-function Calendar_div_3_ng_container_8_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Calendar_div_3_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r8 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 20, 2);
-    ɵɵlistener("@overlayAnimation.start", function Calendar_div_3_Template_div_animation_overlayAnimation_start_0_listener($event) {
-      ɵɵrestoreView(_r8);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.onOverlayAnimationStart($event));
-    })("@overlayAnimation.done", function Calendar_div_3_Template_div_animation_overlayAnimation_done_0_listener($event) {
-      ɵɵrestoreView(_r8);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.onOverlayAnimationDone($event));
-    })("click", function Calendar_div_3_Template_div_click_0_listener($event) {
-      ɵɵrestoreView(_r8);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.onOverlayClick($event));
-    });
-    ɵɵprojection(2);
-    ɵɵtemplate(3, Calendar_div_3_ng_container_3_Template, 1, 0, "ng-container", 13)(4, Calendar_div_3_ng_container_4_Template, 5, 3, "ng-container", 7)(5, Calendar_div_3_div_5_Template, 27, 20, "div", 21)(6, Calendar_div_3_div_6_Template, 3, 8, "div", 22);
-    ɵɵprojection(7, 1);
-    ɵɵtemplate(8, Calendar_div_3_ng_container_8_Template, 1, 0, "ng-container", 13);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext();
-    ɵɵclassMap(ctx_r1.panelStyleClass);
-    ɵɵproperty("ngStyle", ctx_r1.panelStyle)("ngClass", ɵɵpureFunction6(15, _c8, ctx_r1.inline, ctx_r1.disabled, ctx_r1.timeOnly, ctx_r1.numberOfMonths > 1, ctx_r1.view === "month", ctx_r1.touchUI))("@overlayAnimation", ctx_r1.touchUI ? ɵɵpureFunction1(25, _c10, ɵɵpureFunction2(22, _c9, ctx_r1.showTransitionOptions, ctx_r1.hideTransitionOptions)) : ɵɵpureFunction1(30, _c11, ɵɵpureFunction2(27, _c9, ctx_r1.showTransitionOptions, ctx_r1.hideTransitionOptions)))("@.disabled", ctx_r1.inline === true);
-    ɵɵattribute("id", ctx_r1.panelId)("aria-label", ctx_r1.getTranslation("chooseDate"))("role", ctx_r1.inline ? null : "dialog")("aria-modal", ctx_r1.inline ? null : "true");
-    ɵɵadvance(3);
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.headerTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.timeOnly);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", (ctx_r1.showTime || ctx_r1.timeOnly) && ctx_r1.currentView === "date");
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.showButtonBar);
-    ɵɵadvance(2);
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.footerTemplate);
-  }
-}
-var CALENDAR_VALUE_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => Calendar),
-  multi: true
-};
-var Calendar = class _Calendar {
-  document;
-  el;
-  renderer;
-  cd;
-  zone;
-  config;
-  overlayService;
-  iconDisplay = "button";
-  /**
-   * Inline style of the component.
-   * @group Props
-   */
-  style;
-  /**
-   * Style class of the component.
-   * @group Props
-   */
-  styleClass;
-  /**
-   * Inline style of the input field.
-   * @group Props
-   */
-  inputStyle;
-  /**
-   * Identifier of the focus input to match a label defined for the component.
-   * @group Props
-   */
-  inputId;
-  /**
-   * Name of the input element.
-   * @group Props
-   */
-  name;
-  /**
-   * Style class of the input field.
-   * @group Props
-   */
-  inputStyleClass;
-  /**
-   * Placeholder text for the input.
-   * @group Props
-   */
-  placeholder;
-  /**
-   * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
-   * @group Props
-   */
-  ariaLabelledBy;
-  /**
-   * Defines a string that labels the input for accessibility.
-   * @group Props
-   */
-  ariaLabel;
-  /**
-   * Defines a string that labels the icon button for accessibility.
-   * @group Props
-   */
-  iconAriaLabel;
-  /**
-   * When specified, disables the component.
-   * @group Props
-   */
-  disabled;
-  /**
-   * Format of the date which can also be defined at locale settings.
-   * @group Props
-   */
-  dateFormat;
-  /**
-   * Separator for multiple selection mode.
-   * @group Props
-   */
-  multipleSeparator = ",";
-  /**
-   * Separator for joining start and end dates on range selection mode.
-   * @group Props
-   */
-  rangeSeparator = "-";
-  /**
-   * When enabled, displays the calendar as inline. Default is false for popup mode.
-   * @group Props
-   */
-  inline = false;
-  /**
-   * Whether to display dates in other months (non-selectable) at the start or end of the current month. To make these days selectable use the selectOtherMonths option.
-   * @group Props
-   */
-  showOtherMonths = true;
-  /**
-   * Whether days in other months shown before or after the current month are selectable. This only applies if the showOtherMonths option is set to true.
-   * @group Props
-   */
-  selectOtherMonths;
-  /**
-   * When enabled, displays a button with icon next to input.
-   * @group Props
-   */
-  showIcon;
-  /**
-   * Icon of the calendar button.
-   * @group Props
-   */
-  icon;
-  /**
-   * Target element to attach the overlay, valid values are "body" or a local ng-template variable of another element (note: use binding with brackets for template variables, e.g. [appendTo]="mydiv" for a div element having#mydiv as variable name).
-   * @group Props
-   */
-  appendTo;
-  /**
-   * When specified, prevents entering the date manually with keyboard.
-   * @group Props
-   */
-  readonlyInput;
-  /**
-   * The cutoff year for determining the century for a date.
-   * @group Props
-   */
-  shortYearCutoff = "+10";
-  /**
-   * Whether the month should be rendered as a dropdown instead of text.
-   * @group Props
-   * @deprecated Navigator is always on.
-   */
-  monthNavigator;
-  /**
-   * Whether the year should be rendered as a dropdown instead of text.
-   * @group Props
-   * @deprecated  Navigator is always on.
-   */
-  yearNavigator;
-  /**
-   * Specifies 12 or 24 hour format.
-   * @group Props
-   */
-  hourFormat = "24";
-  /**
-   * Whether to display timepicker only.
-   * @group Props
-   */
-  timeOnly;
-  /**
-   * Years to change per step in yearpicker.
-   * @group Props
-   */
-  stepYearPicker = 10;
-  /**
-   * Hours to change per step.
-   * @group Props
-   */
-  stepHour = 1;
-  /**
-   * Minutes to change per step.
-   * @group Props
-   */
-  stepMinute = 1;
-  /**
-   * Seconds to change per step.
-   * @group Props
-   */
-  stepSecond = 1;
-  /**
-   * Whether to show the seconds in time picker.
-   * @group Props
-   */
-  showSeconds = false;
-  /**
-   * When present, it specifies that an input field must be filled out before submitting the form.
-   * @group Props
-   */
-  required;
-  /**
-   * When disabled, datepicker will not be visible with input focus.
-   * @group Props
-   */
-  showOnFocus = true;
-  /**
-   * When enabled, calendar will show week numbers.
-   * @group Props
-   */
-  showWeek = false;
-  /**
-   * When enabled, calendar will start week numbers from first day of the year.
-   * @group Props
-   */
-  startWeekFromFirstDayOfYear = false;
-  /**
-   * When enabled, a clear icon is displayed to clear the value.
-   * @group Props
-   */
-  showClear = false;
-  /**
-   * Type of the value to write back to ngModel, default is date and alternative is string.
-   * @group Props
-   */
-  dataType = "date";
-  /**
-   * Defines the quantity of the selection, valid values are "single", "multiple" and "range".
-   * @group Props
-   */
-  selectionMode = "single";
-  /**
-   * Maximum number of selectable dates in multiple mode.
-   * @group Props
-   */
-  maxDateCount;
-  /**
-   * Whether to display today and clear buttons at the footer
-   * @group Props
-   */
-  showButtonBar;
-  /**
-   * Style class of the today button.
-   * @group Props
-   */
-  todayButtonStyleClass = "p-button-text";
-  /**
-   * Style class of the clear button.
-   * @group Props
-   */
-  clearButtonStyleClass = "p-button-text";
-  /**
-   * When present, it specifies that the component should automatically get focus on load.
-   * @group Props
-   */
-  autofocus;
-  /**
-   * Whether to automatically manage layering.
-   * @group Props
-   */
-  autoZIndex = true;
-  /**
-   * Base zIndex value to use in layering.
-   * @group Props
-   */
-  baseZIndex = 0;
-  /**
-   * Style class of the datetimepicker container element.
-   * @group Props
-   */
-  panelStyleClass;
-  /**
-   * Inline style of the datetimepicker container element.
-   * @group Props
-   */
-  panelStyle;
-  /**
-   * Keep invalid value when input blur.
-   * @group Props
-   */
-  keepInvalid = false;
-  /**
-   * Whether to hide the overlay on date selection.
-   * @group Props
-   */
-  hideOnDateTimeSelect = true;
-  /**
-   * When enabled, calendar overlay is displayed as optimized for touch devices.
-   * @group Props
-   */
-  touchUI;
-  /**
-   * Separator of time selector.
-   * @group Props
-   */
-  timeSeparator = ":";
-  /**
-   * When enabled, can only focus on elements inside the calendar.
-   * @group Props
-   */
-  focusTrap = true;
-  /**
-   * Transition options of the show animation.
-   * @group Props
-   */
-  showTransitionOptions = ".12s cubic-bezier(0, 0, 0.2, 1)";
-  /**
-   * Transition options of the hide animation.
-   * @group Props
-   */
-  hideTransitionOptions = ".1s linear";
-  /**
-   * Index of the element in tabbing order.
-   * @group Props
-   */
-  tabindex;
-  /**
-   * Specifies the input variant of the component.
-   * @group Props
-   */
-  variant = "outlined";
-  /**
-   * The minimum selectable date.
-   * @group Props
-   */
-  get minDate() {
-    return this._minDate;
-  }
-  set minDate(date) {
-    this._minDate = date;
-    if (this.currentMonth != void 0 && this.currentMonth != null && this.currentYear) {
-      this.createMonths(this.currentMonth, this.currentYear);
-    }
-  }
-  /**
-   * The maximum selectable date.
-   * @group Props
-   */
-  get maxDate() {
-    return this._maxDate;
-  }
-  set maxDate(date) {
-    this._maxDate = date;
-    if (this.currentMonth != void 0 && this.currentMonth != null && this.currentYear) {
-      this.createMonths(this.currentMonth, this.currentYear);
-    }
-  }
-  /**
-   * Array with dates that should be disabled (not selectable).
-   * @group Props
-   */
-  get disabledDates() {
-    return this._disabledDates;
-  }
-  set disabledDates(disabledDates) {
-    this._disabledDates = disabledDates;
-    if (this.currentMonth != void 0 && this.currentMonth != null && this.currentYear) {
-      this.createMonths(this.currentMonth, this.currentYear);
-    }
-  }
-  /**
-   * Array with weekday numbers that should be disabled (not selectable).
-   * @group Props
-   */
-  get disabledDays() {
-    return this._disabledDays;
-  }
-  set disabledDays(disabledDays) {
-    this._disabledDays = disabledDays;
-    if (this.currentMonth != void 0 && this.currentMonth != null && this.currentYear) {
-      this.createMonths(this.currentMonth, this.currentYear);
-    }
-  }
-  /**
-   * The range of years displayed in the year drop-down in (nnnn:nnnn) format such as (2000:2020).
-   * @group Props
-   * @deprecated Years are based on decades by default.
-   */
-  get yearRange() {
-    return this._yearRange;
-  }
-  set yearRange(yearRange) {
-    this._yearRange = yearRange;
-    if (yearRange) {
-      const years = yearRange.split(":");
-      const yearStart = parseInt(years[0]);
-      const yearEnd = parseInt(years[1]);
-      this.populateYearOptions(yearStart, yearEnd);
-    }
-  }
-  /**
-   * Whether to display timepicker.
-   * @group Props
-   */
-  get showTime() {
-    return this._showTime;
-  }
-  set showTime(showTime) {
-    this._showTime = showTime;
-    if (this.currentHour === void 0) {
-      this.initTime(this.value || /* @__PURE__ */ new Date());
-    }
-    this.updateInputfield();
-  }
-  /**
-   * An array of options for responsive design.
-   * @group Props
-   */
-  get responsiveOptions() {
-    return this._responsiveOptions;
-  }
-  set responsiveOptions(responsiveOptions) {
-    this._responsiveOptions = responsiveOptions;
-    this.destroyResponsiveStyleElement();
-    this.createResponsiveStyle();
-  }
-  /**
-   * Number of months to display.
-   * @group Props
-   */
-  get numberOfMonths() {
-    return this._numberOfMonths;
-  }
-  set numberOfMonths(numberOfMonths) {
-    this._numberOfMonths = numberOfMonths;
-    this.destroyResponsiveStyleElement();
-    this.createResponsiveStyle();
-  }
-  /**
-   * Defines the first of the week for various date calculations.
-   * @group Props
-   */
-  get firstDayOfWeek() {
-    return this._firstDayOfWeek;
-  }
-  set firstDayOfWeek(firstDayOfWeek) {
-    this._firstDayOfWeek = firstDayOfWeek;
-    this.createWeekDays();
-  }
-  /**
-   * Option to set calendar locale.
-   * @group Props
-   * @deprecated Locale property has no effect, use new i18n API instead.
-   */
-  set locale(newLocale) {
-    console.warn("Locale property has no effect, use new i18n API instead.");
-  }
-  /**
-   * Type of view to display, valid values are "date" for datepicker and "month" for month picker.
-   * @group Props
-   */
-  get view() {
-    return this._view;
-  }
-  set view(view) {
-    this._view = view;
-    this.currentView = this._view;
-  }
-  /**
-   * Set the date to highlight on first opening if the field is blank.
-   * @group Props
-   */
-  get defaultDate() {
-    return this._defaultDate;
-  }
-  set defaultDate(defaultDate) {
-    this._defaultDate = defaultDate;
-    if (this.initialized) {
-      const date = defaultDate || /* @__PURE__ */ new Date();
-      this.currentMonth = date.getMonth();
-      this.currentYear = date.getFullYear();
-      this.initTime(date);
-      this.createMonths(this.currentMonth, this.currentYear);
-    }
-  }
-  get inputClass() {
-    return {
-      "p-inputtext p-component": true,
-      "p-variant-filled": this.variant === "filled" || this.config.inputStyle() === "filled"
-    };
-  }
-  /**
-   * Callback to invoke on focus of input field.
-   * @param {Event} event - browser event.
-   * @group Emits
-   */
-  onFocus = new EventEmitter();
-  /**
-   * Callback to invoke on blur of input field.
-   * @param {Event} event - browser event.
-   * @group Emits
-   */
-  onBlur = new EventEmitter();
-  /**
-   * Callback to invoke when date panel closed.
-   * @param {Event} event - Mouse event
-   * @group Emits
-   */
-  onClose = new EventEmitter();
-  /**
-   * Callback to invoke on date select.
-   * @param {Date} date - date value.
-   * @group Emits
-   */
-  onSelect = new EventEmitter();
-  /**
-   * Callback to invoke when input field cleared.
-   * @group Emits
-   */
-  onClear = new EventEmitter();
-  /**
-   * Callback to invoke when input field is being typed.
-   * @param {Event} event - browser event
-   * @group Emits
-   */
-  onInput = new EventEmitter();
-  /**
-   * Callback to invoke when today button is clicked.
-   * @param {Date} date - today as a date instance.
-   * @group Emits
-   */
-  onTodayClick = new EventEmitter();
-  /**
-   * Callback to invoke when clear button is clicked.
-   * @param {Event} event - browser event.
-   * @group Emits
-   */
-  onClearClick = new EventEmitter();
-  /**
-   * Callback to invoke when a month is changed using the navigators.
-   * @param {CalendarMonthChangeEvent} event - custom month change event.
-   * @group Emits
-   */
-  onMonthChange = new EventEmitter();
-  /**
-   * Callback to invoke when a year is changed using the navigators.
-   * @param {CalendarYearChangeEvent} event - custom year change event.
-   * @group Emits
-   */
-  onYearChange = new EventEmitter();
-  /**
-   * Callback to invoke when clicked outside of the date panel.
-   * @group Emits
-   */
-  onClickOutside = new EventEmitter();
-  /**
-   * Callback to invoke when datepicker panel is shown.
-   * @group Emits
-   */
-  onShow = new EventEmitter();
-  templates;
-  containerViewChild;
-  inputfieldViewChild;
-  set content(content) {
-    this.contentViewChild = content;
-    if (this.contentViewChild) {
-      if (this.isMonthNavigate) {
-        Promise.resolve(null).then(() => this.updateFocus());
-        this.isMonthNavigate = false;
-      } else {
-        if (!this.focus && !this.inline) {
-          this.initFocusableCell();
-        }
-      }
-    }
-  }
-  contentViewChild;
-  value;
-  dates;
-  months;
-  weekDays;
-  currentMonth;
-  currentYear;
-  currentHour;
-  currentMinute;
-  currentSecond;
-  pm;
-  mask;
-  maskClickListener;
-  overlay;
-  responsiveStyleElement;
-  overlayVisible;
-  onModelChange = () => {
-  };
-  onModelTouched = () => {
-  };
-  calendarElement;
-  timePickerTimer;
-  documentClickListener;
-  animationEndListener;
-  ticksTo1970;
-  yearOptions;
-  focus;
-  isKeydown;
-  filled;
-  inputFieldValue = null;
-  _minDate;
-  _maxDate;
-  _showTime;
-  _yearRange;
-  preventDocumentListener;
-  dateTemplate;
-  headerTemplate;
-  footerTemplate;
-  disabledDateTemplate;
-  decadeTemplate;
-  previousIconTemplate;
-  nextIconTemplate;
-  triggerIconTemplate;
-  clearIconTemplate;
-  decrementIconTemplate;
-  incrementIconTemplate;
-  inputIconTemplate;
-  _disabledDates;
-  _disabledDays;
-  selectElement;
-  todayElement;
-  focusElement;
-  scrollHandler;
-  documentResizeListener;
-  navigationState = null;
-  isMonthNavigate;
-  initialized;
-  translationSubscription;
-  _locale;
-  _responsiveOptions;
-  currentView;
-  attributeSelector;
-  panelId;
-  _numberOfMonths = 1;
-  _firstDayOfWeek;
-  _view = "date";
-  preventFocus;
-  _defaultDate;
-  _focusKey = null;
-  window;
-  get locale() {
-    return this._locale;
-  }
-  get iconButtonAriaLabel() {
-    return this.iconAriaLabel ? this.iconAriaLabel : this.getTranslation("chooseDate");
-  }
-  get prevIconAriaLabel() {
-    return this.currentView === "year" ? this.getTranslation("prevDecade") : this.currentView === "month" ? this.getTranslation("prevYear") : this.getTranslation("prevMonth");
-  }
-  get nextIconAriaLabel() {
-    return this.currentView === "year" ? this.getTranslation("nextDecade") : this.currentView === "month" ? this.getTranslation("nextYear") : this.getTranslation("nextMonth");
-  }
-  constructor(document2, el, renderer, cd, zone, config, overlayService) {
-    this.document = document2;
-    this.el = el;
-    this.renderer = renderer;
-    this.cd = cd;
-    this.zone = zone;
-    this.config = config;
-    this.overlayService = overlayService;
-    this.window = this.document.defaultView;
-  }
-  ngOnInit() {
-    this.attributeSelector = UniqueComponentId();
-    this.panelId = this.attributeSelector + "_panel";
-    const date = this.defaultDate || /* @__PURE__ */ new Date();
-    this.createResponsiveStyle();
-    this.currentMonth = date.getMonth();
-    this.currentYear = date.getFullYear();
-    this.yearOptions = [];
-    this.currentView = this.view;
-    if (this.view === "date") {
-      this.createWeekDays();
-      this.initTime(date);
-      this.createMonths(this.currentMonth, this.currentYear);
-      this.ticksTo1970 = ((1970 - 1) * 365 + Math.floor(1970 / 4) - Math.floor(1970 / 100) + Math.floor(1970 / 400)) * 24 * 60 * 60 * 1e7;
-    }
-    this.translationSubscription = this.config.translationObserver.subscribe(() => {
-      this.createWeekDays();
-      this.cd.markForCheck();
-    });
-    this.initialized = true;
-  }
-  ngAfterContentInit() {
-    this.templates.forEach((item) => {
-      switch (item.getType()) {
-        case "date":
-          this.dateTemplate = item.template;
-          break;
-        case "decade":
-          this.decadeTemplate = item.template;
-          break;
-        case "disabledDate":
-          this.disabledDateTemplate = item.template;
-          break;
-        case "header":
-          this.headerTemplate = item.template;
-          break;
-        case "inputicon":
-          this.inputIconTemplate = item.template;
-          break;
-        case "previousicon":
-          this.previousIconTemplate = item.template;
-          break;
-        case "nexticon":
-          this.nextIconTemplate = item.template;
-          break;
-        case "triggericon":
-          this.triggerIconTemplate = item.template;
-          break;
-        case "clearicon":
-          this.clearIconTemplate = item.template;
-          break;
-        case "decrementicon":
-          this.decrementIconTemplate = item.template;
-          break;
-        case "incrementicon":
-          this.incrementIconTemplate = item.template;
-          break;
-        case "footer":
-          this.footerTemplate = item.template;
-          break;
-        default:
-          this.dateTemplate = item.template;
-          break;
-      }
-    });
-  }
-  ngAfterViewInit() {
-    if (this.inline) {
-      this.contentViewChild && this.contentViewChild.nativeElement.setAttribute(this.attributeSelector, "");
-      if (!this.disabled && !this.inline) {
-        this.initFocusableCell();
-        if (this.numberOfMonths === 1) {
-          if (this.contentViewChild && this.contentViewChild.nativeElement) {
-            this.contentViewChild.nativeElement.style.width = DomHandler.getOuterWidth(this.containerViewChild?.nativeElement) + "px";
-          }
-        }
-      }
-    }
-  }
-  getTranslation(option) {
-    return this.config.getTranslation(option);
-  }
-  populateYearOptions(start, end) {
-    this.yearOptions = [];
-    for (let i = start; i <= end; i++) {
-      this.yearOptions.push(i);
-    }
-  }
-  createWeekDays() {
-    this.weekDays = [];
-    let dayIndex = this.getFirstDateOfWeek();
-    let dayLabels = this.getTranslation(TranslationKeys.DAY_NAMES_MIN);
-    for (let i = 0; i < 7; i++) {
-      this.weekDays.push(dayLabels[dayIndex]);
-      dayIndex = dayIndex == 6 ? 0 : ++dayIndex;
-    }
-  }
-  monthPickerValues() {
-    let monthPickerValues = [];
-    for (let i = 0; i <= 11; i++) {
-      monthPickerValues.push(this.config.getTranslation("monthNamesShort")[i]);
-    }
-    return monthPickerValues;
-  }
-  yearPickerValues() {
-    let yearPickerValues = [];
-    let base = this.currentYear - this.currentYear % this.stepYearPicker;
-    for (let i = 0; i < this.stepYearPicker; i++) {
-      yearPickerValues.push(base + i);
-    }
-    return yearPickerValues;
-  }
-  createMonths(month, year) {
-    this.months = this.months = [];
-    for (let i = 0; i < this.numberOfMonths; i++) {
-      let m = month + i;
-      let y = year;
-      if (m > 11) {
-        m = m % 11 - 1;
-        y = year + 1;
-      }
-      this.months.push(this.createMonth(m, y));
-    }
-  }
-  getWeekNumber(date) {
-    let checkDate = new Date(date.getTime());
-    if (this.startWeekFromFirstDayOfYear) {
-      let firstDayOfWeek = +this.getFirstDateOfWeek();
-      checkDate.setDate(checkDate.getDate() + 6 + firstDayOfWeek - checkDate.getDay());
-    } else {
-      checkDate.setDate(checkDate.getDate() + 4 - (checkDate.getDay() || 7));
-    }
-    let time = checkDate.getTime();
-    checkDate.setMonth(0);
-    checkDate.setDate(1);
-    return Math.floor(Math.round((time - checkDate.getTime()) / 864e5) / 7) + 1;
-  }
-  createMonth(month, year) {
-    let dates = [];
-    let firstDay = this.getFirstDayOfMonthIndex(month, year);
-    let daysLength = this.getDaysCountInMonth(month, year);
-    let prevMonthDaysLength = this.getDaysCountInPrevMonth(month, year);
-    let dayNo = 1;
-    let today = /* @__PURE__ */ new Date();
-    let weekNumbers = [];
-    let monthRows = Math.ceil((daysLength + firstDay) / 7);
-    for (let i = 0; i < monthRows; i++) {
-      let week = [];
-      if (i == 0) {
-        for (let j = prevMonthDaysLength - firstDay + 1; j <= prevMonthDaysLength; j++) {
-          let prev = this.getPreviousMonthAndYear(month, year);
-          week.push({
-            day: j,
-            month: prev.month,
-            year: prev.year,
-            otherMonth: true,
-            today: this.isToday(today, j, prev.month, prev.year),
-            selectable: this.isSelectable(j, prev.month, prev.year, true)
-          });
-        }
-        let remainingDaysLength = 7 - week.length;
-        for (let j = 0; j < remainingDaysLength; j++) {
-          week.push({
-            day: dayNo,
-            month,
-            year,
-            today: this.isToday(today, dayNo, month, year),
-            selectable: this.isSelectable(dayNo, month, year, false)
-          });
-          dayNo++;
-        }
-      } else {
-        for (let j = 0; j < 7; j++) {
-          if (dayNo > daysLength) {
-            let next = this.getNextMonthAndYear(month, year);
-            week.push({
-              day: dayNo - daysLength,
-              month: next.month,
-              year: next.year,
-              otherMonth: true,
-              today: this.isToday(today, dayNo - daysLength, next.month, next.year),
-              selectable: this.isSelectable(dayNo - daysLength, next.month, next.year, true)
-            });
-          } else {
-            week.push({
-              day: dayNo,
-              month,
-              year,
-              today: this.isToday(today, dayNo, month, year),
-              selectable: this.isSelectable(dayNo, month, year, false)
-            });
-          }
-          dayNo++;
-        }
-      }
-      if (this.showWeek) {
-        weekNumbers.push(this.getWeekNumber(new Date(week[0].year, week[0].month, week[0].day)));
-      }
-      dates.push(week);
-    }
-    return {
-      month,
-      year,
-      dates,
-      weekNumbers
-    };
-  }
-  initTime(date) {
-    this.pm = date.getHours() > 11;
-    if (this.showTime) {
-      this.currentMinute = date.getMinutes();
-      this.currentSecond = date.getSeconds();
-      this.setCurrentHourPM(date.getHours());
-    } else if (this.timeOnly) {
-      this.currentMinute = 0;
-      this.currentHour = 0;
-      this.currentSecond = 0;
-    }
-  }
-  navBackward(event2) {
-    if (this.disabled) {
-      event2.preventDefault();
-      return;
-    }
-    this.isMonthNavigate = true;
-    if (this.currentView === "month") {
-      this.decrementYear();
-      setTimeout(() => {
-        this.updateFocus();
-      }, 1);
-    } else if (this.currentView === "year") {
-      this.decrementYearPickerStep();
-      setTimeout(() => {
-        this.updateFocus();
-      }, 1);
-    } else {
-      if (this.currentMonth === 0) {
-        this.currentMonth = 11;
-        this.decrementYear();
-      } else {
-        this.currentMonth--;
-      }
-      this.onMonthChange.emit({
-        month: this.currentMonth + 1,
-        year: this.currentYear
-      });
-      this.createMonths(this.currentMonth, this.currentYear);
-    }
-  }
-  navForward(event2) {
-    if (this.disabled) {
-      event2.preventDefault();
-      return;
-    }
-    this.isMonthNavigate = true;
-    if (this.currentView === "month") {
-      this.incrementYear();
-      setTimeout(() => {
-        this.updateFocus();
-      }, 1);
-    } else if (this.currentView === "year") {
-      this.incrementYearPickerStep();
-      setTimeout(() => {
-        this.updateFocus();
-      }, 1);
-    } else {
-      if (this.currentMonth === 11) {
-        this.currentMonth = 0;
-        this.incrementYear();
-      } else {
-        this.currentMonth++;
-      }
-      this.onMonthChange.emit({
-        month: this.currentMonth + 1,
-        year: this.currentYear
-      });
-      this.createMonths(this.currentMonth, this.currentYear);
-    }
-  }
-  decrementYear() {
-    this.currentYear--;
-    let _yearOptions = this.yearOptions;
-    if (this.yearNavigator && this.currentYear < _yearOptions[0]) {
-      let difference = _yearOptions[_yearOptions.length - 1] - _yearOptions[0];
-      this.populateYearOptions(_yearOptions[0] - difference, _yearOptions[_yearOptions.length - 1] - difference);
-    }
-  }
-  decrementYearPickerStep() {
-    this.currentYear = this.currentYear - this.stepYearPicker;
-  }
-  incrementYearPickerStep() {
-    this.currentYear = this.currentYear + this.stepYearPicker;
-  }
-  incrementYear() {
-    this.currentYear++;
-    let _yearOptions = this.yearOptions;
-    if (this.yearNavigator && this.currentYear > _yearOptions[_yearOptions.length - 1]) {
-      let difference = _yearOptions[_yearOptions.length - 1] - _yearOptions[0];
-      this.populateYearOptions(_yearOptions[0] + difference, _yearOptions[_yearOptions.length - 1] + difference);
-    }
-  }
-  switchToMonthView(event2) {
-    this.setCurrentView("month");
-    event2.preventDefault();
-  }
-  switchToYearView(event2) {
-    this.setCurrentView("year");
-    event2.preventDefault();
-  }
-  onDateSelect(event2, dateMeta) {
-    if (this.disabled || !dateMeta.selectable) {
-      event2.preventDefault();
-      return;
-    }
-    if (this.isMultipleSelection() && this.isSelected(dateMeta)) {
-      this.value = this.value.filter((date, i) => {
-        return !this.isDateEquals(date, dateMeta);
-      });
-      if (this.value.length === 0) {
-        this.value = null;
-      }
-      this.updateModel(this.value);
-    } else {
-      if (this.shouldSelectDate(dateMeta)) {
-        this.selectDate(dateMeta);
-      }
-    }
-    if (this.hideOnDateTimeSelect && (this.isSingleSelection() || this.isRangeSelection() && this.value[1])) {
-      setTimeout(() => {
-        event2.preventDefault();
-        this.hideOverlay();
-        if (this.mask) {
-          this.disableModality();
-        }
-        this.cd.markForCheck();
-      }, 150);
-    }
-    this.updateInputfield();
-    event2.preventDefault();
-  }
-  shouldSelectDate(dateMeta) {
-    if (this.isMultipleSelection()) return this.maxDateCount != null ? this.maxDateCount > (this.value ? this.value.length : 0) : true;
-    else return true;
-  }
-  onMonthSelect(event2, index) {
-    if (this.view === "month") {
-      this.onDateSelect(event2, {
-        year: this.currentYear,
-        month: index,
-        day: 1,
-        selectable: true
-      });
-    } else {
-      this.currentMonth = index;
-      this.createMonths(this.currentMonth, this.currentYear);
-      this.setCurrentView("date");
-      this.onMonthChange.emit({
-        month: this.currentMonth + 1,
-        year: this.currentYear
-      });
-    }
-  }
-  onYearSelect(event2, year) {
-    if (this.view === "year") {
-      this.onDateSelect(event2, {
-        year,
-        month: 0,
-        day: 1,
-        selectable: true
-      });
-    } else {
-      this.currentYear = year;
-      this.setCurrentView("month");
-      this.onYearChange.emit({
-        month: this.currentMonth + 1,
-        year: this.currentYear
-      });
-    }
-  }
-  updateInputfield() {
-    let formattedValue = "";
-    if (this.value) {
-      if (this.isSingleSelection()) {
-        formattedValue = this.formatDateTime(this.value);
-      } else if (this.isMultipleSelection()) {
-        for (let i = 0; i < this.value.length; i++) {
-          let dateAsString = this.formatDateTime(this.value[i]);
-          formattedValue += dateAsString;
-          if (i !== this.value.length - 1) {
-            formattedValue += this.multipleSeparator + " ";
-          }
-        }
-      } else if (this.isRangeSelection()) {
-        if (this.value && this.value.length) {
-          let startDate = this.value[0];
-          let endDate = this.value[1];
-          formattedValue = this.formatDateTime(startDate);
-          if (endDate) {
-            formattedValue += " " + this.rangeSeparator + " " + this.formatDateTime(endDate);
-          }
-        }
-      }
-    }
-    this.inputFieldValue = formattedValue;
-    this.updateFilledState();
-    if (this.inputfieldViewChild && this.inputfieldViewChild.nativeElement) {
-      this.inputfieldViewChild.nativeElement.value = this.inputFieldValue;
-    }
-  }
-  formatDateTime(date) {
-    let formattedValue = this.keepInvalid ? date : null;
-    const isDateValid = this.isValidDateForTimeConstraints(date);
-    if (this.isValidDate(date)) {
-      if (this.timeOnly) {
-        formattedValue = this.formatTime(date);
-      } else {
-        formattedValue = this.formatDate(date, this.getDateFormat());
-        if (this.showTime) {
-          formattedValue += " " + this.formatTime(date);
-        }
-      }
-    } else if (this.dataType === "string") {
-      formattedValue = date;
-    }
-    formattedValue = isDateValid ? formattedValue : "";
-    return formattedValue;
-  }
-  formatDateMetaToDate(dateMeta) {
-    return new Date(dateMeta.year, dateMeta.month, dateMeta.day);
-  }
-  formatDateKey(date) {
-    return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-  }
-  setCurrentHourPM(hours) {
-    if (this.hourFormat == "12") {
-      this.pm = hours > 11;
-      if (hours >= 12) {
-        this.currentHour = hours == 12 ? 12 : hours - 12;
-      } else {
-        this.currentHour = hours == 0 ? 12 : hours;
-      }
-    } else {
-      this.currentHour = hours;
-    }
-  }
-  setCurrentView(currentView) {
-    this.currentView = currentView;
-    this.cd.detectChanges();
-    this.alignOverlay();
-  }
-  selectDate(dateMeta) {
-    let date = this.formatDateMetaToDate(dateMeta);
-    if (this.showTime) {
-      if (this.hourFormat == "12") {
-        if (this.currentHour === 12) date.setHours(this.pm ? 12 : 0);
-        else date.setHours(this.pm ? this.currentHour + 12 : this.currentHour);
-      } else {
-        date.setHours(this.currentHour);
-      }
-      date.setMinutes(this.currentMinute);
-      date.setSeconds(this.currentSecond);
-    }
-    if (this.minDate && this.minDate > date) {
-      date = this.minDate;
-      this.setCurrentHourPM(date.getHours());
-      this.currentMinute = date.getMinutes();
-      this.currentSecond = date.getSeconds();
-    }
-    if (this.maxDate && this.maxDate < date) {
-      date = this.maxDate;
-      this.setCurrentHourPM(date.getHours());
-      this.currentMinute = date.getMinutes();
-      this.currentSecond = date.getSeconds();
-    }
-    if (this.isSingleSelection()) {
-      this.updateModel(date);
-    } else if (this.isMultipleSelection()) {
-      this.updateModel(this.value ? [...this.value, date] : [date]);
-    } else if (this.isRangeSelection()) {
-      if (this.value && this.value.length) {
-        let startDate = this.value[0];
-        let endDate = this.value[1];
-        if (!endDate && date.getTime() >= startDate.getTime()) {
-          endDate = date;
-        } else {
-          startDate = date;
-          endDate = null;
-        }
-        this.updateModel([startDate, endDate]);
-      } else {
-        this.updateModel([date, null]);
-      }
-    }
-    this.onSelect.emit(date);
-  }
-  updateModel(value) {
-    this.value = value;
-    if (this.dataType == "date") {
-      this.onModelChange(this.value);
-    } else if (this.dataType == "string") {
-      if (this.isSingleSelection()) {
-        this.onModelChange(this.formatDateTime(this.value));
-      } else {
-        let stringArrValue = null;
-        if (Array.isArray(this.value)) {
-          stringArrValue = this.value.map((date) => this.formatDateTime(date));
-        }
-        this.onModelChange(stringArrValue);
-      }
-    }
-  }
-  getFirstDayOfMonthIndex(month, year) {
-    let day = /* @__PURE__ */ new Date();
-    day.setDate(1);
-    day.setMonth(month);
-    day.setFullYear(year);
-    let dayIndex = day.getDay() + this.getSundayIndex();
-    return dayIndex >= 7 ? dayIndex - 7 : dayIndex;
-  }
-  getDaysCountInMonth(month, year) {
-    return 32 - this.daylightSavingAdjust(new Date(year, month, 32)).getDate();
-  }
-  getDaysCountInPrevMonth(month, year) {
-    let prev = this.getPreviousMonthAndYear(month, year);
-    return this.getDaysCountInMonth(prev.month, prev.year);
-  }
-  getPreviousMonthAndYear(month, year) {
-    let m, y;
-    if (month === 0) {
-      m = 11;
-      y = year - 1;
-    } else {
-      m = month - 1;
-      y = year;
-    }
-    return {
-      month: m,
-      year: y
-    };
-  }
-  getNextMonthAndYear(month, year) {
-    let m, y;
-    if (month === 11) {
-      m = 0;
-      y = year + 1;
-    } else {
-      m = month + 1;
-      y = year;
-    }
-    return {
-      month: m,
-      year: y
-    };
-  }
-  getSundayIndex() {
-    let firstDayOfWeek = this.getFirstDateOfWeek();
-    return firstDayOfWeek > 0 ? 7 - firstDayOfWeek : 0;
-  }
-  isSelected(dateMeta) {
-    if (this.value) {
-      if (this.isSingleSelection()) {
-        return this.isDateEquals(this.value, dateMeta);
-      } else if (this.isMultipleSelection()) {
-        let selected = false;
-        for (let date of this.value) {
-          selected = this.isDateEquals(date, dateMeta);
-          if (selected) {
-            break;
-          }
-        }
-        return selected;
-      } else if (this.isRangeSelection()) {
-        if (this.value[1]) return this.isDateEquals(this.value[0], dateMeta) || this.isDateEquals(this.value[1], dateMeta) || this.isDateBetween(this.value[0], this.value[1], dateMeta);
-        else return this.isDateEquals(this.value[0], dateMeta);
-      }
-    } else {
-      return false;
-    }
-  }
-  isComparable() {
-    return this.value != null && typeof this.value !== "string";
-  }
-  isMonthSelected(month) {
-    if (this.isComparable() && !this.isMultipleSelection()) {
-      const [start, end] = this.isRangeSelection() ? this.value : [this.value, this.value];
-      const selected = new Date(this.currentYear, month, 1);
-      return selected >= start && selected <= (end ?? start);
-    }
-    return false;
-  }
-  isMonthDisabled(month, year) {
-    const yearToCheck = year ?? this.currentYear;
-    for (let day = 1; day < this.getDaysCountInMonth(month, yearToCheck) + 1; day++) {
-      if (this.isSelectable(day, month, yearToCheck, false)) {
-        return false;
-      }
-    }
-    return true;
-  }
-  isYearDisabled(year) {
-    return Array(12).fill(0).every((v, month) => this.isMonthDisabled(month, year));
-  }
-  isYearSelected(year) {
-    if (!this.isComparable()) return false;
-    if (this.isMultipleSelection()) return false;
-    let value = this.isRangeSelection() ? this.value[0] : this.value;
-    return value ? value.getFullYear() === year : false;
-  }
-  isDateEquals(value, dateMeta) {
-    if (value && ObjectUtils.isDate(value)) return value.getDate() === dateMeta.day && value.getMonth() === dateMeta.month && value.getFullYear() === dateMeta.year;
-    else return false;
-  }
-  isDateBetween(start, end, dateMeta) {
-    let between = false;
-    if (ObjectUtils.isDate(start) && ObjectUtils.isDate(end)) {
-      let date = this.formatDateMetaToDate(dateMeta);
-      return start.getTime() <= date.getTime() && end.getTime() >= date.getTime();
-    }
-    return between;
-  }
-  isSingleSelection() {
-    return this.selectionMode === "single";
-  }
-  isRangeSelection() {
-    return this.selectionMode === "range";
-  }
-  isMultipleSelection() {
-    return this.selectionMode === "multiple";
-  }
-  isToday(today, day, month, year) {
-    return today.getDate() === day && today.getMonth() === month && today.getFullYear() === year;
-  }
-  isSelectable(day, month, year, otherMonth) {
-    let validMin = true;
-    let validMax = true;
-    let validDate = true;
-    let validDay = true;
-    if (otherMonth && !this.selectOtherMonths) {
-      return false;
-    }
-    if (this.minDate) {
-      if (this.minDate.getFullYear() > year) {
-        validMin = false;
-      } else if (this.minDate.getFullYear() === year && this.currentView != "year") {
-        if (this.minDate.getMonth() > month) {
-          validMin = false;
-        } else if (this.minDate.getMonth() === month) {
-          if (this.minDate.getDate() > day) {
-            validMin = false;
-          }
-        }
-      }
-    }
-    if (this.maxDate) {
-      if (this.maxDate.getFullYear() < year) {
-        validMax = false;
-      } else if (this.maxDate.getFullYear() === year) {
-        if (this.maxDate.getMonth() < month) {
-          validMax = false;
-        } else if (this.maxDate.getMonth() === month) {
-          if (this.maxDate.getDate() < day) {
-            validMax = false;
-          }
-        }
-      }
-    }
-    if (this.disabledDates) {
-      validDate = !this.isDateDisabled(day, month, year);
-    }
-    if (this.disabledDays) {
-      validDay = !this.isDayDisabled(day, month, year);
-    }
-    return validMin && validMax && validDate && validDay;
-  }
-  isDateDisabled(day, month, year) {
-    if (this.disabledDates) {
-      for (let disabledDate of this.disabledDates) {
-        if (disabledDate.getFullYear() === year && disabledDate.getMonth() === month && disabledDate.getDate() === day) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
-  isDayDisabled(day, month, year) {
-    if (this.disabledDays) {
-      let weekday = new Date(year, month, day);
-      let weekdayNumber = weekday.getDay();
-      return this.disabledDays.indexOf(weekdayNumber) !== -1;
-    }
-    return false;
-  }
-  onInputFocus(event2) {
-    this.focus = true;
-    if (this.showOnFocus) {
-      this.showOverlay();
-    }
-    this.onFocus.emit(event2);
-  }
-  onInputClick() {
-    if (this.showOnFocus && !this.overlayVisible) {
-      this.showOverlay();
-    }
-  }
-  onInputBlur(event2) {
-    this.focus = false;
-    this.onBlur.emit(event2);
-    if (!this.keepInvalid) {
-      this.updateInputfield();
-    }
-    this.onModelTouched();
-  }
-  onButtonClick(event2, inputfield = this.inputfieldViewChild?.nativeElement) {
-    if (!this.overlayVisible) {
-      inputfield.focus();
-      this.showOverlay();
-    } else {
-      this.hideOverlay();
-    }
-  }
-  clear() {
-    this.inputFieldValue = null;
-    this.value = null;
-    this.onModelChange(this.value);
-    this.onClear.emit();
-  }
-  onOverlayClick(event2) {
-    this.overlayService.add({
-      originalEvent: event2,
-      target: this.el.nativeElement
-    });
-  }
-  getMonthName(index) {
-    return this.config.getTranslation("monthNames")[index];
-  }
-  getYear(month) {
-    return this.currentView === "month" ? this.currentYear : month.year;
-  }
-  switchViewButtonDisabled() {
-    return this.numberOfMonths > 1 || this.disabled;
-  }
-  onPrevButtonClick(event2) {
-    this.navigationState = {
-      backward: true,
-      button: true
-    };
-    this.navBackward(event2);
-  }
-  onNextButtonClick(event2) {
-    this.navigationState = {
-      backward: false,
-      button: true
-    };
-    this.navForward(event2);
-  }
-  onContainerButtonKeydown(event2) {
-    switch (event2.which) {
-      case 9:
-        if (!this.inline) {
-          this.trapFocus(event2);
-        }
-        if (this.inline) {
-          const headerElements = DomHandler.findSingle(this.containerViewChild?.nativeElement, ".p-datepicker-header");
-          const element = event2.target;
-          if (this.timeOnly) {
-            return;
-          } else {
-            if (element == headerElements.children[headerElements?.children?.length - 1]) {
-              this.initFocusableCell();
-            }
-          }
-        }
-        break;
-      case 27:
-        this.inputfieldViewChild?.nativeElement.focus();
-        this.overlayVisible = false;
-        event2.preventDefault();
-        break;
-      default:
-        break;
-    }
-  }
-  onInputKeydown(event2) {
-    this.isKeydown = true;
-    if (event2.keyCode === 40 && this.contentViewChild) {
-      this.trapFocus(event2);
-    } else if (event2.keyCode === 27) {
-      if (this.overlayVisible) {
-        this.inputfieldViewChild?.nativeElement.focus();
-        this.overlayVisible = false;
-        event2.preventDefault();
-      }
-    } else if (event2.keyCode === 13) {
-      if (this.overlayVisible) {
-        this.overlayVisible = false;
-        event2.preventDefault();
-      }
-    } else if (event2.keyCode === 9 && this.contentViewChild) {
-      DomHandler.getFocusableElements(this.contentViewChild.nativeElement).forEach((el) => el.tabIndex = "-1");
-      if (this.overlayVisible) {
-        this.overlayVisible = false;
-      }
-    }
-  }
-  onDateCellKeydown(event2, dateMeta, groupIndex) {
-    const cellContent = event2.currentTarget;
-    const cell = cellContent.parentElement;
-    const currentDate = this.formatDateMetaToDate(dateMeta);
-    switch (event2.which) {
-      case 40: {
-        cellContent.tabIndex = "-1";
-        let cellIndex = DomHandler.index(cell);
-        let nextRow = cell.parentElement.nextElementSibling;
-        if (nextRow) {
-          let focusCell = nextRow.children[cellIndex].children[0];
-          if (DomHandler.hasClass(focusCell, "p-disabled")) {
-            this.navigationState = {
-              backward: false
-            };
-            this.navForward(event2);
-          } else {
-            nextRow.children[cellIndex].children[0].tabIndex = "0";
-            nextRow.children[cellIndex].children[0].focus();
-          }
-        } else {
-          this.navigationState = {
-            backward: false
-          };
-          this.navForward(event2);
-        }
-        event2.preventDefault();
-        break;
-      }
-      case 38: {
-        cellContent.tabIndex = "-1";
-        let cellIndex = DomHandler.index(cell);
-        let prevRow = cell.parentElement.previousElementSibling;
-        if (prevRow) {
-          let focusCell = prevRow.children[cellIndex].children[0];
-          if (DomHandler.hasClass(focusCell, "p-disabled")) {
-            this.navigationState = {
-              backward: true
-            };
-            this.navBackward(event2);
-          } else {
-            focusCell.tabIndex = "0";
-            focusCell.focus();
-          }
-        } else {
-          this.navigationState = {
-            backward: true
-          };
-          this.navBackward(event2);
-        }
-        event2.preventDefault();
-        break;
-      }
-      case 37: {
-        cellContent.tabIndex = "-1";
-        let prevCell = cell.previousElementSibling;
-        if (prevCell) {
-          let focusCell = prevCell.children[0];
-          if (DomHandler.hasClass(focusCell, "p-disabled") || DomHandler.hasClass(focusCell.parentElement, "p-datepicker-weeknumber")) {
-            this.navigateToMonth(true, groupIndex);
-          } else {
-            focusCell.tabIndex = "0";
-            focusCell.focus();
-          }
-        } else {
-          this.navigateToMonth(true, groupIndex);
-        }
-        event2.preventDefault();
-        break;
-      }
-      case 39: {
-        cellContent.tabIndex = "-1";
-        let nextCell = cell.nextElementSibling;
-        if (nextCell) {
-          let focusCell = nextCell.children[0];
-          if (DomHandler.hasClass(focusCell, "p-disabled")) {
-            this.navigateToMonth(false, groupIndex);
-          } else {
-            focusCell.tabIndex = "0";
-            focusCell.focus();
-          }
-        } else {
-          this.navigateToMonth(false, groupIndex);
-        }
-        event2.preventDefault();
-        break;
-      }
-      case 13:
-      case 32: {
-        this.onDateSelect(event2, dateMeta);
-        event2.preventDefault();
-        break;
-      }
-      case 27: {
-        this.inputfieldViewChild?.nativeElement.focus();
-        this.overlayVisible = false;
-        event2.preventDefault();
-        break;
-      }
-      case 9: {
-        if (!this.inline) {
-          this.trapFocus(event2);
-        }
-        break;
-      }
-      case 33: {
-        cellContent.tabIndex = "-1";
-        const dateToFocus = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, currentDate.getDate());
-        const focusKey = this.formatDateKey(dateToFocus);
-        this.navigateToMonth(true, groupIndex, `span[data-date='${focusKey}']:not(.p-disabled):not(.p-ink)`);
-        event2.preventDefault();
-        break;
-      }
-      case 34: {
-        cellContent.tabIndex = "-1";
-        const dateToFocus = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate());
-        const focusKey = this.formatDateKey(dateToFocus);
-        this.navigateToMonth(false, groupIndex, `span[data-date='${focusKey}']:not(.p-disabled):not(.p-ink)`);
-        event2.preventDefault();
-        break;
-      }
-      case 36:
-        cellContent.tabIndex = "-1";
-        const firstDayDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-        const firstDayDateKey = this.formatDateKey(firstDayDate);
-        const firstDayCell = DomHandler.findSingle(cellContent.offsetParent, `span[data-date='${firstDayDateKey}']:not(.p-disabled):not(.p-ink)`);
-        if (firstDayCell) {
-          firstDayCell.tabIndex = "0";
-          firstDayCell.focus();
-        }
-        event2.preventDefault();
-        break;
-      case 35:
-        cellContent.tabIndex = "-1";
-        const lastDayDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
-        const lastDayDateKey = this.formatDateKey(lastDayDate);
-        const lastDayCell = DomHandler.findSingle(cellContent.offsetParent, `span[data-date='${lastDayDateKey}']:not(.p-disabled):not(.p-ink)`);
-        if (lastDayDate) {
-          lastDayCell.tabIndex = "0";
-          lastDayCell.focus();
-        }
-        event2.preventDefault();
-        break;
-      default:
-        break;
-    }
-  }
-  onMonthCellKeydown(event2, index) {
-    const cell = event2.currentTarget;
-    switch (event2.which) {
-      case 38:
-      case 40: {
-        cell.tabIndex = "-1";
-        var cells = cell.parentElement.children;
-        var cellIndex = DomHandler.index(cell);
-        let nextCell = cells[event2.which === 40 ? cellIndex + 3 : cellIndex - 3];
-        if (nextCell) {
-          nextCell.tabIndex = "0";
-          nextCell.focus();
-        }
-        event2.preventDefault();
-        break;
-      }
-      case 37: {
-        cell.tabIndex = "-1";
-        let prevCell = cell.previousElementSibling;
-        if (prevCell) {
-          prevCell.tabIndex = "0";
-          prevCell.focus();
-        } else {
-          this.navigationState = {
-            backward: true
-          };
-          this.navBackward(event2);
-        }
-        event2.preventDefault();
-        break;
-      }
-      case 39: {
-        cell.tabIndex = "-1";
-        let nextCell = cell.nextElementSibling;
-        if (nextCell) {
-          nextCell.tabIndex = "0";
-          nextCell.focus();
-        } else {
-          this.navigationState = {
-            backward: false
-          };
-          this.navForward(event2);
-        }
-        event2.preventDefault();
-        break;
-      }
-      case 13:
-      case 32: {
-        this.onMonthSelect(event2, index);
-        event2.preventDefault();
-        break;
-      }
-      case 27: {
-        this.inputfieldViewChild?.nativeElement.focus();
-        this.overlayVisible = false;
-        event2.preventDefault();
-        break;
-      }
-      case 9: {
-        if (!this.inline) {
-          this.trapFocus(event2);
-        }
-        break;
-      }
-      default:
-        break;
-    }
-  }
-  onYearCellKeydown(event2, index) {
-    const cell = event2.currentTarget;
-    switch (event2.which) {
-      case 38:
-      case 40: {
-        cell.tabIndex = "-1";
-        var cells = cell.parentElement.children;
-        var cellIndex = DomHandler.index(cell);
-        let nextCell = cells[event2.which === 40 ? cellIndex + 2 : cellIndex - 2];
-        if (nextCell) {
-          nextCell.tabIndex = "0";
-          nextCell.focus();
-        }
-        event2.preventDefault();
-        break;
-      }
-      case 37: {
-        cell.tabIndex = "-1";
-        let prevCell = cell.previousElementSibling;
-        if (prevCell) {
-          prevCell.tabIndex = "0";
-          prevCell.focus();
-        } else {
-          this.navigationState = {
-            backward: true
-          };
-          this.navBackward(event2);
-        }
-        event2.preventDefault();
-        break;
-      }
-      case 39: {
-        cell.tabIndex = "-1";
-        let nextCell = cell.nextElementSibling;
-        if (nextCell) {
-          nextCell.tabIndex = "0";
-          nextCell.focus();
-        } else {
-          this.navigationState = {
-            backward: false
-          };
-          this.navForward(event2);
-        }
-        event2.preventDefault();
-        break;
-      }
-      case 13:
-      case 32: {
-        this.onYearSelect(event2, index);
-        event2.preventDefault();
-        break;
-      }
-      case 27: {
-        this.inputfieldViewChild?.nativeElement.focus();
-        this.overlayVisible = false;
-        event2.preventDefault();
-        break;
-      }
-      case 9: {
-        this.trapFocus(event2);
-        break;
-      }
-      default:
-        break;
-    }
-  }
-  navigateToMonth(prev, groupIndex, focusKey) {
-    if (prev) {
-      if (this.numberOfMonths === 1 || groupIndex === 0) {
-        this.navigationState = {
-          backward: true
-        };
-        this._focusKey = focusKey;
-        this.navBackward(event);
-      } else {
-        let prevMonthContainer = this.contentViewChild.nativeElement.children[groupIndex - 1];
-        if (focusKey) {
-          const firstDayCell = DomHandler.findSingle(prevMonthContainer, focusKey);
-          firstDayCell.tabIndex = "0";
-          firstDayCell.focus();
-        } else {
-          let cells = DomHandler.find(prevMonthContainer, ".p-datepicker-calendar td span:not(.p-disabled):not(.p-ink)");
-          let focusCell = cells[cells.length - 1];
-          focusCell.tabIndex = "0";
-          focusCell.focus();
-        }
-      }
-    } else {
-      if (this.numberOfMonths === 1 || groupIndex === this.numberOfMonths - 1) {
-        this.navigationState = {
-          backward: false
-        };
-        this._focusKey = focusKey;
-        this.navForward(event);
-      } else {
-        let nextMonthContainer = this.contentViewChild.nativeElement.children[groupIndex + 1];
-        if (focusKey) {
-          const firstDayCell = DomHandler.findSingle(nextMonthContainer, focusKey);
-          firstDayCell.tabIndex = "0";
-          firstDayCell.focus();
-        } else {
-          let focusCell = DomHandler.findSingle(nextMonthContainer, ".p-datepicker-calendar td span:not(.p-disabled):not(.p-ink)");
-          focusCell.tabIndex = "0";
-          focusCell.focus();
-        }
-      }
-    }
-  }
-  updateFocus() {
-    let cell;
-    if (this.navigationState) {
-      if (this.navigationState.button) {
-        this.initFocusableCell();
-        if (this.navigationState.backward) DomHandler.findSingle(this.contentViewChild.nativeElement, ".p-datepicker-prev").focus();
-        else DomHandler.findSingle(this.contentViewChild.nativeElement, ".p-datepicker-next").focus();
-      } else {
-        if (this.navigationState.backward) {
-          let cells;
-          if (this.currentView === "month") {
-            cells = DomHandler.find(this.contentViewChild.nativeElement, ".p-monthpicker .p-monthpicker-month:not(.p-disabled)");
-          } else if (this.currentView === "year") {
-            cells = DomHandler.find(this.contentViewChild.nativeElement, ".p-yearpicker .p-yearpicker-year:not(.p-disabled)");
-          } else {
-            cells = DomHandler.find(this.contentViewChild.nativeElement, this._focusKey || ".p-datepicker-calendar td span:not(.p-disabled):not(.p-ink)");
-          }
-          if (cells && cells.length > 0) {
-            cell = cells[cells.length - 1];
-          }
-        } else {
-          if (this.currentView === "month") {
-            cell = DomHandler.findSingle(this.contentViewChild.nativeElement, ".p-monthpicker .p-monthpicker-month:not(.p-disabled)");
-          } else if (this.currentView === "year") {
-            cell = DomHandler.findSingle(this.contentViewChild.nativeElement, ".p-yearpicker .p-yearpicker-year:not(.p-disabled)");
-          } else {
-            cell = DomHandler.findSingle(this.contentViewChild.nativeElement, this._focusKey || ".p-datepicker-calendar td span:not(.p-disabled):not(.p-ink)");
-          }
-        }
-        if (cell) {
-          cell.tabIndex = "0";
-          cell.focus();
-        }
-      }
-      this.navigationState = null;
-      this._focusKey = null;
-    } else {
-      this.initFocusableCell();
-    }
-    this.alignOverlay();
-  }
-  initFocusableCell() {
-    const contentEl = this.contentViewChild?.nativeElement;
-    let cell;
-    if (this.currentView === "month") {
-      let cells = DomHandler.find(contentEl, ".p-monthpicker .p-monthpicker-month:not(.p-disabled)");
-      let selectedCell = DomHandler.findSingle(contentEl, ".p-monthpicker .p-monthpicker-month.p-highlight");
-      cells.forEach((cell2) => cell2.tabIndex = -1);
-      cell = selectedCell || cells[0];
-      if (cells.length === 0) {
-        let disabledCells = DomHandler.find(contentEl, '.p-monthpicker .p-monthpicker-month.p-disabled[tabindex = "0"]');
-        disabledCells.forEach((cell2) => cell2.tabIndex = -1);
-      }
-    } else if (this.currentView === "year") {
-      let cells = DomHandler.find(contentEl, ".p-yearpicker .p-yearpicker-year:not(.p-disabled)");
-      let selectedCell = DomHandler.findSingle(contentEl, ".p-yearpicker .p-yearpicker-year.p-highlight");
-      cells.forEach((cell2) => cell2.tabIndex = -1);
-      cell = selectedCell || cells[0];
-      if (cells.length === 0) {
-        let disabledCells = DomHandler.find(contentEl, '.p-yearpicker .p-yearpicker-year.p-disabled[tabindex = "0"]');
-        disabledCells.forEach((cell2) => cell2.tabIndex = -1);
-      }
-    } else {
-      cell = DomHandler.findSingle(contentEl, "span.p-highlight");
-      if (!cell) {
-        let todayCell = DomHandler.findSingle(contentEl, "td.p-datepicker-today span:not(.p-disabled):not(.p-ink)");
-        if (todayCell) cell = todayCell;
-        else cell = DomHandler.findSingle(contentEl, ".p-datepicker-calendar td span:not(.p-disabled):not(.p-ink)");
-      }
-    }
-    if (cell) {
-      cell.tabIndex = "0";
-      if (!this.preventFocus && (!this.navigationState || !this.navigationState.button)) {
-        setTimeout(() => {
-          if (!this.disabled) {
-            cell.focus();
-          }
-        }, 1);
-      }
-      this.preventFocus = false;
-    }
-  }
-  trapFocus(event2) {
-    let focusableElements = DomHandler.getFocusableElements(this.contentViewChild.nativeElement);
-    if (focusableElements && focusableElements.length > 0) {
-      if (!focusableElements[0].ownerDocument.activeElement) {
-        focusableElements[0].focus();
-      } else {
-        let focusedIndex = focusableElements.indexOf(focusableElements[0].ownerDocument.activeElement);
-        if (event2.shiftKey) {
-          if (focusedIndex == -1 || focusedIndex === 0) {
-            if (this.focusTrap) {
-              focusableElements[focusableElements.length - 1].focus();
-            } else {
-              if (focusedIndex === -1) return this.hideOverlay();
-              else if (focusedIndex === 0) return;
-            }
-          } else {
-            focusableElements[focusedIndex - 1].focus();
-          }
-        } else {
-          if (focusedIndex == -1) {
-            if (this.timeOnly) {
-              focusableElements[0].focus();
-            } else {
-              let spanIndex = 0;
-              for (let i = 0; i < focusableElements.length; i++) {
-                if (focusableElements[i].tagName === "SPAN") spanIndex = i;
-              }
-              focusableElements[spanIndex].focus();
-            }
-          } else if (focusedIndex === focusableElements.length - 1) {
-            if (!this.focusTrap && focusedIndex != -1) return this.hideOverlay();
-            focusableElements[0].focus();
-          } else {
-            focusableElements[focusedIndex + 1].focus();
-          }
-        }
-      }
-    }
-    event2.preventDefault();
-  }
-  onMonthDropdownChange(m) {
-    this.currentMonth = parseInt(m);
-    this.onMonthChange.emit({
-      month: this.currentMonth + 1,
-      year: this.currentYear
-    });
-    this.createMonths(this.currentMonth, this.currentYear);
-  }
-  onYearDropdownChange(y) {
-    this.currentYear = parseInt(y);
-    this.onYearChange.emit({
-      month: this.currentMonth + 1,
-      year: this.currentYear
-    });
-    this.createMonths(this.currentMonth, this.currentYear);
-  }
-  convertTo24Hour(hours, pm) {
-    if (this.hourFormat == "12") {
-      if (hours === 12) {
-        return pm ? 12 : 0;
-      } else {
-        return pm ? hours + 12 : hours;
-      }
-    }
-    return hours;
-  }
-  constrainTime(hour, minute, second, pm) {
-    let returnTimeTriple = [hour, minute, second];
-    let minHoursExceeds12;
-    let value = this.value;
-    const convertedHour = this.convertTo24Hour(hour, pm);
-    const isRange = this.isRangeSelection(), isMultiple = this.isMultipleSelection(), isMultiValue = isRange || isMultiple;
-    if (isMultiValue) {
-      if (!this.value) {
-        this.value = [/* @__PURE__ */ new Date(), /* @__PURE__ */ new Date()];
-      }
-      if (isRange) {
-        value = this.value[1] || this.value[0];
-      }
-      if (isMultiple) {
-        value = this.value[this.value.length - 1];
-      }
-    }
-    const valueDateString = value ? value.toDateString() : null;
-    let isMinDate = this.minDate && valueDateString && this.minDate.toDateString() === valueDateString;
-    let isMaxDate = this.maxDate && valueDateString && this.maxDate.toDateString() === valueDateString;
-    if (isMinDate) {
-      minHoursExceeds12 = this.minDate.getHours() >= 12;
-    }
-    switch (true) {
-      case (isMinDate && minHoursExceeds12 && this.minDate.getHours() === 12 && this.minDate.getHours() > convertedHour):
-        returnTimeTriple[0] = 11;
-      case (isMinDate && this.minDate.getHours() === convertedHour && this.minDate.getMinutes() > minute):
-        returnTimeTriple[1] = this.minDate.getMinutes();
-      case (isMinDate && this.minDate.getHours() === convertedHour && this.minDate.getMinutes() === minute && this.minDate.getSeconds() > second):
-        returnTimeTriple[2] = this.minDate.getSeconds();
-        break;
-      case (isMinDate && !minHoursExceeds12 && this.minDate.getHours() - 1 === convertedHour && this.minDate.getHours() > convertedHour):
-        returnTimeTriple[0] = 11;
-        this.pm = true;
-      case (isMinDate && this.minDate.getHours() === convertedHour && this.minDate.getMinutes() > minute):
-        returnTimeTriple[1] = this.minDate.getMinutes();
-      case (isMinDate && this.minDate.getHours() === convertedHour && this.minDate.getMinutes() === minute && this.minDate.getSeconds() > second):
-        returnTimeTriple[2] = this.minDate.getSeconds();
-        break;
-      case (isMinDate && minHoursExceeds12 && this.minDate.getHours() > convertedHour && convertedHour !== 12):
-        this.setCurrentHourPM(this.minDate.getHours());
-        returnTimeTriple[0] = this.currentHour;
-      case (isMinDate && this.minDate.getHours() === convertedHour && this.minDate.getMinutes() > minute):
-        returnTimeTriple[1] = this.minDate.getMinutes();
-      case (isMinDate && this.minDate.getHours() === convertedHour && this.minDate.getMinutes() === minute && this.minDate.getSeconds() > second):
-        returnTimeTriple[2] = this.minDate.getSeconds();
-        break;
-      case (isMinDate && this.minDate.getHours() > convertedHour):
-        returnTimeTriple[0] = this.minDate.getHours();
-      case (isMinDate && this.minDate.getHours() === convertedHour && this.minDate.getMinutes() > minute):
-        returnTimeTriple[1] = this.minDate.getMinutes();
-      case (isMinDate && this.minDate.getHours() === convertedHour && this.minDate.getMinutes() === minute && this.minDate.getSeconds() > second):
-        returnTimeTriple[2] = this.minDate.getSeconds();
-        break;
-      case (isMaxDate && this.maxDate.getHours() < convertedHour):
-        returnTimeTriple[0] = this.maxDate.getHours();
-      case (isMaxDate && this.maxDate.getHours() === convertedHour && this.maxDate.getMinutes() < minute):
-        returnTimeTriple[1] = this.maxDate.getMinutes();
-      case (isMaxDate && this.maxDate.getHours() === convertedHour && this.maxDate.getMinutes() === minute && this.maxDate.getSeconds() < second):
-        returnTimeTriple[2] = this.maxDate.getSeconds();
-        break;
-    }
-    return returnTimeTriple;
-  }
-  incrementHour(event2) {
-    const prevHour = this.currentHour ?? 0;
-    let newHour = (this.currentHour ?? 0) + this.stepHour;
-    let newPM = this.pm;
-    if (this.hourFormat == "24") newHour = newHour >= 24 ? newHour - 24 : newHour;
-    else if (this.hourFormat == "12") {
-      if (prevHour < 12 && newHour > 11) {
-        newPM = !this.pm;
-      }
-      newHour = newHour >= 13 ? newHour - 12 : newHour;
-    }
-    this.toggleAMPMIfNotMinDate(newPM);
-    [this.currentHour, this.currentMinute, this.currentSecond] = this.constrainTime(newHour, this.currentMinute, this.currentSecond, newPM);
-    event2.preventDefault();
-  }
-  toggleAMPMIfNotMinDate(newPM) {
-    let value = this.value;
-    if ((this.selectionMode == "range" || this.selectionMode == "multiple") && Array.isArray(value) && value.length > 0) {
-      value = value[value.length - 1];
-    }
-    const valueDateString = value ? value.toDateString() : null;
-    let isMinDate = this.minDate && valueDateString && this.minDate.toDateString() === valueDateString;
-    if (isMinDate && this.minDate.getHours() >= 12) {
-      this.pm = true;
-    } else {
-      this.pm = newPM;
-    }
-  }
-  onTimePickerElementMouseDown(event2, type, direction) {
-    if (!this.disabled) {
-      this.repeat(event2, null, type, direction);
-      event2.preventDefault();
-    }
-  }
-  onTimePickerElementMouseUp(event2) {
-    if (!this.disabled) {
-      this.clearTimePickerTimer();
-      this.updateTime();
-    }
-  }
-  onTimePickerElementMouseLeave() {
-    if (!this.disabled && this.timePickerTimer) {
-      this.clearTimePickerTimer();
-      this.updateTime();
-    }
-  }
-  repeat(event2, interval, type, direction) {
-    let i = interval || 500;
-    this.clearTimePickerTimer();
-    this.timePickerTimer = setTimeout(() => {
-      this.repeat(event2, 100, type, direction);
-      this.cd.markForCheck();
-    }, i);
-    switch (type) {
-      case 0:
-        if (direction === 1) this.incrementHour(event2);
-        else this.decrementHour(event2);
-        break;
-      case 1:
-        if (direction === 1) this.incrementMinute(event2);
-        else this.decrementMinute(event2);
-        break;
-      case 2:
-        if (direction === 1) this.incrementSecond(event2);
-        else this.decrementSecond(event2);
-        break;
-    }
-    this.updateInputfield();
-  }
-  clearTimePickerTimer() {
-    if (this.timePickerTimer) {
-      clearTimeout(this.timePickerTimer);
-      this.timePickerTimer = null;
-    }
-  }
-  decrementHour(event2) {
-    let newHour = (this.currentHour ?? 0) - this.stepHour;
-    let newPM = this.pm;
-    if (this.hourFormat == "24") newHour = newHour < 0 ? 24 + newHour : newHour;
-    else if (this.hourFormat == "12") {
-      if (this.currentHour === 12) {
-        newPM = !this.pm;
-      }
-      newHour = newHour <= 0 ? 12 + newHour : newHour;
-    }
-    this.toggleAMPMIfNotMinDate(newPM);
-    [this.currentHour, this.currentMinute, this.currentSecond] = this.constrainTime(newHour, this.currentMinute, this.currentSecond, newPM);
-    event2.preventDefault();
-  }
-  incrementMinute(event2) {
-    let newMinute = (this.currentMinute ?? 0) + this.stepMinute;
-    newMinute = newMinute > 59 ? newMinute - 60 : newMinute;
-    [this.currentHour, this.currentMinute, this.currentSecond] = this.constrainTime(this.currentHour, newMinute, this.currentSecond, this.pm);
-    event2.preventDefault();
-  }
-  decrementMinute(event2) {
-    let newMinute = (this.currentMinute ?? 0) - this.stepMinute;
-    newMinute = newMinute < 0 ? 60 + newMinute : newMinute;
-    [this.currentHour, this.currentMinute, this.currentSecond] = this.constrainTime(this.currentHour, newMinute, this.currentSecond, this.pm);
-    event2.preventDefault();
-  }
-  incrementSecond(event2) {
-    let newSecond = this.currentSecond + this.stepSecond;
-    newSecond = newSecond > 59 ? newSecond - 60 : newSecond;
-    [this.currentHour, this.currentMinute, this.currentSecond] = this.constrainTime(this.currentHour, this.currentMinute, newSecond, this.pm);
-    event2.preventDefault();
-  }
-  decrementSecond(event2) {
-    let newSecond = this.currentSecond - this.stepSecond;
-    newSecond = newSecond < 0 ? 60 + newSecond : newSecond;
-    [this.currentHour, this.currentMinute, this.currentSecond] = this.constrainTime(this.currentHour, this.currentMinute, newSecond, this.pm);
-    event2.preventDefault();
-  }
-  updateTime() {
-    let value = this.value;
-    if (this.isRangeSelection()) {
-      value = this.value[1] || this.value[0];
-    }
-    if (this.isMultipleSelection()) {
-      value = this.value[this.value.length - 1];
-    }
-    value = value ? new Date(value.getTime()) : /* @__PURE__ */ new Date();
-    if (this.hourFormat == "12") {
-      if (this.currentHour === 12) value.setHours(this.pm ? 12 : 0);
-      else value.setHours(this.pm ? this.currentHour + 12 : this.currentHour);
-    } else {
-      value.setHours(this.currentHour);
-    }
-    value.setMinutes(this.currentMinute);
-    value.setSeconds(this.currentSecond);
-    if (this.isRangeSelection()) {
-      if (this.value[1]) value = [this.value[0], value];
-      else value = [value, null];
-    }
-    if (this.isMultipleSelection()) {
-      value = [...this.value.slice(0, -1), value];
-    }
-    this.updateModel(value);
-    this.onSelect.emit(value);
-    this.updateInputfield();
-  }
-  toggleAMPM(event2) {
-    const newPM = !this.pm;
-    this.pm = newPM;
-    [this.currentHour, this.currentMinute, this.currentSecond] = this.constrainTime(this.currentHour, this.currentMinute, this.currentSecond, newPM);
-    this.updateTime();
-    event2.preventDefault();
-  }
-  onUserInput(event2) {
-    if (!this.isKeydown) {
-      return;
-    }
-    this.isKeydown = false;
-    let val = event2.target.value;
-    try {
-      let value = this.parseValueFromString(val);
-      if (this.isValidSelection(value)) {
-        this.updateModel(value);
-        this.updateUI();
-      } else if (this.keepInvalid) {
-        this.updateModel(value);
-      }
-    } catch (err) {
-      let value = this.keepInvalid ? val : null;
-      this.updateModel(value);
-    }
-    this.filled = val != null && val.length;
-    this.onInput.emit(event2);
-  }
-  isValidSelection(value) {
-    if (this.isSingleSelection()) {
-      return this.isSelectable(value.getDate(), value.getMonth(), value.getFullYear(), false);
-    }
-    let isValid = value.every((v) => this.isSelectable(v.getDate(), v.getMonth(), v.getFullYear(), false));
-    if (isValid && this.isRangeSelection()) {
-      isValid = value.length === 1 || value.length > 1 && value[1] >= value[0];
-    }
-    return isValid;
-  }
-  parseValueFromString(text) {
-    if (!text || text.trim().length === 0) {
-      return null;
-    }
-    let value;
-    if (this.isSingleSelection()) {
-      value = this.parseDateTime(text);
-    } else if (this.isMultipleSelection()) {
-      let tokens = text.split(this.multipleSeparator);
-      value = [];
-      for (let token of tokens) {
-        value.push(this.parseDateTime(token.trim()));
-      }
-    } else if (this.isRangeSelection()) {
-      let tokens = text.split(" " + this.rangeSeparator + " ");
-      value = [];
-      for (let i = 0; i < tokens.length; i++) {
-        value[i] = this.parseDateTime(tokens[i].trim());
-      }
-    }
-    return value;
-  }
-  parseDateTime(text) {
-    let date;
-    let parts = text.split(" ");
-    if (this.timeOnly) {
-      date = /* @__PURE__ */ new Date();
-      this.populateTime(date, parts[0], parts[1]);
-    } else {
-      const dateFormat = this.getDateFormat();
-      if (this.showTime) {
-        let ampm = this.hourFormat == "12" ? parts.pop() : null;
-        let timeString = parts.pop();
-        date = this.parseDate(parts.join(" "), dateFormat);
-        this.populateTime(date, timeString, ampm);
-      } else {
-        date = this.parseDate(text, dateFormat);
-      }
-    }
-    return date;
-  }
-  populateTime(value, timeString, ampm) {
-    if (this.hourFormat == "12" && !ampm) {
-      throw "Invalid Time";
-    }
-    this.pm = ampm === "PM" || ampm === "pm";
-    let time = this.parseTime(timeString);
-    value.setHours(time.hour);
-    value.setMinutes(time.minute);
-    value.setSeconds(time.second);
-  }
-  isValidDate(date) {
-    return ObjectUtils.isDate(date) && ObjectUtils.isNotEmpty(date);
-  }
-  updateUI() {
-    let propValue = this.value;
-    if (Array.isArray(propValue)) {
-      propValue = propValue[1] || propValue[0];
-    }
-    let val = this.defaultDate && this.isValidDate(this.defaultDate) && !this.value ? this.defaultDate : propValue && this.isValidDate(propValue) ? propValue : /* @__PURE__ */ new Date();
-    this.currentMonth = val.getMonth();
-    this.currentYear = val.getFullYear();
-    this.createMonths(this.currentMonth, this.currentYear);
-    if (this.showTime || this.timeOnly) {
-      this.setCurrentHourPM(val.getHours());
-      this.currentMinute = val.getMinutes();
-      this.currentSecond = val.getSeconds();
-    }
-  }
-  showOverlay() {
-    if (!this.overlayVisible) {
-      this.updateUI();
-      if (!this.touchUI) {
-        this.preventFocus = true;
-      }
-      this.overlayVisible = true;
-    }
-  }
-  hideOverlay() {
-    this.inputfieldViewChild?.nativeElement.focus();
-    this.overlayVisible = false;
-    this.clearTimePickerTimer();
-    if (this.touchUI) {
-      this.disableModality();
-    }
-    this.cd.markForCheck();
-  }
-  toggle() {
-    if (!this.inline) {
-      if (!this.overlayVisible) {
-        this.showOverlay();
-        this.inputfieldViewChild?.nativeElement.focus();
-      } else {
-        this.hideOverlay();
-      }
-    }
-  }
-  onOverlayAnimationStart(event2) {
-    switch (event2.toState) {
-      case "visible":
-      case "visibleTouchUI":
-        if (!this.inline) {
-          this.overlay = event2.element;
-          this.overlay?.setAttribute(this.attributeSelector, "");
-          this.appendOverlay();
-          this.updateFocus();
-          if (this.autoZIndex) {
-            if (this.touchUI) zindexutils.set("modal", this.overlay, this.baseZIndex || this.config.zIndex.modal);
-            else zindexutils.set("overlay", this.overlay, this.baseZIndex || this.config.zIndex.overlay);
-          }
-          this.alignOverlay();
-          this.onShow.emit(event2);
-        }
-        break;
-      case "void":
-        this.onOverlayHide();
-        this.onClose.emit(event2);
-        break;
-    }
-  }
-  onOverlayAnimationDone(event2) {
-    switch (event2.toState) {
-      case "visible":
-      case "visibleTouchUI":
-        if (!this.inline) {
-          this.bindDocumentClickListener();
-          this.bindDocumentResizeListener();
-          this.bindScrollListener();
-        }
-        break;
-      case "void":
-        if (this.autoZIndex) {
-          zindexutils.clear(event2.element);
-        }
-        break;
-    }
-  }
-  appendOverlay() {
-    if (this.appendTo) {
-      if (this.appendTo === "body") this.document.body.appendChild(this.overlay);
-      else DomHandler.appendChild(this.overlay, this.appendTo);
-    }
-  }
-  restoreOverlayAppend() {
-    if (this.overlay && this.appendTo) {
-      this.el.nativeElement.appendChild(this.overlay);
-    }
-  }
-  alignOverlay() {
-    if (this.touchUI) {
-      this.enableModality(this.overlay);
-    } else if (this.overlay) {
-      if (this.appendTo) {
-        if (this.view === "date") {
-          if (!this.overlay.style.width) {
-            this.overlay.style.width = DomHandler.getOuterWidth(this.overlay) + "px";
-          }
-          if (!this.overlay.style.minWidth) {
-            this.overlay.style.minWidth = DomHandler.getOuterWidth(this.inputfieldViewChild?.nativeElement) + "px";
-          }
-        } else {
-          if (!this.overlay.style.width) {
-            this.overlay.style.width = DomHandler.getOuterWidth(this.inputfieldViewChild?.nativeElement) + "px";
-          }
-        }
-        DomHandler.absolutePosition(this.overlay, this.inputfieldViewChild?.nativeElement);
-      } else {
-        DomHandler.relativePosition(this.overlay, this.inputfieldViewChild?.nativeElement);
-      }
-    }
-  }
-  enableModality(element) {
-    if (!this.mask && this.touchUI) {
-      this.mask = this.renderer.createElement("div");
-      this.renderer.setStyle(this.mask, "zIndex", String(parseInt(element.style.zIndex) - 1));
-      let maskStyleClass = "p-component-overlay p-datepicker-mask p-datepicker-mask-scrollblocker p-component-overlay p-component-overlay-enter";
-      DomHandler.addMultipleClasses(this.mask, maskStyleClass);
-      this.maskClickListener = this.renderer.listen(this.mask, "click", (event2) => {
-        this.disableModality();
-        this.overlayVisible = false;
-      });
-      this.renderer.appendChild(this.document.body, this.mask);
-      DomHandler.blockBodyScroll();
-    }
-  }
-  disableModality() {
-    if (this.mask) {
-      DomHandler.addClass(this.mask, "p-component-overlay-leave");
-      if (!this.animationEndListener) {
-        this.animationEndListener = this.renderer.listen(this.mask, "animationend", this.destroyMask.bind(this));
-      }
-    }
-  }
-  destroyMask() {
-    if (!this.mask) {
-      return;
-    }
-    this.renderer.removeChild(this.document.body, this.mask);
-    let bodyChildren = this.document.body.children;
-    let hasBlockerMasks;
-    for (let i = 0; i < bodyChildren.length; i++) {
-      let bodyChild = bodyChildren[i];
-      if (DomHandler.hasClass(bodyChild, "p-datepicker-mask-scrollblocker")) {
-        hasBlockerMasks = true;
-        break;
-      }
-    }
-    if (!hasBlockerMasks) {
-      DomHandler.unblockBodyScroll();
-    }
-    this.unbindAnimationEndListener();
-    this.unbindMaskClickListener();
-    this.mask = null;
-  }
-  unbindMaskClickListener() {
-    if (this.maskClickListener) {
-      this.maskClickListener();
-      this.maskClickListener = null;
-    }
-  }
-  unbindAnimationEndListener() {
-    if (this.animationEndListener && this.mask) {
-      this.animationEndListener();
-      this.animationEndListener = null;
-    }
-  }
-  writeValue(value) {
-    this.value = value;
-    if (this.value && typeof this.value === "string") {
-      try {
-        this.value = this.parseValueFromString(this.value);
-      } catch {
-        if (this.keepInvalid) {
-          this.value = value;
-        }
-      }
-    }
-    this.updateInputfield();
-    this.updateUI();
-    this.cd.markForCheck();
-  }
-  registerOnChange(fn) {
-    this.onModelChange = fn;
-  }
-  registerOnTouched(fn) {
-    this.onModelTouched = fn;
-  }
-  setDisabledState(val) {
-    this.disabled = val;
-    this.cd.markForCheck();
-  }
-  getDateFormat() {
-    return this.dateFormat || this.getTranslation("dateFormat");
-  }
-  getFirstDateOfWeek() {
-    return this._firstDayOfWeek || this.getTranslation(TranslationKeys.FIRST_DAY_OF_WEEK);
-  }
-  // Ported from jquery-ui datepicker formatDate
-  formatDate(date, format) {
-    if (!date) {
-      return "";
-    }
-    let iFormat;
-    const lookAhead = (match) => {
-      const matches = iFormat + 1 < format.length && format.charAt(iFormat + 1) === match;
-      if (matches) {
-        iFormat++;
-      }
-      return matches;
-    }, formatNumber = (match, value, len) => {
-      let num = "" + value;
-      if (lookAhead(match)) {
-        while (num.length < len) {
-          num = "0" + num;
-        }
-      }
-      return num;
-    }, formatName = (match, value, shortNames, longNames) => {
-      return lookAhead(match) ? longNames[value] : shortNames[value];
-    };
-    let output = "";
-    let literal = false;
-    if (date) {
-      for (iFormat = 0; iFormat < format.length; iFormat++) {
-        if (literal) {
-          if (format.charAt(iFormat) === "'" && !lookAhead("'")) {
-            literal = false;
-          } else {
-            output += format.charAt(iFormat);
-          }
-        } else {
-          switch (format.charAt(iFormat)) {
-            case "d":
-              output += formatNumber("d", date.getDate(), 2);
-              break;
-            case "D":
-              output += formatName("D", date.getDay(), this.getTranslation(TranslationKeys.DAY_NAMES_SHORT), this.getTranslation(TranslationKeys.DAY_NAMES));
-              break;
-            case "o":
-              output += formatNumber("o", Math.round((new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / 864e5), 3);
-              break;
-            case "m":
-              output += formatNumber("m", date.getMonth() + 1, 2);
-              break;
-            case "M":
-              output += formatName("M", date.getMonth(), this.getTranslation(TranslationKeys.MONTH_NAMES_SHORT), this.getTranslation(TranslationKeys.MONTH_NAMES));
-              break;
-            case "y":
-              output += lookAhead("y") ? date.getFullYear() : (date.getFullYear() % 100 < 10 ? "0" : "") + date.getFullYear() % 100;
-              break;
-            case "@":
-              output += date.getTime();
-              break;
-            case "!":
-              output += date.getTime() * 1e4 + this.ticksTo1970;
-              break;
-            case "'":
-              if (lookAhead("'")) {
-                output += "'";
-              } else {
-                literal = true;
-              }
-              break;
-            default:
-              output += format.charAt(iFormat);
-          }
-        }
-      }
-    }
-    return output;
-  }
-  formatTime(date) {
-    if (!date) {
-      return "";
-    }
-    let output = "";
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-    if (this.hourFormat == "12" && hours > 11 && hours != 12) {
-      hours -= 12;
-    }
-    if (this.hourFormat == "12") {
-      output += hours === 0 ? 12 : hours < 10 ? "0" + hours : hours;
-    } else {
-      output += hours < 10 ? "0" + hours : hours;
-    }
-    output += ":";
-    output += minutes < 10 ? "0" + minutes : minutes;
-    if (this.showSeconds) {
-      output += ":";
-      output += seconds < 10 ? "0" + seconds : seconds;
-    }
-    if (this.hourFormat == "12") {
-      output += date.getHours() > 11 ? " PM" : " AM";
-    }
-    return output;
-  }
-  parseTime(value) {
-    let tokens = value.split(":");
-    let validTokenLength = this.showSeconds ? 3 : 2;
-    if (tokens.length !== validTokenLength) {
-      throw "Invalid time";
-    }
-    let h = parseInt(tokens[0]);
-    let m = parseInt(tokens[1]);
-    let s = this.showSeconds ? parseInt(tokens[2]) : null;
-    if (isNaN(h) || isNaN(m) || h > 23 || m > 59 || this.hourFormat == "12" && h > 12 || this.showSeconds && (isNaN(s) || s > 59)) {
-      throw "Invalid time";
-    } else {
-      if (this.hourFormat == "12") {
-        if (h !== 12 && this.pm) {
-          h += 12;
-        } else if (!this.pm && h === 12) {
-          h -= 12;
-        }
-      }
-      return {
-        hour: h,
-        minute: m,
-        second: s
-      };
-    }
-  }
-  // Ported from jquery-ui datepicker parseDate
-  parseDate(value, format) {
-    if (format == null || value == null) {
-      throw "Invalid arguments";
-    }
-    value = typeof value === "object" ? value.toString() : value + "";
-    if (value === "") {
-      return null;
-    }
-    let iFormat, dim, extra, iValue = 0, shortYearCutoff = typeof this.shortYearCutoff !== "string" ? this.shortYearCutoff : (/* @__PURE__ */ new Date()).getFullYear() % 100 + parseInt(this.shortYearCutoff, 10), year = -1, month = -1, day = -1, doy = -1, literal = false, date, lookAhead = (match) => {
-      let matches = iFormat + 1 < format.length && format.charAt(iFormat + 1) === match;
-      if (matches) {
-        iFormat++;
-      }
-      return matches;
-    }, getNumber = (match) => {
-      let isDoubled = lookAhead(match), size = match === "@" ? 14 : match === "!" ? 20 : match === "y" && isDoubled ? 4 : match === "o" ? 3 : 2, minSize = match === "y" ? size : 1, digits = new RegExp("^\\d{" + minSize + "," + size + "}"), num = value.substring(iValue).match(digits);
-      if (!num) {
-        throw "Missing number at position " + iValue;
-      }
-      iValue += num[0].length;
-      return parseInt(num[0], 10);
-    }, getName = (match, shortNames, longNames) => {
-      let index = -1;
-      let arr = lookAhead(match) ? longNames : shortNames;
-      let names = [];
-      for (let i = 0; i < arr.length; i++) {
-        names.push([i, arr[i]]);
-      }
-      names.sort((a, b) => {
-        return -(a[1].length - b[1].length);
-      });
-      for (let i = 0; i < names.length; i++) {
-        let name = names[i][1];
-        if (value.substr(iValue, name.length).toLowerCase() === name.toLowerCase()) {
-          index = names[i][0];
-          iValue += name.length;
-          break;
-        }
-      }
-      if (index !== -1) {
-        return index + 1;
-      } else {
-        throw "Unknown name at position " + iValue;
-      }
-    }, checkLiteral = () => {
-      if (value.charAt(iValue) !== format.charAt(iFormat)) {
-        throw "Unexpected literal at position " + iValue;
-      }
-      iValue++;
-    };
-    if (this.view === "month") {
-      day = 1;
-    }
-    for (iFormat = 0; iFormat < format.length; iFormat++) {
-      if (literal) {
-        if (format.charAt(iFormat) === "'" && !lookAhead("'")) {
-          literal = false;
-        } else {
-          checkLiteral();
-        }
-      } else {
-        switch (format.charAt(iFormat)) {
-          case "d":
-            day = getNumber("d");
-            break;
-          case "D":
-            getName("D", this.getTranslation(TranslationKeys.DAY_NAMES_SHORT), this.getTranslation(TranslationKeys.DAY_NAMES));
-            break;
-          case "o":
-            doy = getNumber("o");
-            break;
-          case "m":
-            month = getNumber("m");
-            break;
-          case "M":
-            month = getName("M", this.getTranslation(TranslationKeys.MONTH_NAMES_SHORT), this.getTranslation(TranslationKeys.MONTH_NAMES));
-            break;
-          case "y":
-            year = getNumber("y");
-            break;
-          case "@":
-            date = new Date(getNumber("@"));
-            year = date.getFullYear();
-            month = date.getMonth() + 1;
-            day = date.getDate();
-            break;
-          case "!":
-            date = new Date((getNumber("!") - this.ticksTo1970) / 1e4);
-            year = date.getFullYear();
-            month = date.getMonth() + 1;
-            day = date.getDate();
-            break;
-          case "'":
-            if (lookAhead("'")) {
-              checkLiteral();
-            } else {
-              literal = true;
-            }
-            break;
-          default:
-            checkLiteral();
-        }
-      }
-    }
-    if (iValue < value.length) {
-      extra = value.substr(iValue);
-      if (!/^\s+/.test(extra)) {
-        throw "Extra/unparsed characters found in date: " + extra;
-      }
-    }
-    if (year === -1) {
-      year = (/* @__PURE__ */ new Date()).getFullYear();
-    } else if (year < 100) {
-      year += (/* @__PURE__ */ new Date()).getFullYear() - (/* @__PURE__ */ new Date()).getFullYear() % 100 + (year <= shortYearCutoff ? 0 : -100);
-    }
-    if (doy > -1) {
-      month = 1;
-      day = doy;
-      do {
-        dim = this.getDaysCountInMonth(year, month - 1);
-        if (day <= dim) {
-          break;
-        }
-        month++;
-        day -= dim;
-      } while (true);
-    }
-    if (this.view === "year") {
-      month = month === -1 ? 1 : month;
-      day = day === -1 ? 1 : day;
-    }
-    date = this.daylightSavingAdjust(new Date(year, month - 1, day));
-    if (date.getFullYear() !== year || date.getMonth() + 1 !== month || date.getDate() !== day) {
-      throw "Invalid date";
-    }
-    return date;
-  }
-  daylightSavingAdjust(date) {
-    if (!date) {
-      return null;
-    }
-    date.setHours(date.getHours() > 12 ? date.getHours() + 2 : 0);
-    return date;
-  }
-  updateFilledState() {
-    this.filled = this.inputFieldValue && this.inputFieldValue != "";
-  }
-  isValidDateForTimeConstraints(selectedDate) {
-    if (this.keepInvalid) {
-      return true;
-    }
-    return (!this.minDate || selectedDate >= this.minDate) && (!this.maxDate || selectedDate <= this.maxDate);
-  }
-  onTodayButtonClick(event2) {
-    const date = /* @__PURE__ */ new Date();
-    const dateMeta = {
-      day: date.getDate(),
-      month: date.getMonth(),
-      year: date.getFullYear(),
-      otherMonth: date.getMonth() !== this.currentMonth || date.getFullYear() !== this.currentYear,
-      today: true,
-      selectable: true
-    };
-    this.createMonths(date.getMonth(), date.getFullYear());
-    this.onDateSelect(event2, dateMeta);
-    this.onTodayClick.emit(date);
-  }
-  onClearButtonClick(event2) {
-    this.updateModel(null);
-    this.updateInputfield();
-    this.hideOverlay();
-    this.onClearClick.emit(event2);
-  }
-  createResponsiveStyle() {
-    if (this.numberOfMonths > 1 && this.responsiveOptions) {
-      if (!this.responsiveStyleElement) {
-        this.responsiveStyleElement = this.renderer.createElement("style");
-        this.responsiveStyleElement.type = "text/css";
-        DomHandler.setAttribute(this.responsiveStyleElement, "nonce", this.config?.csp()?.nonce);
-        this.renderer.appendChild(this.document.body, this.responsiveStyleElement);
-      }
-      let innerHTML = "";
-      if (this.responsiveOptions) {
-        let responsiveOptions = [...this.responsiveOptions].filter((o) => !!(o.breakpoint && o.numMonths)).sort((o1, o2) => -1 * o1.breakpoint.localeCompare(o2.breakpoint, void 0, {
-          numeric: true
-        }));
-        for (let i = 0; i < responsiveOptions.length; i++) {
-          let {
-            breakpoint,
-            numMonths
-          } = responsiveOptions[i];
-          let styles = `
-                        .p-datepicker[${this.attributeSelector}] .p-datepicker-group:nth-child(${numMonths}) .p-datepicker-next {
-                            display: inline-flex !important;
-                        }
-                    `;
-          for (let j = numMonths; j < this.numberOfMonths; j++) {
-            styles += `
-                            .p-datepicker[${this.attributeSelector}] .p-datepicker-group:nth-child(${j + 1}) {
-                                display: none !important;
-                            }
-                        `;
-          }
-          innerHTML += `
-                        @media screen and (max-width: ${breakpoint}) {
-                            ${styles}
-                        }
-                    `;
-        }
-      }
-      this.responsiveStyleElement.innerHTML = innerHTML;
-    }
-  }
-  destroyResponsiveStyleElement() {
-    if (this.responsiveStyleElement) {
-      this.responsiveStyleElement.remove();
-      this.responsiveStyleElement = null;
-    }
-  }
-  bindDocumentClickListener() {
-    if (!this.documentClickListener) {
-      this.zone.runOutsideAngular(() => {
-        const documentTarget = this.el ? this.el.nativeElement.ownerDocument : this.document;
-        this.documentClickListener = this.renderer.listen(documentTarget, "mousedown", (event2) => {
-          if (this.isOutsideClicked(event2) && this.overlayVisible) {
-            this.zone.run(() => {
-              this.hideOverlay();
-              this.onClickOutside.emit(event2);
-              this.cd.markForCheck();
-            });
-          }
-        });
-      });
-    }
-  }
-  unbindDocumentClickListener() {
-    if (this.documentClickListener) {
-      this.documentClickListener();
-      this.documentClickListener = null;
-    }
-  }
-  bindDocumentResizeListener() {
-    if (!this.documentResizeListener && !this.touchUI) {
-      this.documentResizeListener = this.renderer.listen(this.window, "resize", this.onWindowResize.bind(this));
-    }
-  }
-  unbindDocumentResizeListener() {
-    if (this.documentResizeListener) {
-      this.documentResizeListener();
-      this.documentResizeListener = null;
-    }
-  }
-  bindScrollListener() {
-    if (!this.scrollHandler) {
-      this.scrollHandler = new ConnectedOverlayScrollHandler(this.containerViewChild?.nativeElement, () => {
-        if (this.overlayVisible) {
-          this.hideOverlay();
-        }
-      });
-    }
-    this.scrollHandler.bindScrollListener();
-  }
-  unbindScrollListener() {
-    if (this.scrollHandler) {
-      this.scrollHandler.unbindScrollListener();
-    }
-  }
-  isOutsideClicked(event2) {
-    return !(this.el.nativeElement.isSameNode(event2.target) || this.isNavIconClicked(event2) || this.el.nativeElement.contains(event2.target) || this.overlay && this.overlay.contains(event2.target));
-  }
-  isNavIconClicked(event2) {
-    return DomHandler.hasClass(event2.target, "p-datepicker-prev") || DomHandler.hasClass(event2.target, "p-datepicker-prev-icon") || DomHandler.hasClass(event2.target, "p-datepicker-next") || DomHandler.hasClass(event2.target, "p-datepicker-next-icon");
-  }
-  onWindowResize() {
-    if (this.overlayVisible && !DomHandler.isTouchDevice()) {
-      this.hideOverlay();
-    }
-  }
-  onOverlayHide() {
-    this.currentView = this.view;
-    if (this.mask) {
-      this.destroyMask();
-    }
-    this.unbindDocumentClickListener();
-    this.unbindDocumentResizeListener();
-    this.unbindScrollListener();
-    this.overlay = null;
-  }
-  ngOnDestroy() {
-    if (this.scrollHandler) {
-      this.scrollHandler.destroy();
-      this.scrollHandler = null;
-    }
-    if (this.translationSubscription) {
-      this.translationSubscription.unsubscribe();
-    }
-    if (this.overlay && this.autoZIndex) {
-      zindexutils.clear(this.overlay);
-    }
-    this.destroyResponsiveStyleElement();
-    this.clearTimePickerTimer();
-    this.restoreOverlayAppend();
-    this.onOverlayHide();
-  }
-  static ɵfac = function Calendar_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _Calendar)(ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(PrimeNGConfig), ɵɵdirectiveInject(OverlayService));
-  };
-  static ɵcmp = ɵɵdefineComponent({
-    type: _Calendar,
-    selectors: [["p-calendar"]],
-    contentQueries: function Calendar_ContentQueries(rf, ctx, dirIndex) {
-      if (rf & 1) {
-        ɵɵcontentQuery(dirIndex, PrimeTemplate, 4);
-      }
-      if (rf & 2) {
-        let _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.templates = _t);
-      }
-    },
-    viewQuery: function Calendar_Query(rf, ctx) {
-      if (rf & 1) {
-        ɵɵviewQuery(_c0, 5);
-        ɵɵviewQuery(_c1, 5);
-        ɵɵviewQuery(_c2, 5);
-      }
-      if (rf & 2) {
-        let _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.containerViewChild = _t.first);
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.inputfieldViewChild = _t.first);
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.content = _t.first);
-      }
-    },
-    hostAttrs: [1, "p-element", "p-inputwrapper"],
-    hostVars: 6,
-    hostBindings: function Calendar_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        ɵɵclassProp("p-inputwrapper-filled", ctx.filled)("p-inputwrapper-focus", ctx.focus)("p-calendar-clearable", ctx.showClear && !ctx.disabled);
-      }
-    },
-    inputs: {
-      iconDisplay: "iconDisplay",
-      style: "style",
-      styleClass: "styleClass",
-      inputStyle: "inputStyle",
-      inputId: "inputId",
-      name: "name",
-      inputStyleClass: "inputStyleClass",
-      placeholder: "placeholder",
-      ariaLabelledBy: "ariaLabelledBy",
-      ariaLabel: "ariaLabel",
-      iconAriaLabel: "iconAriaLabel",
-      disabled: [2, "disabled", "disabled", booleanAttribute],
-      dateFormat: "dateFormat",
-      multipleSeparator: "multipleSeparator",
-      rangeSeparator: "rangeSeparator",
-      inline: [2, "inline", "inline", booleanAttribute],
-      showOtherMonths: [2, "showOtherMonths", "showOtherMonths", booleanAttribute],
-      selectOtherMonths: [2, "selectOtherMonths", "selectOtherMonths", booleanAttribute],
-      showIcon: [2, "showIcon", "showIcon", booleanAttribute],
-      icon: "icon",
-      appendTo: "appendTo",
-      readonlyInput: [2, "readonlyInput", "readonlyInput", booleanAttribute],
-      shortYearCutoff: "shortYearCutoff",
-      monthNavigator: [2, "monthNavigator", "monthNavigator", booleanAttribute],
-      yearNavigator: [2, "yearNavigator", "yearNavigator", booleanAttribute],
-      hourFormat: "hourFormat",
-      timeOnly: [2, "timeOnly", "timeOnly", booleanAttribute],
-      stepYearPicker: [2, "stepYearPicker", "stepYearPicker", numberAttribute],
-      stepHour: [2, "stepHour", "stepHour", numberAttribute],
-      stepMinute: [2, "stepMinute", "stepMinute", numberAttribute],
-      stepSecond: [2, "stepSecond", "stepSecond", numberAttribute],
-      showSeconds: [2, "showSeconds", "showSeconds", booleanAttribute],
-      required: [2, "required", "required", booleanAttribute],
-      showOnFocus: [2, "showOnFocus", "showOnFocus", booleanAttribute],
-      showWeek: [2, "showWeek", "showWeek", booleanAttribute],
-      startWeekFromFirstDayOfYear: "startWeekFromFirstDayOfYear",
-      showClear: [2, "showClear", "showClear", booleanAttribute],
-      dataType: "dataType",
-      selectionMode: "selectionMode",
-      maxDateCount: [2, "maxDateCount", "maxDateCount", numberAttribute],
-      showButtonBar: [2, "showButtonBar", "showButtonBar", booleanAttribute],
-      todayButtonStyleClass: "todayButtonStyleClass",
-      clearButtonStyleClass: "clearButtonStyleClass",
-      autofocus: [2, "autofocus", "autofocus", booleanAttribute],
-      autoZIndex: [2, "autoZIndex", "autoZIndex", booleanAttribute],
-      baseZIndex: [2, "baseZIndex", "baseZIndex", numberAttribute],
-      panelStyleClass: "panelStyleClass",
-      panelStyle: "panelStyle",
-      keepInvalid: [2, "keepInvalid", "keepInvalid", booleanAttribute],
-      hideOnDateTimeSelect: [2, "hideOnDateTimeSelect", "hideOnDateTimeSelect", booleanAttribute],
-      touchUI: [2, "touchUI", "touchUI", booleanAttribute],
-      timeSeparator: "timeSeparator",
-      focusTrap: [2, "focusTrap", "focusTrap", booleanAttribute],
-      showTransitionOptions: "showTransitionOptions",
-      hideTransitionOptions: "hideTransitionOptions",
-      tabindex: [2, "tabindex", "tabindex", numberAttribute],
-      variant: "variant",
-      minDate: "minDate",
-      maxDate: "maxDate",
-      disabledDates: "disabledDates",
-      disabledDays: "disabledDays",
-      yearRange: "yearRange",
-      showTime: "showTime",
-      responsiveOptions: "responsiveOptions",
-      numberOfMonths: "numberOfMonths",
-      firstDayOfWeek: "firstDayOfWeek",
-      locale: "locale",
-      view: "view",
-      defaultDate: "defaultDate"
-    },
-    outputs: {
-      onFocus: "onFocus",
-      onBlur: "onBlur",
-      onClose: "onClose",
-      onSelect: "onSelect",
-      onClear: "onClear",
-      onInput: "onInput",
-      onTodayClick: "onTodayClick",
-      onClearClick: "onClearClick",
-      onMonthChange: "onMonthChange",
-      onYearChange: "onYearChange",
-      onClickOutside: "onClickOutside",
-      onShow: "onShow"
-    },
-    features: [ɵɵProvidersFeature([CALENDAR_VALUE_ACCESSOR]), ɵɵInputTransformsFeature],
-    ngContentSelectors: _c4,
-    decls: 4,
-    vars: 12,
-    consts: [["container", ""], ["inputfield", ""], ["contentWrapper", ""], [3, "ngClass", "ngStyle"], [3, "ngIf"], [3, "class", "ngStyle", "ngClass", "click", 4, "ngIf"], ["type", "text", "role", "combobox", "aria-autocomplete", "none", "aria-haspopup", "dialog", "autocomplete", "off", "pAutoFocus", "", 3, "focus", "keydown", "click", "blur", "input", "value", "readonly", "ngStyle", "placeholder", "disabled", "ngClass", "autofocus"], [4, "ngIf"], ["type", "button", "aria-haspopup", "dialog", "pButton", "", "pRipple", "", "class", "p-datepicker-trigger p-button-icon-only", "tabindex", "0", 3, "disabled", "click", 4, "ngIf"], [3, "styleClass", "click", 4, "ngIf"], ["class", "p-calendar-clear-icon", 3, "click", 4, "ngIf"], [3, "click", "styleClass"], [1, "p-calendar-clear-icon", 3, "click"], [4, "ngTemplateOutlet"], ["type", "button", "aria-haspopup", "dialog", "pButton", "", "pRipple", "", "tabindex", "0", 1, "p-datepicker-trigger", "p-button-icon-only", 3, "click", "disabled"], [3, "ngClass", 4, "ngIf"], [3, "ngClass"], [3, "ngClass", "click", 4, "ngIf"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "click", "ngClass"], [3, "click", "ngStyle", "ngClass"], ["class", "p-timepicker", 4, "ngIf"], ["class", "p-datepicker-buttonbar", 4, "ngIf"], [1, "p-datepicker-group-container"], ["class", "p-datepicker-group", 4, "ngFor", "ngForOf"], ["class", "p-monthpicker", 4, "ngIf"], ["class", "p-yearpicker", 4, "ngIf"], [1, "p-datepicker-group"], [1, "p-datepicker-header"], ["class", "p-datepicker-prev p-link", "type", "button", "pRipple", "", 3, "keydown", "click", 4, "ngIf"], [1, "p-datepicker-title"], ["type", "button", "class", "p-datepicker-month p-link", 3, "disabled", "click", "keydown", 4, "ngIf"], ["type", "button", "class", "p-datepicker-year p-link", 3, "disabled", "click", "keydown", 4, "ngIf"], ["class", "p-datepicker-decade", 4, "ngIf"], ["type", "button", "pRipple", "", 1, "p-datepicker-next", "p-link", 3, "keydown", "click"], [3, "styleClass", 4, "ngIf"], ["class", "p-datepicker-next-icon", 4, "ngIf"], ["class", "p-datepicker-calendar-container", 4, "ngIf"], ["type", "button", "pRipple", "", 1, "p-datepicker-prev", "p-link", 3, "keydown", "click"], ["class", "p-datepicker-prev-icon", 4, "ngIf"], [3, "styleClass"], [1, "p-datepicker-prev-icon"], ["type", "button", 1, "p-datepicker-month", "p-link", 3, "click", "keydown", "disabled"], ["type", "button", 1, "p-datepicker-year", "p-link", 3, "click", "keydown", "disabled"], [1, "p-datepicker-decade"], [1, "p-datepicker-next-icon"], [1, "p-datepicker-calendar-container"], ["role", "grid", 1, "p-datepicker-calendar"], ["class", "p-datepicker-weekheader p-disabled", 4, "ngIf"], ["scope", "col", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], [1, "p-datepicker-weekheader", "p-disabled"], ["scope", "col"], ["class", "p-datepicker-weeknumber", 4, "ngIf"], [3, "ngClass", 4, "ngFor", "ngForOf"], [1, "p-datepicker-weeknumber"], [1, "p-disabled"], ["draggable", "false", "pRipple", "", 3, "click", "keydown", "ngClass"], ["class", "p-hidden-accessible", "aria-live", "polite", 4, "ngIf"], ["aria-live", "polite", 1, "p-hidden-accessible"], [1, "p-monthpicker"], ["class", "p-monthpicker-month", "pRipple", "", 3, "ngClass", "click", "keydown", 4, "ngFor", "ngForOf"], ["pRipple", "", 1, "p-monthpicker-month", 3, "click", "keydown", "ngClass"], [1, "p-yearpicker"], ["class", "p-yearpicker-year", "pRipple", "", 3, "ngClass", "click", "keydown", 4, "ngFor", "ngForOf"], ["pRipple", "", 1, "p-yearpicker-year", 3, "click", "keydown", "ngClass"], [1, "p-timepicker"], [1, "p-hour-picker"], ["type", "button", "pRipple", "", 1, "p-link", 3, "keydown", "keydown.enter", "keydown.space", "mousedown", "mouseup", "keyup.enter", "keyup.space", "mouseleave"], [1, "p-separator"], [1, "p-minute-picker"], ["class", "p-separator", 4, "ngIf"], ["class", "p-second-picker", 4, "ngIf"], ["class", "p-ampm-picker", 4, "ngIf"], [1, "p-second-picker"], [1, "p-ampm-picker"], ["type", "button", "pRipple", "", 1, "p-link", 3, "keydown", "click", "keydown.enter"], [1, "p-datepicker-buttonbar"], ["type", "button", "pButton", "", "pRipple", "", 3, "keydown", "click", "label", "ngClass"]],
-    template: function Calendar_Template(rf, ctx) {
-      if (rf & 1) {
-        ɵɵprojectionDef(_c3);
-        ɵɵelementStart(0, "span", 3, 0);
-        ɵɵtemplate(2, Calendar_ng_template_2_Template, 5, 22, "ng-template", 4)(3, Calendar_div_3_Template, 9, 32, "div", 5);
-        ɵɵelementEnd();
-      }
-      if (rf & 2) {
-        ɵɵclassMap(ctx.styleClass);
-        ɵɵproperty("ngClass", ɵɵpureFunction5(6, _c5, ctx.showIcon && ctx.iconDisplay === "input", ctx.showIcon && ctx.iconDisplay === "button", ctx.timeOnly, ctx.disabled, ctx.focus || ctx.overlayVisible))("ngStyle", ctx.style);
-        ɵɵadvance(2);
-        ɵɵproperty("ngIf", !ctx.inline);
-        ɵɵadvance();
-        ɵɵproperty("ngIf", ctx.inline || ctx.overlayVisible);
-      }
-    },
-    dependencies: () => [NgClass, NgForOf, NgIf, NgTemplateOutlet, NgStyle, ButtonDirective, Ripple, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon, ChevronDownIcon, TimesIcon, CalendarIcon, AutoFocus],
-    styles: ["@layer primeng{.p-calendar{position:relative;display:inline-flex;max-width:100%}.p-calendar .p-inputtext{flex:1 1 auto;width:1%;text-overflow:ellipsis}.p-calendar-w-btn .p-inputtext{border-top-right-radius:0;border-bottom-right-radius:0}.p-calendar-w-btn .p-datepicker-trigger{border-top-left-radius:0;border-bottom-left-radius:0}.p-fluid .p-calendar{display:flex}.p-fluid .p-calendar .p-inputtext{width:1%}.p-calendar .p-datepicker{min-width:100%}.p-datepicker{width:auto;position:absolute;top:0;left:0}.p-datepicker-inline{display:inline-block;position:static;overflow-x:auto}.p-datepicker-header{display:flex;align-items:center;justify-content:space-between}.p-datepicker-header .p-datepicker-title{margin:0 auto}.p-datepicker-prev,.p-datepicker-next{cursor:pointer;display:inline-flex;justify-content:center;align-items:center;overflow:hidden;position:relative}.p-datepicker-multiple-month .p-datepicker-group-container .p-datepicker-group{flex:1 1 auto}.p-datepicker-multiple-month .p-datepicker-group-container{display:flex}.p-datepicker table{width:100%;border-collapse:collapse}.p-datepicker td>span{display:flex;justify-content:center;align-items:center;cursor:pointer;margin:0 auto;overflow:hidden;position:relative}.p-monthpicker-month{width:33.3%;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative}.p-datepicker-buttonbar{display:flex;justify-content:space-between;align-items:center}.p-timepicker{display:flex;justify-content:center;align-items:center}.p-timepicker button{display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative}.p-timepicker>div{display:flex;align-items:center;flex-direction:column}.p-datepicker-touch-ui,.p-calendar .p-datepicker-touch-ui{position:fixed;top:50%;left:50%;min-width:80vw;transform:translate(-50%,-50%)}.p-yearpicker-year{width:50%;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative}.p-calendar-clear-icon{position:absolute;top:50%;margin-top:-.5rem;cursor:pointer}.p-datepicker-icon{pointer-events:none}.p-calendar-clearable{position:relative}}\n"],
-    encapsulation: 2,
-    data: {
-      animation: [trigger("overlayAnimation", [state("visibleTouchUI", style({
-        transform: "translate(-50%,-50%)",
-        opacity: 1
-      })), transition("void => visible", [style({
-        opacity: 0,
-        transform: "scaleY(0.8)"
-      }), animate("{{showTransitionParams}}", style({
-        opacity: 1,
-        transform: "*"
-      }))]), transition("visible => void", [animate("{{hideTransitionParams}}", style({
-        opacity: 0
-      }))]), transition("void => visibleTouchUI", [style({
-        opacity: 0,
-        transform: "translate3d(-50%, -40%, 0) scale(0.9)"
-      }), animate("{{showTransitionParams}}")]), transition("visibleTouchUI => void", [animate("{{hideTransitionParams}}", style({
-        opacity: 0,
-        transform: "translate3d(-50%, -40%, 0) scale(0.9)"
-      }))])])]
-    },
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Calendar, [{
-    type: Component,
-    args: [{
-      selector: "p-calendar",
-      template: `
-        <span
-            #container
-            [ngClass]="{
-                'p-calendar': true,
-                'p-input-icon-right': showIcon && iconDisplay === 'input',
-                'p-calendar-w-btn': showIcon && iconDisplay === 'button',
-                'p-calendar-timeonly': timeOnly,
-                'p-calendar-disabled': disabled,
-                'p-focus': focus || overlayVisible
-            }"
-            [ngStyle]="style"
-            [class]="styleClass"
-        >
-            <ng-template [ngIf]="!inline">
-                <input
-                    #inputfield
-                    type="text"
-                    role="combobox"
-                    [attr.id]="inputId"
-                    [attr.name]="name"
-                    [attr.required]="required"
-                    [attr.aria-required]="required"
-                    aria-autocomplete="none"
-                    aria-haspopup="dialog"
-                    [attr.aria-expanded]="overlayVisible ?? false"
-                    [attr.aria-controls]="overlayVisible ? panelId : null"
-                    [attr.aria-labelledby]="ariaLabelledBy"
-                    [attr.aria-label]="ariaLabel"
-                    [value]="inputFieldValue"
-                    (focus)="onInputFocus($event)"
-                    (keydown)="onInputKeydown($event)"
-                    (click)="onInputClick()"
-                    (blur)="onInputBlur($event)"
-                    [readonly]="readonlyInput"
-                    (input)="onUserInput($event)"
-                    [ngStyle]="inputStyle"
-                    [class]="inputStyleClass"
-                    [placeholder]="placeholder || ''"
-                    [disabled]="disabled"
-                    [attr.tabindex]="tabindex"
-                    [attr.inputmode]="touchUI ? 'off' : null"
-                    [ngClass]="inputClass"
-                    autocomplete="off"
-                    pAutoFocus
-                    [autofocus]="autofocus"
-                />
-                <ng-container *ngIf="showClear && !disabled && value != null">
-                    <TimesIcon *ngIf="!clearIconTemplate" [styleClass]="'p-calendar-clear-icon'" (click)="clear()" />
-                    <span *ngIf="clearIconTemplate" class="p-calendar-clear-icon" (click)="clear()">
-                        <ng-template *ngTemplateOutlet="clearIconTemplate"></ng-template>
-                    </span>
-                </ng-container>
-                <button
-                    type="button"
-                    [attr.aria-label]="iconButtonAriaLabel"
-                    aria-haspopup="dialog"
-                    [attr.aria-expanded]="overlayVisible ?? false"
-                    [attr.aria-controls]="overlayVisible ? panelId : null"
-                    pButton
-                    pRipple
-                    *ngIf="showIcon && iconDisplay === 'button'"
-                    (click)="onButtonClick($event, inputfield)"
-                    class="p-datepicker-trigger p-button-icon-only"
-                    [disabled]="disabled"
-                    tabindex="0"
-                >
-                    <span *ngIf="icon" [ngClass]="icon"></span>
-                    <ng-container *ngIf="!icon">
-                        <CalendarIcon *ngIf="!triggerIconTemplate" />
-                        <ng-template *ngTemplateOutlet="triggerIconTemplate"></ng-template>
-                    </ng-container>
-                </button>
-                <ng-container *ngIf="iconDisplay === 'input' && showIcon">
-                    <CalendarIcon
-                        (click)="onButtonClick($event)"
-                        *ngIf="!inputIconTemplate"
-                        [ngClass]="{
-                            'p-datepicker-icon': showOnFocus
-                        }"
-                    />
-                    <ng-container *ngTemplateOutlet="inputIconTemplate; context: { clickCallBack: onButtonClick.bind(this) }"></ng-container>
-                </ng-container>
-            </ng-template>
-            <div
-                #contentWrapper
-                [attr.id]="panelId"
-                [class]="panelStyleClass"
-                [ngStyle]="panelStyle"
-                [ngClass]="{
-                    'p-datepicker p-component': true,
-                    'p-datepicker-inline': inline,
-                    'p-disabled': disabled,
-                    'p-datepicker-timeonly': timeOnly,
-                    'p-datepicker-multiple-month': this.numberOfMonths > 1,
-                    'p-datepicker-monthpicker': view === 'month',
-                    'p-datepicker-touch-ui': touchUI
-                }"
-                [@overlayAnimation]="
-                    touchUI
-                        ? { value: 'visibleTouchUI', params: { showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions } }
-                        : { value: 'visible', params: { showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions } }
-                "
-                [attr.aria-label]="getTranslation('chooseDate')"
-                [attr.role]="inline ? null : 'dialog'"
-                [attr.aria-modal]="inline ? null : 'true'"
-                [@.disabled]="inline === true"
-                (@overlayAnimation.start)="onOverlayAnimationStart($event)"
-                (@overlayAnimation.done)="onOverlayAnimationDone($event)"
-                (click)="onOverlayClick($event)"
-                *ngIf="inline || overlayVisible"
-            >
-                <ng-content select="p-header"></ng-content>
-                <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
-                <ng-container *ngIf="!timeOnly">
-                    <div class="p-datepicker-group-container">
-                        <div class="p-datepicker-group" *ngFor="let month of months; let i = index">
-                            <div class="p-datepicker-header">
-                                <button (keydown)="onContainerButtonKeydown($event)" class="p-datepicker-prev p-link" (click)="onPrevButtonClick($event)" *ngIf="i === 0" type="button" [attr.aria-label]="prevIconAriaLabel" pRipple>
-                                    <ChevronLeftIcon [styleClass]="'p-datepicker-prev-icon'" *ngIf="!previousIconTemplate" />
-                                    <span *ngIf="previousIconTemplate" class="p-datepicker-prev-icon">
-                                        <ng-template *ngTemplateOutlet="previousIconTemplate"></ng-template>
-                                    </span>
-                                </button>
-                                <div class="p-datepicker-title">
-                                    <button
-                                        type="button"
-                                        (click)="switchToMonthView($event)"
-                                        (keydown)="onContainerButtonKeydown($event)"
-                                        *ngIf="currentView === 'date'"
-                                        class="p-datepicker-month p-link"
-                                        [disabled]="switchViewButtonDisabled()"
-                                        [attr.aria-label]="this.getTranslation('chooseMonth')"
-                                    >
-                                        {{ getMonthName(month.month) }}
-                                    </button>
-                                    <button
-                                        type="button"
-                                        (click)="switchToYearView($event)"
-                                        (keydown)="onContainerButtonKeydown($event)"
-                                        *ngIf="currentView !== 'year'"
-                                        class="p-datepicker-year p-link"
-                                        [disabled]="switchViewButtonDisabled()"
-                                        [attr.aria-label]="getTranslation('chooseYear')"
-                                    >
-                                        {{ getYear(month) }}
-                                    </button>
-                                    <span class="p-datepicker-decade" *ngIf="currentView === 'year'">
-                                        <ng-container *ngIf="!decadeTemplate">{{ yearPickerValues()[0] }} - {{ yearPickerValues()[yearPickerValues().length - 1] }}</ng-container>
-                                        <ng-container *ngTemplateOutlet="decadeTemplate; context: { $implicit: yearPickerValues }"></ng-container>
-                                    </span>
-                                </div>
-                                <button
-                                    (keydown)="onContainerButtonKeydown($event)"
-                                    class="p-datepicker-next p-link"
-                                    (click)="onNextButtonClick($event)"
-                                    [style.display]="numberOfMonths === 1 ? 'inline-flex' : i === numberOfMonths - 1 ? 'inline-flex' : 'none'"
-                                    type="button"
-                                    [attr.aria-label]="nextIconAriaLabel"
-                                    pRipple
-                                >
-                                    <ChevronRightIcon [styleClass]="'p-datepicker-next-icon'" *ngIf="!nextIconTemplate" />
-                                    <span *ngIf="nextIconTemplate" class="p-datepicker-next-icon">
-                                        <ng-template *ngTemplateOutlet="nextIconTemplate"></ng-template>
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="p-datepicker-calendar-container" *ngIf="currentView === 'date'">
-                                <table class="p-datepicker-calendar" role="grid">
-                                    <thead>
-                                        <tr>
-                                            <th *ngIf="showWeek" class="p-datepicker-weekheader p-disabled">
-                                                <span>{{ getTranslation('weekHeader') }}</span>
-                                            </th>
-                                            <th scope="col" *ngFor="let weekDay of weekDays; let begin = first; let end = last">
-                                                <span>{{ weekDay }}</span>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let week of month.dates; let j = index">
-                                            <td *ngIf="showWeek" class="p-datepicker-weeknumber">
-                                                <span class="p-disabled">
-                                                    {{ month.weekNumbers[j] }}
-                                                </span>
-                                            </td>
-                                            <td *ngFor="let date of week" [attr.aria-label]="date.day" [ngClass]="{ 'p-datepicker-other-month': date.otherMonth, 'p-datepicker-today': date.today }">
-                                                <ng-container *ngIf="date.otherMonth ? showOtherMonths : true">
-                                                    <span
-                                                        [ngClass]="{ 'p-highlight p-datepicker-current-day': isSelected(date) && date.selectable, 'p-disabled': !date.selectable }"
-                                                        (click)="onDateSelect($event, date)"
-                                                        draggable="false"
-                                                        [attr.data-date]="formatDateKey(formatDateMetaToDate(date))"
-                                                        (keydown)="onDateCellKeydown($event, date, i)"
-                                                        pRipple
-                                                    >
-                                                        <ng-container *ngIf="!dateTemplate && (date.selectable || !disabledDateTemplate)">{{ date.day }}</ng-container>
-                                                        <ng-container *ngIf="date.selectable || !disabledDateTemplate">
-                                                            <ng-container *ngTemplateOutlet="dateTemplate; context: { $implicit: date }"></ng-container>
-                                                        </ng-container>
-                                                        <ng-container *ngIf="!date.selectable">
-                                                            <ng-container *ngTemplateOutlet="disabledDateTemplate; context: { $implicit: date }"></ng-container>
-                                                        </ng-container>
-                                                    </span>
-                                                    <div *ngIf="isSelected(date)" class="p-hidden-accessible" aria-live="polite">
-                                                        {{ date.day }}
-                                                    </div>
-                                                </ng-container>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-monthpicker" *ngIf="currentView === 'month'">
-                        <span
-                            *ngFor="let m of monthPickerValues(); let i = index"
-                            (click)="onMonthSelect($event, i)"
-                            (keydown)="onMonthCellKeydown($event, i)"
-                            class="p-monthpicker-month"
-                            [ngClass]="{ 'p-highlight': isMonthSelected(i), 'p-disabled': isMonthDisabled(i) }"
-                            pRipple
-                        >
-                            {{ m }}
-                            <div *ngIf="isMonthSelected(i)" class="p-hidden-accessible" aria-live="polite">
-                                {{ m }}
-                            </div>
-                        </span>
-                    </div>
-                    <div class="p-yearpicker" *ngIf="currentView === 'year'">
-                        <span
-                            *ngFor="let y of yearPickerValues()"
-                            (click)="onYearSelect($event, y)"
-                            (keydown)="onYearCellKeydown($event, y)"
-                            class="p-yearpicker-year"
-                            [ngClass]="{ 'p-highlight': isYearSelected(y), 'p-disabled': isYearDisabled(y) }"
-                            pRipple
-                        >
-                            {{ y }}
-                            <div *ngIf="isYearSelected(y)" class="p-hidden-accessible" aria-live="polite">
-                                {{ y }}
-                            </div>
-                        </span>
-                    </div>
-                </ng-container>
-                <div class="p-timepicker" *ngIf="(showTime || timeOnly) && currentView === 'date'">
-                    <div class="p-hour-picker">
-                        <button
-                            class="p-link"
-                            type="button"
-                            (keydown)="onContainerButtonKeydown($event)"
-                            (keydown.enter)="incrementHour($event)"
-                            (keydown.space)="incrementHour($event)"
-                            (mousedown)="onTimePickerElementMouseDown($event, 0, 1)"
-                            (mouseup)="onTimePickerElementMouseUp($event)"
-                            (keyup.enter)="onTimePickerElementMouseUp($event)"
-                            (keyup.space)="onTimePickerElementMouseUp($event)"
-                            (mouseleave)="onTimePickerElementMouseLeave()"
-                            [attr.aria-label]="getTranslation('nextHour')"
-                            pRipple
-                        >
-                            <ChevronUpIcon *ngIf="!incrementIconTemplate" />
-                            <ng-template *ngTemplateOutlet="incrementIconTemplate"></ng-template>
-                        </button>
-                        <span><ng-container *ngIf="currentHour < 10">0</ng-container>{{ currentHour }}</span>
-                        <button
-                            class="p-link"
-                            type="button"
-                            (keydown)="onContainerButtonKeydown($event)"
-                            (keydown.enter)="decrementHour($event)"
-                            (keydown.space)="decrementHour($event)"
-                            (mousedown)="onTimePickerElementMouseDown($event, 0, -1)"
-                            (mouseup)="onTimePickerElementMouseUp($event)"
-                            (keyup.enter)="onTimePickerElementMouseUp($event)"
-                            (keyup.space)="onTimePickerElementMouseUp($event)"
-                            (mouseleave)="onTimePickerElementMouseLeave()"
-                            [attr.aria-label]="getTranslation('prevHour')"
-                            pRipple
-                        >
-                            <ChevronDownIcon *ngIf="!decrementIconTemplate" />
-                            <ng-template *ngTemplateOutlet="decrementIconTemplate"></ng-template>
-                        </button>
-                    </div>
-                    <div class="p-separator">
-                        <span>{{ timeSeparator }}</span>
-                    </div>
-                    <div class="p-minute-picker">
-                        <button
-                            class="p-link"
-                            type="button"
-                            (keydown)="onContainerButtonKeydown($event)"
-                            (keydown.enter)="incrementMinute($event)"
-                            (keydown.space)="incrementMinute($event)"
-                            (mousedown)="onTimePickerElementMouseDown($event, 1, 1)"
-                            (mouseup)="onTimePickerElementMouseUp($event)"
-                            (keyup.enter)="onTimePickerElementMouseUp($event)"
-                            (keyup.space)="onTimePickerElementMouseUp($event)"
-                            (mouseleave)="onTimePickerElementMouseLeave()"
-                            [attr.aria-label]="getTranslation('nextMinute')"
-                            pRipple
-                        >
-                            <ChevronUpIcon *ngIf="!incrementIconTemplate" />
-                            <ng-template *ngTemplateOutlet="incrementIconTemplate"></ng-template>
-                        </button>
-                        <span><ng-container *ngIf="currentMinute < 10">0</ng-container>{{ currentMinute }}</span>
-                        <button
-                            class="p-link"
-                            type="button"
-                            (keydown)="onContainerButtonKeydown($event)"
-                            (keydown.enter)="decrementMinute($event)"
-                            (keydown.space)="decrementMinute($event)"
-                            (mousedown)="onTimePickerElementMouseDown($event, 1, -1)"
-                            (mouseup)="onTimePickerElementMouseUp($event)"
-                            (keyup.enter)="onTimePickerElementMouseUp($event)"
-                            (keyup.space)="onTimePickerElementMouseUp($event)"
-                            (mouseleave)="onTimePickerElementMouseLeave()"
-                            [attr.aria-label]="getTranslation('prevMinute')"
-                            pRipple
-                        >
-                            <ChevronDownIcon *ngIf="!decrementIconTemplate" />
-                            <ng-template *ngTemplateOutlet="decrementIconTemplate"></ng-template>
-                        </button>
-                    </div>
-                    <div class="p-separator" *ngIf="showSeconds">
-                        <span>{{ timeSeparator }}</span>
-                    </div>
-                    <div class="p-second-picker" *ngIf="showSeconds">
-                        <button
-                            class="p-link"
-                            type="button"
-                            (keydown)="onContainerButtonKeydown($event)"
-                            (keydown.enter)="incrementSecond($event)"
-                            (keydown.space)="incrementSecond($event)"
-                            (mousedown)="onTimePickerElementMouseDown($event, 2, 1)"
-                            (mouseup)="onTimePickerElementMouseUp($event)"
-                            (keyup.enter)="onTimePickerElementMouseUp($event)"
-                            (keyup.space)="onTimePickerElementMouseUp($event)"
-                            (mouseleave)="onTimePickerElementMouseLeave()"
-                            [attr.aria-label]="getTranslation('nextSecond')"
-                            pRipple
-                        >
-                            <ChevronUpIcon *ngIf="!incrementIconTemplate" />
-                            <ng-template *ngTemplateOutlet="incrementIconTemplate"></ng-template>
-                        </button>
-                        <span><ng-container *ngIf="currentSecond < 10">0</ng-container>{{ currentSecond }}</span>
-                        <button
-                            class="p-link"
-                            type="button"
-                            (keydown)="onContainerButtonKeydown($event)"
-                            (keydown.enter)="decrementSecond($event)"
-                            (keydown.space)="decrementSecond($event)"
-                            (mousedown)="onTimePickerElementMouseDown($event, 2, -1)"
-                            (mouseup)="onTimePickerElementMouseUp($event)"
-                            (keyup.enter)="onTimePickerElementMouseUp($event)"
-                            (keyup.space)="onTimePickerElementMouseUp($event)"
-                            (mouseleave)="onTimePickerElementMouseLeave()"
-                            [attr.aria-label]="getTranslation('prevSecond')"
-                            pRipple
-                        >
-                            <ChevronDownIcon *ngIf="!decrementIconTemplate" />
-                            <ng-template *ngTemplateOutlet="decrementIconTemplate"></ng-template>
-                        </button>
-                    </div>
-                    <div class="p-ampm-picker" *ngIf="hourFormat == '12'">
-                        <button class="p-link" type="button" (keydown)="onContainerButtonKeydown($event)" (click)="toggleAMPM($event)" (keydown.enter)="toggleAMPM($event)" [attr.aria-label]="getTranslation('am')" pRipple>
-                            <ChevronUpIcon *ngIf="!incrementIconTemplate" />
-                            <ng-template *ngTemplateOutlet="incrementIconTemplate"></ng-template>
-                        </button>
-                        <span>{{ pm ? 'PM' : 'AM' }}</span>
-                        <button class="p-link" type="button" (keydown)="onContainerButtonKeydown($event)" (click)="toggleAMPM($event)" (keydown.enter)="toggleAMPM($event)" [attr.aria-label]="getTranslation('pm')" pRipple>
-                            <ChevronDownIcon *ngIf="!decrementIconTemplate" />
-                            <ng-template *ngTemplateOutlet="decrementIconTemplate"></ng-template>
-                        </button>
-                    </div>
-                </div>
-                <div class="p-datepicker-buttonbar" *ngIf="showButtonBar">
-                    <button type="button" [label]="getTranslation('today')" (keydown)="onContainerButtonKeydown($event)" (click)="onTodayButtonClick($event)" pButton pRipple [ngClass]="[todayButtonStyleClass]"></button>
-                    <button type="button" [label]="getTranslation('clear')" (keydown)="onContainerButtonKeydown($event)" (click)="onClearButtonClick($event)" pButton pRipple [ngClass]="[clearButtonStyleClass]"></button>
-                </div>
-                <ng-content select="p-footer"></ng-content>
-                <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
-            </div>
-        </span>
-    `,
-      animations: [trigger("overlayAnimation", [state("visibleTouchUI", style({
-        transform: "translate(-50%,-50%)",
-        opacity: 1
-      })), transition("void => visible", [style({
-        opacity: 0,
-        transform: "scaleY(0.8)"
-      }), animate("{{showTransitionParams}}", style({
-        opacity: 1,
-        transform: "*"
-      }))]), transition("visible => void", [animate("{{hideTransitionParams}}", style({
-        opacity: 0
-      }))]), transition("void => visibleTouchUI", [style({
-        opacity: 0,
-        transform: "translate3d(-50%, -40%, 0) scale(0.9)"
-      }), animate("{{showTransitionParams}}")]), transition("visibleTouchUI => void", [animate("{{hideTransitionParams}}", style({
-        opacity: 0,
-        transform: "translate3d(-50%, -40%, 0) scale(0.9)"
-      }))])])],
-      host: {
-        class: "p-element p-inputwrapper",
-        "[class.p-inputwrapper-filled]": "filled",
-        "[class.p-inputwrapper-focus]": "focus",
-        "[class.p-calendar-clearable]": "showClear && !disabled"
-      },
-      providers: [CALENDAR_VALUE_ACCESSOR],
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      encapsulation: ViewEncapsulation$1.None,
-      styles: ["@layer primeng{.p-calendar{position:relative;display:inline-flex;max-width:100%}.p-calendar .p-inputtext{flex:1 1 auto;width:1%;text-overflow:ellipsis}.p-calendar-w-btn .p-inputtext{border-top-right-radius:0;border-bottom-right-radius:0}.p-calendar-w-btn .p-datepicker-trigger{border-top-left-radius:0;border-bottom-left-radius:0}.p-fluid .p-calendar{display:flex}.p-fluid .p-calendar .p-inputtext{width:1%}.p-calendar .p-datepicker{min-width:100%}.p-datepicker{width:auto;position:absolute;top:0;left:0}.p-datepicker-inline{display:inline-block;position:static;overflow-x:auto}.p-datepicker-header{display:flex;align-items:center;justify-content:space-between}.p-datepicker-header .p-datepicker-title{margin:0 auto}.p-datepicker-prev,.p-datepicker-next{cursor:pointer;display:inline-flex;justify-content:center;align-items:center;overflow:hidden;position:relative}.p-datepicker-multiple-month .p-datepicker-group-container .p-datepicker-group{flex:1 1 auto}.p-datepicker-multiple-month .p-datepicker-group-container{display:flex}.p-datepicker table{width:100%;border-collapse:collapse}.p-datepicker td>span{display:flex;justify-content:center;align-items:center;cursor:pointer;margin:0 auto;overflow:hidden;position:relative}.p-monthpicker-month{width:33.3%;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative}.p-datepicker-buttonbar{display:flex;justify-content:space-between;align-items:center}.p-timepicker{display:flex;justify-content:center;align-items:center}.p-timepicker button{display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative}.p-timepicker>div{display:flex;align-items:center;flex-direction:column}.p-datepicker-touch-ui,.p-calendar .p-datepicker-touch-ui{position:fixed;top:50%;left:50%;min-width:80vw;transform:translate(-50%,-50%)}.p-yearpicker-year{width:50%;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative}.p-calendar-clear-icon{position:absolute;top:50%;margin-top:-.5rem;cursor:pointer}.p-datepicker-icon{pointer-events:none}.p-calendar-clearable{position:relative}}\n"]
-    }]
-  }], () => [{
-    type: Document,
-    decorators: [{
-      type: Inject,
-      args: [DOCUMENT]
-    }]
-  }, {
-    type: ElementRef
-  }, {
-    type: Renderer2
-  }, {
-    type: ChangeDetectorRef
-  }, {
-    type: NgZone
-  }, {
-    type: PrimeNGConfig
-  }, {
-    type: OverlayService
-  }], {
-    iconDisplay: [{
-      type: Input
-    }],
-    style: [{
-      type: Input
-    }],
-    styleClass: [{
-      type: Input
-    }],
-    inputStyle: [{
-      type: Input
-    }],
-    inputId: [{
-      type: Input
-    }],
-    name: [{
-      type: Input
-    }],
-    inputStyleClass: [{
-      type: Input
-    }],
-    placeholder: [{
-      type: Input
-    }],
-    ariaLabelledBy: [{
-      type: Input
-    }],
-    ariaLabel: [{
-      type: Input
-    }],
-    iconAriaLabel: [{
-      type: Input
-    }],
-    disabled: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    dateFormat: [{
-      type: Input
-    }],
-    multipleSeparator: [{
-      type: Input
-    }],
-    rangeSeparator: [{
-      type: Input
-    }],
-    inline: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    showOtherMonths: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    selectOtherMonths: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    showIcon: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    icon: [{
-      type: Input
-    }],
-    appendTo: [{
-      type: Input
-    }],
-    readonlyInput: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    shortYearCutoff: [{
-      type: Input
-    }],
-    monthNavigator: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    yearNavigator: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    hourFormat: [{
-      type: Input
-    }],
-    timeOnly: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    stepYearPicker: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    stepHour: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    stepMinute: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    stepSecond: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    showSeconds: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    required: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    showOnFocus: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    showWeek: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    startWeekFromFirstDayOfYear: [{
-      type: Input
-    }],
-    showClear: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    dataType: [{
-      type: Input
-    }],
-    selectionMode: [{
-      type: Input
-    }],
-    maxDateCount: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    showButtonBar: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    todayButtonStyleClass: [{
-      type: Input
-    }],
-    clearButtonStyleClass: [{
-      type: Input
-    }],
-    autofocus: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    autoZIndex: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    baseZIndex: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    panelStyleClass: [{
-      type: Input
-    }],
-    panelStyle: [{
-      type: Input
-    }],
-    keepInvalid: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    hideOnDateTimeSelect: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    touchUI: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    timeSeparator: [{
-      type: Input
-    }],
-    focusTrap: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    showTransitionOptions: [{
-      type: Input
-    }],
-    hideTransitionOptions: [{
-      type: Input
-    }],
-    tabindex: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    variant: [{
-      type: Input
-    }],
-    minDate: [{
-      type: Input
-    }],
-    maxDate: [{
-      type: Input
-    }],
-    disabledDates: [{
-      type: Input
-    }],
-    disabledDays: [{
-      type: Input
-    }],
-    yearRange: [{
-      type: Input
-    }],
-    showTime: [{
-      type: Input
-    }],
-    responsiveOptions: [{
-      type: Input
-    }],
-    numberOfMonths: [{
-      type: Input
-    }],
-    firstDayOfWeek: [{
-      type: Input
-    }],
-    locale: [{
-      type: Input
-    }],
-    view: [{
-      type: Input
-    }],
-    defaultDate: [{
-      type: Input
-    }],
-    onFocus: [{
-      type: Output
-    }],
-    onBlur: [{
-      type: Output
-    }],
-    onClose: [{
-      type: Output
-    }],
-    onSelect: [{
-      type: Output
-    }],
-    onClear: [{
-      type: Output
-    }],
-    onInput: [{
-      type: Output
-    }],
-    onTodayClick: [{
-      type: Output
-    }],
-    onClearClick: [{
-      type: Output
-    }],
-    onMonthChange: [{
-      type: Output
-    }],
-    onYearChange: [{
-      type: Output
-    }],
-    onClickOutside: [{
-      type: Output
-    }],
-    onShow: [{
-      type: Output
-    }],
-    templates: [{
-      type: ContentChildren,
-      args: [PrimeTemplate]
-    }],
-    containerViewChild: [{
-      type: ViewChild,
-      args: ["container", {
-        static: false
-      }]
-    }],
-    inputfieldViewChild: [{
-      type: ViewChild,
-      args: ["inputfield", {
-        static: false
-      }]
-    }],
-    content: [{
-      type: ViewChild,
-      args: ["contentWrapper", {
-        static: false
-      }]
-    }]
-  });
-})();
-var CalendarModule = class _CalendarModule {
-  static ɵfac = function CalendarModule_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _CalendarModule)();
-  };
-  static ɵmod = ɵɵdefineNgModule({
-    type: _CalendarModule,
-    declarations: [Calendar],
-    imports: [CommonModule, ButtonModule, SharedModule, RippleModule, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon, ChevronDownIcon, TimesIcon, CalendarIcon, AutoFocusModule],
-    exports: [Calendar, ButtonModule, SharedModule]
-  });
-  static ɵinj = ɵɵdefineInjector({
-    imports: [CommonModule, ButtonModule, SharedModule, RippleModule, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon, ChevronDownIcon, TimesIcon, CalendarIcon, AutoFocusModule, ButtonModule, SharedModule]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CalendarModule, [{
-    type: NgModule,
-    args: [{
-      imports: [CommonModule, ButtonModule, SharedModule, RippleModule, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon, ChevronDownIcon, TimesIcon, CalendarIcon, AutoFocusModule],
-      exports: [Calendar, ButtonModule, SharedModule],
-      declarations: [Calendar]
-    }]
-  }], null, null);
-})();
 
 // node_modules/primeng/fesm2022/primeng-icons-arrowdown.mjs
 var ArrowDownIcon = class _ArrowDownIcon extends BaseIcon {
@@ -6060,3496 +804,14 @@ var TrashIcon = class _TrashIcon extends BaseIcon {
   }], null, null);
 })();
 
-// node_modules/primeng/fesm2022/primeng-icons-angledown.mjs
-var AngleDownIcon = class _AngleDownIcon extends BaseIcon {
-  static ɵfac = /* @__PURE__ */ (() => {
-    let ɵAngleDownIcon_BaseFactory;
-    return function AngleDownIcon_Factory(__ngFactoryType__) {
-      return (ɵAngleDownIcon_BaseFactory || (ɵAngleDownIcon_BaseFactory = ɵɵgetInheritedFactory(_AngleDownIcon)))(__ngFactoryType__ || _AngleDownIcon);
-    };
-  })();
-  static ɵcmp = ɵɵdefineComponent({
-    type: _AngleDownIcon,
-    selectors: [["AngleDownIcon"]],
-    standalone: true,
-    features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-    decls: 2,
-    vars: 5,
-    consts: [["width", "14", "height", "14", "viewBox", "0 0 14 14", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M3.58659 4.5007C3.68513 4.50023 3.78277 4.51945 3.87379 4.55723C3.9648 4.59501 4.04735 4.65058 4.11659 4.7207L7.11659 7.7207L10.1166 4.7207C10.2619 4.65055 10.4259 4.62911 10.5843 4.65956C10.7427 4.69002 10.8871 4.77074 10.996 4.88976C11.1049 5.00877 11.1726 5.15973 11.1889 5.32022C11.2052 5.48072 11.1693 5.6422 11.0866 5.7807L7.58659 9.2807C7.44597 9.42115 7.25534 9.50004 7.05659 9.50004C6.85784 9.50004 6.66722 9.42115 6.52659 9.2807L3.02659 5.7807C2.88614 5.64007 2.80725 5.44945 2.80725 5.2507C2.80725 5.05195 2.88614 4.86132 3.02659 4.7207C3.09932 4.64685 3.18675 4.58911 3.28322 4.55121C3.37969 4.51331 3.48305 4.4961 3.58659 4.5007Z", "fill", "currentColor"]],
-    template: function AngleDownIcon_Template(rf, ctx) {
-      if (rf & 1) {
-        ɵɵnamespaceSVG();
-        ɵɵelementStart(0, "svg", 0);
-        ɵɵelement(1, "path", 1);
-        ɵɵelementEnd();
-      }
-      if (rf & 2) {
-        ɵɵclassMap(ctx.getClassNames());
-        ɵɵattribute("aria-label", ctx.ariaLabel)("aria-hidden", ctx.ariaHidden)("role", ctx.role);
-      }
-    },
-    encapsulation: 2
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AngleDownIcon, [{
-    type: Component,
-    args: [{
-      selector: "AngleDownIcon",
-      standalone: true,
-      imports: [BaseIcon],
-      template: `
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" [attr.aria-label]="ariaLabel" [attr.aria-hidden]="ariaHidden" [attr.role]="role" [class]="getClassNames()">
-            <path
-                d="M3.58659 4.5007C3.68513 4.50023 3.78277 4.51945 3.87379 4.55723C3.9648 4.59501 4.04735 4.65058 4.11659 4.7207L7.11659 7.7207L10.1166 4.7207C10.2619 4.65055 10.4259 4.62911 10.5843 4.65956C10.7427 4.69002 10.8871 4.77074 10.996 4.88976C11.1049 5.00877 11.1726 5.15973 11.1889 5.32022C11.2052 5.48072 11.1693 5.6422 11.0866 5.7807L7.58659 9.2807C7.44597 9.42115 7.25534 9.50004 7.05659 9.50004C6.85784 9.50004 6.66722 9.42115 6.52659 9.2807L3.02659 5.7807C2.88614 5.64007 2.80725 5.44945 2.80725 5.2507C2.80725 5.05195 2.88614 4.86132 3.02659 4.7207C3.09932 4.64685 3.18675 4.58911 3.28322 4.55121C3.37969 4.51331 3.48305 4.4961 3.58659 4.5007Z"
-                fill="currentColor"
-            />
-        </svg>
-    `
-    }]
-  }], null, null);
-})();
-
-// node_modules/primeng/fesm2022/primeng-icons-angleup.mjs
-var AngleUpIcon = class _AngleUpIcon extends BaseIcon {
-  static ɵfac = /* @__PURE__ */ (() => {
-    let ɵAngleUpIcon_BaseFactory;
-    return function AngleUpIcon_Factory(__ngFactoryType__) {
-      return (ɵAngleUpIcon_BaseFactory || (ɵAngleUpIcon_BaseFactory = ɵɵgetInheritedFactory(_AngleUpIcon)))(__ngFactoryType__ || _AngleUpIcon);
-    };
-  })();
-  static ɵcmp = ɵɵdefineComponent({
-    type: _AngleUpIcon,
-    selectors: [["AngleUpIcon"]],
-    standalone: true,
-    features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-    decls: 2,
-    vars: 5,
-    consts: [["width", "14", "height", "14", "viewBox", "0 0 14 14", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M10.4134 9.49931C10.3148 9.49977 10.2172 9.48055 10.1262 9.44278C10.0352 9.405 9.95263 9.34942 9.88338 9.27931L6.88338 6.27931L3.88338 9.27931C3.73811 9.34946 3.57409 9.3709 3.41567 9.34044C3.25724 9.30999 3.11286 9.22926 3.00395 9.11025C2.89504 8.99124 2.82741 8.84028 2.8111 8.67978C2.79478 8.51928 2.83065 8.35781 2.91338 8.21931L6.41338 4.71931C6.55401 4.57886 6.74463 4.49997 6.94338 4.49997C7.14213 4.49997 7.33276 4.57886 7.47338 4.71931L10.9734 8.21931C11.1138 8.35994 11.1927 8.55056 11.1927 8.74931C11.1927 8.94806 11.1138 9.13868 10.9734 9.27931C10.9007 9.35315 10.8132 9.41089 10.7168 9.44879C10.6203 9.48669 10.5169 9.5039 10.4134 9.49931Z", "fill", "currentColor"]],
-    template: function AngleUpIcon_Template(rf, ctx) {
-      if (rf & 1) {
-        ɵɵnamespaceSVG();
-        ɵɵelementStart(0, "svg", 0);
-        ɵɵelement(1, "path", 1);
-        ɵɵelementEnd();
-      }
-      if (rf & 2) {
-        ɵɵclassMap(ctx.getClassNames());
-        ɵɵattribute("aria-label", ctx.ariaLabel)("aria-hidden", ctx.ariaHidden)("role", ctx.role);
-      }
-    },
-    encapsulation: 2
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AngleUpIcon, [{
-    type: Component,
-    args: [{
-      selector: "AngleUpIcon",
-      standalone: true,
-      imports: [BaseIcon],
-      template: `
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" [attr.aria-label]="ariaLabel" [attr.aria-hidden]="ariaHidden" [attr.role]="role" [class]="getClassNames()">
-            <path
-                d="M10.4134 9.49931C10.3148 9.49977 10.2172 9.48055 10.1262 9.44278C10.0352 9.405 9.95263 9.34942 9.88338 9.27931L6.88338 6.27931L3.88338 9.27931C3.73811 9.34946 3.57409 9.3709 3.41567 9.34044C3.25724 9.30999 3.11286 9.22926 3.00395 9.11025C2.89504 8.99124 2.82741 8.84028 2.8111 8.67978C2.79478 8.51928 2.83065 8.35781 2.91338 8.21931L6.41338 4.71931C6.55401 4.57886 6.74463 4.49997 6.94338 4.49997C7.14213 4.49997 7.33276 4.57886 7.47338 4.71931L10.9734 8.21931C11.1138 8.35994 11.1927 8.55056 11.1927 8.74931C11.1927 8.94806 11.1138 9.13868 10.9734 9.27931C10.9007 9.35315 10.8132 9.41089 10.7168 9.44879C10.6203 9.48669 10.5169 9.5039 10.4134 9.49931Z"
-                fill="currentColor"
-            />
-        </svg>
-    `
-    }]
-  }], null, null);
-})();
-
-// node_modules/primeng/fesm2022/primeng-inputnumber.mjs
-var _c02 = ["input"];
-var _c17 = (a0, a1, a2) => ({
-  "p-inputnumber p-component": true,
-  "p-inputnumber-buttons-stacked": a0,
-  "p-inputnumber-buttons-horizontal": a1,
-  "p-inputnumber-buttons-vertical": a2
-});
-var _c22 = () => ({
-  "p-inputnumber-button p-inputnumber-button-up": true
-});
-var _c32 = () => ({
-  "p-inputnumber-button p-inputnumber-button-down": true
-});
-function InputNumber_ng_container_3_TimesIcon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r2 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "TimesIcon", 8);
-    ɵɵlistener("click", function InputNumber_ng_container_3_TimesIcon_1_Template_TimesIcon_click_0_listener() {
-      ɵɵrestoreView(_r2);
-      const ctx_r2 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r2.clear());
-    });
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    ɵɵproperty("ngClass", "p-inputnumber-clear-icon");
-    ɵɵattribute("data-pc-section", "clearIcon");
-  }
-}
-function InputNumber_ng_container_3_span_2_1_ng_template_0_Template(rf, ctx) {
-}
-function InputNumber_ng_container_3_span_2_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, InputNumber_ng_container_3_span_2_1_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function InputNumber_ng_container_3_span_2_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r4 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "span", 9);
-    ɵɵlistener("click", function InputNumber_ng_container_3_span_2_Template_span_click_0_listener() {
-      ɵɵrestoreView(_r4);
-      const ctx_r2 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r2.clear());
-    });
-    ɵɵtemplate(1, InputNumber_ng_container_3_span_2_1_Template, 1, 0, null, 10);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵattribute("data-pc-section", "clearIcon");
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r2.clearIconTemplate);
-  }
-}
-function InputNumber_ng_container_3_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, InputNumber_ng_container_3_TimesIcon_1_Template, 1, 2, "TimesIcon", 6)(2, InputNumber_ng_container_3_span_2_Template, 2, 2, "span", 7);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext();
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r2.clearIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r2.clearIconTemplate);
-  }
-}
-function InputNumber_span_4_span_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "span", 14);
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵproperty("ngClass", ctx_r2.incrementButtonIcon);
-    ɵɵattribute("data-pc-section", "incrementbuttonicon");
-  }
-}
-function InputNumber_span_4_ng_container_3_AngleUpIcon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "AngleUpIcon");
-  }
-  if (rf & 2) {
-    ɵɵattribute("data-pc-section", "incrementbuttonicon");
-  }
-}
-function InputNumber_span_4_ng_container_3_2_ng_template_0_Template(rf, ctx) {
-}
-function InputNumber_span_4_ng_container_3_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, InputNumber_span_4_ng_container_3_2_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function InputNumber_span_4_ng_container_3_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, InputNumber_span_4_ng_container_3_AngleUpIcon_1_Template, 1, 1, "AngleUpIcon", 3)(2, InputNumber_span_4_ng_container_3_2_Template, 1, 0, null, 10);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r2.incrementButtonIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r2.incrementButtonIconTemplate);
-  }
-}
-function InputNumber_span_4_span_5_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "span", 14);
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵproperty("ngClass", ctx_r2.decrementButtonIcon);
-    ɵɵattribute("data-pc-section", "decrementbuttonicon");
-  }
-}
-function InputNumber_span_4_ng_container_6_AngleDownIcon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "AngleDownIcon");
-  }
-  if (rf & 2) {
-    ɵɵattribute("data-pc-section", "decrementbuttonicon");
-  }
-}
-function InputNumber_span_4_ng_container_6_2_ng_template_0_Template(rf, ctx) {
-}
-function InputNumber_span_4_ng_container_6_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, InputNumber_span_4_ng_container_6_2_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function InputNumber_span_4_ng_container_6_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, InputNumber_span_4_ng_container_6_AngleDownIcon_1_Template, 1, 1, "AngleDownIcon", 3)(2, InputNumber_span_4_ng_container_6_2_Template, 1, 0, null, 10);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r2.decrementButtonIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r2.decrementButtonIconTemplate);
-  }
-}
-function InputNumber_span_4_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r5 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "span", 11)(1, "button", 12);
-    ɵɵlistener("mousedown", function InputNumber_span_4_Template_button_mousedown_1_listener($event) {
-      ɵɵrestoreView(_r5);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onUpButtonMouseDown($event));
-    })("mouseup", function InputNumber_span_4_Template_button_mouseup_1_listener() {
-      ɵɵrestoreView(_r5);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onUpButtonMouseUp());
-    })("mouseleave", function InputNumber_span_4_Template_button_mouseleave_1_listener() {
-      ɵɵrestoreView(_r5);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onUpButtonMouseLeave());
-    })("keydown", function InputNumber_span_4_Template_button_keydown_1_listener($event) {
-      ɵɵrestoreView(_r5);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onUpButtonKeyDown($event));
-    })("keyup", function InputNumber_span_4_Template_button_keyup_1_listener() {
-      ɵɵrestoreView(_r5);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onUpButtonKeyUp());
-    });
-    ɵɵtemplate(2, InputNumber_span_4_span_2_Template, 1, 2, "span", 13)(3, InputNumber_span_4_ng_container_3_Template, 3, 2, "ng-container", 3);
-    ɵɵelementEnd();
-    ɵɵelementStart(4, "button", 12);
-    ɵɵlistener("mousedown", function InputNumber_span_4_Template_button_mousedown_4_listener($event) {
-      ɵɵrestoreView(_r5);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onDownButtonMouseDown($event));
-    })("mouseup", function InputNumber_span_4_Template_button_mouseup_4_listener() {
-      ɵɵrestoreView(_r5);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onDownButtonMouseUp());
-    })("mouseleave", function InputNumber_span_4_Template_button_mouseleave_4_listener() {
-      ɵɵrestoreView(_r5);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onDownButtonMouseLeave());
-    })("keydown", function InputNumber_span_4_Template_button_keydown_4_listener($event) {
-      ɵɵrestoreView(_r5);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onDownButtonKeyDown($event));
-    })("keyup", function InputNumber_span_4_Template_button_keyup_4_listener() {
-      ɵɵrestoreView(_r5);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onDownButtonKeyUp());
-    });
-    ɵɵtemplate(5, InputNumber_span_4_span_5_Template, 1, 2, "span", 13)(6, InputNumber_span_4_ng_container_6_Template, 3, 2, "ng-container", 3);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext();
-    ɵɵattribute("data-pc-section", "buttonGroup");
-    ɵɵadvance();
-    ɵɵclassMap(ctx_r2.incrementButtonClass);
-    ɵɵproperty("ngClass", ɵɵpureFunction0(17, _c22))("disabled", ctx_r2.disabled);
-    ɵɵattribute("aria-hidden", true)("data-pc-section", "incrementbutton");
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r2.incrementButtonIcon);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r2.incrementButtonIcon);
-    ɵɵadvance();
-    ɵɵclassMap(ctx_r2.decrementButtonClass);
-    ɵɵproperty("ngClass", ɵɵpureFunction0(18, _c32))("disabled", ctx_r2.disabled);
-    ɵɵattribute("aria-hidden", true)("data-pc-section", ctx_r2.decrementbutton);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r2.decrementButtonIcon);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r2.decrementButtonIcon);
-  }
-}
-function InputNumber_button_5_span_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "span", 14);
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵproperty("ngClass", ctx_r2.incrementButtonIcon);
-    ɵɵattribute("data-pc-section", "incrementbuttonicon");
-  }
-}
-function InputNumber_button_5_ng_container_2_AngleUpIcon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "AngleUpIcon");
-  }
-  if (rf & 2) {
-    ɵɵattribute("data-pc-section", "incrementbuttonicon");
-  }
-}
-function InputNumber_button_5_ng_container_2_2_ng_template_0_Template(rf, ctx) {
-}
-function InputNumber_button_5_ng_container_2_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, InputNumber_button_5_ng_container_2_2_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function InputNumber_button_5_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, InputNumber_button_5_ng_container_2_AngleUpIcon_1_Template, 1, 1, "AngleUpIcon", 3)(2, InputNumber_button_5_ng_container_2_2_Template, 1, 0, null, 10);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r2.incrementButtonIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r2.incrementButtonIconTemplate);
-  }
-}
-function InputNumber_button_5_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r6 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 12);
-    ɵɵlistener("mousedown", function InputNumber_button_5_Template_button_mousedown_0_listener($event) {
-      ɵɵrestoreView(_r6);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onUpButtonMouseDown($event));
-    })("mouseup", function InputNumber_button_5_Template_button_mouseup_0_listener() {
-      ɵɵrestoreView(_r6);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onUpButtonMouseUp());
-    })("mouseleave", function InputNumber_button_5_Template_button_mouseleave_0_listener() {
-      ɵɵrestoreView(_r6);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onUpButtonMouseLeave());
-    })("keydown", function InputNumber_button_5_Template_button_keydown_0_listener($event) {
-      ɵɵrestoreView(_r6);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onUpButtonKeyDown($event));
-    })("keyup", function InputNumber_button_5_Template_button_keyup_0_listener() {
-      ɵɵrestoreView(_r6);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onUpButtonKeyUp());
-    });
-    ɵɵtemplate(1, InputNumber_button_5_span_1_Template, 1, 2, "span", 13)(2, InputNumber_button_5_ng_container_2_Template, 3, 2, "ng-container", 3);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext();
-    ɵɵclassMap(ctx_r2.incrementButtonClass);
-    ɵɵproperty("ngClass", ɵɵpureFunction0(8, _c22))("disabled", ctx_r2.disabled);
-    ɵɵattribute("aria-hidden", true)("data-pc-section", "incrementbutton");
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r2.incrementButtonIcon);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r2.incrementButtonIcon);
-  }
-}
-function InputNumber_button_6_span_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "span", 14);
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵproperty("ngClass", ctx_r2.decrementButtonIcon);
-    ɵɵattribute("data-pc-section", "decrementbuttonicon");
-  }
-}
-function InputNumber_button_6_ng_container_2_AngleDownIcon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "AngleDownIcon");
-  }
-  if (rf & 2) {
-    ɵɵattribute("data-pc-section", "decrementbuttonicon");
-  }
-}
-function InputNumber_button_6_ng_container_2_2_ng_template_0_Template(rf, ctx) {
-}
-function InputNumber_button_6_ng_container_2_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, InputNumber_button_6_ng_container_2_2_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function InputNumber_button_6_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, InputNumber_button_6_ng_container_2_AngleDownIcon_1_Template, 1, 1, "AngleDownIcon", 3)(2, InputNumber_button_6_ng_container_2_2_Template, 1, 0, null, 10);
-    ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r2.decrementButtonIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r2.decrementButtonIconTemplate);
-  }
-}
-function InputNumber_button_6_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r7 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 12);
-    ɵɵlistener("mousedown", function InputNumber_button_6_Template_button_mousedown_0_listener($event) {
-      ɵɵrestoreView(_r7);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onDownButtonMouseDown($event));
-    })("mouseup", function InputNumber_button_6_Template_button_mouseup_0_listener() {
-      ɵɵrestoreView(_r7);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onDownButtonMouseUp());
-    })("mouseleave", function InputNumber_button_6_Template_button_mouseleave_0_listener() {
-      ɵɵrestoreView(_r7);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onDownButtonMouseLeave());
-    })("keydown", function InputNumber_button_6_Template_button_keydown_0_listener($event) {
-      ɵɵrestoreView(_r7);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onDownButtonKeyDown($event));
-    })("keyup", function InputNumber_button_6_Template_button_keyup_0_listener() {
-      ɵɵrestoreView(_r7);
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onDownButtonKeyUp());
-    });
-    ɵɵtemplate(1, InputNumber_button_6_span_1_Template, 1, 2, "span", 13)(2, InputNumber_button_6_ng_container_2_Template, 3, 2, "ng-container", 3);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext();
-    ɵɵclassMap(ctx_r2.decrementButtonClass);
-    ɵɵproperty("ngClass", ɵɵpureFunction0(8, _c32))("disabled", ctx_r2.disabled);
-    ɵɵattribute("aria-hidden", true)("data-pc-section", "decrementbutton");
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r2.decrementButtonIcon);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r2.decrementButtonIcon);
-  }
-}
-var INPUTNUMBER_VALUE_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => InputNumber),
-  multi: true
-};
-var InputNumber = class _InputNumber {
-  document;
-  el;
-  cd;
-  injector;
-  config;
-  /**
-   * Displays spinner buttons.
-   * @group Props
-   */
-  showButtons = false;
-  /**
-   * Whether to format the value.
-   * @group Props
-   */
-  format = true;
-  /**
-   * Layout of the buttons, valid values are "stacked" (default), "horizontal" and "vertical".
-   * @group Props
-   */
-  buttonLayout = "stacked";
-  /**
-   * Identifier of the focus input to match a label defined for the component.
-   * @group Props
-   */
-  inputId;
-  /**
-   * Style class of the component.
-   * @group Props
-   */
-  styleClass;
-  /**
-   * Inline style of the component.
-   * @group Props
-   */
-  style;
-  /**
-   * Advisory information to display on input.
-   * @group Props
-   */
-  placeholder;
-  /**
-   * Size of the input field.
-   * @group Props
-   */
-  size;
-  /**
-   * Maximum number of character allows in the input field.
-   * @group Props
-   */
-  maxlength;
-  /**
-   * Specifies tab order of the element.
-   * @group Props
-   */
-  tabindex;
-  /**
-   * Title text of the input text.
-   * @group Props
-   */
-  title;
-  /**
-   * Specifies one or more IDs in the DOM that labels the input field.
-   * @group Props
-   */
-  ariaLabelledBy;
-  /**
-   * Used to define a string that labels the input element.
-   * @group Props
-   */
-  ariaLabel;
-  /**
-   * Used to indicate that user input is required on an element before a form can be submitted.
-   * @group Props
-   */
-  ariaRequired;
-  /**
-   * Name of the input field.
-   * @group Props
-   */
-  name;
-  /**
-   * Indicates that whether the input field is required.
-   * @group Props
-   */
-  required;
-  /**
-   * Used to define a string that autocomplete attribute the current element.
-   * @group Props
-   */
-  autocomplete;
-  /**
-   * Mininum boundary value.
-   * @group Props
-   */
-  min;
-  /**
-   * Maximum boundary value.
-   * @group Props
-   */
-  max;
-  /**
-   * Style class of the increment button.
-   * @group Props
-   */
-  incrementButtonClass;
-  /**
-   * Style class of the decrement button.
-   * @group Props
-   */
-  decrementButtonClass;
-  /**
-   * Style class of the increment button.
-   * @group Props
-   */
-  incrementButtonIcon;
-  /**
-   * Style class of the decrement button.
-   * @group Props
-   */
-  decrementButtonIcon;
-  /**
-   * When present, it specifies that an input field is read-only.
-   * @group Props
-   */
-  readonly = false;
-  /**
-   * Step factor to increment/decrement the value.
-   * @group Props
-   */
-  step = 1;
-  /**
-   * Determines whether the input field is empty.
-   * @group Props
-   */
-  allowEmpty = true;
-  /**
-   * Locale to be used in formatting.
-   * @group Props
-   */
-  locale;
-  /**
-   * The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit". See Locale Negotiation for details.
-   * @group Props
-   */
-  localeMatcher;
-  /**
-   * Defines the behavior of the component, valid values are "decimal" and "currency".
-   * @group Props
-   */
-  mode = "decimal";
-  /**
-   * The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as "USD" for the US dollar, "EUR" for the euro, or "CNY" for the Chinese RMB. There is no default value; if the style is "currency", the currency property must be provided.
-   * @group Props
-   */
-  currency;
-  /**
-   * How to display the currency in currency formatting. Possible values are "symbol" to use a localized currency symbol such as €, ü"code" to use the ISO currency code, "name" to use a localized currency name such as "dollar"; the default is "symbol".
-   * @group Props
-   */
-  currencyDisplay;
-  /**
-   * Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators.
-   * @group Props
-   */
-  useGrouping = true;
-  /**
-   * Specifies the input variant of the component.
-   * @group Props
-   */
-  variant = "outlined";
-  /**
-   * The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).
-   * @group Props
-   */
-  minFractionDigits;
-  /**
-   * The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).
-   * @group Props
-   */
-  maxFractionDigits;
-  /**
-   * Text to display before the value.
-   * @group Props
-   */
-  prefix;
-  /**
-   * Text to display after the value.
-   * @group Props
-   */
-  suffix;
-  /**
-   * Inline style of the input field.
-   * @group Props
-   */
-  inputStyle;
-  /**
-   * Style class of the input field.
-   * @group Props
-   */
-  inputStyleClass;
-  /**
-   * When enabled, a clear icon is displayed to clear the value.
-   * @group Props
-   */
-  showClear = false;
-  /**
-   * When present, it specifies that the component should automatically get focus on load.
-   * @group Props
-   */
-  autofocus;
-  /**
-   * When present, it specifies that the element should be disabled.
-   * @group Props
-   */
-  get disabled() {
-    return this._disabled;
-  }
-  set disabled(disabled) {
-    if (disabled) this.focused = false;
-    this._disabled = disabled;
-    if (this.timer) this.clearTimer();
-  }
-  /**
-   * Callback to invoke on input.
-   * @param {InputNumberInputEvent} event - Custom input event.
-   * @group Emits
-   */
-  onInput = new EventEmitter();
-  /**
-   * Callback to invoke when the component receives focus.
-   * @param {Event} event - Browser event.
-   * @group Emits
-   */
-  onFocus = new EventEmitter();
-  /**
-   * Callback to invoke when the component loses focus.
-   * @param {Event} event - Browser event.
-   * @group Emits
-   */
-  onBlur = new EventEmitter();
-  /**
-   * Callback to invoke on input key press.
-   * @param {KeyboardEvent} event - Keyboard event.
-   * @group Emits
-   */
-  onKeyDown = new EventEmitter();
-  /**
-   * Callback to invoke when clear token is clicked.
-   * @group Emits
-   */
-  onClear = new EventEmitter();
-  input;
-  templates;
-  clearIconTemplate;
-  incrementButtonIconTemplate;
-  decrementButtonIconTemplate;
-  value;
-  onModelChange = () => {
-  };
-  onModelTouched = () => {
-  };
-  focused;
-  initialized;
-  groupChar = "";
-  prefixChar = "";
-  suffixChar = "";
-  isSpecialChar;
-  timer;
-  lastValue;
-  _numeral;
-  numberFormat;
-  _decimal;
-  _decimalChar;
-  _group;
-  _minusSign;
-  _currency;
-  _prefix;
-  _suffix;
-  _index;
-  _disabled;
-  ngControl = null;
-  constructor(document2, el, cd, injector, config) {
-    this.document = document2;
-    this.el = el;
-    this.cd = cd;
-    this.injector = injector;
-    this.config = config;
-  }
-  ngOnChanges(simpleChange) {
-    const props = ["locale", "localeMatcher", "mode", "currency", "currencyDisplay", "useGrouping", "minFractionDigits", "maxFractionDigits", "prefix", "suffix"];
-    if (props.some((p) => !!simpleChange[p])) {
-      this.updateConstructParser();
-    }
-  }
-  ngAfterContentInit() {
-    this.templates.forEach((item) => {
-      switch (item.getType()) {
-        case "clearicon":
-          this.clearIconTemplate = item.template;
-          break;
-        case "incrementbuttonicon":
-          this.incrementButtonIconTemplate = item.template;
-          break;
-        case "decrementbuttonicon":
-          this.decrementButtonIconTemplate = item.template;
-          break;
-      }
-    });
-  }
-  ngOnInit() {
-    this.ngControl = this.injector.get(NgControl, null, {
-      optional: true
-    });
-    this.constructParser();
-    this.initialized = true;
-  }
-  getOptions() {
-    return {
-      localeMatcher: this.localeMatcher,
-      style: this.mode,
-      currency: this.currency,
-      currencyDisplay: this.currencyDisplay,
-      useGrouping: this.useGrouping,
-      minimumFractionDigits: this.minFractionDigits ?? void 0,
-      maximumFractionDigits: this.maxFractionDigits ?? void 0
-    };
-  }
-  constructParser() {
-    this.numberFormat = new Intl.NumberFormat(this.locale, this.getOptions());
-    const numerals = [...new Intl.NumberFormat(this.locale, {
-      useGrouping: false
-    }).format(9876543210)].reverse();
-    const index = new Map(numerals.map((d, i) => [d, i]));
-    this._numeral = new RegExp(`[${numerals.join("")}]`, "g");
-    this._group = this.getGroupingExpression();
-    this._minusSign = this.getMinusSignExpression();
-    this._currency = this.getCurrencyExpression();
-    this._decimal = this.getDecimalExpression();
-    this._decimalChar = this.getDecimalChar();
-    this._suffix = this.getSuffixExpression();
-    this._prefix = this.getPrefixExpression();
-    this._index = (d) => index.get(d);
-  }
-  updateConstructParser() {
-    if (this.initialized) {
-      this.constructParser();
-    }
-  }
-  escapeRegExp(text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-  }
-  getDecimalExpression() {
-    const decimalChar = this.getDecimalChar();
-    return new RegExp(`[${decimalChar}]`, "g");
-  }
-  getDecimalChar() {
-    const formatter = new Intl.NumberFormat(this.locale, __spreadProps(__spreadValues({}, this.getOptions()), {
-      useGrouping: false
-    }));
-    return formatter.format(1.1).replace(this._currency, "").trim().replace(this._numeral, "");
-  }
-  getGroupingExpression() {
-    const formatter = new Intl.NumberFormat(this.locale, {
-      useGrouping: true
-    });
-    this.groupChar = formatter.format(1e6).trim().replace(this._numeral, "").charAt(0);
-    return new RegExp(`[${this.groupChar}]`, "g");
-  }
-  getMinusSignExpression() {
-    const formatter = new Intl.NumberFormat(this.locale, {
-      useGrouping: false
-    });
-    return new RegExp(`[${formatter.format(-1).trim().replace(this._numeral, "")}]`, "g");
-  }
-  getCurrencyExpression() {
-    if (this.currency) {
-      const formatter = new Intl.NumberFormat(this.locale, {
-        style: "currency",
-        currency: this.currency,
-        currencyDisplay: this.currencyDisplay,
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-      });
-      return new RegExp(`[${formatter.format(1).replace(/\s/g, "").replace(this._numeral, "").replace(this._group, "")}]`, "g");
-    }
-    return new RegExp(`[]`, "g");
-  }
-  getPrefixExpression() {
-    if (this.prefix) {
-      this.prefixChar = this.prefix;
-    } else {
-      const formatter = new Intl.NumberFormat(this.locale, {
-        style: this.mode,
-        currency: this.currency,
-        currencyDisplay: this.currencyDisplay
-      });
-      this.prefixChar = formatter.format(1).split("1")[0];
-    }
-    return new RegExp(`${this.escapeRegExp(this.prefixChar || "")}`, "g");
-  }
-  getSuffixExpression() {
-    if (this.suffix) {
-      this.suffixChar = this.suffix;
-    } else {
-      const formatter = new Intl.NumberFormat(this.locale, {
-        style: this.mode,
-        currency: this.currency,
-        currencyDisplay: this.currencyDisplay,
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-      });
-      this.suffixChar = formatter.format(1).split("1")[1];
-    }
-    return new RegExp(`${this.escapeRegExp(this.suffixChar || "")}`, "g");
-  }
-  get isBlurUpdateOnMode() {
-    return this.ngControl?.control?.updateOn === "blur";
-  }
-  formatValue(value) {
-    if (value != null) {
-      if (value === "-") {
-        return value;
-      }
-      if (this.format) {
-        let formatter = new Intl.NumberFormat(this.locale, this.getOptions());
-        let formattedValue = formatter.format(value);
-        if (this.prefix && value != this.prefix) {
-          formattedValue = this.prefix + formattedValue;
-        }
-        if (this.suffix && value != this.suffix) {
-          formattedValue = formattedValue + this.suffix;
-        }
-        return formattedValue;
-      }
-      return value.toString();
-    }
-    return "";
-  }
-  parseValue(text) {
-    const suffixRegex = new RegExp(this._suffix, "");
-    const prefixRegex = new RegExp(this._prefix, "");
-    const currencyRegex = new RegExp(this._currency, "");
-    let filteredText = text.replace(suffixRegex, "").replace(prefixRegex, "").trim().replace(/\s/g, "").replace(currencyRegex, "").replace(this._group, "").replace(this._minusSign, "-").replace(this._decimal, ".").replace(this._numeral, this._index);
-    if (filteredText) {
-      if (filteredText === "-")
-        return filteredText;
-      let parsedValue = +filteredText;
-      return isNaN(parsedValue) ? null : parsedValue;
-    }
-    return null;
-  }
-  repeat(event2, interval, dir) {
-    if (this.readonly) {
-      return;
-    }
-    let i = interval || 500;
-    this.clearTimer();
-    this.timer = setTimeout(() => {
-      this.repeat(event2, 40, dir);
-    }, i);
-    this.spin(event2, dir);
-  }
-  spin(event2, dir) {
-    let step = this.step * dir;
-    let currentValue = this.parseValue(this.input?.nativeElement.value) || 0;
-    let newValue = this.validateValue(currentValue + step);
-    if (this.maxlength && this.maxlength < this.formatValue(newValue).length) {
-      return;
-    }
-    this.updateInput(newValue, null, "spin", null);
-    this.updateModel(event2, newValue);
-    this.handleOnInput(event2, currentValue, newValue);
-  }
-  clear() {
-    this.value = null;
-    this.onModelChange(this.value);
-    this.onClear.emit();
-  }
-  onUpButtonMouseDown(event2) {
-    if (event2.button === 2) {
-      this.clearTimer();
-      return;
-    }
-    if (!this.disabled) {
-      this.input?.nativeElement.focus();
-      this.repeat(event2, null, 1);
-      event2.preventDefault();
-    }
-  }
-  onUpButtonMouseUp() {
-    if (!this.disabled) {
-      this.clearTimer();
-    }
-  }
-  onUpButtonMouseLeave() {
-    if (!this.disabled) {
-      this.clearTimer();
-    }
-  }
-  onUpButtonKeyDown(event2) {
-    if (event2.keyCode === 32 || event2.keyCode === 13) {
-      this.repeat(event2, null, 1);
-    }
-  }
-  onUpButtonKeyUp() {
-    if (!this.disabled) {
-      this.clearTimer();
-    }
-  }
-  onDownButtonMouseDown(event2) {
-    if (event2.button === 2) {
-      this.clearTimer();
-      return;
-    }
-    if (!this.disabled) {
-      this.input?.nativeElement.focus();
-      this.repeat(event2, null, -1);
-      event2.preventDefault();
-    }
-  }
-  onDownButtonMouseUp() {
-    if (!this.disabled) {
-      this.clearTimer();
-    }
-  }
-  onDownButtonMouseLeave() {
-    if (!this.disabled) {
-      this.clearTimer();
-    }
-  }
-  onDownButtonKeyUp() {
-    if (!this.disabled) {
-      this.clearTimer();
-    }
-  }
-  onDownButtonKeyDown(event2) {
-    if (event2.keyCode === 32 || event2.keyCode === 13) {
-      this.repeat(event2, null, -1);
-    }
-  }
-  onUserInput(event2) {
-    if (this.readonly) {
-      return;
-    }
-    if (this.isSpecialChar) {
-      event2.target.value = this.lastValue;
-    }
-    this.isSpecialChar = false;
-  }
-  onInputKeyDown(event2) {
-    if (this.readonly) {
-      return;
-    }
-    this.lastValue = event2.target.value;
-    if (event2.shiftKey || event2.altKey) {
-      this.isSpecialChar = true;
-      return;
-    }
-    let selectionStart = event2.target.selectionStart;
-    let selectionEnd = event2.target.selectionEnd;
-    let inputValue = event2.target.value;
-    let newValueStr = null;
-    if (event2.altKey) {
-      event2.preventDefault();
-    }
-    switch (event2.key) {
-      case "ArrowUp":
-        this.spin(event2, 1);
-        event2.preventDefault();
-        break;
-      case "ArrowDown":
-        this.spin(event2, -1);
-        event2.preventDefault();
-        break;
-      case "ArrowLeft":
-        for (let index = selectionStart; index <= inputValue.length; index++) {
-          const previousCharIndex = index === 0 ? 0 : index - 1;
-          if (this.isNumeralChar(inputValue.charAt(previousCharIndex))) {
-            this.input.nativeElement.setSelectionRange(index, index);
-            break;
-          }
-        }
-        break;
-      case "ArrowRight":
-        for (let index = selectionEnd; index >= 0; index--) {
-          if (this.isNumeralChar(inputValue.charAt(index))) {
-            this.input.nativeElement.setSelectionRange(index, index);
-            break;
-          }
-        }
-        break;
-      case "Tab":
-      case "Enter":
-        newValueStr = this.validateValue(this.parseValue(this.input.nativeElement.value));
-        this.input.nativeElement.value = this.formatValue(newValueStr);
-        this.input.nativeElement.setAttribute("aria-valuenow", newValueStr);
-        this.updateModel(event2, newValueStr);
-        break;
-      case "Backspace": {
-        event2.preventDefault();
-        if (selectionStart === selectionEnd) {
-          if (selectionStart == 1 && this.prefix || selectionStart == inputValue.length && this.suffix) {
-            break;
-          }
-          const deleteChar = inputValue.charAt(selectionStart - 1);
-          const {
-            decimalCharIndex,
-            decimalCharIndexWithoutPrefix
-          } = this.getDecimalCharIndexes(inputValue);
-          if (this.isNumeralChar(deleteChar)) {
-            const decimalLength = this.getDecimalLength(inputValue);
-            if (this._group.test(deleteChar)) {
-              this._group.lastIndex = 0;
-              newValueStr = inputValue.slice(0, selectionStart - 2) + inputValue.slice(selectionStart - 1);
-            } else if (this._decimal.test(deleteChar)) {
-              this._decimal.lastIndex = 0;
-              if (decimalLength) {
-                this.input?.nativeElement.setSelectionRange(selectionStart - 1, selectionStart - 1);
-              } else {
-                newValueStr = inputValue.slice(0, selectionStart - 1) + inputValue.slice(selectionStart);
-              }
-            } else if (decimalCharIndex > 0 && selectionStart > decimalCharIndex) {
-              const insertedText = this.isDecimalMode() && (this.minFractionDigits || 0) < decimalLength ? "" : "0";
-              newValueStr = inputValue.slice(0, selectionStart - 1) + insertedText + inputValue.slice(selectionStart);
-            } else if (decimalCharIndexWithoutPrefix === 1) {
-              newValueStr = inputValue.slice(0, selectionStart - 1) + "0" + inputValue.slice(selectionStart);
-              newValueStr = this.parseValue(newValueStr) > 0 ? newValueStr : "";
-            } else {
-              newValueStr = inputValue.slice(0, selectionStart - 1) + inputValue.slice(selectionStart);
-            }
-          } else if (this.mode === "currency" && deleteChar.search(this._currency) != -1) {
-            newValueStr = inputValue.slice(1);
-          }
-          this.updateValue(event2, newValueStr, null, "delete-single");
-        } else {
-          newValueStr = this.deleteRange(inputValue, selectionStart, selectionEnd);
-          this.updateValue(event2, newValueStr, null, "delete-range");
-        }
-        break;
-      }
-      case "Delete":
-        event2.preventDefault();
-        if (selectionStart === selectionEnd) {
-          if (selectionStart == 0 && this.prefix || selectionStart == inputValue.length - 1 && this.suffix) {
-            break;
-          }
-          const deleteChar = inputValue.charAt(selectionStart);
-          const {
-            decimalCharIndex,
-            decimalCharIndexWithoutPrefix
-          } = this.getDecimalCharIndexes(inputValue);
-          if (this.isNumeralChar(deleteChar)) {
-            const decimalLength = this.getDecimalLength(inputValue);
-            if (this._group.test(deleteChar)) {
-              this._group.lastIndex = 0;
-              newValueStr = inputValue.slice(0, selectionStart) + inputValue.slice(selectionStart + 2);
-            } else if (this._decimal.test(deleteChar)) {
-              this._decimal.lastIndex = 0;
-              if (decimalLength) {
-                this.input?.nativeElement.setSelectionRange(selectionStart + 1, selectionStart + 1);
-              } else {
-                newValueStr = inputValue.slice(0, selectionStart) + inputValue.slice(selectionStart + 1);
-              }
-            } else if (decimalCharIndex > 0 && selectionStart > decimalCharIndex) {
-              const insertedText = this.isDecimalMode() && (this.minFractionDigits || 0) < decimalLength ? "" : "0";
-              newValueStr = inputValue.slice(0, selectionStart) + insertedText + inputValue.slice(selectionStart + 1);
-            } else if (decimalCharIndexWithoutPrefix === 1) {
-              newValueStr = inputValue.slice(0, selectionStart) + "0" + inputValue.slice(selectionStart + 1);
-              newValueStr = this.parseValue(newValueStr) > 0 ? newValueStr : "";
-            } else {
-              newValueStr = inputValue.slice(0, selectionStart) + inputValue.slice(selectionStart + 1);
-            }
-          }
-          this.updateValue(event2, newValueStr, null, "delete-back-single");
-        } else {
-          newValueStr = this.deleteRange(inputValue, selectionStart, selectionEnd);
-          this.updateValue(event2, newValueStr, null, "delete-range");
-        }
-        break;
-      case "Home":
-        if (this.min) {
-          this.updateModel(event2, this.min);
-          event2.preventDefault();
-        }
-        break;
-      case "End":
-        if (this.max) {
-          this.updateModel(event2, this.max);
-          event2.preventDefault();
-        }
-        break;
-      default:
-        break;
-    }
-    this.onKeyDown.emit(event2);
-  }
-  onInputKeyPress(event2) {
-    if (this.readonly) {
-      return;
-    }
-    let code = event2.which || event2.keyCode;
-    let char = String.fromCharCode(code);
-    let isDecimalSign = this.isDecimalSign(char);
-    const isMinusSign = this.isMinusSign(char);
-    if (code != 13) {
-      event2.preventDefault();
-    }
-    if (!isDecimalSign && event2.code === "NumpadDecimal") {
-      isDecimalSign = true;
-      char = this._decimalChar;
-      code = char.charCodeAt(0);
-    }
-    const newValue = this.parseValue(this.input.nativeElement.value + char);
-    const newValueStr = newValue != null ? newValue.toString() : "";
-    if (this.maxlength && this.getSelectedText()?.length == this.maxlength) {
-      this.insert(event2, char, {
-        isDecimalSign,
-        isMinusSign
-      });
-      return;
-    }
-    if (this.maxlength && newValueStr.length > this.maxlength) {
-      return;
-    }
-    if (48 <= code && code <= 57 || isMinusSign || isDecimalSign) {
-      this.insert(event2, char, {
-        isDecimalSign,
-        isMinusSign
-      });
-    }
-  }
-  getSelectedText() {
-    return window?.getSelection()?.toString().replaceAll(/[^0-9']/g, "") || "";
-  }
-  onPaste(event2) {
-    if (!this.disabled && !this.readonly) {
-      event2.preventDefault();
-      let data = (event2.clipboardData || this.document.defaultView["clipboardData"]).getData("Text");
-      if (data) {
-        if (this.maxlength) {
-          data = data.toString().substring(0, this.maxlength);
-        }
-        let filteredData = this.parseValue(data);
-        if (filteredData != null) {
-          this.insert(event2, filteredData.toString());
-        }
-      }
-    }
-  }
-  allowMinusSign() {
-    return this.min == null || this.min < 0;
-  }
-  isMinusSign(char) {
-    if (this._minusSign.test(char) || char === "-") {
-      this._minusSign.lastIndex = 0;
-      return true;
-    }
-    return false;
-  }
-  isDecimalSign(char) {
-    if (this._decimal.test(char)) {
-      this._decimal.lastIndex = 0;
-      return true;
-    }
-    return false;
-  }
-  isDecimalMode() {
-    return this.mode === "decimal";
-  }
-  getDecimalCharIndexes(val) {
-    let decimalCharIndex = val.search(this._decimal);
-    this._decimal.lastIndex = 0;
-    const filteredVal = val.replace(this._prefix, "").trim().replace(/\s/g, "").replace(this._currency, "");
-    const decimalCharIndexWithoutPrefix = filteredVal.search(this._decimal);
-    this._decimal.lastIndex = 0;
-    return {
-      decimalCharIndex,
-      decimalCharIndexWithoutPrefix
-    };
-  }
-  getCharIndexes(val) {
-    const decimalCharIndex = val.search(this._decimal);
-    this._decimal.lastIndex = 0;
-    const minusCharIndex = val.search(this._minusSign);
-    this._minusSign.lastIndex = 0;
-    const suffixCharIndex = val.search(this._suffix);
-    this._suffix.lastIndex = 0;
-    const currencyCharIndex = val.search(this._currency);
-    this._currency.lastIndex = 0;
-    return {
-      decimalCharIndex,
-      minusCharIndex,
-      suffixCharIndex,
-      currencyCharIndex
-    };
-  }
-  insert(event2, text, sign = {
-    isDecimalSign: false,
-    isMinusSign: false
-  }) {
-    const minusCharIndexOnText = text.search(this._minusSign);
-    this._minusSign.lastIndex = 0;
-    if (!this.allowMinusSign() && minusCharIndexOnText !== -1) {
-      return;
-    }
-    let selectionStart = this.input?.nativeElement.selectionStart;
-    let selectionEnd = this.input?.nativeElement.selectionEnd;
-    let inputValue = this.input?.nativeElement.value.trim();
-    const {
-      decimalCharIndex,
-      minusCharIndex,
-      suffixCharIndex,
-      currencyCharIndex
-    } = this.getCharIndexes(inputValue);
-    let newValueStr;
-    if (sign.isMinusSign) {
-      if (selectionStart === 0) {
-        newValueStr = inputValue;
-        if (minusCharIndex === -1 || selectionEnd !== 0) {
-          newValueStr = this.insertText(inputValue, text, 0, selectionEnd);
-        }
-        this.updateValue(event2, newValueStr, text, "insert");
-      }
-    } else if (sign.isDecimalSign) {
-      if (decimalCharIndex > 0 && selectionStart === decimalCharIndex) {
-        this.updateValue(event2, inputValue, text, "insert");
-      } else if (decimalCharIndex > selectionStart && decimalCharIndex < selectionEnd) {
-        newValueStr = this.insertText(inputValue, text, selectionStart, selectionEnd);
-        this.updateValue(event2, newValueStr, text, "insert");
-      } else if (decimalCharIndex === -1 && this.maxFractionDigits) {
-        newValueStr = this.insertText(inputValue, text, selectionStart, selectionEnd);
-        this.updateValue(event2, newValueStr, text, "insert");
-      }
-    } else {
-      const maxFractionDigits = this.numberFormat.resolvedOptions().maximumFractionDigits;
-      const operation = selectionStart !== selectionEnd ? "range-insert" : "insert";
-      if (decimalCharIndex > 0 && selectionStart > decimalCharIndex) {
-        if (selectionStart + text.length - (decimalCharIndex + 1) <= maxFractionDigits) {
-          const charIndex = currencyCharIndex >= selectionStart ? currencyCharIndex - 1 : suffixCharIndex >= selectionStart ? suffixCharIndex : inputValue.length;
-          newValueStr = inputValue.slice(0, selectionStart) + text + inputValue.slice(selectionStart + text.length, charIndex) + inputValue.slice(charIndex);
-          this.updateValue(event2, newValueStr, text, operation);
-        }
-      } else {
-        newValueStr = this.insertText(inputValue, text, selectionStart, selectionEnd);
-        this.updateValue(event2, newValueStr, text, operation);
-      }
-    }
-  }
-  insertText(value, text, start, end) {
-    let textSplit = text === "." ? text : text.split(".");
-    if (textSplit.length === 2) {
-      const decimalCharIndex = value.slice(start, end).search(this._decimal);
-      this._decimal.lastIndex = 0;
-      return decimalCharIndex > 0 ? value.slice(0, start) + this.formatValue(text) + value.slice(end) : value || this.formatValue(text);
-    } else if (end - start === value.length) {
-      return this.formatValue(text);
-    } else if (start === 0) {
-      return text + value.slice(end);
-    } else if (end === value.length) {
-      return value.slice(0, start) + text;
-    } else {
-      return value.slice(0, start) + text + value.slice(end);
-    }
-  }
-  deleteRange(value, start, end) {
-    let newValueStr;
-    if (end - start === value.length) newValueStr = "";
-    else if (start === 0) newValueStr = value.slice(end);
-    else if (end === value.length) newValueStr = value.slice(0, start);
-    else newValueStr = value.slice(0, start) + value.slice(end);
-    return newValueStr;
-  }
-  initCursor() {
-    let selectionStart = this.input?.nativeElement.selectionStart;
-    let selectionEnd = this.input?.nativeElement.selectionEnd;
-    let inputValue = this.input?.nativeElement.value;
-    let valueLength = inputValue.length;
-    let index = null;
-    let prefixLength = (this.prefixChar || "").length;
-    inputValue = inputValue.replace(this._prefix, "");
-    if (selectionStart === selectionEnd || selectionStart !== 0 || selectionEnd < prefixLength) {
-      selectionStart -= prefixLength;
-    }
-    let char = inputValue.charAt(selectionStart);
-    if (this.isNumeralChar(char)) {
-      return selectionStart + prefixLength;
-    }
-    let i = selectionStart - 1;
-    while (i >= 0) {
-      char = inputValue.charAt(i);
-      if (this.isNumeralChar(char)) {
-        index = i + prefixLength;
-        break;
-      } else {
-        i--;
-      }
-    }
-    if (index !== null) {
-      this.input?.nativeElement.setSelectionRange(index + 1, index + 1);
-    } else {
-      i = selectionStart;
-      while (i < valueLength) {
-        char = inputValue.charAt(i);
-        if (this.isNumeralChar(char)) {
-          index = i + prefixLength;
-          break;
-        } else {
-          i++;
-        }
-      }
-      if (index !== null) {
-        this.input?.nativeElement.setSelectionRange(index, index);
-      }
-    }
-    return index || 0;
-  }
-  onInputClick() {
-    const currentValue = this.input?.nativeElement.value;
-    if (!this.readonly && currentValue !== DomHandler.getSelection()) {
-      this.initCursor();
-    }
-  }
-  isNumeralChar(char) {
-    if (char.length === 1 && (this._numeral.test(char) || this._decimal.test(char) || this._group.test(char) || this._minusSign.test(char))) {
-      this.resetRegex();
-      return true;
-    }
-    return false;
-  }
-  resetRegex() {
-    this._numeral.lastIndex = 0;
-    this._decimal.lastIndex = 0;
-    this._group.lastIndex = 0;
-    this._minusSign.lastIndex = 0;
-  }
-  updateValue(event2, valueStr, insertedValueStr, operation) {
-    let currentValue = this.input?.nativeElement.value;
-    let newValue = null;
-    if (valueStr != null) {
-      newValue = this.parseValue(valueStr);
-      newValue = !newValue && !this.allowEmpty ? 0 : newValue;
-      this.updateInput(newValue, insertedValueStr, operation, valueStr);
-      this.handleOnInput(event2, currentValue, newValue);
-    }
-  }
-  handleOnInput(event2, currentValue, newValue) {
-    if (this.isValueChanged(currentValue, newValue)) {
-      this.input.nativeElement.value = this.formatValue(newValue);
-      this.input?.nativeElement.setAttribute("aria-valuenow", newValue);
-      !this.isBlurUpdateOnMode && this.updateModel(event2, newValue);
-      this.onInput.emit({
-        originalEvent: event2,
-        value: newValue,
-        formattedValue: currentValue
-      });
-    }
-  }
-  isValueChanged(currentValue, newValue) {
-    if (newValue === null && currentValue !== null) {
-      return true;
-    }
-    if (newValue != null) {
-      let parsedCurrentValue = typeof currentValue === "string" ? this.parseValue(currentValue) : currentValue;
-      return newValue !== parsedCurrentValue;
-    }
-    return false;
-  }
-  validateValue(value) {
-    if (value === "-" || value == null) {
-      return null;
-    }
-    if (this.min != null && value < this.min) {
-      return this.min;
-    }
-    if (this.max != null && value > this.max) {
-      return this.max;
-    }
-    return value;
-  }
-  updateInput(value, insertedValueStr, operation, valueStr) {
-    insertedValueStr = insertedValueStr || "";
-    let inputValue = this.input?.nativeElement.value;
-    let newValue = this.formatValue(value);
-    let currentLength = inputValue.length;
-    if (newValue !== valueStr) {
-      newValue = this.concatValues(newValue, valueStr);
-    }
-    if (currentLength === 0) {
-      this.input.nativeElement.value = newValue;
-      this.input.nativeElement.setSelectionRange(0, 0);
-      const index = this.initCursor();
-      const selectionEnd = index + insertedValueStr.length;
-      this.input.nativeElement.setSelectionRange(selectionEnd, selectionEnd);
-    } else {
-      let selectionStart = this.input.nativeElement.selectionStart;
-      let selectionEnd = this.input.nativeElement.selectionEnd;
-      if (this.maxlength && newValue.length > this.maxlength) {
-        newValue = newValue.slice(0, this.maxlength);
-        selectionStart = Math.min(selectionStart, this.maxlength);
-        selectionEnd = Math.min(selectionEnd, this.maxlength);
-      }
-      if (this.maxlength && this.maxlength < newValue.length) {
-        return;
-      }
-      this.input.nativeElement.value = newValue;
-      let newLength = newValue.length;
-      if (operation === "range-insert") {
-        const startValue = this.parseValue((inputValue || "").slice(0, selectionStart));
-        const startValueStr = startValue !== null ? startValue.toString() : "";
-        const startExpr = startValueStr.split("").join(`(${this.groupChar})?`);
-        const sRegex = new RegExp(startExpr, "g");
-        sRegex.test(newValue);
-        const tExpr = insertedValueStr.split("").join(`(${this.groupChar})?`);
-        const tRegex = new RegExp(tExpr, "g");
-        tRegex.test(newValue.slice(sRegex.lastIndex));
-        selectionEnd = sRegex.lastIndex + tRegex.lastIndex;
-        this.input.nativeElement.setSelectionRange(selectionEnd, selectionEnd);
-      } else if (newLength === currentLength) {
-        if (operation === "insert" || operation === "delete-back-single") this.input.nativeElement.setSelectionRange(selectionEnd + 1, selectionEnd + 1);
-        else if (operation === "delete-single") this.input.nativeElement.setSelectionRange(selectionEnd - 1, selectionEnd - 1);
-        else if (operation === "delete-range" || operation === "spin") this.input.nativeElement.setSelectionRange(selectionEnd, selectionEnd);
-      } else if (operation === "delete-back-single") {
-        let prevChar = inputValue.charAt(selectionEnd - 1);
-        let nextChar = inputValue.charAt(selectionEnd);
-        let diff = currentLength - newLength;
-        let isGroupChar = this._group.test(nextChar);
-        if (isGroupChar && diff === 1) {
-          selectionEnd += 1;
-        } else if (!isGroupChar && this.isNumeralChar(prevChar)) {
-          selectionEnd += -1 * diff + 1;
-        }
-        this._group.lastIndex = 0;
-        this.input.nativeElement.setSelectionRange(selectionEnd, selectionEnd);
-      } else if (inputValue === "-" && operation === "insert") {
-        this.input.nativeElement.setSelectionRange(0, 0);
-        const index = this.initCursor();
-        const selectionEnd2 = index + insertedValueStr.length + 1;
-        this.input.nativeElement.setSelectionRange(selectionEnd2, selectionEnd2);
-      } else {
-        selectionEnd = selectionEnd + (newLength - currentLength);
-        this.input.nativeElement.setSelectionRange(selectionEnd, selectionEnd);
-      }
-    }
-    this.input.nativeElement.setAttribute("aria-valuenow", value);
-  }
-  concatValues(val1, val2) {
-    if (val1 && val2) {
-      let decimalCharIndex = val2.search(this._decimal);
-      this._decimal.lastIndex = 0;
-      if (this.suffixChar) {
-        return decimalCharIndex !== -1 ? val1 : val1.replace(this.suffixChar, "").split(this._decimal)[0] + val2.replace(this.suffixChar, "").slice(decimalCharIndex) + this.suffixChar;
-      } else {
-        return decimalCharIndex !== -1 ? val1.split(this._decimal)[0] + val2.slice(decimalCharIndex) : val1;
-      }
-    }
-    return val1;
-  }
-  getDecimalLength(value) {
-    if (value) {
-      const valueSplit = value.split(this._decimal);
-      if (valueSplit.length === 2) {
-        return valueSplit[1].replace(this._suffix, "").trim().replace(/\s/g, "").replace(this._currency, "").length;
-      }
-    }
-    return 0;
-  }
-  onInputFocus(event2) {
-    this.focused = true;
-    this.onFocus.emit(event2);
-  }
-  onInputBlur(event2) {
-    this.focused = false;
-    const newValueNumber = this.validateValue(this.parseValue(this.input.nativeElement.value));
-    const newValueString = newValueNumber?.toString();
-    this.input.nativeElement.value = this.formatValue(newValueString);
-    this.input.nativeElement.setAttribute("aria-valuenow", newValueString);
-    this.updateModel(event2, newValueNumber);
-    this.onBlur.emit(event2);
-  }
-  formattedValue() {
-    const val = !this.value && !this.allowEmpty ? 0 : this.value;
-    return this.formatValue(val);
-  }
-  updateModel(event2, value) {
-    if (this.value !== value) {
-      this.value = value;
-      if (!(this.isBlurUpdateOnMode && this.focused)) {
-        this.onModelChange(value);
-      } else if (this.isBlurUpdateOnMode) {
-        this.onModelChange(value);
-      }
-    }
-    this.onModelTouched();
-  }
-  writeValue(value) {
-    this.value = value;
-    this.cd.markForCheck();
-  }
-  registerOnChange(fn) {
-    this.onModelChange = fn;
-  }
-  registerOnTouched(fn) {
-    this.onModelTouched = fn;
-  }
-  setDisabledState(val) {
-    this.disabled = val;
-    this.cd.markForCheck();
-  }
-  get filled() {
-    return this.value != null && this.value.toString().length > 0;
-  }
-  clearTimer() {
-    if (this.timer) {
-      clearInterval(this.timer);
-    }
-  }
-  static ɵfac = function InputNumber_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _InputNumber)(ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(Injector), ɵɵdirectiveInject(PrimeNGConfig));
-  };
-  static ɵcmp = ɵɵdefineComponent({
-    type: _InputNumber,
-    selectors: [["p-inputNumber"]],
-    contentQueries: function InputNumber_ContentQueries(rf, ctx, dirIndex) {
-      if (rf & 1) {
-        ɵɵcontentQuery(dirIndex, PrimeTemplate, 4);
-      }
-      if (rf & 2) {
-        let _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.templates = _t);
-      }
-    },
-    viewQuery: function InputNumber_Query(rf, ctx) {
-      if (rf & 1) {
-        ɵɵviewQuery(_c02, 5);
-      }
-      if (rf & 2) {
-        let _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.input = _t.first);
-      }
-    },
-    hostAttrs: [1, "p-element", "p-inputwrapper"],
-    hostVars: 6,
-    hostBindings: function InputNumber_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        ɵɵclassProp("p-inputwrapper-filled", ctx.filled)("p-inputwrapper-focus", ctx.focused)("p-inputnumber-clearable", ctx.showClear && ctx.buttonLayout != "vertical");
-      }
-    },
-    inputs: {
-      showButtons: [2, "showButtons", "showButtons", booleanAttribute],
-      format: [2, "format", "format", booleanAttribute],
-      buttonLayout: "buttonLayout",
-      inputId: "inputId",
-      styleClass: "styleClass",
-      style: "style",
-      placeholder: "placeholder",
-      size: [2, "size", "size", numberAttribute],
-      maxlength: [2, "maxlength", "maxlength", numberAttribute],
-      tabindex: [2, "tabindex", "tabindex", numberAttribute],
-      title: "title",
-      ariaLabelledBy: "ariaLabelledBy",
-      ariaLabel: "ariaLabel",
-      ariaRequired: [2, "ariaRequired", "ariaRequired", booleanAttribute],
-      name: "name",
-      required: [2, "required", "required", booleanAttribute],
-      autocomplete: "autocomplete",
-      min: [2, "min", "min", numberAttribute],
-      max: [2, "max", "max", numberAttribute],
-      incrementButtonClass: "incrementButtonClass",
-      decrementButtonClass: "decrementButtonClass",
-      incrementButtonIcon: "incrementButtonIcon",
-      decrementButtonIcon: "decrementButtonIcon",
-      readonly: [2, "readonly", "readonly", booleanAttribute],
-      step: [2, "step", "step", numberAttribute],
-      allowEmpty: [2, "allowEmpty", "allowEmpty", booleanAttribute],
-      locale: "locale",
-      localeMatcher: "localeMatcher",
-      mode: "mode",
-      currency: "currency",
-      currencyDisplay: "currencyDisplay",
-      useGrouping: [2, "useGrouping", "useGrouping", booleanAttribute],
-      variant: "variant",
-      minFractionDigits: [2, "minFractionDigits", "minFractionDigits", (value) => numberAttribute(value, null)],
-      maxFractionDigits: [2, "maxFractionDigits", "maxFractionDigits", (value) => numberAttribute(value, null)],
-      prefix: "prefix",
-      suffix: "suffix",
-      inputStyle: "inputStyle",
-      inputStyleClass: "inputStyleClass",
-      showClear: [2, "showClear", "showClear", booleanAttribute],
-      autofocus: [2, "autofocus", "autofocus", booleanAttribute],
-      disabled: "disabled"
-    },
-    outputs: {
-      onInput: "onInput",
-      onFocus: "onFocus",
-      onBlur: "onBlur",
-      onKeyDown: "onKeyDown",
-      onClear: "onClear"
-    },
-    features: [ɵɵProvidersFeature([INPUTNUMBER_VALUE_ACCESSOR]), ɵɵInputTransformsFeature, ɵɵNgOnChangesFeature],
-    decls: 7,
-    vars: 43,
-    consts: [["input", ""], [3, "ngClass", "ngStyle"], ["pInputText", "", "role", "spinbutton", "inputmode", "decimal", "pAutoFocus", "", 3, "input", "keydown", "keypress", "paste", "click", "focus", "blur", "ngClass", "ngStyle", "value", "disabled", "readonly", "autofocus"], [4, "ngIf"], ["class", "p-inputnumber-button-group", 4, "ngIf"], ["type", "button", "pButton", "", "class", "p-button-icon-only", "tabindex", "-1", 3, "ngClass", "class", "disabled", "mousedown", "mouseup", "mouseleave", "keydown", "keyup", 4, "ngIf"], [3, "ngClass", "click", 4, "ngIf"], ["class", "p-inputnumber-clear-icon", 3, "click", 4, "ngIf"], [3, "click", "ngClass"], [1, "p-inputnumber-clear-icon", 3, "click"], [4, "ngTemplateOutlet"], [1, "p-inputnumber-button-group"], ["type", "button", "pButton", "", "tabindex", "-1", 1, "p-button-icon-only", 3, "mousedown", "mouseup", "mouseleave", "keydown", "keyup", "ngClass", "disabled"], [3, "ngClass", 4, "ngIf"], [3, "ngClass"]],
-    template: function InputNumber_Template(rf, ctx) {
-      if (rf & 1) {
-        const _r1 = ɵɵgetCurrentView();
-        ɵɵelementStart(0, "span", 1)(1, "input", 2, 0);
-        ɵɵlistener("input", function InputNumber_Template_input_input_1_listener($event) {
-          ɵɵrestoreView(_r1);
-          return ɵɵresetView(ctx.onUserInput($event));
-        })("keydown", function InputNumber_Template_input_keydown_1_listener($event) {
-          ɵɵrestoreView(_r1);
-          return ɵɵresetView(ctx.onInputKeyDown($event));
-        })("keypress", function InputNumber_Template_input_keypress_1_listener($event) {
-          ɵɵrestoreView(_r1);
-          return ɵɵresetView(ctx.onInputKeyPress($event));
-        })("paste", function InputNumber_Template_input_paste_1_listener($event) {
-          ɵɵrestoreView(_r1);
-          return ɵɵresetView(ctx.onPaste($event));
-        })("click", function InputNumber_Template_input_click_1_listener() {
-          ɵɵrestoreView(_r1);
-          return ɵɵresetView(ctx.onInputClick());
-        })("focus", function InputNumber_Template_input_focus_1_listener($event) {
-          ɵɵrestoreView(_r1);
-          return ɵɵresetView(ctx.onInputFocus($event));
-        })("blur", function InputNumber_Template_input_blur_1_listener($event) {
-          ɵɵrestoreView(_r1);
-          return ɵɵresetView(ctx.onInputBlur($event));
-        });
-        ɵɵelementEnd();
-        ɵɵtemplate(3, InputNumber_ng_container_3_Template, 3, 2, "ng-container", 3)(4, InputNumber_span_4_Template, 7, 19, "span", 4)(5, InputNumber_button_5_Template, 3, 9, "button", 5)(6, InputNumber_button_6_Template, 3, 9, "button", 5);
-        ɵɵelementEnd();
-      }
-      if (rf & 2) {
-        ɵɵclassMap(ctx.styleClass);
-        ɵɵproperty("ngClass", ɵɵpureFunction3(39, _c17, ctx.showButtons && ctx.buttonLayout === "stacked", ctx.showButtons && ctx.buttonLayout === "horizontal", ctx.showButtons && ctx.buttonLayout === "vertical"))("ngStyle", ctx.style);
-        ɵɵattribute("data-pc-name", "inputnumber")("data-pc-section", "root");
-        ɵɵadvance();
-        ɵɵclassMap(ctx.inputStyleClass);
-        ɵɵclassProp("p-variant-filled", ctx.variant === "filled" || ctx.config.inputStyle() === "filled");
-        ɵɵproperty("ngClass", "p-inputnumber-input")("ngStyle", ctx.inputStyle)("value", ctx.formattedValue())("disabled", ctx.disabled)("readonly", ctx.readonly)("autofocus", ctx.autofocus);
-        ɵɵattribute("id", ctx.inputId)("variant", ctx.variant)("aria-valuemin", ctx.min)("aria-valuemax", ctx.max)("aria-valuenow", ctx.value)("placeholder", ctx.placeholder)("aria-label", ctx.ariaLabel)("aria-labelledby", ctx.ariaLabelledBy)("title", ctx.title)("size", ctx.size)("name", ctx.name)("autocomplete", ctx.autocomplete)("maxlength", ctx.maxlength)("tabindex", ctx.tabindex)("aria-required", ctx.ariaRequired)("required", ctx.required)("min", ctx.min)("max", ctx.max)("data-pc-section", "input");
-        ɵɵadvance(2);
-        ɵɵproperty("ngIf", ctx.buttonLayout != "vertical" && ctx.showClear && ctx.value);
-        ɵɵadvance();
-        ɵɵproperty("ngIf", ctx.showButtons && ctx.buttonLayout === "stacked");
-        ɵɵadvance();
-        ɵɵproperty("ngIf", ctx.showButtons && ctx.buttonLayout !== "stacked");
-        ɵɵadvance();
-        ɵɵproperty("ngIf", ctx.showButtons && ctx.buttonLayout !== "stacked");
-      }
-    },
-    dependencies: () => [NgClass, NgIf, NgTemplateOutlet, NgStyle, InputText, ButtonDirective, AutoFocus, TimesIcon, AngleUpIcon, AngleDownIcon],
-    styles: ["@layer primeng{p-inputnumber,.p-inputnumber{display:inline-flex}.p-inputnumber-button{display:flex;align-items:center;justify-content:center;flex:0 0 auto}.p-inputnumber-buttons-stacked .p-button.p-inputnumber-button .p-button-label,.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button .p-button-label{display:none}.p-inputnumber-buttons-stacked .p-button.p-inputnumber-button-up{border-top-left-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;padding:0}.p-inputnumber-buttons-stacked .p-inputnumber-input{border-top-right-radius:0;border-bottom-right-radius:0}.p-inputnumber-buttons-stacked .p-button.p-inputnumber-button-down{border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;padding:0}.p-inputnumber-buttons-stacked .p-inputnumber-button-group{display:flex;flex-direction:column}.p-inputnumber-buttons-stacked .p-inputnumber-button-group .p-button.p-inputnumber-button{flex:1 1 auto}.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-up{order:3;border-top-left-radius:0;border-bottom-left-radius:0}.p-inputnumber-buttons-horizontal .p-inputnumber-input{order:2;border-radius:0}.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-down{order:1;border-top-right-radius:0;border-bottom-right-radius:0}.p-inputnumber-buttons-vertical{flex-direction:column}.p-inputnumber-buttons-vertical .p-button.p-inputnumber-button-up{order:1;border-bottom-left-radius:0;border-bottom-right-radius:0;width:100%}.p-inputnumber-buttons-vertical .p-inputnumber-input{order:2;border-radius:0;text-align:center}.p-inputnumber-buttons-vertical .p-button.p-inputnumber-button-down{order:3;border-top-left-radius:0;border-top-right-radius:0;width:100%}.p-inputnumber-input{flex:1 1 auto}.p-fluid p-inputnumber,.p-fluid .p-inputnumber{width:100%}.p-fluid .p-inputnumber .p-inputnumber-input{width:1%}.p-fluid .p-inputnumber-buttons-vertical .p-inputnumber-input{width:100%}.p-inputnumber-clear-icon{position:absolute;top:50%;margin-top:-.5rem;cursor:pointer}.p-inputnumber-clearable{position:relative}}\n"],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(InputNumber, [{
-    type: Component,
-    args: [{
-      selector: "p-inputNumber",
-      template: `
-        <span
-            [ngClass]="{
-                'p-inputnumber p-component': true,
-                'p-inputnumber-buttons-stacked': this.showButtons && this.buttonLayout === 'stacked',
-                'p-inputnumber-buttons-horizontal': this.showButtons && this.buttonLayout === 'horizontal',
-                'p-inputnumber-buttons-vertical': this.showButtons && this.buttonLayout === 'vertical'
-            }"
-            [ngStyle]="style"
-            [class]="styleClass"
-            [attr.data-pc-name]="'inputnumber'"
-            [attr.data-pc-section]="'root'"
-        >
-            <input
-                pInputText
-                #input
-                [attr.id]="inputId"
-                role="spinbutton"
-                [ngClass]="'p-inputnumber-input'"
-                [ngStyle]="inputStyle"
-                [class]="inputStyleClass"
-                [value]="formattedValue()"
-                [attr.variant]="variant"
-                [attr.aria-valuemin]="min"
-                [attr.aria-valuemax]="max"
-                [attr.aria-valuenow]="value"
-                [disabled]="disabled"
-                [readonly]="readonly"
-                [attr.placeholder]="placeholder"
-                [attr.aria-label]="ariaLabel"
-                [attr.aria-labelledby]="ariaLabelledBy"
-                [attr.title]="title"
-                [attr.size]="size"
-                [attr.name]="name"
-                [attr.autocomplete]="autocomplete"
-                [attr.maxlength]="maxlength"
-                [attr.tabindex]="tabindex"
-                [attr.aria-required]="ariaRequired"
-                [attr.required]="required"
-                [attr.min]="min"
-                [attr.max]="max"
-                inputmode="decimal"
-                (input)="onUserInput($event)"
-                (keydown)="onInputKeyDown($event)"
-                (keypress)="onInputKeyPress($event)"
-                (paste)="onPaste($event)"
-                (click)="onInputClick()"
-                (focus)="onInputFocus($event)"
-                (blur)="onInputBlur($event)"
-                [attr.data-pc-section]="'input'"
-                pAutoFocus
-                [autofocus]="autofocus"
-                [class.p-variant-filled]="variant === 'filled' || config.inputStyle() === 'filled'"
-            />
-            <ng-container *ngIf="buttonLayout != 'vertical' && showClear && value">
-                <TimesIcon *ngIf="!clearIconTemplate" [ngClass]="'p-inputnumber-clear-icon'" (click)="clear()" [attr.data-pc-section]="'clearIcon'" />
-                <span *ngIf="clearIconTemplate" (click)="clear()" class="p-inputnumber-clear-icon" [attr.data-pc-section]="'clearIcon'">
-                    <ng-template *ngTemplateOutlet="clearIconTemplate"></ng-template>
-                </span>
-            </ng-container>
-            <span class="p-inputnumber-button-group" *ngIf="showButtons && buttonLayout === 'stacked'" [attr.data-pc-section]="'buttonGroup'">
-                <button
-                    type="button"
-                    pButton
-                    [ngClass]="{ 'p-inputnumber-button p-inputnumber-button-up': true }"
-                    class="p-button-icon-only"
-                    [class]="incrementButtonClass"
-                    [disabled]="disabled"
-                    tabindex="-1"
-                    (mousedown)="onUpButtonMouseDown($event)"
-                    (mouseup)="onUpButtonMouseUp()"
-                    (mouseleave)="onUpButtonMouseLeave()"
-                    (keydown)="onUpButtonKeyDown($event)"
-                    (keyup)="onUpButtonKeyUp()"
-                    [attr.aria-hidden]="true"
-                    [attr.data-pc-section]="'incrementbutton'"
-                >
-                    <span *ngIf="incrementButtonIcon" [ngClass]="incrementButtonIcon" [attr.data-pc-section]="'incrementbuttonicon'"></span>
-                    <ng-container *ngIf="!incrementButtonIcon">
-                        <AngleUpIcon *ngIf="!incrementButtonIconTemplate" [attr.data-pc-section]="'incrementbuttonicon'" />
-                        <ng-template *ngTemplateOutlet="incrementButtonIconTemplate"></ng-template>
-                    </ng-container>
-                </button>
-                <button
-                    type="button"
-                    pButton
-                    [ngClass]="{ 'p-inputnumber-button p-inputnumber-button-down': true }"
-                    class="p-button-icon-only"
-                    [class]="decrementButtonClass"
-                    [disabled]="disabled"
-                    tabindex="-1"
-                    [attr.aria-hidden]="true"
-                    (mousedown)="onDownButtonMouseDown($event)"
-                    (mouseup)="onDownButtonMouseUp()"
-                    (mouseleave)="onDownButtonMouseLeave()"
-                    (keydown)="onDownButtonKeyDown($event)"
-                    (keyup)="onDownButtonKeyUp()"
-                    [attr.data-pc-section]="decrementbutton"
-                >
-                    <span *ngIf="decrementButtonIcon" [ngClass]="decrementButtonIcon" [attr.data-pc-section]="'decrementbuttonicon'"></span>
-                    <ng-container *ngIf="!decrementButtonIcon">
-                        <AngleDownIcon *ngIf="!decrementButtonIconTemplate" [attr.data-pc-section]="'decrementbuttonicon'" />
-                        <ng-template *ngTemplateOutlet="decrementButtonIconTemplate"></ng-template>
-                    </ng-container>
-                </button>
-            </span>
-            <button
-                *ngIf="showButtons && buttonLayout !== 'stacked'"
-                type="button"
-                pButton
-                [ngClass]="{ 'p-inputnumber-button p-inputnumber-button-up': true }"
-                [class]="incrementButtonClass"
-                class="p-button-icon-only"
-                [disabled]="disabled"
-                tabindex="-1"
-                [attr.aria-hidden]="true"
-                (mousedown)="onUpButtonMouseDown($event)"
-                (mouseup)="onUpButtonMouseUp()"
-                (mouseleave)="onUpButtonMouseLeave()"
-                (keydown)="onUpButtonKeyDown($event)"
-                (keyup)="onUpButtonKeyUp()"
-                [attr.data-pc-section]="'incrementbutton'"
-            >
-                <span *ngIf="incrementButtonIcon" [ngClass]="incrementButtonIcon" [attr.data-pc-section]="'incrementbuttonicon'"></span>
-                <ng-container *ngIf="!incrementButtonIcon">
-                    <AngleUpIcon *ngIf="!incrementButtonIconTemplate" [attr.data-pc-section]="'incrementbuttonicon'" />
-                    <ng-template *ngTemplateOutlet="incrementButtonIconTemplate"></ng-template>
-                </ng-container>
-            </button>
-            <button
-                *ngIf="showButtons && buttonLayout !== 'stacked'"
-                type="button"
-                pButton
-                [ngClass]="{ 'p-inputnumber-button p-inputnumber-button-down': true }"
-                class="p-button-icon-only"
-                [class]="decrementButtonClass"
-                [disabled]="disabled"
-                tabindex="-1"
-                [attr.aria-hidden]="true"
-                (mousedown)="onDownButtonMouseDown($event)"
-                (mouseup)="onDownButtonMouseUp()"
-                (mouseleave)="onDownButtonMouseLeave()"
-                (keydown)="onDownButtonKeyDown($event)"
-                (keyup)="onDownButtonKeyUp()"
-                [attr.data-pc-section]="'decrementbutton'"
-            >
-                <span *ngIf="decrementButtonIcon" [ngClass]="decrementButtonIcon" [attr.data-pc-section]="'decrementbuttonicon'"></span>
-                <ng-container *ngIf="!decrementButtonIcon">
-                    <AngleDownIcon *ngIf="!decrementButtonIconTemplate" [attr.data-pc-section]="'decrementbuttonicon'" />
-                    <ng-template *ngTemplateOutlet="decrementButtonIconTemplate"></ng-template>
-                </ng-container>
-            </button>
-        </span>
-    `,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      providers: [INPUTNUMBER_VALUE_ACCESSOR],
-      encapsulation: ViewEncapsulation$1.None,
-      host: {
-        class: "p-element p-inputwrapper",
-        "[class.p-inputwrapper-filled]": "filled",
-        "[class.p-inputwrapper-focus]": "focused",
-        "[class.p-inputnumber-clearable]": 'showClear && buttonLayout != "vertical"'
-      },
-      styles: ["@layer primeng{p-inputnumber,.p-inputnumber{display:inline-flex}.p-inputnumber-button{display:flex;align-items:center;justify-content:center;flex:0 0 auto}.p-inputnumber-buttons-stacked .p-button.p-inputnumber-button .p-button-label,.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button .p-button-label{display:none}.p-inputnumber-buttons-stacked .p-button.p-inputnumber-button-up{border-top-left-radius:0;border-bottom-left-radius:0;border-bottom-right-radius:0;padding:0}.p-inputnumber-buttons-stacked .p-inputnumber-input{border-top-right-radius:0;border-bottom-right-radius:0}.p-inputnumber-buttons-stacked .p-button.p-inputnumber-button-down{border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:0;padding:0}.p-inputnumber-buttons-stacked .p-inputnumber-button-group{display:flex;flex-direction:column}.p-inputnumber-buttons-stacked .p-inputnumber-button-group .p-button.p-inputnumber-button{flex:1 1 auto}.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-up{order:3;border-top-left-radius:0;border-bottom-left-radius:0}.p-inputnumber-buttons-horizontal .p-inputnumber-input{order:2;border-radius:0}.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-down{order:1;border-top-right-radius:0;border-bottom-right-radius:0}.p-inputnumber-buttons-vertical{flex-direction:column}.p-inputnumber-buttons-vertical .p-button.p-inputnumber-button-up{order:1;border-bottom-left-radius:0;border-bottom-right-radius:0;width:100%}.p-inputnumber-buttons-vertical .p-inputnumber-input{order:2;border-radius:0;text-align:center}.p-inputnumber-buttons-vertical .p-button.p-inputnumber-button-down{order:3;border-top-left-radius:0;border-top-right-radius:0;width:100%}.p-inputnumber-input{flex:1 1 auto}.p-fluid p-inputnumber,.p-fluid .p-inputnumber{width:100%}.p-fluid .p-inputnumber .p-inputnumber-input{width:1%}.p-fluid .p-inputnumber-buttons-vertical .p-inputnumber-input{width:100%}.p-inputnumber-clear-icon{position:absolute;top:50%;margin-top:-.5rem;cursor:pointer}.p-inputnumber-clearable{position:relative}}\n"]
-    }]
-  }], () => [{
-    type: Document,
-    decorators: [{
-      type: Inject,
-      args: [DOCUMENT]
-    }]
-  }, {
-    type: ElementRef
-  }, {
-    type: ChangeDetectorRef
-  }, {
-    type: Injector
-  }, {
-    type: PrimeNGConfig
-  }], {
-    showButtons: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    format: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    buttonLayout: [{
-      type: Input
-    }],
-    inputId: [{
-      type: Input
-    }],
-    styleClass: [{
-      type: Input
-    }],
-    style: [{
-      type: Input
-    }],
-    placeholder: [{
-      type: Input
-    }],
-    size: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    maxlength: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    tabindex: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    title: [{
-      type: Input
-    }],
-    ariaLabelledBy: [{
-      type: Input
-    }],
-    ariaLabel: [{
-      type: Input
-    }],
-    ariaRequired: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    name: [{
-      type: Input
-    }],
-    required: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    autocomplete: [{
-      type: Input
-    }],
-    min: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    max: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    incrementButtonClass: [{
-      type: Input
-    }],
-    decrementButtonClass: [{
-      type: Input
-    }],
-    incrementButtonIcon: [{
-      type: Input
-    }],
-    decrementButtonIcon: [{
-      type: Input
-    }],
-    readonly: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    step: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    allowEmpty: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    locale: [{
-      type: Input
-    }],
-    localeMatcher: [{
-      type: Input
-    }],
-    mode: [{
-      type: Input
-    }],
-    currency: [{
-      type: Input
-    }],
-    currencyDisplay: [{
-      type: Input
-    }],
-    useGrouping: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    variant: [{
-      type: Input
-    }],
-    minFractionDigits: [{
-      type: Input,
-      args: [{
-        transform: (value) => numberAttribute(value, null)
-      }]
-    }],
-    maxFractionDigits: [{
-      type: Input,
-      args: [{
-        transform: (value) => numberAttribute(value, null)
-      }]
-    }],
-    prefix: [{
-      type: Input
-    }],
-    suffix: [{
-      type: Input
-    }],
-    inputStyle: [{
-      type: Input
-    }],
-    inputStyleClass: [{
-      type: Input
-    }],
-    showClear: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    autofocus: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    disabled: [{
-      type: Input
-    }],
-    onInput: [{
-      type: Output
-    }],
-    onFocus: [{
-      type: Output
-    }],
-    onBlur: [{
-      type: Output
-    }],
-    onKeyDown: [{
-      type: Output
-    }],
-    onClear: [{
-      type: Output
-    }],
-    input: [{
-      type: ViewChild,
-      args: ["input"]
-    }],
-    templates: [{
-      type: ContentChildren,
-      args: [PrimeTemplate]
-    }]
-  });
-})();
-var InputNumberModule = class _InputNumberModule {
-  static ɵfac = function InputNumberModule_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _InputNumberModule)();
-  };
-  static ɵmod = ɵɵdefineNgModule({
-    type: _InputNumberModule,
-    declarations: [InputNumber],
-    imports: [CommonModule, InputTextModule, ButtonModule, AutoFocusModule, TimesIcon, AngleUpIcon, AngleDownIcon],
-    exports: [InputNumber, SharedModule]
-  });
-  static ɵinj = ɵɵdefineInjector({
-    imports: [CommonModule, InputTextModule, ButtonModule, AutoFocusModule, TimesIcon, AngleUpIcon, AngleDownIcon, SharedModule]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(InputNumberModule, [{
-    type: NgModule,
-    args: [{
-      imports: [CommonModule, InputTextModule, ButtonModule, AutoFocusModule, TimesIcon, AngleUpIcon, AngleDownIcon],
-      exports: [InputNumber, SharedModule],
-      declarations: [InputNumber]
-    }]
-  }], null, null);
-})();
-
-// node_modules/primeng/fesm2022/primeng-icons-angledoubleleft.mjs
-var AngleDoubleLeftIcon = class _AngleDoubleLeftIcon extends BaseIcon {
-  static ɵfac = /* @__PURE__ */ (() => {
-    let ɵAngleDoubleLeftIcon_BaseFactory;
-    return function AngleDoubleLeftIcon_Factory(__ngFactoryType__) {
-      return (ɵAngleDoubleLeftIcon_BaseFactory || (ɵAngleDoubleLeftIcon_BaseFactory = ɵɵgetInheritedFactory(_AngleDoubleLeftIcon)))(__ngFactoryType__ || _AngleDoubleLeftIcon);
-    };
-  })();
-  static ɵcmp = ɵɵdefineComponent({
-    type: _AngleDoubleLeftIcon,
-    selectors: [["AngleDoubleLeftIcon"]],
-    standalone: true,
-    features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-    decls: 2,
-    vars: 5,
-    consts: [["width", "14", "height", "14", "viewBox", "0 0 14 14", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["fill-rule", "evenodd", "clip-rule", "evenodd", "d", "M5.71602 11.164C5.80782 11.2021 5.9063 11.2215 6.00569 11.221C6.20216 11.2301 6.39427 11.1612 6.54025 11.0294C6.68191 10.8875 6.76148 10.6953 6.76148 10.4948C6.76148 10.2943 6.68191 10.1021 6.54025 9.96024L3.51441 6.9344L6.54025 3.90855C6.624 3.76126 6.65587 3.59011 6.63076 3.42254C6.60564 3.25498 6.525 3.10069 6.40175 2.98442C6.2785 2.86815 6.11978 2.79662 5.95104 2.7813C5.78229 2.76598 5.61329 2.80776 5.47112 2.89994L1.97123 6.39983C1.82957 6.54167 1.75 6.73393 1.75 6.9344C1.75 7.13486 1.82957 7.32712 1.97123 7.46896L5.47112 10.9991C5.54096 11.0698 5.62422 11.1259 5.71602 11.164ZM11.0488 10.9689C11.1775 11.1156 11.3585 11.2061 11.5531 11.221C11.7477 11.2061 11.9288 11.1156 12.0574 10.9689C12.1815 10.8302 12.25 10.6506 12.25 10.4645C12.25 10.2785 12.1815 10.0989 12.0574 9.96024L9.03158 6.93439L12.0574 3.90855C12.1248 3.76739 12.1468 3.60881 12.1204 3.45463C12.0939 3.30045 12.0203 3.15826 11.9097 3.04765C11.7991 2.93703 11.6569 2.86343 11.5027 2.83698C11.3486 2.81053 11.19 2.83252 11.0488 2.89994L7.51865 6.36957C7.37699 6.51141 7.29742 6.70367 7.29742 6.90414C7.29742 7.1046 7.37699 7.29686 7.51865 7.4387L11.0488 10.9689Z", "fill", "currentColor"]],
-    template: function AngleDoubleLeftIcon_Template(rf, ctx) {
-      if (rf & 1) {
-        ɵɵnamespaceSVG();
-        ɵɵelementStart(0, "svg", 0);
-        ɵɵelement(1, "path", 1);
-        ɵɵelementEnd();
-      }
-      if (rf & 2) {
-        ɵɵclassMap(ctx.getClassNames());
-        ɵɵattribute("aria-label", ctx.ariaLabel)("aria-hidden", ctx.ariaHidden)("role", ctx.role);
-      }
-    },
-    encapsulation: 2
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AngleDoubleLeftIcon, [{
-    type: Component,
-    args: [{
-      selector: "AngleDoubleLeftIcon",
-      standalone: true,
-      imports: [BaseIcon],
-      template: `
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" [attr.aria-label]="ariaLabel" [attr.aria-hidden]="ariaHidden" [attr.role]="role" [class]="getClassNames()">
-            <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M5.71602 11.164C5.80782 11.2021 5.9063 11.2215 6.00569 11.221C6.20216 11.2301 6.39427 11.1612 6.54025 11.0294C6.68191 10.8875 6.76148 10.6953 6.76148 10.4948C6.76148 10.2943 6.68191 10.1021 6.54025 9.96024L3.51441 6.9344L6.54025 3.90855C6.624 3.76126 6.65587 3.59011 6.63076 3.42254C6.60564 3.25498 6.525 3.10069 6.40175 2.98442C6.2785 2.86815 6.11978 2.79662 5.95104 2.7813C5.78229 2.76598 5.61329 2.80776 5.47112 2.89994L1.97123 6.39983C1.82957 6.54167 1.75 6.73393 1.75 6.9344C1.75 7.13486 1.82957 7.32712 1.97123 7.46896L5.47112 10.9991C5.54096 11.0698 5.62422 11.1259 5.71602 11.164ZM11.0488 10.9689C11.1775 11.1156 11.3585 11.2061 11.5531 11.221C11.7477 11.2061 11.9288 11.1156 12.0574 10.9689C12.1815 10.8302 12.25 10.6506 12.25 10.4645C12.25 10.2785 12.1815 10.0989 12.0574 9.96024L9.03158 6.93439L12.0574 3.90855C12.1248 3.76739 12.1468 3.60881 12.1204 3.45463C12.0939 3.30045 12.0203 3.15826 11.9097 3.04765C11.7991 2.93703 11.6569 2.86343 11.5027 2.83698C11.3486 2.81053 11.19 2.83252 11.0488 2.89994L7.51865 6.36957C7.37699 6.51141 7.29742 6.70367 7.29742 6.90414C7.29742 7.1046 7.37699 7.29686 7.51865 7.4387L11.0488 10.9689Z"
-                fill="currentColor"
-            />
-        </svg>
-    `
-    }]
-  }], null, null);
-})();
-
-// node_modules/primeng/fesm2022/primeng-icons-angledoubleright.mjs
-var AngleDoubleRightIcon = class _AngleDoubleRightIcon extends BaseIcon {
-  static ɵfac = /* @__PURE__ */ (() => {
-    let ɵAngleDoubleRightIcon_BaseFactory;
-    return function AngleDoubleRightIcon_Factory(__ngFactoryType__) {
-      return (ɵAngleDoubleRightIcon_BaseFactory || (ɵAngleDoubleRightIcon_BaseFactory = ɵɵgetInheritedFactory(_AngleDoubleRightIcon)))(__ngFactoryType__ || _AngleDoubleRightIcon);
-    };
-  })();
-  static ɵcmp = ɵɵdefineComponent({
-    type: _AngleDoubleRightIcon,
-    selectors: [["AngleDoubleRightIcon"]],
-    standalone: true,
-    features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-    decls: 2,
-    vars: 5,
-    consts: [["width", "14", "height", "14", "viewBox", "0 0 14 14", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["fill-rule", "evenodd", "clip-rule", "evenodd", "d", "M7.68757 11.1451C7.7791 11.1831 7.8773 11.2024 7.9764 11.2019C8.07769 11.1985 8.17721 11.1745 8.26886 11.1312C8.36052 11.088 8.44238 11.0265 8.50943 10.9505L12.0294 7.49085C12.1707 7.34942 12.25 7.15771 12.25 6.95782C12.25 6.75794 12.1707 6.56622 12.0294 6.42479L8.50943 2.90479C8.37014 2.82159 8.20774 2.78551 8.04633 2.80192C7.88491 2.81833 7.73309 2.88635 7.6134 2.99588C7.4937 3.10541 7.41252 3.25061 7.38189 3.40994C7.35126 3.56927 7.37282 3.73423 7.44337 3.88033L10.4605 6.89748L7.44337 9.91463C7.30212 10.0561 7.22278 10.2478 7.22278 10.4477C7.22278 10.6475 7.30212 10.8393 7.44337 10.9807C7.51301 11.0512 7.59603 11.1071 7.68757 11.1451ZM1.94207 10.9505C2.07037 11.0968 2.25089 11.1871 2.44493 11.2019C2.63898 11.1871 2.81949 11.0968 2.94779 10.9505L6.46779 7.49085C6.60905 7.34942 6.68839 7.15771 6.68839 6.95782C6.68839 6.75793 6.60905 6.56622 6.46779 6.42479L2.94779 2.90479C2.80704 2.83757 2.6489 2.81563 2.49517 2.84201C2.34143 2.86839 2.19965 2.94178 2.08936 3.05207C1.97906 3.16237 1.90567 3.30415 1.8793 3.45788C1.85292 3.61162 1.87485 3.76975 1.94207 3.9105L4.95922 6.92765L1.94207 9.9448C1.81838 10.0831 1.75 10.2621 1.75 10.4477C1.75 10.6332 1.81838 10.8122 1.94207 10.9505Z", "fill", "currentColor"]],
-    template: function AngleDoubleRightIcon_Template(rf, ctx) {
-      if (rf & 1) {
-        ɵɵnamespaceSVG();
-        ɵɵelementStart(0, "svg", 0);
-        ɵɵelement(1, "path", 1);
-        ɵɵelementEnd();
-      }
-      if (rf & 2) {
-        ɵɵclassMap(ctx.getClassNames());
-        ɵɵattribute("aria-label", ctx.ariaLabel)("aria-hidden", ctx.ariaHidden)("role", ctx.role);
-      }
-    },
-    encapsulation: 2
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AngleDoubleRightIcon, [{
-    type: Component,
-    args: [{
-      selector: "AngleDoubleRightIcon",
-      standalone: true,
-      imports: [BaseIcon],
-      template: `
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" [attr.aria-label]="ariaLabel" [attr.aria-hidden]="ariaHidden" [attr.role]="role" [class]="getClassNames()">
-            <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M7.68757 11.1451C7.7791 11.1831 7.8773 11.2024 7.9764 11.2019C8.07769 11.1985 8.17721 11.1745 8.26886 11.1312C8.36052 11.088 8.44238 11.0265 8.50943 10.9505L12.0294 7.49085C12.1707 7.34942 12.25 7.15771 12.25 6.95782C12.25 6.75794 12.1707 6.56622 12.0294 6.42479L8.50943 2.90479C8.37014 2.82159 8.20774 2.78551 8.04633 2.80192C7.88491 2.81833 7.73309 2.88635 7.6134 2.99588C7.4937 3.10541 7.41252 3.25061 7.38189 3.40994C7.35126 3.56927 7.37282 3.73423 7.44337 3.88033L10.4605 6.89748L7.44337 9.91463C7.30212 10.0561 7.22278 10.2478 7.22278 10.4477C7.22278 10.6475 7.30212 10.8393 7.44337 10.9807C7.51301 11.0512 7.59603 11.1071 7.68757 11.1451ZM1.94207 10.9505C2.07037 11.0968 2.25089 11.1871 2.44493 11.2019C2.63898 11.1871 2.81949 11.0968 2.94779 10.9505L6.46779 7.49085C6.60905 7.34942 6.68839 7.15771 6.68839 6.95782C6.68839 6.75793 6.60905 6.56622 6.46779 6.42479L2.94779 2.90479C2.80704 2.83757 2.6489 2.81563 2.49517 2.84201C2.34143 2.86839 2.19965 2.94178 2.08936 3.05207C1.97906 3.16237 1.90567 3.30415 1.8793 3.45788C1.85292 3.61162 1.87485 3.76975 1.94207 3.9105L4.95922 6.92765L1.94207 9.9448C1.81838 10.0831 1.75 10.2621 1.75 10.4477C1.75 10.6332 1.81838 10.8122 1.94207 10.9505Z"
-                fill="currentColor"
-            />
-        </svg>
-    `
-    }]
-  }], null, null);
-})();
-
-// node_modules/primeng/fesm2022/primeng-icons-angleleft.mjs
-var AngleLeftIcon = class _AngleLeftIcon extends BaseIcon {
-  static ɵfac = /* @__PURE__ */ (() => {
-    let ɵAngleLeftIcon_BaseFactory;
-    return function AngleLeftIcon_Factory(__ngFactoryType__) {
-      return (ɵAngleLeftIcon_BaseFactory || (ɵAngleLeftIcon_BaseFactory = ɵɵgetInheritedFactory(_AngleLeftIcon)))(__ngFactoryType__ || _AngleLeftIcon);
-    };
-  })();
-  static ɵcmp = ɵɵdefineComponent({
-    type: _AngleLeftIcon,
-    selectors: [["AngleLeftIcon"]],
-    standalone: true,
-    features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-    decls: 2,
-    vars: 5,
-    consts: [["width", "14", "height", "14", "viewBox", "0 0 14 14", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M8.75 11.185C8.65146 11.1854 8.55381 11.1662 8.4628 11.1284C8.37179 11.0906 8.28924 11.0351 8.22 10.965L4.72 7.46496C4.57955 7.32433 4.50066 7.13371 4.50066 6.93496C4.50066 6.73621 4.57955 6.54558 4.72 6.40496L8.22 2.93496C8.36095 2.84357 8.52851 2.80215 8.69582 2.81733C8.86312 2.83252 9.02048 2.90344 9.14268 3.01872C9.26487 3.134 9.34483 3.28696 9.36973 3.4531C9.39463 3.61924 9.36303 3.78892 9.28 3.93496L6.28 6.93496L9.28 9.93496C9.42045 10.0756 9.49934 10.2662 9.49934 10.465C9.49934 10.6637 9.42045 10.8543 9.28 10.995C9.13526 11.1257 8.9448 11.1939 8.75 11.185Z", "fill", "currentColor"]],
-    template: function AngleLeftIcon_Template(rf, ctx) {
-      if (rf & 1) {
-        ɵɵnamespaceSVG();
-        ɵɵelementStart(0, "svg", 0);
-        ɵɵelement(1, "path", 1);
-        ɵɵelementEnd();
-      }
-      if (rf & 2) {
-        ɵɵclassMap(ctx.getClassNames());
-        ɵɵattribute("aria-label", ctx.ariaLabel)("aria-hidden", ctx.ariaHidden)("role", ctx.role);
-      }
-    },
-    encapsulation: 2
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AngleLeftIcon, [{
-    type: Component,
-    args: [{
-      selector: "AngleLeftIcon",
-      standalone: true,
-      imports: [BaseIcon],
-      template: `
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" [attr.aria-label]="ariaLabel" [attr.aria-hidden]="ariaHidden" [attr.role]="role" [class]="getClassNames()">
-            <path
-                d="M8.75 11.185C8.65146 11.1854 8.55381 11.1662 8.4628 11.1284C8.37179 11.0906 8.28924 11.0351 8.22 10.965L4.72 7.46496C4.57955 7.32433 4.50066 7.13371 4.50066 6.93496C4.50066 6.73621 4.57955 6.54558 4.72 6.40496L8.22 2.93496C8.36095 2.84357 8.52851 2.80215 8.69582 2.81733C8.86312 2.83252 9.02048 2.90344 9.14268 3.01872C9.26487 3.134 9.34483 3.28696 9.36973 3.4531C9.39463 3.61924 9.36303 3.78892 9.28 3.93496L6.28 6.93496L9.28 9.93496C9.42045 10.0756 9.49934 10.2662 9.49934 10.465C9.49934 10.6637 9.42045 10.8543 9.28 10.995C9.13526 11.1257 8.9448 11.1939 8.75 11.185Z"
-                fill="currentColor"
-            />
-        </svg>
-    `
-    }]
-  }], null, null);
-})();
-
-// node_modules/primeng/fesm2022/primeng-icons-angleright.mjs
-var AngleRightIcon = class _AngleRightIcon extends BaseIcon {
-  static ɵfac = /* @__PURE__ */ (() => {
-    let ɵAngleRightIcon_BaseFactory;
-    return function AngleRightIcon_Factory(__ngFactoryType__) {
-      return (ɵAngleRightIcon_BaseFactory || (ɵAngleRightIcon_BaseFactory = ɵɵgetInheritedFactory(_AngleRightIcon)))(__ngFactoryType__ || _AngleRightIcon);
-    };
-  })();
-  static ɵcmp = ɵɵdefineComponent({
-    type: _AngleRightIcon,
-    selectors: [["AngleRightIcon"]],
-    standalone: true,
-    features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-    decls: 2,
-    vars: 5,
-    consts: [["width", "14", "height", "14", "viewBox", "0 0 14 14", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M5.25 11.1728C5.14929 11.1694 5.05033 11.1455 4.9592 11.1025C4.86806 11.0595 4.78666 10.9984 4.72 10.9228C4.57955 10.7822 4.50066 10.5916 4.50066 10.3928C4.50066 10.1941 4.57955 10.0035 4.72 9.86283L7.72 6.86283L4.72 3.86283C4.66067 3.71882 4.64765 3.55991 4.68275 3.40816C4.71785 3.25642 4.79932 3.11936 4.91585 3.01602C5.03238 2.91268 5.17819 2.84819 5.33305 2.83149C5.4879 2.81479 5.64411 2.84671 5.78 2.92283L9.28 6.42283C9.42045 6.56346 9.49934 6.75408 9.49934 6.95283C9.49934 7.15158 9.42045 7.34221 9.28 7.48283L5.78 10.9228C5.71333 10.9984 5.63193 11.0595 5.5408 11.1025C5.44966 11.1455 5.35071 11.1694 5.25 11.1728Z", "fill", "currentColor"]],
-    template: function AngleRightIcon_Template(rf, ctx) {
-      if (rf & 1) {
-        ɵɵnamespaceSVG();
-        ɵɵelementStart(0, "svg", 0);
-        ɵɵelement(1, "path", 1);
-        ɵɵelementEnd();
-      }
-      if (rf & 2) {
-        ɵɵclassMap(ctx.getClassNames());
-        ɵɵattribute("aria-label", ctx.ariaLabel)("aria-hidden", ctx.ariaHidden)("role", ctx.role);
-      }
-    },
-    encapsulation: 2
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AngleRightIcon, [{
-    type: Component,
-    args: [{
-      selector: "AngleRightIcon",
-      standalone: true,
-      imports: [BaseIcon],
-      template: `
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" [attr.aria-label]="ariaLabel" [attr.aria-hidden]="ariaHidden" [attr.role]="role" [class]="getClassNames()">
-            <path
-                d="M5.25 11.1728C5.14929 11.1694 5.05033 11.1455 4.9592 11.1025C4.86806 11.0595 4.78666 10.9984 4.72 10.9228C4.57955 10.7822 4.50066 10.5916 4.50066 10.3928C4.50066 10.1941 4.57955 10.0035 4.72 9.86283L7.72 6.86283L4.72 3.86283C4.66067 3.71882 4.64765 3.55991 4.68275 3.40816C4.71785 3.25642 4.79932 3.11936 4.91585 3.01602C5.03238 2.91268 5.17819 2.84819 5.33305 2.83149C5.4879 2.81479 5.64411 2.84671 5.78 2.92283L9.28 6.42283C9.42045 6.56346 9.49934 6.75408 9.49934 6.95283C9.49934 7.15158 9.42045 7.34221 9.28 7.48283L5.78 10.9228C5.71333 10.9984 5.63193 11.0595 5.5408 11.1025C5.44966 11.1455 5.35071 11.1694 5.25 11.1728Z"
-                fill="currentColor"
-            />
-        </svg>
-    `
-    }]
-  }], null, null);
-})();
-
-// node_modules/primeng/fesm2022/primeng-paginator.mjs
-var _c03 = (a0) => ({
-  "p-disabled": a0
-});
-var _c18 = (a0) => ({
-  $implicit: a0
-});
-var _c23 = (a0) => ({
-  "p-highlight": a0
-});
-function Paginator_div_0_div_1_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Paginator_div_0_div_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div", 15);
-    ɵɵtemplate(1, Paginator_div_0_div_1_ng_container_1_Template, 1, 0, "ng-container", 16);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵattribute("data-pc-section", "start");
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.templateLeft)("ngTemplateOutletContext", ɵɵpureFunction1(3, _c18, ctx_r1.paginatorState));
-  }
-}
-function Paginator_div_0_span_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "span", 17);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵadvance();
-    ɵɵtextInterpolate(ctx_r1.currentPageReport);
-  }
-}
-function Paginator_div_0_button_3_AngleDoubleLeftIcon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "AngleDoubleLeftIcon", 19);
-  }
-  if (rf & 2) {
-    ɵɵproperty("styleClass", "p-paginator-icon");
-  }
-}
-function Paginator_div_0_button_3_span_2_1_ng_template_0_Template(rf, ctx) {
-}
-function Paginator_div_0_button_3_span_2_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Paginator_div_0_button_3_span_2_1_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Paginator_div_0_button_3_span_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "span", 20);
-    ɵɵtemplate(1, Paginator_div_0_button_3_span_2_1_Template, 1, 0, null, 21);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.firstPageLinkIconTemplate);
-  }
-}
-function Paginator_div_0_button_3_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r3 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 18);
-    ɵɵlistener("click", function Paginator_div_0_button_3_Template_button_click_0_listener($event) {
-      ɵɵrestoreView(_r3);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.changePageToFirst($event));
-    });
-    ɵɵtemplate(1, Paginator_div_0_button_3_AngleDoubleLeftIcon_1_Template, 1, 1, "AngleDoubleLeftIcon", 6)(2, Paginator_div_0_button_3_span_2_Template, 2, 1, "span", 7);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵproperty("disabled", ctx_r1.isFirstPage() || ctx_r1.empty())("ngClass", ɵɵpureFunction1(5, _c03, ctx_r1.isFirstPage() || ctx_r1.empty()));
-    ɵɵattribute("aria-label", ctx_r1.getAriaLabel("firstPageLabel"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.firstPageLinkIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.firstPageLinkIconTemplate);
-  }
-}
-function Paginator_div_0_AngleLeftIcon_5_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "AngleLeftIcon", 19);
-  }
-  if (rf & 2) {
-    ɵɵproperty("styleClass", "p-paginator-icon");
-  }
-}
-function Paginator_div_0_span_6_1_ng_template_0_Template(rf, ctx) {
-}
-function Paginator_div_0_span_6_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Paginator_div_0_span_6_1_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Paginator_div_0_span_6_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "span", 20);
-    ɵɵtemplate(1, Paginator_div_0_span_6_1_Template, 1, 0, null, 21);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.previousPageLinkIconTemplate);
-  }
-}
-function Paginator_div_0_span_7_button_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r4 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 24);
-    ɵɵlistener("click", function Paginator_div_0_span_7_button_1_Template_button_click_0_listener($event) {
-      const pageLink_r5 = ɵɵrestoreView(_r4).$implicit;
-      const ctx_r1 = ɵɵnextContext(3);
-      return ɵɵresetView(ctx_r1.onPageLinkClick($event, pageLink_r5 - 1));
-    });
-    ɵɵtext(1);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const pageLink_r5 = ctx.$implicit;
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵproperty("ngClass", ɵɵpureFunction1(4, _c23, pageLink_r5 - 1 == ctx_r1.getPage()));
-    ɵɵattribute("aria-label", ctx_r1.getPageAriaLabel(pageLink_r5))("aria-current", pageLink_r5 - 1 == ctx_r1.getPage() ? "page" : void 0);
-    ɵɵadvance();
-    ɵɵtextInterpolate1(" ", ctx_r1.getLocalization(pageLink_r5), " ");
-  }
-}
-function Paginator_div_0_span_7_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "span", 22);
-    ɵɵtemplate(1, Paginator_div_0_span_7_button_1_Template, 2, 6, "button", 23);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵadvance();
-    ɵɵproperty("ngForOf", ctx_r1.pageLinks);
-  }
-}
-function Paginator_div_0_p_dropdown_8_ng_template_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtext(0);
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵtextInterpolate(ctx_r1.currentPageReport);
-  }
-}
-function Paginator_div_0_p_dropdown_8_ng_container_2_ng_template_1_ng_container_0_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Paginator_div_0_p_dropdown_8_ng_container_2_ng_template_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Paginator_div_0_p_dropdown_8_ng_container_2_ng_template_1_ng_container_0_Template, 1, 0, "ng-container", 16);
-  }
-  if (rf & 2) {
-    const item_r7 = ctx.$implicit;
-    const ctx_r1 = ɵɵnextContext(4);
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.jumpToPageItemTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c18, item_r7));
-  }
-}
-function Paginator_div_0_p_dropdown_8_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, Paginator_div_0_p_dropdown_8_ng_container_2_ng_template_1_Template, 1, 4, "ng-template", 28);
-    ɵɵelementContainerEnd();
-  }
-}
-function Paginator_div_0_p_dropdown_8_3_ng_template_0_ng_container_0_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Paginator_div_0_p_dropdown_8_3_ng_template_0_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Paginator_div_0_p_dropdown_8_3_ng_template_0_ng_container_0_Template, 1, 0, "ng-container", 21);
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(4);
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.dropdownIconTemplate);
-  }
-}
-function Paginator_div_0_p_dropdown_8_3_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Paginator_div_0_p_dropdown_8_3_ng_template_0_Template, 1, 1, "ng-template", 29);
-  }
-}
-function Paginator_div_0_p_dropdown_8_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r6 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "p-dropdown", 25);
-    ɵɵlistener("onChange", function Paginator_div_0_p_dropdown_8_Template_p_dropdown_onChange_0_listener($event) {
-      ɵɵrestoreView(_r6);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onPageDropdownChange($event));
-    });
-    ɵɵtemplate(1, Paginator_div_0_p_dropdown_8_ng_template_1_Template, 1, 1, "ng-template", 26)(2, Paginator_div_0_p_dropdown_8_ng_container_2_Template, 2, 0, "ng-container", 27)(3, Paginator_div_0_p_dropdown_8_3_Template, 1, 0, null, 27);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵproperty("options", ctx_r1.pageItems)("ngModel", ctx_r1.getPage())("disabled", ctx_r1.empty())("appendTo", ctx_r1.dropdownAppendTo)("scrollHeight", ctx_r1.dropdownScrollHeight);
-    ɵɵattribute("aria-label", ctx_r1.getAriaLabel("jumpToPageDropdownLabel"));
-    ɵɵadvance(2);
-    ɵɵproperty("ngIf", ctx_r1.jumpToPageItemTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.dropdownIconTemplate);
-  }
-}
-function Paginator_div_0_AngleRightIcon_10_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "AngleRightIcon", 19);
-  }
-  if (rf & 2) {
-    ɵɵproperty("styleClass", "p-paginator-icon");
-  }
-}
-function Paginator_div_0_span_11_1_ng_template_0_Template(rf, ctx) {
-}
-function Paginator_div_0_span_11_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Paginator_div_0_span_11_1_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Paginator_div_0_span_11_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "span", 20);
-    ɵɵtemplate(1, Paginator_div_0_span_11_1_Template, 1, 0, null, 21);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.nextPageLinkIconTemplate);
-  }
-}
-function Paginator_div_0_button_12_AngleDoubleRightIcon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "AngleDoubleRightIcon", 19);
-  }
-  if (rf & 2) {
-    ɵɵproperty("styleClass", "p-paginator-icon");
-  }
-}
-function Paginator_div_0_button_12_span_2_1_ng_template_0_Template(rf, ctx) {
-}
-function Paginator_div_0_button_12_span_2_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Paginator_div_0_button_12_span_2_1_ng_template_0_Template, 0, 0, "ng-template");
-  }
-}
-function Paginator_div_0_button_12_span_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "span", 20);
-    ɵɵtemplate(1, Paginator_div_0_button_12_span_2_1_Template, 1, 0, null, 21);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.lastPageLinkIconTemplate);
-  }
-}
-function Paginator_div_0_button_12_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r8 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 30);
-    ɵɵlistener("click", function Paginator_div_0_button_12_Template_button_click_0_listener($event) {
-      ɵɵrestoreView(_r8);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.changePageToLast($event));
-    });
-    ɵɵtemplate(1, Paginator_div_0_button_12_AngleDoubleRightIcon_1_Template, 1, 1, "AngleDoubleRightIcon", 6)(2, Paginator_div_0_button_12_span_2_Template, 2, 1, "span", 7);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵproperty("disabled", ctx_r1.isLastPage() || ctx_r1.empty())("ngClass", ɵɵpureFunction1(5, _c03, ctx_r1.isLastPage() || ctx_r1.empty()));
-    ɵɵattribute("aria-label", ctx_r1.getAriaLabel("lastPageLabel"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.lastPageLinkIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.lastPageLinkIconTemplate);
-  }
-}
-function Paginator_div_0_p_inputNumber_13_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r9 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "p-inputNumber", 31);
-    ɵɵlistener("ngModelChange", function Paginator_div_0_p_inputNumber_13_Template_p_inputNumber_ngModelChange_0_listener($event) {
-      ɵɵrestoreView(_r9);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.changePage($event - 1));
-    });
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵproperty("ngModel", ctx_r1.currentPage())("disabled", ctx_r1.empty());
-  }
-}
-function Paginator_div_0_p_dropdown_14_ng_container_1_ng_template_1_ng_container_0_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Paginator_div_0_p_dropdown_14_ng_container_1_ng_template_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Paginator_div_0_p_dropdown_14_ng_container_1_ng_template_1_ng_container_0_Template, 1, 0, "ng-container", 16);
-  }
-  if (rf & 2) {
-    const item_r11 = ctx.$implicit;
-    const ctx_r1 = ɵɵnextContext(4);
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.dropdownItemTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c18, item_r11));
-  }
-}
-function Paginator_div_0_p_dropdown_14_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, Paginator_div_0_p_dropdown_14_ng_container_1_ng_template_1_Template, 1, 4, "ng-template", 28);
-    ɵɵelementContainerEnd();
-  }
-}
-function Paginator_div_0_p_dropdown_14_2_ng_template_0_ng_container_0_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Paginator_div_0_p_dropdown_14_2_ng_template_0_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Paginator_div_0_p_dropdown_14_2_ng_template_0_ng_container_0_Template, 1, 0, "ng-container", 21);
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(4);
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.dropdownIconTemplate);
-  }
-}
-function Paginator_div_0_p_dropdown_14_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtemplate(0, Paginator_div_0_p_dropdown_14_2_ng_template_0_Template, 1, 1, "ng-template", 29);
-  }
-}
-function Paginator_div_0_p_dropdown_14_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r10 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "p-dropdown", 32);
-    ɵɵtwoWayListener("ngModelChange", function Paginator_div_0_p_dropdown_14_Template_p_dropdown_ngModelChange_0_listener($event) {
-      ɵɵrestoreView(_r10);
-      const ctx_r1 = ɵɵnextContext(2);
-      ɵɵtwoWayBindingSet(ctx_r1.rows, $event) || (ctx_r1.rows = $event);
-      return ɵɵresetView($event);
-    });
-    ɵɵlistener("onChange", function Paginator_div_0_p_dropdown_14_Template_p_dropdown_onChange_0_listener($event) {
-      ɵɵrestoreView(_r10);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.onRppChange($event));
-    });
-    ɵɵtemplate(1, Paginator_div_0_p_dropdown_14_ng_container_1_Template, 2, 0, "ng-container", 27)(2, Paginator_div_0_p_dropdown_14_2_Template, 1, 0, null, 27);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵproperty("options", ctx_r1.rowsPerPageItems);
-    ɵɵtwoWayProperty("ngModel", ctx_r1.rows);
-    ɵɵproperty("disabled", ctx_r1.empty())("appendTo", ctx_r1.dropdownAppendTo)("scrollHeight", ctx_r1.dropdownScrollHeight)("ariaLabel", ctx_r1.getAriaLabel("rowsPerPageLabel"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.dropdownItemTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.dropdownIconTemplate);
-  }
-}
-function Paginator_div_0_div_15_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementContainer(0);
-  }
-}
-function Paginator_div_0_div_15_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div", 33);
-    ɵɵtemplate(1, Paginator_div_0_div_15_ng_container_1_Template, 1, 0, "ng-container", 16);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵattribute("data-pc-section", "end");
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.templateRight)("ngTemplateOutletContext", ɵɵpureFunction1(3, _c18, ctx_r1.paginatorState));
-  }
-}
-function Paginator_div_0_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r1 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 1);
-    ɵɵtemplate(1, Paginator_div_0_div_1_Template, 2, 5, "div", 2)(2, Paginator_div_0_span_2_Template, 2, 1, "span", 3)(3, Paginator_div_0_button_3_Template, 3, 7, "button", 4);
-    ɵɵelementStart(4, "button", 5);
-    ɵɵlistener("click", function Paginator_div_0_Template_button_click_4_listener($event) {
-      ɵɵrestoreView(_r1);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.changePageToPrev($event));
-    });
-    ɵɵtemplate(5, Paginator_div_0_AngleLeftIcon_5_Template, 1, 1, "AngleLeftIcon", 6)(6, Paginator_div_0_span_6_Template, 2, 1, "span", 7);
-    ɵɵelementEnd();
-    ɵɵtemplate(7, Paginator_div_0_span_7_Template, 2, 1, "span", 8)(8, Paginator_div_0_p_dropdown_8_Template, 4, 8, "p-dropdown", 9);
-    ɵɵelementStart(9, "button", 10);
-    ɵɵlistener("click", function Paginator_div_0_Template_button_click_9_listener($event) {
-      ɵɵrestoreView(_r1);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.changePageToNext($event));
-    });
-    ɵɵtemplate(10, Paginator_div_0_AngleRightIcon_10_Template, 1, 1, "AngleRightIcon", 6)(11, Paginator_div_0_span_11_Template, 2, 1, "span", 7);
-    ɵɵelementEnd();
-    ɵɵtemplate(12, Paginator_div_0_button_12_Template, 3, 7, "button", 11)(13, Paginator_div_0_p_inputNumber_13_Template, 1, 2, "p-inputNumber", 12)(14, Paginator_div_0_p_dropdown_14_Template, 3, 8, "p-dropdown", 13)(15, Paginator_div_0_div_15_Template, 2, 5, "div", 14);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext();
-    ɵɵclassMap(ctx_r1.styleClass);
-    ɵɵproperty("ngStyle", ctx_r1.style)("ngClass", "p-paginator p-component");
-    ɵɵattribute("data-pc-section", "paginator")("data-pc-section", "root");
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.templateLeft);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.showCurrentPageReport);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.showFirstLastIcon);
-    ɵɵadvance();
-    ɵɵproperty("disabled", ctx_r1.isFirstPage() || ctx_r1.empty())("ngClass", ɵɵpureFunction1(25, _c03, ctx_r1.isFirstPage() || ctx_r1.empty()));
-    ɵɵattribute("aria-label", ctx_r1.getAriaLabel("prevPageLabel"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.previousPageLinkIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.previousPageLinkIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.showPageLinks);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.showJumpToPageDropdown);
-    ɵɵadvance();
-    ɵɵproperty("disabled", ctx_r1.isLastPage() || ctx_r1.empty())("ngClass", ɵɵpureFunction1(27, _c03, ctx_r1.isLastPage() || ctx_r1.empty()));
-    ɵɵattribute("aria-label", ctx_r1.getAriaLabel("nextPageLabel"));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.nextPageLinkIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.nextPageLinkIconTemplate);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.showFirstLastIcon);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.showJumpToPageInput);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.rowsPerPageOptions);
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.templateRight);
-  }
-}
-var Paginator = class _Paginator {
-  cd;
-  config;
-  /**
-   * Number of page links to display.
-   * @group Props
-   */
-  pageLinkSize = 5;
-  /**
-   * Inline style of the component.
-   * @group Props
-   */
-  style;
-  /**
-   * Style class of the component.
-   * @group Props
-   */
-  styleClass;
-  /**
-   * Whether to show it even there is only one page.
-   * @group Props
-   */
-  alwaysShow = true;
-  /**
-   * Target element to attach the dropdown overlay, valid values are "body" or a local ng-template variable of another element (note: use binding with brackets for template variables, e.g. [appendTo]="mydiv" for a div element having #mydiv as variable name).
-   * @group Props
-   */
-  dropdownAppendTo;
-  /**
-   * Template instance to inject into the left side of the paginator.
-   * @param {PaginatorState} context - Paginator state.
-   * @group Props
-   */
-  templateLeft;
-  /**
-   * Template instance to inject into the right side of the paginator.
-   * @param {PaginatorState} context - Paginator state.
-   * @group Props
-   */
-  templateRight;
-  /**
-   * Target element to attach the dropdown overlay, valid values are "body" or a local ng-template variable of another element (note: use binding with brackets for template variables, e.g. [appendTo]="mydiv" for a div element having #mydiv as variable name).
-   * @group Props
-   */
-  appendTo;
-  /**
-   * Dropdown height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.
-   * @group Props
-   */
-  dropdownScrollHeight = "200px";
-  /**
-   * Template of the current page report element. Available placeholders are {currentPage},{totalPages},{rows},{first},{last} and {totalRecords}
-   * @group Props
-   */
-  currentPageReportTemplate = "{currentPage} of {totalPages}";
-  /**
-   * Whether to display current page report.
-   * @group Props
-   */
-  showCurrentPageReport;
-  /**
-   * When enabled, icons are displayed on paginator to go first and last page.
-   * @group Props
-   */
-  showFirstLastIcon = true;
-  /**
-   * Number of total records.
-   * @group Props
-   */
-  totalRecords = 0;
-  /**
-   * Data count to display per page.
-   * @group Props
-   */
-  rows = 0;
-  /**
-   * Array of integer/object values to display inside rows per page dropdown. A object that have 'showAll' key can be added to it to show all data. Exp; [10,20,30,{showAll:'All'}]
-   * @group Props
-   */
-  rowsPerPageOptions;
-  /**
-   * Whether to display a dropdown to navigate to any page.
-   * @group Props
-   */
-  showJumpToPageDropdown;
-  /**
-   * Whether to display a input to navigate to any page.
-   * @group Props
-   */
-  showJumpToPageInput;
-  /**
-   * Template instance to inject into the jump to page dropdown item inside in the paginator.
-   * @param {Object} context - item instance.
-   * @group Props
-   */
-  jumpToPageItemTemplate;
-  /**
-   * Whether to show page links.
-   * @group Props
-   */
-  showPageLinks = true;
-  /**
-   * Locale to be used in formatting.
-   * @group Props
-   */
-  locale;
-  /**
-   * Template instance to inject into the rows per page dropdown item inside in the paginator.
-   * @param {Object} context - item instance.
-   * @group Props
-   */
-  dropdownItemTemplate;
-  /**
-   * Zero-relative number of the first row to be displayed.
-   * @group Props
-   */
-  get first() {
-    return this._first;
-  }
-  set first(val) {
-    this._first = val;
-  }
-  /**
-   * Callback to invoke when page changes, the event object contains information about the new state.
-   * @param {PaginatorState} event - Paginator state.
-   * @group Emits
-   */
-  onPageChange = new EventEmitter();
-  templates;
-  dropdownIconTemplate;
-  firstPageLinkIconTemplate;
-  previousPageLinkIconTemplate;
-  lastPageLinkIconTemplate;
-  nextPageLinkIconTemplate;
-  pageLinks;
-  pageItems;
-  rowsPerPageItems;
-  paginatorState;
-  _first = 0;
-  _page = 0;
-  constructor(cd, config) {
-    this.cd = cd;
-    this.config = config;
-  }
-  ngOnInit() {
-    this.updatePaginatorState();
-  }
-  getAriaLabel(labelType) {
-    return this.config.translation.aria ? this.config.translation.aria[labelType] : void 0;
-  }
-  getPageAriaLabel(value) {
-    return this.config.translation.aria ? this.config.translation.aria.pageLabel.replace(/{page}/g, `${value}`) : void 0;
-  }
-  getLocalization(digit) {
-    const numerals = [...new Intl.NumberFormat(this.locale, {
-      useGrouping: false
-    }).format(9876543210)].reverse();
-    const index = new Map(numerals.map((d, i) => [i, d]));
-    if (digit > 9) {
-      const numbers = String(digit).split("");
-      return numbers.map((number) => index.get(Number(number))).join("");
-    } else {
-      return index.get(digit);
-    }
-  }
-  ngAfterContentInit() {
-    this.templates.forEach((item) => {
-      switch (item.getType()) {
-        case "dropdownicon":
-          this.dropdownIconTemplate = item.template;
-          break;
-        case "firstpagelinkicon":
-          this.firstPageLinkIconTemplate = item.template;
-          break;
-        case "previouspagelinkicon":
-          this.previousPageLinkIconTemplate = item.template;
-          break;
-        case "lastpagelinkicon":
-          this.lastPageLinkIconTemplate = item.template;
-          break;
-        case "nextpagelinkicon":
-          this.nextPageLinkIconTemplate = item.template;
-          break;
-      }
-    });
-  }
-  ngOnChanges(simpleChange) {
-    if (simpleChange.totalRecords) {
-      this.updatePageLinks();
-      this.updatePaginatorState();
-      this.updateFirst();
-      this.updateRowsPerPageOptions();
-    }
-    if (simpleChange.first) {
-      this._first = simpleChange.first.currentValue;
-      this.updatePageLinks();
-      this.updatePaginatorState();
-    }
-    if (simpleChange.rows) {
-      this.updatePageLinks();
-      this.updatePaginatorState();
-    }
-    if (simpleChange.rowsPerPageOptions) {
-      this.updateRowsPerPageOptions();
-    }
-    if (simpleChange.pageLinkSize) {
-      this.updatePageLinks();
-    }
-  }
-  updateRowsPerPageOptions() {
-    if (this.rowsPerPageOptions) {
-      this.rowsPerPageItems = [];
-      for (let opt of this.rowsPerPageOptions) {
-        if (typeof opt == "object" && opt["showAll"]) {
-          this.rowsPerPageItems.unshift({
-            label: opt["showAll"],
-            value: this.totalRecords
-          });
-        } else {
-          this.rowsPerPageItems.push({
-            label: String(this.getLocalization(opt)),
-            value: opt
-          });
-        }
-      }
-    }
-  }
-  isFirstPage() {
-    return this.getPage() === 0;
-  }
-  isLastPage() {
-    return this.getPage() === this.getPageCount() - 1;
-  }
-  getPageCount() {
-    return Math.ceil(this.totalRecords / this.rows);
-  }
-  calculatePageLinkBoundaries() {
-    let numberOfPages = this.getPageCount(), visiblePages = Math.min(this.pageLinkSize, numberOfPages);
-    let start = Math.max(0, Math.ceil(this.getPage() - visiblePages / 2)), end = Math.min(numberOfPages - 1, start + visiblePages - 1);
-    var delta = this.pageLinkSize - (end - start + 1);
-    start = Math.max(0, start - delta);
-    return [start, end];
-  }
-  updatePageLinks() {
-    this.pageLinks = [];
-    let boundaries = this.calculatePageLinkBoundaries(), start = boundaries[0], end = boundaries[1];
-    for (let i = start; i <= end; i++) {
-      this.pageLinks.push(i + 1);
-    }
-    if (this.showJumpToPageDropdown) {
-      this.pageItems = [];
-      for (let i = 0; i < this.getPageCount(); i++) {
-        this.pageItems.push({
-          label: String(i + 1),
-          value: i
-        });
-      }
-    }
-  }
-  changePage(p) {
-    var pc = this.getPageCount();
-    if (p >= 0 && p < pc) {
-      this._first = this.rows * p;
-      var state2 = {
-        page: p,
-        first: this.first,
-        rows: this.rows,
-        pageCount: pc
-      };
-      this.updatePageLinks();
-      this.onPageChange.emit(state2);
-      this.updatePaginatorState();
-    }
-  }
-  updateFirst() {
-    const page = this.getPage();
-    if (page > 0 && this.totalRecords && this.first >= this.totalRecords) {
-      Promise.resolve(null).then(() => this.changePage(page - 1));
-    }
-  }
-  getPage() {
-    return Math.floor(this.first / this.rows);
-  }
-  changePageToFirst(event2) {
-    if (!this.isFirstPage()) {
-      this.changePage(0);
-    }
-    event2.preventDefault();
-  }
-  changePageToPrev(event2) {
-    this.changePage(this.getPage() - 1);
-    event2.preventDefault();
-  }
-  changePageToNext(event2) {
-    this.changePage(this.getPage() + 1);
-    event2.preventDefault();
-  }
-  changePageToLast(event2) {
-    if (!this.isLastPage()) {
-      this.changePage(this.getPageCount() - 1);
-    }
-    event2.preventDefault();
-  }
-  onPageLinkClick(event2, page) {
-    this.changePage(page);
-    event2.preventDefault();
-  }
-  onRppChange(event2) {
-    this.changePage(this.getPage());
-  }
-  onPageDropdownChange(event2) {
-    this.changePage(event2.value);
-  }
-  updatePaginatorState() {
-    this.paginatorState = {
-      page: this.getPage(),
-      pageCount: this.getPageCount(),
-      rows: this.rows,
-      first: this.first,
-      totalRecords: this.totalRecords
-    };
-  }
-  empty() {
-    return this.getPageCount() === 0;
-  }
-  currentPage() {
-    return this.getPageCount() > 0 ? this.getPage() + 1 : 0;
-  }
-  get currentPageReport() {
-    return this.currentPageReportTemplate.replace("{currentPage}", String(this.currentPage())).replace("{totalPages}", String(this.getPageCount())).replace("{first}", String(this.totalRecords > 0 ? this._first + 1 : 0)).replace("{last}", String(Math.min(this._first + this.rows, this.totalRecords))).replace("{rows}", String(this.rows)).replace("{totalRecords}", String(this.totalRecords));
-  }
-  static ɵfac = function Paginator_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _Paginator)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(PrimeNGConfig));
-  };
-  static ɵcmp = ɵɵdefineComponent({
-    type: _Paginator,
-    selectors: [["p-paginator"]],
-    contentQueries: function Paginator_ContentQueries(rf, ctx, dirIndex) {
-      if (rf & 1) {
-        ɵɵcontentQuery(dirIndex, PrimeTemplate, 4);
-      }
-      if (rf & 2) {
-        let _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.templates = _t);
-      }
-    },
-    hostAttrs: [1, "p-element"],
-    inputs: {
-      pageLinkSize: [2, "pageLinkSize", "pageLinkSize", numberAttribute],
-      style: "style",
-      styleClass: "styleClass",
-      alwaysShow: [2, "alwaysShow", "alwaysShow", booleanAttribute],
-      dropdownAppendTo: "dropdownAppendTo",
-      templateLeft: "templateLeft",
-      templateRight: "templateRight",
-      appendTo: "appendTo",
-      dropdownScrollHeight: "dropdownScrollHeight",
-      currentPageReportTemplate: "currentPageReportTemplate",
-      showCurrentPageReport: [2, "showCurrentPageReport", "showCurrentPageReport", booleanAttribute],
-      showFirstLastIcon: [2, "showFirstLastIcon", "showFirstLastIcon", booleanAttribute],
-      totalRecords: [2, "totalRecords", "totalRecords", numberAttribute],
-      rows: [2, "rows", "rows", numberAttribute],
-      rowsPerPageOptions: "rowsPerPageOptions",
-      showJumpToPageDropdown: [2, "showJumpToPageDropdown", "showJumpToPageDropdown", booleanAttribute],
-      showJumpToPageInput: [2, "showJumpToPageInput", "showJumpToPageInput", booleanAttribute],
-      jumpToPageItemTemplate: "jumpToPageItemTemplate",
-      showPageLinks: [2, "showPageLinks", "showPageLinks", booleanAttribute],
-      locale: "locale",
-      dropdownItemTemplate: "dropdownItemTemplate",
-      first: "first"
-    },
-    outputs: {
-      onPageChange: "onPageChange"
-    },
-    features: [ɵɵInputTransformsFeature, ɵɵNgOnChangesFeature],
-    decls: 1,
-    vars: 1,
-    consts: [[3, "class", "ngStyle", "ngClass", 4, "ngIf"], [3, "ngStyle", "ngClass"], ["class", "p-paginator-left-content", 4, "ngIf"], ["class", "p-paginator-current", 4, "ngIf"], ["type", "button", "pRipple", "", "class", "p-paginator-first p-paginator-element p-link", 3, "disabled", "ngClass", "click", 4, "ngIf"], ["type", "button", "pRipple", "", 1, "p-paginator-prev", "p-paginator-element", "p-link", 3, "click", "disabled", "ngClass"], [3, "styleClass", 4, "ngIf"], ["class", "p-paginator-icon", 4, "ngIf"], ["class", "p-paginator-pages", 4, "ngIf"], ["styleClass", "p-paginator-page-options", 3, "options", "ngModel", "disabled", "appendTo", "scrollHeight", "onChange", 4, "ngIf"], ["type", "button", "pRipple", "", 1, "p-paginator-next", "p-paginator-element", "p-link", 3, "click", "disabled", "ngClass"], ["type", "button", "pRipple", "", "class", "p-paginator-last p-paginator-element p-link", 3, "disabled", "ngClass", "click", 4, "ngIf"], ["class", "p-paginator-page-input", 3, "ngModel", "disabled", "ngModelChange", 4, "ngIf"], ["styleClass", "p-paginator-rpp-options", 3, "options", "ngModel", "disabled", "appendTo", "scrollHeight", "ariaLabel", "ngModelChange", "onChange", 4, "ngIf"], ["class", "p-paginator-right-content", 4, "ngIf"], [1, "p-paginator-left-content"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "p-paginator-current"], ["type", "button", "pRipple", "", 1, "p-paginator-first", "p-paginator-element", "p-link", 3, "click", "disabled", "ngClass"], [3, "styleClass"], [1, "p-paginator-icon"], [4, "ngTemplateOutlet"], [1, "p-paginator-pages"], ["type", "button", "class", "p-paginator-page p-paginator-element p-link", "pRipple", "", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], ["type", "button", "pRipple", "", 1, "p-paginator-page", "p-paginator-element", "p-link", 3, "click", "ngClass"], ["styleClass", "p-paginator-page-options", 3, "onChange", "options", "ngModel", "disabled", "appendTo", "scrollHeight"], ["pTemplate", "selectedItem"], [4, "ngIf"], ["pTemplate", "item"], ["pTemplate", "dropdownicon"], ["type", "button", "pRipple", "", 1, "p-paginator-last", "p-paginator-element", "p-link", 3, "click", "disabled", "ngClass"], [1, "p-paginator-page-input", 3, "ngModelChange", "ngModel", "disabled"], ["styleClass", "p-paginator-rpp-options", 3, "ngModelChange", "onChange", "options", "ngModel", "disabled", "appendTo", "scrollHeight", "ariaLabel"], [1, "p-paginator-right-content"]],
-    template: function Paginator_Template(rf, ctx) {
-      if (rf & 1) {
-        ɵɵtemplate(0, Paginator_div_0_Template, 16, 29, "div", 0);
-      }
-      if (rf & 2) {
-        ɵɵproperty("ngIf", ctx.alwaysShow ? true : ctx.pageLinks && ctx.pageLinks.length > 1);
-      }
-    },
-    dependencies: () => [NgClass, NgForOf, NgIf, NgTemplateOutlet, NgStyle, Dropdown, PrimeTemplate, InputNumber, NgControlStatus, NgModel, Ripple, AngleDoubleLeftIcon, AngleDoubleRightIcon, AngleLeftIcon, AngleRightIcon],
-    styles: ["@layer primeng{.p-paginator{display:flex;align-items:center;justify-content:center;flex-wrap:wrap}.p-paginator-left-content{margin-right:auto}.p-paginator-right-content{margin-left:auto}.p-paginator-page,.p-paginator-next,.p-paginator-last,.p-paginator-first,.p-paginator-prev,.p-paginator-current{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;line-height:1;-webkit-user-select:none;user-select:none;overflow:hidden;position:relative}.p-paginator-element:focus{z-index:1;position:relative}}\n"],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Paginator, [{
-    type: Component,
-    args: [{
-      selector: "p-paginator",
-      template: `
-        <div [class]="styleClass" [ngStyle]="style" [ngClass]="'p-paginator p-component'" *ngIf="alwaysShow ? true : pageLinks && pageLinks.length > 1" [attr.data-pc-section]="'paginator'" [attr.data-pc-section]="'root'">
-            <div class="p-paginator-left-content" *ngIf="templateLeft" [attr.data-pc-section]="'start'">
-                <ng-container *ngTemplateOutlet="templateLeft; context: { $implicit: paginatorState }"></ng-container>
-            </div>
-            <span class="p-paginator-current" *ngIf="showCurrentPageReport">{{ currentPageReport }}</span>
-            <button
-                *ngIf="showFirstLastIcon"
-                type="button"
-                [disabled]="isFirstPage() || empty()"
-                (click)="changePageToFirst($event)"
-                pRipple
-                class="p-paginator-first p-paginator-element p-link"
-                [ngClass]="{ 'p-disabled': isFirstPage() || empty() }"
-                [attr.aria-label]="getAriaLabel('firstPageLabel')"
-            >
-                <AngleDoubleLeftIcon *ngIf="!firstPageLinkIconTemplate" [styleClass]="'p-paginator-icon'" />
-                <span class="p-paginator-icon" *ngIf="firstPageLinkIconTemplate">
-                    <ng-template *ngTemplateOutlet="firstPageLinkIconTemplate"></ng-template>
-                </span>
-            </button>
-            <button
-                type="button"
-                [disabled]="isFirstPage() || empty()"
-                (click)="changePageToPrev($event)"
-                pRipple
-                class="p-paginator-prev p-paginator-element p-link"
-                [ngClass]="{ 'p-disabled': isFirstPage() || empty() }"
-                [attr.aria-label]="getAriaLabel('prevPageLabel')"
-            >
-                <AngleLeftIcon *ngIf="!previousPageLinkIconTemplate" [styleClass]="'p-paginator-icon'" />
-                <span class="p-paginator-icon" *ngIf="previousPageLinkIconTemplate">
-                    <ng-template *ngTemplateOutlet="previousPageLinkIconTemplate"></ng-template>
-                </span>
-            </button>
-            <span class="p-paginator-pages" *ngIf="showPageLinks">
-                <button
-                    type="button"
-                    *ngFor="let pageLink of pageLinks"
-                    class="p-paginator-page p-paginator-element p-link"
-                    [ngClass]="{ 'p-highlight': pageLink - 1 == getPage() }"
-                    [attr.aria-label]="getPageAriaLabel(pageLink)"
-                    [attr.aria-current]="pageLink - 1 == getPage() ? 'page' : undefined"
-                    (click)="onPageLinkClick($event, pageLink - 1)"
-                    pRipple
-                >
-                    {{ getLocalization(pageLink) }}
-                </button>
-            </span>
-            <p-dropdown
-                [options]="pageItems"
-                [ngModel]="getPage()"
-                *ngIf="showJumpToPageDropdown"
-                [disabled]="empty()"
-                [attr.aria-label]="getAriaLabel('jumpToPageDropdownLabel')"
-                styleClass="p-paginator-page-options"
-                (onChange)="onPageDropdownChange($event)"
-                [appendTo]="dropdownAppendTo"
-                [scrollHeight]="dropdownScrollHeight"
-            >
-                <ng-template pTemplate="selectedItem">{{ currentPageReport }}</ng-template>
-                <ng-container *ngIf="jumpToPageItemTemplate">
-                    <ng-template let-item pTemplate="item">
-                        <ng-container *ngTemplateOutlet="jumpToPageItemTemplate; context: { $implicit: item }"> </ng-container>
-                    </ng-template>
-                </ng-container>
-                <ng-template pTemplate="dropdownicon" *ngIf="dropdownIconTemplate">
-                    <ng-container *ngTemplateOutlet="dropdownIconTemplate"></ng-container>
-                </ng-template>
-            </p-dropdown>
-            <button
-                type="button"
-                [disabled]="isLastPage() || empty()"
-                (click)="changePageToNext($event)"
-                pRipple
-                class="p-paginator-next p-paginator-element p-link"
-                [ngClass]="{ 'p-disabled': isLastPage() || empty() }"
-                [attr.aria-label]="getAriaLabel('nextPageLabel')"
-            >
-                <AngleRightIcon *ngIf="!nextPageLinkIconTemplate" [styleClass]="'p-paginator-icon'" />
-                <span class="p-paginator-icon" *ngIf="nextPageLinkIconTemplate">
-                    <ng-template *ngTemplateOutlet="nextPageLinkIconTemplate"></ng-template>
-                </span>
-            </button>
-            <button
-                *ngIf="showFirstLastIcon"
-                type="button"
-                [disabled]="isLastPage() || empty()"
-                (click)="changePageToLast($event)"
-                pRipple
-                class="p-paginator-last p-paginator-element p-link"
-                [ngClass]="{ 'p-disabled': isLastPage() || empty() }"
-                [attr.aria-label]="getAriaLabel('lastPageLabel')"
-            >
-                <AngleDoubleRightIcon *ngIf="!lastPageLinkIconTemplate" [styleClass]="'p-paginator-icon'" />
-                <span class="p-paginator-icon" *ngIf="lastPageLinkIconTemplate">
-                    <ng-template *ngTemplateOutlet="lastPageLinkIconTemplate"></ng-template>
-                </span>
-            </button>
-            <p-inputNumber *ngIf="showJumpToPageInput" [ngModel]="currentPage()" class="p-paginator-page-input" [disabled]="empty()" (ngModelChange)="changePage($event - 1)"></p-inputNumber>
-            <p-dropdown
-                [options]="rowsPerPageItems"
-                [(ngModel)]="rows"
-                *ngIf="rowsPerPageOptions"
-                styleClass="p-paginator-rpp-options"
-                [disabled]="empty()"
-                (onChange)="onRppChange($event)"
-                [appendTo]="dropdownAppendTo"
-                [scrollHeight]="dropdownScrollHeight"
-                [ariaLabel]="getAriaLabel('rowsPerPageLabel')"
-            >
-                <ng-container *ngIf="dropdownItemTemplate">
-                    <ng-template let-item pTemplate="item">
-                        <ng-container *ngTemplateOutlet="dropdownItemTemplate; context: { $implicit: item }"> </ng-container>
-                    </ng-template>
-                </ng-container>
-                <ng-template pTemplate="dropdownicon" *ngIf="dropdownIconTemplate">
-                    <ng-container *ngTemplateOutlet="dropdownIconTemplate"></ng-container>
-                </ng-template>
-            </p-dropdown>
-            <div class="p-paginator-right-content" *ngIf="templateRight" [attr.data-pc-section]="'end'">
-                <ng-container *ngTemplateOutlet="templateRight; context: { $implicit: paginatorState }"></ng-container>
-            </div>
-        </div>
-    `,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      encapsulation: ViewEncapsulation$1.None,
-      host: {
-        class: "p-element"
-      },
-      styles: ["@layer primeng{.p-paginator{display:flex;align-items:center;justify-content:center;flex-wrap:wrap}.p-paginator-left-content{margin-right:auto}.p-paginator-right-content{margin-left:auto}.p-paginator-page,.p-paginator-next,.p-paginator-last,.p-paginator-first,.p-paginator-prev,.p-paginator-current{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;line-height:1;-webkit-user-select:none;user-select:none;overflow:hidden;position:relative}.p-paginator-element:focus{z-index:1;position:relative}}\n"]
-    }]
-  }], () => [{
-    type: ChangeDetectorRef
-  }, {
-    type: PrimeNGConfig
-  }], {
-    pageLinkSize: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    style: [{
-      type: Input
-    }],
-    styleClass: [{
-      type: Input
-    }],
-    alwaysShow: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    dropdownAppendTo: [{
-      type: Input
-    }],
-    templateLeft: [{
-      type: Input
-    }],
-    templateRight: [{
-      type: Input
-    }],
-    appendTo: [{
-      type: Input
-    }],
-    dropdownScrollHeight: [{
-      type: Input
-    }],
-    currentPageReportTemplate: [{
-      type: Input
-    }],
-    showCurrentPageReport: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    showFirstLastIcon: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    totalRecords: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    rows: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    rowsPerPageOptions: [{
-      type: Input
-    }],
-    showJumpToPageDropdown: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    showJumpToPageInput: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    jumpToPageItemTemplate: [{
-      type: Input
-    }],
-    showPageLinks: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    locale: [{
-      type: Input
-    }],
-    dropdownItemTemplate: [{
-      type: Input
-    }],
-    first: [{
-      type: Input
-    }],
-    onPageChange: [{
-      type: Output
-    }],
-    templates: [{
-      type: ContentChildren,
-      args: [PrimeTemplate]
-    }]
-  });
-})();
-var PaginatorModule = class _PaginatorModule {
-  static ɵfac = function PaginatorModule_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _PaginatorModule)();
-  };
-  static ɵmod = ɵɵdefineNgModule({
-    type: _PaginatorModule,
-    declarations: [Paginator],
-    imports: [CommonModule, DropdownModule, InputNumberModule, FormsModule, SharedModule, RippleModule, AngleDoubleLeftIcon, AngleDoubleRightIcon, AngleLeftIcon, AngleRightIcon],
-    exports: [Paginator, DropdownModule, InputNumberModule, FormsModule, SharedModule]
-  });
-  static ɵinj = ɵɵdefineInjector({
-    imports: [CommonModule, DropdownModule, InputNumberModule, FormsModule, SharedModule, RippleModule, AngleDoubleLeftIcon, AngleDoubleRightIcon, AngleLeftIcon, AngleRightIcon, DropdownModule, InputNumberModule, FormsModule, SharedModule]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PaginatorModule, [{
-    type: NgModule,
-    args: [{
-      imports: [CommonModule, DropdownModule, InputNumberModule, FormsModule, SharedModule, RippleModule, AngleDoubleLeftIcon, AngleDoubleRightIcon, AngleLeftIcon, AngleRightIcon],
-      exports: [Paginator, DropdownModule, InputNumberModule, FormsModule, SharedModule],
-      declarations: [Paginator]
-    }]
-  }], null, null);
-})();
-
 // node_modules/primeng/fesm2022/primeng-selectbutton.mjs
-var _c04 = ["container"];
-var _c19 = (a0, a1, a2) => ({
+var _c0 = ["container"];
+var _c1 = (a0, a1, a2) => ({
   "p-highlight": a0,
   "p-disabled": a1,
   "p-button-icon-only": a2
 });
-var _c24 = (a0, a1) => ({
+var _c2 = (a0, a1) => ({
   $implicit: a0,
   index: a1
 });
@@ -9598,7 +860,7 @@ function SelectButton_div_2_ng_template_2_Template(rf, ctx) {
     const option_r3 = ctx_r6.$implicit;
     const i_r4 = ctx_r6.index;
     const ctx_r4 = ɵɵnextContext();
-    ɵɵproperty("ngTemplateOutlet", ctx_r4.selectButtonTemplate)("ngTemplateOutletContext", ɵɵpureFunction2(2, _c24, option_r3, i_r4));
+    ɵɵproperty("ngTemplateOutlet", ctx_r4.selectButtonTemplate)("ngTemplateOutletContext", ɵɵpureFunction2(2, _c2, option_r3, i_r4));
   }
 }
 function SelectButton_div_2_Template(rf, ctx) {
@@ -9635,7 +897,7 @@ function SelectButton_div_2_Template(rf, ctx) {
     const customcontent_r8 = ɵɵreference(3);
     const ctx_r4 = ɵɵnextContext();
     ɵɵclassMap(option_r3.styleClass);
-    ɵɵproperty("role", ctx_r4.multiple ? "checkbox" : "radio")("ngClass", ɵɵpureFunction3(14, _c19, ctx_r4.isSelected(option_r3), ctx_r4.disabled || ctx_r4.isOptionDisabled(option_r3), option_r3.icon && !ctx_r4.getOptionLabel(option_r3)))("autofocus", ctx_r4.autofocus);
+    ɵɵproperty("role", ctx_r4.multiple ? "checkbox" : "radio")("ngClass", ɵɵpureFunction3(14, _c1, ctx_r4.isSelected(option_r3), ctx_r4.disabled || ctx_r4.isOptionDisabled(option_r3), option_r3.icon && !ctx_r4.getOptionLabel(option_r3)))("autofocus", ctx_r4.autofocus);
     ɵɵattribute("tabindex", i_r4 === ctx_r4.focusedIndex && !ctx_r4.disabled ? "0" : "-1")("aria-label", option_r3.label)("aria-checked", ctx_r4.isSelected(option_r3))("aria-disabled", ctx_r4.optionDisabled)("title", option_r3.title)("aria-labelledby", ctx_r4.getOptionLabel(option_r3))("data-pc-section", "button");
     ɵɵadvance();
     ɵɵproperty("ngIf", !ctx_r4.itemTemplate)("ngIfElse", customcontent_r8);
@@ -9770,7 +1032,7 @@ var SelectButton = class _SelectButton {
     this.disabled = val;
     this.cd.markForCheck();
   }
-  onOptionSelect(event2, option, index) {
+  onOptionSelect(event, option, index) {
     if (this.disabled || this.isOptionDisabled(option)) {
       return;
     }
@@ -9793,39 +1055,39 @@ var SelectButton = class _SelectButton {
     this.value = newValue;
     this.onModelChange(this.value);
     this.onChange.emit({
-      originalEvent: event2,
+      originalEvent: event,
       value: this.value
     });
     this.onOptionClick.emit({
-      originalEvent: event2,
+      originalEvent: event,
       option,
       index
     });
   }
-  onKeyDown(event2, option, index) {
-    switch (event2.code) {
+  onKeyDown(event, option, index) {
+    switch (event.code) {
       case "Space": {
-        this.onOptionSelect(event2, option, index);
-        event2.preventDefault();
+        this.onOptionSelect(event, option, index);
+        event.preventDefault();
         break;
       }
       case "ArrowDown":
       case "ArrowRight": {
-        this.changeTabIndexes(event2, "next");
-        event2.preventDefault();
+        this.changeTabIndexes(event, "next");
+        event.preventDefault();
         break;
       }
       case "ArrowUp":
       case "ArrowLeft": {
-        this.changeTabIndexes(event2, "prev");
-        event2.preventDefault();
+        this.changeTabIndexes(event, "prev");
+        event.preventDefault();
         break;
       }
       default:
         break;
     }
   }
-  changeTabIndexes(event2, direction) {
+  changeTabIndexes(event, direction) {
     let firstTabableChild, index;
     for (let i = 0; i <= this.container.nativeElement.children.length - 1; i++) {
       if (this.container.nativeElement.children[i].getAttribute("tabindex") === "0") firstTabableChild = {
@@ -9843,7 +1105,7 @@ var SelectButton = class _SelectButton {
     this.focusedIndex = index;
     this.container.nativeElement.children[index].focus();
   }
-  onFocus(event2, index) {
+  onFocus(event, index) {
     this.focusedIndex = index;
   }
   onBlur() {
@@ -9886,7 +1148,7 @@ var SelectButton = class _SelectButton {
     },
     viewQuery: function SelectButton_Query(rf, ctx) {
       if (rf & 1) {
-        ɵɵviewQuery(_c04, 5);
+        ɵɵviewQuery(_c0, 5);
       }
       if (rf & 2) {
         let _t;
@@ -10089,18 +1351,18 @@ var SelectButtonModule = class _SelectButtonModule {
 })();
 
 // node_modules/primeng/fesm2022/primeng-tristatecheckbox.mjs
-var _c05 = (a0, a1, a2) => ({
+var _c02 = (a0, a1, a2) => ({
   "p-checkbox p-component": true,
   "p-checkbox-disabled": a0,
   "p-checkbox-focused": a1,
   "p-variant-filled": a2
 });
-var _c110 = (a0, a1, a2) => ({
+var _c12 = (a0, a1, a2) => ({
   "p-highlight": a0,
   "p-disabled": a1,
   "p-focus": a2
 });
-var _c25 = (a0, a1, a2) => ({
+var _c22 = (a0, a1, a2) => ({
   "p-checkbox-label-active": a0,
   "p-disabled": a1,
   "p-checkbox-label-focus": a2
@@ -10254,7 +1516,7 @@ function TriStateCheckbox_label_7_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r2 = ɵɵnextContext();
-    ɵɵproperty("ngClass", ɵɵpureFunction3(3, _c25, ctx_r2.value != null, ctx_r2.disabled, ctx_r2.focused));
+    ɵɵproperty("ngClass", ɵɵpureFunction3(3, _c22, ctx_r2.value != null, ctx_r2.disabled, ctx_r2.focused));
     ɵɵattribute("for", ctx_r2.inputId);
     ɵɵadvance();
     ɵɵtextInterpolate(ctx_r2.label);
@@ -10357,26 +1619,26 @@ var TriStateCheckbox = class _TriStateCheckbox {
   };
   onModelTouched = () => {
   };
-  onClick(event2, input) {
+  onClick(event, input) {
     if (!this.disabled && !this.readonly) {
-      this.toggle(event2);
+      this.toggle(event);
       this.focused = true;
       input.focus();
     }
   }
-  onKeyDown(event2) {
-    if (event2.key === "Enter") {
-      this.toggle(event2);
-      event2.preventDefault();
+  onKeyDown(event) {
+    if (event.key === "Enter") {
+      this.toggle(event);
+      event.preventDefault();
     }
   }
-  toggle(event2) {
+  toggle(event) {
     if (this.value == null || this.value == void 0) this.value = true;
     else if (this.value == true) this.value = false;
     else if (this.value == false) this.value = null;
     this.onModelChange(this.value);
     this.onChange.emit({
-      originalEvent: event2,
+      originalEvent: event,
       value: this.value
     });
   }
@@ -10480,13 +1742,13 @@ var TriStateCheckbox = class _TriStateCheckbox {
       }
       if (rf & 2) {
         ɵɵclassMap(ctx.styleClass);
-        ɵɵproperty("ngStyle", ctx.style)("ngClass", ɵɵpureFunction3(20, _c05, ctx.disabled, ctx.focused, ctx.variant === "filled" || ctx.config.inputStyle() === "filled"));
+        ɵɵproperty("ngStyle", ctx.style)("ngClass", ɵɵpureFunction3(20, _c02, ctx.disabled, ctx.focused, ctx.variant === "filled" || ctx.config.inputStyle() === "filled"));
         ɵɵattribute("data-pc-name", "tristatecheckbox")("data-pc-section", "root");
         ɵɵadvance(2);
         ɵɵproperty("name", ctx.name)("readonly", ctx.readonly)("disabled", ctx.disabled)("autofocus", ctx.autofocus);
         ɵɵattribute("id", ctx.inputId)("tabindex", ctx.tabindex)("aria-labelledby", ctx.ariaLabelledBy)("aria-label", ctx.ariaLabel)("data-pc-section", "hiddenInput");
         ɵɵadvance(2);
-        ɵɵproperty("ngClass", ɵɵpureFunction3(24, _c110, ctx.value != null, ctx.disabled, ctx.focused));
+        ɵɵproperty("ngClass", ɵɵpureFunction3(24, _c12, ctx.value != null, ctx.disabled, ctx.focused));
         ɵɵattribute("aria-checked", ctx.value === true);
         ɵɵadvance();
         ɵɵproperty("ngIf", ctx.value === true);
@@ -10659,25 +1921,25 @@ var TriStateCheckboxModule = class _TriStateCheckboxModule {
 })();
 
 // node_modules/primeng/fesm2022/primeng-table.mjs
-var _c06 = ["container"];
-var _c111 = ["resizeHelper"];
-var _c26 = ["reorderIndicatorUp"];
-var _c33 = ["reorderIndicatorDown"];
-var _c42 = ["wrapper"];
-var _c52 = ["table"];
-var _c62 = ["thead"];
-var _c72 = ["tfoot"];
-var _c82 = ["scroller"];
-var _c92 = (a0, a1, a2) => ({
+var _c03 = ["container"];
+var _c13 = ["resizeHelper"];
+var _c23 = ["reorderIndicatorUp"];
+var _c3 = ["reorderIndicatorDown"];
+var _c4 = ["wrapper"];
+var _c5 = ["table"];
+var _c6 = ["thead"];
+var _c7 = ["tfoot"];
+var _c8 = ["scroller"];
+var _c9 = (a0, a1, a2) => ({
   "p-datatable p-component": true,
   "p-datatable-hoverable-rows": a0,
   "p-datatable-scrollable": a1,
   "p-datatable-flex-scrollable": a2
 });
-var _c102 = (a0) => ({
+var _c10 = (a0) => ({
   maxHeight: a0
 });
-var _c112 = (a0) => ({
+var _c11 = (a0) => ({
   height: a0
 });
 var _c122 = (a0, a1) => ({
@@ -10687,16 +1949,16 @@ var _c122 = (a0, a1) => ({
 var _c132 = (a0) => ({
   columns: a0
 });
-var _c142 = (a0, a1, a2) => ({
+var _c14 = (a0, a1, a2) => ({
   "p-datatable-table": true,
   "p-datatable-scrollable-table": a0,
   "p-datatable-resizable-table": a1,
   "p-datatable-resizable-table-fit": a2
 });
-var _c152 = (a0) => ({
+var _c15 = (a0) => ({
   $implicit: a0
 });
-var _c162 = () => ({
+var _c16 = () => ({
   display: "none"
 });
 function Table_div_2_i_1_Template(rf, ctx) {
@@ -10933,7 +2195,7 @@ function Table_p_scroller_7_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext();
-    ɵɵstyleMap(ɵɵpureFunction1(15, _c112, ctx_r0.scrollHeight !== "flex" ? ctx_r0.scrollHeight : void 0));
+    ɵɵstyleMap(ɵɵpureFunction1(15, _c11, ctx_r0.scrollHeight !== "flex" ? ctx_r0.scrollHeight : void 0));
     ɵɵproperty("items", ctx_r0.processedData)("columns", ctx_r0.columns)("scrollHeight", ctx_r0.scrollHeight !== "flex" ? void 0 : "100%")("itemSize", ctx_r0.virtualScrollItemSize || ctx_r0._virtualRowHeight)("step", ctx_r0.rows)("delay", ctx_r0.lazy ? ctx_r0.virtualScrollDelay : 0)("inline", true)("autoSize", true)("lazy", ctx_r0.lazy)("loaderDisabled", true)("showSpacer", false)("showLoader", ctx_r0.loadingBodyTemplate)("options", ctx_r0.virtualScrollOptions);
   }
 }
@@ -10981,7 +2243,7 @@ function Table_ng_template_9_tbody_8_Template(rf, ctx) {
   }
   if (rf & 2) {
     const scrollerOptions_r7 = ɵɵnextContext().options;
-    ɵɵproperty("ngStyle", ɵɵpureFunction1(1, _c112, "calc(" + scrollerOptions_r7.spacerStyle.height + " - " + scrollerOptions_r7.rows.length * scrollerOptions_r7.itemSize + "px)"));
+    ɵɵproperty("ngStyle", ɵɵpureFunction1(1, _c11, "calc(" + scrollerOptions_r7.spacerStyle.height + " - " + scrollerOptions_r7.rows.length * scrollerOptions_r7.itemSize + "px)"));
   }
 }
 function Table_ng_template_9_tfoot_9_ng_container_2_Template(rf, ctx) {
@@ -10999,7 +2261,7 @@ function Table_ng_template_9_tfoot_9_Template(rf, ctx) {
     const scrollerOptions_r7 = ɵɵnextContext().options;
     const ctx_r0 = ɵɵnextContext();
     ɵɵadvance(2);
-    ɵɵproperty("ngTemplateOutlet", ctx_r0.footerGroupedTemplate || ctx_r0.footerTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c152, scrollerOptions_r7.columns));
+    ɵɵproperty("ngTemplateOutlet", ctx_r0.footerGroupedTemplate || ctx_r0.footerTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c15, scrollerOptions_r7.columns));
   }
 }
 function Table_ng_template_9_Template(rf, ctx) {
@@ -11018,12 +2280,12 @@ function Table_ng_template_9_Template(rf, ctx) {
     const scrollerOptions_r7 = ctx.options;
     const ctx_r0 = ɵɵnextContext();
     ɵɵclassMap(ctx_r0.tableStyleClass);
-    ɵɵproperty("ngClass", ɵɵpureFunction3(18, _c142, ctx_r0.scrollable, ctx_r0.resizableColumns, ctx_r0.resizableColumns && ctx_r0.columnResizeMode === "fit"))("ngStyle", ctx_r0.tableStyle);
+    ɵɵproperty("ngClass", ɵɵpureFunction3(18, _c14, ctx_r0.scrollable, ctx_r0.resizableColumns, ctx_r0.resizableColumns && ctx_r0.columnResizeMode === "fit"))("ngStyle", ctx_r0.tableStyle);
     ɵɵattribute("id", ctx_r0.id + "-table");
     ɵɵadvance(2);
-    ɵɵproperty("ngTemplateOutlet", ctx_r0.colGroupTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(22, _c152, scrollerOptions_r7.columns));
+    ɵɵproperty("ngTemplateOutlet", ctx_r0.colGroupTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(22, _c15, scrollerOptions_r7.columns));
     ɵɵadvance(3);
-    ɵɵproperty("ngTemplateOutlet", ctx_r0.headerGroupedTemplate || ctx_r0.headerTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(24, _c152, scrollerOptions_r7.columns));
+    ɵɵproperty("ngTemplateOutlet", ctx_r0.headerGroupedTemplate || ctx_r0.headerTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(24, _c15, scrollerOptions_r7.columns));
     ɵɵadvance();
     ɵɵproperty("ngIf", ctx_r0.frozenValue || ctx_r0.frozenBodyTemplate);
     ɵɵadvance();
@@ -11178,7 +2440,7 @@ function Table_div_13_Template(rf, ctx) {
     ɵɵelement(0, "div", 48, 7);
   }
   if (rf & 2) {
-    ɵɵproperty("ngStyle", ɵɵpureFunction0(1, _c162));
+    ɵɵproperty("ngStyle", ɵɵpureFunction0(1, _c16));
   }
 }
 function Table_span_14_ArrowDownIcon_2_Template(rf, ctx) {
@@ -11201,7 +2463,7 @@ function Table_span_14_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext();
-    ɵɵproperty("ngStyle", ɵɵpureFunction0(3, _c162));
+    ɵɵproperty("ngStyle", ɵɵpureFunction0(3, _c16));
     ɵɵadvance(2);
     ɵɵproperty("ngIf", !ctx_r0.reorderIndicatorUpIconTemplate);
     ɵɵadvance();
@@ -11228,22 +2490,22 @@ function Table_span_15_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext();
-    ɵɵproperty("ngStyle", ɵɵpureFunction0(3, _c162));
+    ɵɵproperty("ngStyle", ɵɵpureFunction0(3, _c16));
     ɵɵadvance(2);
     ɵɵproperty("ngIf", !ctx_r0.reorderIndicatorDownIconTemplate);
     ɵɵadvance();
     ɵɵproperty("ngTemplateOutlet", ctx_r0.reorderIndicatorDownIconTemplate);
   }
 }
-var _c172 = ["pTableBody", ""];
-var _c182 = (a0, a1, a2, a3, a4) => ({
+var _c17 = ["pTableBody", ""];
+var _c18 = (a0, a1, a2, a3, a4) => ({
   $implicit: a0,
   rowIndex: a1,
   columns: a2,
   editing: a3,
   frozen: a4
 });
-var _c192 = (a0, a1, a2, a3, a4, a5, a6) => ({
+var _c19 = (a0, a1, a2, a3, a4, a5, a6) => ({
   $implicit: a0,
   rowIndex: a1,
   columns: a2,
@@ -11287,7 +2549,7 @@ function TableBody_ng_container_0_ng_template_1_ng_container_0_Template(rf, ctx)
     const rowIndex_r3 = ctx_r0.index;
     const ctx_r3 = ɵɵnextContext(2);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r3.dt.groupHeaderTemplate)("ngTemplateOutletContext", ɵɵpureFunction5(2, _c182, rowData_r2, ctx_r3.getRowIndex(rowIndex_r3), ctx_r3.columns, ctx_r3.dt.editMode === "row" && ctx_r3.dt.isRowEditing(rowData_r2), ctx_r3.frozen));
+    ɵɵproperty("ngTemplateOutlet", ctx_r3.dt.groupHeaderTemplate)("ngTemplateOutletContext", ɵɵpureFunction5(2, _c18, rowData_r2, ctx_r3.getRowIndex(rowIndex_r3), ctx_r3.columns, ctx_r3.dt.editMode === "row" && ctx_r3.dt.isRowEditing(rowData_r2), ctx_r3.frozen));
   }
 }
 function TableBody_ng_container_0_ng_template_1_ng_container_1_ng_container_1_Template(rf, ctx) {
@@ -11307,7 +2569,7 @@ function TableBody_ng_container_0_ng_template_1_ng_container_1_Template(rf, ctx)
     const rowIndex_r3 = ctx_r0.index;
     const ctx_r3 = ɵɵnextContext(2);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", rowData_r2 ? ctx_r3.template : ctx_r3.dt.loadingBodyTemplate)("ngTemplateOutletContext", ɵɵpureFunction5(2, _c182, rowData_r2, ctx_r3.getRowIndex(rowIndex_r3), ctx_r3.columns, ctx_r3.dt.editMode === "row" && ctx_r3.dt.isRowEditing(rowData_r2), ctx_r3.frozen));
+    ɵɵproperty("ngTemplateOutlet", rowData_r2 ? ctx_r3.template : ctx_r3.dt.loadingBodyTemplate)("ngTemplateOutletContext", ɵɵpureFunction5(2, _c18, rowData_r2, ctx_r3.getRowIndex(rowIndex_r3), ctx_r3.columns, ctx_r3.dt.editMode === "row" && ctx_r3.dt.isRowEditing(rowData_r2), ctx_r3.frozen));
   }
 }
 function TableBody_ng_container_0_ng_template_1_ng_container_2_ng_container_1_Template(rf, ctx) {
@@ -11327,7 +2589,7 @@ function TableBody_ng_container_0_ng_template_1_ng_container_2_Template(rf, ctx)
     const rowIndex_r3 = ctx_r0.index;
     const ctx_r3 = ɵɵnextContext(2);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", rowData_r2 ? ctx_r3.template : ctx_r3.dt.loadingBodyTemplate)("ngTemplateOutletContext", ɵɵpureFunction7(2, _c192, rowData_r2, ctx_r3.getRowIndex(rowIndex_r3), ctx_r3.columns, ctx_r3.dt.editMode === "row" && ctx_r3.dt.isRowEditing(rowData_r2), ctx_r3.frozen, ctx_r3.shouldRenderRowspan(ctx_r3.value, rowData_r2, rowIndex_r3), ctx_r3.calculateRowGroupSize(ctx_r3.value, rowData_r2, rowIndex_r3)));
+    ɵɵproperty("ngTemplateOutlet", rowData_r2 ? ctx_r3.template : ctx_r3.dt.loadingBodyTemplate)("ngTemplateOutletContext", ɵɵpureFunction7(2, _c19, rowData_r2, ctx_r3.getRowIndex(rowIndex_r3), ctx_r3.columns, ctx_r3.dt.editMode === "row" && ctx_r3.dt.isRowEditing(rowData_r2), ctx_r3.frozen, ctx_r3.shouldRenderRowspan(ctx_r3.value, rowData_r2, rowIndex_r3), ctx_r3.calculateRowGroupSize(ctx_r3.value, rowData_r2, rowIndex_r3)));
   }
 }
 function TableBody_ng_container_0_ng_template_1_ng_container_3_ng_container_1_Template(rf, ctx) {
@@ -11347,7 +2609,7 @@ function TableBody_ng_container_0_ng_template_1_ng_container_3_Template(rf, ctx)
     const rowIndex_r3 = ctx_r0.index;
     const ctx_r3 = ɵɵnextContext(2);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r3.dt.groupFooterTemplate)("ngTemplateOutletContext", ɵɵpureFunction5(2, _c182, rowData_r2, ctx_r3.getRowIndex(rowIndex_r3), ctx_r3.columns, ctx_r3.dt.editMode === "row" && ctx_r3.dt.isRowEditing(rowData_r2), ctx_r3.frozen));
+    ɵɵproperty("ngTemplateOutlet", ctx_r3.dt.groupFooterTemplate)("ngTemplateOutletContext", ɵɵpureFunction5(2, _c18, rowData_r2, ctx_r3.getRowIndex(rowIndex_r3), ctx_r3.columns, ctx_r3.dt.editMode === "row" && ctx_r3.dt.isRowEditing(rowData_r2), ctx_r3.frozen));
   }
 }
 function TableBody_ng_container_0_ng_template_1_Template(rf, ctx) {
@@ -11628,7 +2890,7 @@ function SortIcon_span_1_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext();
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r0.dt.sortIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c152, ctx_r0.sortOrder));
+    ɵɵproperty("ngTemplateOutlet", ctx_r0.dt.sortIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c15, ctx_r0.sortOrder));
   }
 }
 function SortIcon_span_2_Template(rf, ctx) {
@@ -11678,18 +2940,18 @@ function CellEditor_ng_container_1_Template(rf, ctx) {
   }
 }
 var _c232 = ["rb"];
-var _c242 = (a0, a1, a2) => ({
+var _c24 = (a0, a1, a2) => ({
   "p-radiobutton-focused": a0,
   "p-radiobutton-checked": a1,
   "p-radiobutton-disabled": a2
 });
-var _c252 = (a0, a1, a2) => ({
+var _c25 = (a0, a1, a2) => ({
   "p-radiobutton-box p-component": true,
   "p-highlight": a0,
   "p-focus": a1,
   "p-disabled": a2
 });
-var _c262 = (a0, a1) => ({
+var _c26 = (a0, a1) => ({
   "p-checkbox-focused": a0,
   "p-checkbox-disabled": a1
 });
@@ -11735,7 +2997,7 @@ function TableCheckbox_span_6_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = ɵɵnextContext();
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.dt.checkboxIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c152, ctx_r1.checked));
+    ɵɵproperty("ngTemplateOutlet", ctx_r1.dt.checkboxIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c15, ctx_r1.checked));
   }
 }
 var _c28 = (a0, a1, a2) => ({
@@ -11780,7 +3042,7 @@ function TableHeaderCheckbox_span_7_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = ɵɵnextContext();
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.dt.headerCheckboxIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c152, ctx_r1.checked));
+    ɵɵproperty("ngTemplateOutlet", ctx_r1.dt.headerCheckboxIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c15, ctx_r1.checked));
   }
 }
 var _c29 = ["icon"];
@@ -11789,11 +3051,11 @@ var _c31 = (a0, a1) => ({
   "p-column-filter-row": a0,
   "p-column-filter-menu": a1
 });
-var _c322 = (a0, a1) => ({
+var _c32 = (a0, a1) => ({
   "p-column-filter-menu-button-open": a0,
   "p-column-filter-menu-button-active": a1
 });
-var _c332 = (a0) => ({
+var _c33 = (a0) => ({
   "p-hidden-space": a0
 });
 var _c34 = (a0) => ({
@@ -11858,7 +3120,7 @@ function ColumnFilter_button_2_Template(rf, ctx) {
   if (rf & 2) {
     let tmp_5_0;
     const ctx_r0 = ɵɵnextContext();
-    ɵɵproperty("ngClass", ɵɵpureFunction2(6, _c322, ctx_r0.overlayVisible, ctx_r0.hasFilter()));
+    ɵɵproperty("ngClass", ɵɵpureFunction2(6, _c32, ctx_r0.overlayVisible, ctx_r0.hasFilter()));
     ɵɵattribute("aria-label", ctx_r0.filterMenuButtonAriaLabel)("aria-controls", ctx_r0.overlayVisible ? ctx_r0.overlayId : null)("aria-expanded", (tmp_5_0 = ctx_r0.overlayVisible) !== null && tmp_5_0 !== void 0 ? tmp_5_0 : false);
     ɵɵadvance(2);
     ɵɵproperty("ngIf", !ctx_r0.filterIconTemplate);
@@ -11892,7 +3154,7 @@ function ColumnFilter_button_3_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext();
-    ɵɵproperty("ngClass", ɵɵpureFunction1(4, _c332, !ctx_r0.hasRowFilter()));
+    ɵɵproperty("ngClass", ɵɵpureFunction1(4, _c33, !ctx_r0.hasRowFilter()));
     ɵɵattribute("aria-label", ctx_r0.clearButtonLabel);
     ɵɵadvance(2);
     ɵɵproperty("ngIf", !ctx_r0.clearFilterIconTemplate);
@@ -12199,11 +3461,11 @@ function ColumnFilter_div_4_Template(rf, ctx) {
     ɵɵproperty("ngClass", ɵɵpureFunction1(10, _c34, ctx_r0.display === "menu"))("id", ctx_r0.overlayId)("@overlayAnimation", "visible");
     ɵɵattribute("aria-modal", true);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r0.headerTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(12, _c152, ctx_r0.field));
+    ɵɵproperty("ngTemplateOutlet", ctx_r0.headerTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(12, _c15, ctx_r0.field));
     ɵɵadvance();
     ɵɵproperty("ngIf", ctx_r0.display === "row")("ngIfElse", menu_r16);
     ɵɵadvance(3);
-    ɵɵproperty("ngTemplateOutlet", ctx_r0.footerTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(14, _c152, ctx_r0.field));
+    ɵɵproperty("ngTemplateOutlet", ctx_r0.footerTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(14, _c15, ctx_r0.field));
   }
 }
 var _c36 = (a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15) => ({
@@ -13361,9 +4623,9 @@ var Table = class _Table {
       }
     }
   }
-  onPageChange(event2) {
-    this.first = event2.first;
-    this.rows = event2.rows;
+  onPageChange(event) {
+    this.first = event.first;
+    this.rows = event.rows;
     this.onPage.emit({
       first: this.first,
       rows: this.rows
@@ -13382,11 +4644,11 @@ var Table = class _Table {
       this.resetScrollTop();
     }
   }
-  sort(event2) {
-    let originalEvent = event2.originalEvent;
+  sort(event) {
+    let originalEvent = event.originalEvent;
     if (this.sortMode === "single") {
-      this._sortOrder = this.sortField === event2.field ? this.sortOrder * -1 : this.defaultSortOrder;
-      this._sortField = event2.field;
+      this._sortOrder = this.sortField === event.field ? this.sortOrder * -1 : this.defaultSortOrder;
+      this._sortField = event.field;
       if (this.resetPageOnSort) {
         this._first = 0;
         this.firstChange.emit(this._first);
@@ -13398,11 +4660,11 @@ var Table = class _Table {
     }
     if (this.sortMode === "multiple") {
       let metaKey = originalEvent.metaKey || originalEvent.ctrlKey;
-      let sortMeta = this.getSortMeta(event2.field);
+      let sortMeta = this.getSortMeta(event.field);
       if (sortMeta) {
         if (!metaKey) {
           this._multiSortMeta = [{
-            field: event2.field,
+            field: event.field,
             order: sortMeta.order * -1
           }];
           if (this.resetPageOnSort) {
@@ -13424,7 +4686,7 @@ var Table = class _Table {
           }
         }
         this._multiSortMeta.push({
-          field: event2.field,
+          field: event.field,
           order: this.defaultSortOrder
         });
       }
@@ -13554,24 +4816,24 @@ var Table = class _Table {
       return sorted;
     }
   }
-  handleRowClick(event2) {
-    let target = event2.originalEvent.target;
+  handleRowClick(event) {
+    let target = event.originalEvent.target;
     let targetNode = target.nodeName;
     let parentNode = target.parentElement && target.parentElement.nodeName;
-    if (targetNode == "INPUT" || targetNode == "BUTTON" || targetNode == "A" || parentNode == "INPUT" || parentNode == "BUTTON" || parentNode == "A" || DomHandler.hasClass(event2.originalEvent.target, "p-clickable")) {
+    if (targetNode == "INPUT" || targetNode == "BUTTON" || targetNode == "A" || parentNode == "INPUT" || parentNode == "BUTTON" || parentNode == "A" || DomHandler.hasClass(event.originalEvent.target, "p-clickable")) {
       return;
     }
     if (this.selectionMode) {
-      let rowData = event2.rowData;
-      let rowIndex = event2.rowIndex;
+      let rowData = event.rowData;
+      let rowIndex = event.rowIndex;
       this.preventSelectionSetterPropagation = true;
-      if (this.isMultipleSelectionMode() && event2.originalEvent.shiftKey && this.anchorRowIndex != null) {
+      if (this.isMultipleSelectionMode() && event.originalEvent.shiftKey && this.anchorRowIndex != null) {
         DomHandler.clearSelection();
         if (this.rangeRowIndex != null) {
-          this.clearSelectionRange(event2.originalEvent);
+          this.clearSelectionRange(event.originalEvent);
         }
         this.rangeRowIndex = rowIndex;
-        this.selectRange(event2.originalEvent, rowIndex);
+        this.selectRange(event.originalEvent, rowIndex);
       } else {
         let selected = this.isSelected(rowData);
         if (!selected && !this.isRowSelectable(rowData, rowIndex)) {
@@ -13582,7 +4844,7 @@ var Table = class _Table {
         this.anchorRowIndex = rowIndex;
         this.rangeRowIndex = rowIndex;
         if (metaSelection) {
-          let metaKey = event2.originalEvent.metaKey || event2.originalEvent.ctrlKey;
+          let metaKey = event.originalEvent.metaKey || event.originalEvent.ctrlKey;
           if (selected && metaKey) {
             if (this.isSingleSelectionMode()) {
               this._selection = null;
@@ -13597,7 +4859,7 @@ var Table = class _Table {
               }
             }
             this.onRowUnselect.emit({
-              originalEvent: event2.originalEvent,
+              originalEvent: event.originalEvent,
               data: rowData,
               type: "row"
             });
@@ -13623,7 +4885,7 @@ var Table = class _Table {
               }
             }
             this.onRowSelect.emit({
-              originalEvent: event2.originalEvent,
+              originalEvent: event.originalEvent,
               data: rowData,
               type: "row",
               index: rowIndex
@@ -13636,7 +4898,7 @@ var Table = class _Table {
               this.selectionKeys = {};
               this.selectionChange.emit(this.selection);
               this.onRowUnselect.emit({
-                originalEvent: event2.originalEvent,
+                originalEvent: event.originalEvent,
                 data: rowData,
                 type: "row",
                 index: rowIndex
@@ -13645,7 +4907,7 @@ var Table = class _Table {
               this._selection = rowData;
               this.selectionChange.emit(this.selection);
               this.onRowSelect.emit({
-                originalEvent: event2.originalEvent,
+                originalEvent: event.originalEvent,
                 data: rowData,
                 type: "row",
                 index: rowIndex
@@ -13661,7 +4923,7 @@ var Table = class _Table {
               this._selection = this.selection.filter((val, i) => i != selectionIndex);
               this.selectionChange.emit(this.selection);
               this.onRowUnselect.emit({
-                originalEvent: event2.originalEvent,
+                originalEvent: event.originalEvent,
                 data: rowData,
                 type: "row",
                 index: rowIndex
@@ -13673,7 +4935,7 @@ var Table = class _Table {
               this._selection = this.selection ? [...this.selection, rowData] : [rowData];
               this.selectionChange.emit(this.selection);
               this.onRowSelect.emit({
-                originalEvent: event2.originalEvent,
+                originalEvent: event.originalEvent,
                 data: rowData,
                 type: "row",
                 index: rowIndex
@@ -13692,22 +4954,22 @@ var Table = class _Table {
     }
     this.rowTouched = false;
   }
-  handleRowTouchEnd(event2) {
+  handleRowTouchEnd(event) {
     this.rowTouched = true;
   }
-  handleRowRightClick(event2) {
+  handleRowRightClick(event) {
     if (this.contextMenu) {
-      const rowData = event2.rowData;
-      const rowIndex = event2.rowIndex;
+      const rowData = event.rowData;
+      const rowIndex = event.rowIndex;
       if (this.contextMenuSelectionMode === "separate") {
         this.contextMenuSelection = rowData;
         this.contextMenuSelectionChange.emit(rowData);
         this.onContextMenuSelect.emit({
-          originalEvent: event2.originalEvent,
+          originalEvent: event.originalEvent,
           data: rowData,
-          index: event2.rowIndex
+          index: event.rowIndex
         });
-        this.contextMenu.show(event2.originalEvent);
+        this.contextMenu.show(event.originalEvent);
         this.tableService.onContextMenu(rowData);
       } else if (this.contextMenuSelectionMode === "joint") {
         this.preventSelectionSetterPropagation = true;
@@ -13733,16 +4995,16 @@ var Table = class _Table {
           }
         }
         this.tableService.onSelectionChange();
-        this.contextMenu.show(event2.originalEvent);
+        this.contextMenu.show(event.originalEvent);
         this.onContextMenuSelect.emit({
-          originalEvent: event2,
+          originalEvent: event,
           data: rowData,
-          index: event2.rowIndex
+          index: event.rowIndex
         });
       }
     }
   }
-  selectRange(event2, rowIndex, isMetaKeySelection) {
+  selectRange(event, rowIndex, isMetaKeySelection) {
     let rangeStart, rangeEnd;
     if (this.anchorRowIndex > rowIndex) {
       rangeStart = rowIndex;
@@ -13775,12 +5037,12 @@ var Table = class _Table {
     }
     this.selectionChange.emit(this.selection);
     this.onRowSelect.emit({
-      originalEvent: event2,
+      originalEvent: event,
       data: rangeRowsData,
       type: "row"
     });
   }
-  clearSelectionRange(event2) {
+  clearSelectionRange(event) {
     let rangeStart, rangeEnd;
     let rangeRowIndex = this.rangeRowIndex;
     let anchorRowIndex = this.anchorRowIndex;
@@ -13803,7 +5065,7 @@ var Table = class _Table {
         delete this.selectionKeys[dataKeyValue];
       }
       this.onRowUnselect.emit({
-        originalEvent: event2,
+        originalEvent: event,
         data: rangeRowData,
         type: "row"
       });
@@ -13841,17 +5103,17 @@ var Table = class _Table {
     }
     return true;
   }
-  toggleRowWithRadio(event2, rowData) {
+  toggleRowWithRadio(event, rowData) {
     this.preventSelectionSetterPropagation = true;
     if (this.selection != rowData) {
-      if (!this.isRowSelectable(rowData, event2.rowIndex)) {
+      if (!this.isRowSelectable(rowData, event.rowIndex)) {
         return;
       }
       this._selection = rowData;
       this.selectionChange.emit(this.selection);
       this.onRowSelect.emit({
-        originalEvent: event2.originalEvent,
-        index: event2.rowIndex,
+        originalEvent: event.originalEvent,
+        index: event.rowIndex,
         data: rowData,
         type: "radiobutton"
       });
@@ -13863,8 +5125,8 @@ var Table = class _Table {
       this._selection = null;
       this.selectionChange.emit(this.selection);
       this.onRowUnselect.emit({
-        originalEvent: event2.originalEvent,
-        index: event2.rowIndex,
+        originalEvent: event.originalEvent,
+        index: event.rowIndex,
         data: rowData,
         type: "radiobutton"
       });
@@ -13874,7 +5136,7 @@ var Table = class _Table {
       this.saveState();
     }
   }
-  toggleRowWithCheckbox(event2, rowData) {
+  toggleRowWithCheckbox(event, rowData) {
     this.selection = this.selection || [];
     let selected = this.isSelected(rowData);
     let dataKeyValue = this.dataKey ? String(ObjectUtils.resolveFieldData(rowData, this.dataKey)) : null;
@@ -13884,8 +5146,8 @@ var Table = class _Table {
       this._selection = this.selection.filter((val, i) => i != selectionIndex);
       this.selectionChange.emit(this.selection);
       this.onRowUnselect.emit({
-        originalEvent: event2.originalEvent,
-        index: event2.rowIndex,
+        originalEvent: event.originalEvent,
+        index: event.rowIndex,
         data: rowData,
         type: "checkbox"
       });
@@ -13893,14 +5155,14 @@ var Table = class _Table {
         delete this.selectionKeys[dataKeyValue];
       }
     } else {
-      if (!this.isRowSelectable(rowData, event2.rowIndex)) {
+      if (!this.isRowSelectable(rowData, event.rowIndex)) {
         return;
       }
       this._selection = this.selection ? [...this.selection, rowData] : [rowData];
       this.selectionChange.emit(this.selection);
       this.onRowSelect.emit({
-        originalEvent: event2.originalEvent,
-        index: event2.rowIndex,
+        originalEvent: event.originalEvent,
+        index: event.rowIndex,
         data: rowData,
         type: "checkbox"
       });
@@ -13913,10 +5175,10 @@ var Table = class _Table {
       this.saveState();
     }
   }
-  toggleRowsWithCheckbox(event2, check) {
+  toggleRowsWithCheckbox(event, check) {
     if (this._selectAll !== null) {
       this.selectAllChange.emit({
-        originalEvent: event2,
+        originalEvent: event,
         checked: check
       });
     } else {
@@ -13935,7 +5197,7 @@ var Table = class _Table {
       this.selectionChange.emit(this._selection);
       this.tableService.onSelectionChange();
       this.onHeaderCheckboxToggle.emit({
-        originalEvent: event2,
+        originalEvent: event,
         checked: check
       });
       if (this.isStateful()) {
@@ -14178,9 +5440,9 @@ var Table = class _Table {
     }
     this.renderer.removeChild(this.document.body, link);
   }
-  onLazyItemLoad(event2) {
-    this.onLazyLoad.emit(__spreadProps(__spreadValues(__spreadValues({}, this.createLazyLoadMetadata()), event2), {
-      rows: event2.last - event2.first
+  onLazyItemLoad(event) {
+    this.onLazyLoad.emit(__spreadProps(__spreadValues(__spreadValues({}, this.createLazyLoadMetadata()), event), {
+      rows: event.last - event.first
     }));
   }
   /**
@@ -14230,14 +5492,14 @@ var Table = class _Table {
   }
   bindDocumentEditListener() {
     if (!this.documentEditListener) {
-      this.documentEditListener = this.renderer.listen(this.document, "click", (event2) => {
+      this.documentEditListener = this.renderer.listen(this.document, "click", (event) => {
         if (this.editingCell && !this.selfClick && this.isEditingCellValid()) {
           DomHandler.removeClass(this.editingCell, "p-cell-editing");
           this.editingCell = null;
           this.onEditComplete.emit({
             field: this.editingCellField,
             data: this.editingCellData,
-            originalEvent: event2,
+            originalEvent: event,
             index: this.editingCellRowIndex
           });
           this.editingCellField = null;
@@ -14273,7 +5535,7 @@ var Table = class _Table {
     let dataKeyValue = String(ObjectUtils.resolveFieldData(rowData, this.dataKey));
     delete this.editingRowKeys[dataKeyValue];
   }
-  toggleRow(rowData, event2) {
+  toggleRow(rowData, event) {
     if (!this.dataKey && !this.groupRowsBy) {
       throw new Error("dataKey or groupRowsBy must be defined to use row expansion");
     }
@@ -14281,7 +5543,7 @@ var Table = class _Table {
     if (this.expandedRowKeys[dataKeyValue] != null) {
       delete this.expandedRowKeys[dataKeyValue];
       this.onRowCollapse.emit({
-        originalEvent: event2,
+        originalEvent: event,
         data: rowData
       });
     } else {
@@ -14290,12 +5552,12 @@ var Table = class _Table {
       }
       this.expandedRowKeys[dataKeyValue] = true;
       this.onRowExpand.emit({
-        originalEvent: event2,
+        originalEvent: event,
         data: rowData
       });
     }
-    if (event2) {
-      event2.preventDefault();
+    if (event) {
+      event.preventDefault();
     }
     if (this.isStateful()) {
       this.saveState();
@@ -14313,27 +5575,27 @@ var Table = class _Table {
   isMultipleSelectionMode() {
     return this.selectionMode === "multiple";
   }
-  onColumnResizeBegin(event2) {
+  onColumnResizeBegin(event) {
     let containerLeft = DomHandler.getOffset(this.containerViewChild?.nativeElement).left;
-    this.resizeColumnElement = event2.target.parentElement;
+    this.resizeColumnElement = event.target.parentElement;
     this.columnResizing = true;
-    if (event2.type == "touchstart") {
-      this.lastResizerHelperX = event2.changedTouches[0].clientX - containerLeft + this.containerViewChild?.nativeElement.scrollLeft;
+    if (event.type == "touchstart") {
+      this.lastResizerHelperX = event.changedTouches[0].clientX - containerLeft + this.containerViewChild?.nativeElement.scrollLeft;
     } else {
-      this.lastResizerHelperX = event2.pageX - containerLeft + this.containerViewChild?.nativeElement.scrollLeft;
+      this.lastResizerHelperX = event.pageX - containerLeft + this.containerViewChild?.nativeElement.scrollLeft;
     }
-    this.onColumnResize(event2);
-    event2.preventDefault();
+    this.onColumnResize(event);
+    event.preventDefault();
   }
-  onColumnResize(event2) {
+  onColumnResize(event) {
     let containerLeft = DomHandler.getOffset(this.containerViewChild?.nativeElement).left;
     DomHandler.addClass(this.containerViewChild?.nativeElement, "p-unselectable-text");
     this.resizeHelperViewChild.nativeElement.style.height = this.containerViewChild?.nativeElement.offsetHeight + "px";
     this.resizeHelperViewChild.nativeElement.style.top = "0px";
-    if (event2.type == "touchmove") {
-      this.resizeHelperViewChild.nativeElement.style.left = event2.changedTouches[0].clientX - containerLeft + this.containerViewChild?.nativeElement.scrollLeft + "px";
+    if (event.type == "touchmove") {
+      this.resizeHelperViewChild.nativeElement.style.left = event.changedTouches[0].clientX - containerLeft + this.containerViewChild?.nativeElement.scrollLeft + "px";
     } else {
-      this.resizeHelperViewChild.nativeElement.style.left = event2.pageX - containerLeft + this.containerViewChild?.nativeElement.scrollLeft + "px";
+      this.resizeHelperViewChild.nativeElement.style.left = event.pageX - containerLeft + this.containerViewChild?.nativeElement.scrollLeft + "px";
     }
     this.resizeHelperViewChild.nativeElement.style.display = "block";
   }
@@ -14373,15 +5635,15 @@ var Table = class _Table {
     headers.forEach((header) => widths.push(DomHandler.getOuterWidth(header)));
     return widths;
   }
-  onColumnDragStart(event2, columnElement) {
+  onColumnDragStart(event, columnElement) {
     this.reorderIconWidth = DomHandler.getHiddenElementOuterWidth(this.reorderIndicatorUpViewChild?.nativeElement);
     this.reorderIconHeight = DomHandler.getHiddenElementOuterHeight(this.reorderIndicatorDownViewChild?.nativeElement);
     this.draggedColumn = columnElement;
-    event2.dataTransfer.setData("text", "b");
+    event.dataTransfer.setData("text", "b");
   }
-  onColumnDragEnter(event2, dropHeader) {
+  onColumnDragEnter(event, dropHeader) {
     if (this.reorderableColumns && this.draggedColumn && dropHeader) {
-      event2.preventDefault();
+      event.preventDefault();
       let containerOffset = DomHandler.getOffset(this.containerViewChild?.nativeElement);
       let dropHeaderOffset = DomHandler.getOffset(dropHeader);
       if (this.draggedColumn != dropHeader) {
@@ -14392,7 +5654,7 @@ var Table = class _Table {
         let columnCenter = dropHeaderOffset.left + dropHeader.offsetWidth / 2;
         this.reorderIndicatorUpViewChild.nativeElement.style.top = dropHeaderOffset.top - containerOffset.top - (this.reorderIconHeight - 1) + "px";
         this.reorderIndicatorDownViewChild.nativeElement.style.top = dropHeaderOffset.top - containerOffset.top + dropHeader.offsetHeight + "px";
-        if (event2.pageX > columnCenter) {
+        if (event.pageX > columnCenter) {
           this.reorderIndicatorUpViewChild.nativeElement.style.left = targetLeft + dropHeader.offsetWidth - Math.ceil(this.reorderIconWidth / 2) + "px";
           this.reorderIndicatorDownViewChild.nativeElement.style.left = targetLeft + dropHeader.offsetWidth - Math.ceil(this.reorderIconWidth / 2) + "px";
           this.dropPosition = 1;
@@ -14404,17 +5666,17 @@ var Table = class _Table {
         this.reorderIndicatorUpViewChild.nativeElement.style.display = "block";
         this.reorderIndicatorDownViewChild.nativeElement.style.display = "block";
       } else {
-        event2.dataTransfer.dropEffect = "none";
+        event.dataTransfer.dropEffect = "none";
       }
     }
   }
-  onColumnDragLeave(event2) {
+  onColumnDragLeave(event) {
     if (this.reorderableColumns && this.draggedColumn) {
-      event2.preventDefault();
+      event.preventDefault();
     }
   }
-  onColumnDrop(event2, dropColumn) {
-    event2.preventDefault();
+  onColumnDrop(event, dropColumn) {
+    event.preventDefault();
     if (this.draggedColumn) {
       let dragIndex = DomHandler.indexWithinGroup(this.draggedColumn, "preorderablecolumn");
       let dropIndex = DomHandler.indexWithinGroup(dropColumn, "preorderablecolumn");
@@ -14477,15 +5739,15 @@ var Table = class _Table {
     });
     this.renderer.setProperty(this.styleElement, "innerHTML", this.domSanitizer.bypassSecurityTrustStyle(innerHTML));
   }
-  onRowDragStart(event2, index) {
+  onRowDragStart(event, index) {
     this.rowDragging = true;
     this.draggedRowIndex = index;
-    event2.dataTransfer.setData("text", "b");
+    event.dataTransfer.setData("text", "b");
   }
-  onRowDragOver(event2, index, rowElement) {
+  onRowDragOver(event, index, rowElement) {
     if (this.rowDragging && this.draggedRowIndex !== index) {
       let rowY = DomHandler.getOffset(rowElement).top;
-      let pageY = event2.pageY;
+      let pageY = event.pageY;
       let rowMidY = rowY + DomHandler.getOuterHeight(rowElement) / 2;
       let prevRowElement = rowElement.previousElementSibling;
       if (pageY < rowMidY) {
@@ -14501,7 +5763,7 @@ var Table = class _Table {
       }
     }
   }
-  onRowDragLeave(event2, rowElement) {
+  onRowDragLeave(event, rowElement) {
     let prevRowElement = rowElement.previousElementSibling;
     if (prevRowElement) {
       DomHandler.removeClass(prevRowElement, "p-datatable-dragpoint-bottom");
@@ -14509,12 +5771,12 @@ var Table = class _Table {
     DomHandler.removeClass(rowElement, "p-datatable-dragpoint-bottom");
     DomHandler.removeClass(rowElement, "p-datatable-dragpoint-top");
   }
-  onRowDragEnd(event2) {
+  onRowDragEnd(event) {
     this.rowDragging = false;
     this.draggedRowIndex = null;
     this.droppedRowIndex = null;
   }
-  onRowDrop(event2, rowElement) {
+  onRowDrop(event, rowElement) {
     if (this.droppedRowIndex != null) {
       let dropIndex = this.draggedRowIndex > this.droppedRowIndex ? this.droppedRowIndex : this.droppedRowIndex === 0 ? 0 : this.droppedRowIndex - 1;
       ObjectUtils.reorderArray(this.value, this.draggedRowIndex, dropIndex);
@@ -14526,8 +5788,8 @@ var Table = class _Table {
         dropIndex
       });
     }
-    this.onRowDragLeave(event2, rowElement);
-    this.onRowDragEnd(event2);
+    this.onRowDragLeave(event, rowElement);
+    this.onRowDragEnd(event);
   }
   isEmpty() {
     let data = this.filteredValue || this.value;
@@ -14555,35 +5817,35 @@ var Table = class _Table {
   }
   saveState() {
     const storage = this.getStorage();
-    let state2 = {};
+    let state = {};
     if (this.paginator) {
-      state2.first = this.first;
-      state2.rows = this.rows;
+      state.first = this.first;
+      state.rows = this.rows;
     }
     if (this.sortField) {
-      state2.sortField = this.sortField;
-      state2.sortOrder = this.sortOrder;
+      state.sortField = this.sortField;
+      state.sortOrder = this.sortOrder;
     }
     if (this.multiSortMeta) {
-      state2.multiSortMeta = this.multiSortMeta;
+      state.multiSortMeta = this.multiSortMeta;
     }
     if (this.hasFilter()) {
-      state2.filters = this.filters;
+      state.filters = this.filters;
     }
     if (this.resizableColumns) {
-      this.saveColumnWidths(state2);
+      this.saveColumnWidths(state);
     }
     if (this.reorderableColumns) {
-      this.saveColumnOrder(state2);
+      this.saveColumnOrder(state);
     }
     if (this.selection) {
-      state2.selection = this.selection;
+      state.selection = this.selection;
     }
     if (Object.keys(this.expandedRowKeys).length) {
-      state2.expandedRowKeys = this.expandedRowKeys;
+      state.expandedRowKeys = this.expandedRowKeys;
     }
-    storage.setItem(this.stateKey, JSON.stringify(state2));
-    this.onStateSave.emit(state2);
+    storage.setItem(this.stateKey, JSON.stringify(state));
+    this.onStateSave.emit(state);
   }
   clearState() {
     const storage = this.getStorage();
@@ -14602,45 +5864,45 @@ var Table = class _Table {
       return value;
     };
     if (stateString) {
-      let state2 = JSON.parse(stateString, reviver);
+      let state = JSON.parse(stateString, reviver);
       if (this.paginator) {
         if (this.first !== void 0) {
-          this.first = state2.first;
+          this.first = state.first;
           this.firstChange.emit(this.first);
         }
         if (this.rows !== void 0) {
-          this.rows = state2.rows;
+          this.rows = state.rows;
           this.rowsChange.emit(this.rows);
         }
       }
-      if (state2.sortField) {
+      if (state.sortField) {
         this.restoringSort = true;
-        this._sortField = state2.sortField;
-        this._sortOrder = state2.sortOrder;
+        this._sortField = state.sortField;
+        this._sortOrder = state.sortOrder;
       }
-      if (state2.multiSortMeta) {
+      if (state.multiSortMeta) {
         this.restoringSort = true;
-        this._multiSortMeta = state2.multiSortMeta;
+        this._multiSortMeta = state.multiSortMeta;
       }
-      if (state2.filters) {
+      if (state.filters) {
         this.restoringFilter = true;
-        this.filters = state2.filters;
+        this.filters = state.filters;
       }
       if (this.resizableColumns) {
-        this.columnWidthsState = state2.columnWidths;
-        this.tableWidthState = state2.tableWidth;
+        this.columnWidthsState = state.columnWidths;
+        this.tableWidthState = state.tableWidth;
       }
-      if (state2.expandedRowKeys) {
-        this.expandedRowKeys = state2.expandedRowKeys;
+      if (state.expandedRowKeys) {
+        this.expandedRowKeys = state.expandedRowKeys;
       }
-      if (state2.selection) {
-        Promise.resolve(null).then(() => this.selectionChange.emit(state2.selection));
+      if (state.selection) {
+        Promise.resolve(null).then(() => this.selectionChange.emit(state.selection));
       }
       this.stateRestored = true;
-      this.onStateRestore.emit(state2);
+      this.onStateRestore.emit(state);
     }
   }
-  saveColumnWidths(state2) {
+  saveColumnWidths(state) {
     let widths = [];
     let headers = [];
     const container = this.containerViewChild?.nativeElement;
@@ -14648,9 +5910,9 @@ var Table = class _Table {
       headers = DomHandler.find(container, ".p-datatable-thead > tr > th");
     }
     headers.forEach((header) => widths.push(DomHandler.getOuterWidth(header)));
-    state2.columnWidths = widths.join(",");
+    state.columnWidths = widths.join(",");
     if (this.columnResizeMode === "expand") {
-      state2.tableWidth = DomHandler.getOuterWidth(this.tableViewChild?.nativeElement);
+      state.tableWidth = DomHandler.getOuterWidth(this.tableViewChild?.nativeElement);
     }
   }
   setResizeTableWidth(width) {
@@ -14680,21 +5942,21 @@ var Table = class _Table {
       }
     }
   }
-  saveColumnOrder(state2) {
+  saveColumnOrder(state) {
     if (this.columns) {
       let columnOrder = [];
       this.columns.map((column) => {
         columnOrder.push(column.field || column.key);
       });
-      state2.columnOrder = columnOrder;
+      state.columnOrder = columnOrder;
     }
   }
   restoreColumnOrder() {
     const storage = this.getStorage();
     const stateString = storage.getItem(this.stateKey);
     if (stateString) {
-      let state2 = JSON.parse(stateString);
-      let columnOrder = state2.columnOrder;
+      let state = JSON.parse(stateString);
+      let columnOrder = state.columnOrder;
       if (columnOrder) {
         let reorderedColumns = [];
         columnOrder.map((key) => {
@@ -14809,15 +6071,15 @@ var Table = class _Table {
     },
     viewQuery: function Table_Query(rf, ctx) {
       if (rf & 1) {
-        ɵɵviewQuery(_c06, 5);
-        ɵɵviewQuery(_c111, 5);
-        ɵɵviewQuery(_c26, 5);
-        ɵɵviewQuery(_c33, 5);
-        ɵɵviewQuery(_c42, 5);
-        ɵɵviewQuery(_c52, 5);
-        ɵɵviewQuery(_c62, 5);
-        ɵɵviewQuery(_c72, 5);
-        ɵɵviewQuery(_c82, 5);
+        ɵɵviewQuery(_c03, 5);
+        ɵɵviewQuery(_c13, 5);
+        ɵɵviewQuery(_c23, 5);
+        ɵɵviewQuery(_c3, 5);
+        ɵɵviewQuery(_c4, 5);
+        ɵɵviewQuery(_c5, 5);
+        ɵɵviewQuery(_c6, 5);
+        ɵɵviewQuery(_c7, 5);
+        ɵɵviewQuery(_c8, 5);
       }
       if (rf & 2) {
         let _t;
@@ -14962,7 +6224,7 @@ var Table = class _Table {
       }
       if (rf & 2) {
         ɵɵclassMap(ctx.styleClass);
-        ɵɵproperty("ngStyle", ctx.style)("ngClass", ɵɵpureFunction3(16, _c92, ctx.rowHover || ctx.selectionMode, ctx.scrollable, ctx.scrollable && ctx.scrollHeight === "flex"));
+        ɵɵproperty("ngStyle", ctx.style)("ngClass", ɵɵpureFunction3(16, _c9, ctx.rowHover || ctx.selectionMode, ctx.scrollable, ctx.scrollable && ctx.scrollHeight === "flex"));
         ɵɵattribute("id", ctx.id);
         ɵɵadvance(2);
         ɵɵproperty("ngIf", ctx.loading && ctx.showLoader);
@@ -14971,7 +6233,7 @@ var Table = class _Table {
         ɵɵadvance();
         ɵɵproperty("ngIf", ctx.paginator && (ctx.paginatorPosition === "top" || ctx.paginatorPosition == "both"));
         ɵɵadvance();
-        ɵɵproperty("ngStyle", ɵɵpureFunction1(20, _c102, ctx.virtualScroll ? "" : ctx.scrollHeight));
+        ɵɵproperty("ngStyle", ɵɵpureFunction1(20, _c10, ctx.virtualScroll ? "" : ctx.scrollHeight));
         ɵɵadvance(2);
         ɵɵproperty("ngIf", ctx.virtualScroll);
         ɵɵadvance();
@@ -15838,7 +7100,7 @@ var TableBody = class _TableBody {
       scrollerOptions: "scrollerOptions"
     },
     features: [ɵɵInputTransformsFeature],
-    attrs: _c172,
+    attrs: _c17,
     decls: 5,
     vars: 5,
     consts: [[4, "ngIf"], ["ngFor", "", 3, "ngForOf", "ngForTrackBy"], ["role", "row", 4, "ngIf"], ["role", "row"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"]],
@@ -16154,19 +7416,19 @@ var SortableColumn = class _SortableColumn {
     this.sorted = this.dt.isSorted(this.field);
     this.sortOrder = this.sorted ? this.dt.sortOrder === 1 ? "ascending" : "descending" : "none";
   }
-  onClick(event2) {
-    if (this.isEnabled() && !this.isFilterElement(event2.target)) {
+  onClick(event) {
+    if (this.isEnabled() && !this.isFilterElement(event.target)) {
       this.updateSortState();
       this.dt.sort({
-        originalEvent: event2,
+        originalEvent: event,
         field: this.field
       });
       DomHandler.clearSelection();
     }
   }
-  onEnterKey(event2) {
-    this.onClick(event2);
-    event2.preventDefault();
+  onEnterKey(event) {
+    this.onClick(event);
+    event.preventDefault();
   }
   isEnabled() {
     return this.pSortableColumnDisabled !== true;
@@ -16268,8 +7530,8 @@ var SortIcon = class _SortIcon {
   ngOnInit() {
     this.updateSortState();
   }
-  onClick(event2) {
-    event2.preventDefault();
+  onClick(event) {
+    event.preventDefault();
   }
   updateSortState() {
     if (this.dt.sortMode === "single") {
@@ -16397,113 +7659,113 @@ var SelectableRow = class _SelectableRow {
       this.selected = this.dt.isSelected(this.data);
     }
   }
-  onClick(event2) {
+  onClick(event) {
     if (this.isEnabled()) {
       this.dt.handleRowClick({
-        originalEvent: event2,
+        originalEvent: event,
         rowData: this.data,
         rowIndex: this.index
       });
     }
   }
-  onTouchEnd(event2) {
+  onTouchEnd(event) {
     if (this.isEnabled()) {
-      this.dt.handleRowTouchEnd(event2);
+      this.dt.handleRowTouchEnd(event);
     }
   }
-  onKeyDown(event2) {
-    switch (event2.code) {
+  onKeyDown(event) {
+    switch (event.code) {
       case "ArrowDown":
-        this.onArrowDownKey(event2);
+        this.onArrowDownKey(event);
         break;
       case "ArrowUp":
-        this.onArrowUpKey(event2);
+        this.onArrowUpKey(event);
         break;
       case "Home":
-        this.onHomeKey(event2);
+        this.onHomeKey(event);
         break;
       case "End":
-        this.onEndKey(event2);
+        this.onEndKey(event);
         break;
       case "Space":
-        this.onSpaceKey(event2);
+        this.onSpaceKey(event);
         break;
       case "Enter":
-        this.onEnterKey(event2);
+        this.onEnterKey(event);
         break;
       default:
-        if (event2.code === "KeyA" && (event2.metaKey || event2.ctrlKey) && this.dt.selectionMode === "multiple") {
+        if (event.code === "KeyA" && (event.metaKey || event.ctrlKey) && this.dt.selectionMode === "multiple") {
           const data = this.dt.dataToRender(this.dt.processedData);
           this.dt.selection = [...data];
-          this.dt.selectRange(event2, data.length - 1, true);
-          event2.preventDefault();
+          this.dt.selectRange(event, data.length - 1, true);
+          event.preventDefault();
         }
         break;
     }
   }
-  onArrowDownKey(event2) {
+  onArrowDownKey(event) {
     if (!this.isEnabled()) {
       return;
     }
-    const row = event2.currentTarget;
+    const row = event.currentTarget;
     const nextRow = this.findNextSelectableRow(row);
     if (nextRow) {
       nextRow.focus();
     }
-    event2.preventDefault();
+    event.preventDefault();
   }
-  onArrowUpKey(event2) {
+  onArrowUpKey(event) {
     if (!this.isEnabled()) {
       return;
     }
-    const row = event2.currentTarget;
+    const row = event.currentTarget;
     const prevRow = this.findPrevSelectableRow(row);
     if (prevRow) {
       prevRow.focus();
     }
-    event2.preventDefault();
+    event.preventDefault();
   }
-  onEnterKey(event2) {
+  onEnterKey(event) {
     if (!this.isEnabled()) {
       return;
     }
     this.dt.handleRowClick({
-      originalEvent: event2,
+      originalEvent: event,
       rowData: this.data,
       rowIndex: this.index
     });
   }
-  onEndKey(event2) {
+  onEndKey(event) {
     const lastRow = this.findLastSelectableRow();
     lastRow && this.focusRowChange(this.el.nativeElement, lastRow);
-    if (event2.ctrlKey && event2.shiftKey) {
+    if (event.ctrlKey && event.shiftKey) {
       const data = this.dt.dataToRender(this.dt.rows);
       const lastSelectableRowIndex = DomHandler.getAttribute(lastRow, "index");
       this.dt.anchorRowIndex = lastSelectableRowIndex;
       this.dt.selection = data.slice(this.index, data.length);
-      this.dt.selectRange(event2, this.index);
+      this.dt.selectRange(event, this.index);
     }
-    event2.preventDefault();
+    event.preventDefault();
   }
-  onHomeKey(event2) {
+  onHomeKey(event) {
     const firstRow = this.findFirstSelectableRow();
     firstRow && this.focusRowChange(this.el.nativeElement, firstRow);
-    if (event2.ctrlKey && event2.shiftKey) {
+    if (event.ctrlKey && event.shiftKey) {
       const data = this.dt.dataToRender(this.dt.rows);
       const firstSelectableRowIndex = DomHandler.getAttribute(firstRow, "index");
       this.dt.anchorRowIndex = this.dt.anchorRowIndex || firstSelectableRowIndex;
       this.dt.selection = data.slice(0, this.index + 1);
-      this.dt.selectRange(event2, this.index);
+      this.dt.selectRange(event, this.index);
     }
-    event2.preventDefault();
+    event.preventDefault();
   }
-  onSpaceKey(event2) {
-    const isInput = event2.target instanceof HTMLInputElement || event2.target instanceof HTMLSelectElement || event2.target instanceof HTMLTextAreaElement;
+  onSpaceKey(event) {
+    const isInput = event.target instanceof HTMLInputElement || event.target instanceof HTMLSelectElement || event.target instanceof HTMLTextAreaElement;
     if (isInput) {
       return;
     } else {
-      this.onEnterKey(event2);
-      if (event2.shiftKey && this.dt.selection !== null) {
+      this.onEnterKey(event);
+      if (event.shiftKey && this.dt.selection !== null) {
         const data = this.dt.dataToRender(this.dt.rows);
         let index;
         if (ObjectUtils.isNotEmpty(this.dt.selection) && this.dt.selection.length > 0) {
@@ -16516,9 +7778,9 @@ var SelectableRow = class _SelectableRow {
         }
         this.dt.anchorRowIndex = index;
         this.dt.selection = index !== this.index ? data.slice(Math.min(index, this.index), Math.max(index, this.index) + 1) : [this.data];
-        this.dt.selectRange(event2, this.index);
+        this.dt.selectRange(event, this.index);
       }
-      event2.preventDefault();
+      event.preventDefault();
     }
   }
   focusRowChange(firstFocusableRow, currentFocusedRow) {
@@ -16662,10 +7924,10 @@ var SelectableRowDblClick = class _SelectableRowDblClick {
       this.selected = this.dt.isSelected(this.data);
     }
   }
-  onClick(event2) {
+  onClick(event) {
     if (this.isEnabled()) {
       this.dt.handleRowClick({
-        originalEvent: event2,
+        originalEvent: event,
         rowData: this.data,
         rowIndex: this.index
       });
@@ -16760,15 +8022,15 @@ var ContextMenuRow = class _ContextMenuRow {
       });
     }
   }
-  onContextMenu(event2) {
+  onContextMenu(event) {
     if (this.isEnabled()) {
       this.dt.handleRowRightClick({
-        originalEvent: event2,
+        originalEvent: event,
         rowData: this.data,
         rowIndex: this.index
       });
       this.el.nativeElement.focus();
-      event2.preventDefault();
+      event.preventDefault();
     }
   }
   isEnabled() {
@@ -16851,10 +8113,10 @@ var RowToggler = class _RowToggler {
   constructor(dt) {
     this.dt = dt;
   }
-  onClick(event2) {
+  onClick(event) {
     if (this.isEnabled()) {
-      this.dt.toggleRow(this.data, event2);
-      event2.preventDefault();
+      this.dt.toggleRow(this.data, event);
+      event.preventDefault();
     }
   }
   isEnabled() {
@@ -16972,25 +8234,25 @@ var ResizableColumn = class _ResizableColumn {
       this.resizerTouchEndListener = null;
     }
   }
-  onMouseDown(event2) {
-    this.dt.onColumnResizeBegin(event2);
+  onMouseDown(event) {
+    this.dt.onColumnResizeBegin(event);
     this.bindDocumentEvents();
   }
-  onTouchStart(event2) {
-    this.dt.onColumnResizeBegin(event2);
+  onTouchStart(event) {
+    this.dt.onColumnResizeBegin(event);
     this.bindDocumentEvents();
   }
-  onTouchMove(event2) {
-    this.dt.onColumnResize(event2);
+  onTouchMove(event) {
+    this.dt.onColumnResize(event);
   }
-  onDocumentMouseMove(event2) {
-    this.dt.onColumnResize(event2);
+  onDocumentMouseMove(event) {
+    this.dt.onColumnResize(event);
   }
-  onDocumentMouseUp(event2) {
+  onDocumentMouseUp(event) {
     this.dt.onColumnResizeEnd();
     this.unbindDocumentEvents();
   }
-  onTouchEnd(event2) {
+  onTouchEnd(event) {
     this.dt.onColumnResizeEnd();
     this.unbindDocumentEvents();
   }
@@ -17112,25 +8374,25 @@ var ReorderableColumn = class _ReorderableColumn {
       this.dragLeaveListener = null;
     }
   }
-  onMouseDown(event2) {
-    if (event2.target.nodeName === "INPUT" || event2.target.nodeName === "TEXTAREA" || DomHandler.hasClass(event2.target, "p-column-resizer")) this.el.nativeElement.draggable = false;
+  onMouseDown(event) {
+    if (event.target.nodeName === "INPUT" || event.target.nodeName === "TEXTAREA" || DomHandler.hasClass(event.target, "p-column-resizer")) this.el.nativeElement.draggable = false;
     else this.el.nativeElement.draggable = true;
   }
-  onDragStart(event2) {
-    this.dt.onColumnDragStart(event2, this.el.nativeElement);
+  onDragStart(event) {
+    this.dt.onColumnDragStart(event, this.el.nativeElement);
   }
-  onDragOver(event2) {
-    event2.preventDefault();
+  onDragOver(event) {
+    event.preventDefault();
   }
-  onDragEnter(event2) {
-    this.dt.onColumnDragEnter(event2, this.el.nativeElement);
+  onDragEnter(event) {
+    this.dt.onColumnDragEnter(event, this.el.nativeElement);
   }
-  onDragLeave(event2) {
-    this.dt.onColumnDragLeave(event2);
+  onDragLeave(event) {
+    this.dt.onColumnDragLeave(event);
   }
-  onDrop(event2) {
+  onDrop(event) {
     if (this.isEnabled()) {
-      this.dt.onColumnDrop(event2, this.el.nativeElement);
+      this.dt.onColumnDrop(event, this.el.nativeElement);
     }
   }
   isEnabled() {
@@ -17227,7 +8489,7 @@ var EditableColumn = class _EditableColumn {
       DomHandler.addClass(this.el.nativeElement, "p-editable-column");
     }
   }
-  onClick(event2) {
+  onClick(event) {
     if (this.isEnabled()) {
       this.dt.selfClick = true;
       if (this.dt.editingCell) {
@@ -17235,7 +8497,7 @@ var EditableColumn = class _EditableColumn {
           if (!this.dt.isEditingCellValid()) {
             return;
           }
-          this.closeEditingCell(true, event2);
+          this.closeEditingCell(true, event);
           this.openCell();
         }
       } else {
@@ -17267,11 +8529,11 @@ var EditableColumn = class _EditableColumn {
     };
     this.dt.overlaySubscription = this.dt.overlayService.clickObservable.subscribe(this.overlayEventListener);
   }
-  closeEditingCell(completed, event2) {
+  closeEditingCell(completed, event) {
     const eventData = {
       field: this.dt.editingCellField,
       data: this.dt.editingCellData,
-      originalEvent: event2,
+      originalEvent: event,
       index: this.dt.editingCellRowIndex
     };
     if (completed) {
@@ -17293,80 +8555,80 @@ var EditableColumn = class _EditableColumn {
       this.dt.overlaySubscription.unsubscribe();
     }
   }
-  onEnterKeyDown(event2) {
-    if (this.isEnabled() && !event2.shiftKey) {
+  onEnterKeyDown(event) {
+    if (this.isEnabled() && !event.shiftKey) {
       if (this.dt.isEditingCellValid()) {
-        this.closeEditingCell(true, event2);
+        this.closeEditingCell(true, event);
       }
-      event2.preventDefault();
+      event.preventDefault();
     }
   }
-  onTabKeyDown(event2) {
+  onTabKeyDown(event) {
     if (this.isEnabled()) {
       if (this.dt.isEditingCellValid()) {
-        this.closeEditingCell(true, event2);
+        this.closeEditingCell(true, event);
       }
-      event2.preventDefault();
+      event.preventDefault();
     }
   }
-  onEscapeKeyDown(event2) {
+  onEscapeKeyDown(event) {
     if (this.isEnabled()) {
       if (this.dt.isEditingCellValid()) {
-        this.closeEditingCell(false, event2);
+        this.closeEditingCell(false, event);
       }
-      event2.preventDefault();
+      event.preventDefault();
     }
   }
-  onShiftKeyDown(event2) {
+  onShiftKeyDown(event) {
     if (this.isEnabled()) {
-      if (event2.shiftKey) this.moveToPreviousCell(event2);
+      if (event.shiftKey) this.moveToPreviousCell(event);
       else {
-        this.moveToNextCell(event2);
+        this.moveToNextCell(event);
       }
     }
   }
-  onArrowDown(event2) {
+  onArrowDown(event) {
     if (this.isEnabled()) {
-      let currentCell = this.findCell(event2.target);
+      let currentCell = this.findCell(event.target);
       if (currentCell) {
         let cellIndex = DomHandler.index(currentCell);
         let targetCell = this.findNextEditableColumnByIndex(currentCell, cellIndex);
         if (targetCell) {
           if (this.dt.isEditingCellValid()) {
-            this.closeEditingCell(true, event2);
+            this.closeEditingCell(true, event);
           }
-          DomHandler.invokeElementMethod(event2.target, "blur");
+          DomHandler.invokeElementMethod(event.target, "blur");
           DomHandler.invokeElementMethod(targetCell, "click");
         }
-        event2.preventDefault();
+        event.preventDefault();
       }
     }
   }
-  onArrowUp(event2) {
+  onArrowUp(event) {
     if (this.isEnabled()) {
-      let currentCell = this.findCell(event2.target);
+      let currentCell = this.findCell(event.target);
       if (currentCell) {
         let cellIndex = DomHandler.index(currentCell);
         let targetCell = this.findPrevEditableColumnByIndex(currentCell, cellIndex);
         if (targetCell) {
           if (this.dt.isEditingCellValid()) {
-            this.closeEditingCell(true, event2);
+            this.closeEditingCell(true, event);
           }
-          DomHandler.invokeElementMethod(event2.target, "blur");
+          DomHandler.invokeElementMethod(event.target, "blur");
           DomHandler.invokeElementMethod(targetCell, "click");
         }
-        event2.preventDefault();
+        event.preventDefault();
       }
     }
   }
-  onArrowLeft(event2) {
+  onArrowLeft(event) {
     if (this.isEnabled()) {
-      this.moveToPreviousCell(event2);
+      this.moveToPreviousCell(event);
     }
   }
-  onArrowRight(event2) {
+  onArrowRight(event) {
     if (this.isEnabled()) {
-      this.moveToNextCell(event2);
+      this.moveToNextCell(event);
     }
   }
   findCell(element) {
@@ -17380,34 +8642,34 @@ var EditableColumn = class _EditableColumn {
       return null;
     }
   }
-  moveToPreviousCell(event2) {
-    let currentCell = this.findCell(event2.target);
+  moveToPreviousCell(event) {
+    let currentCell = this.findCell(event.target);
     if (currentCell) {
       let targetCell = this.findPreviousEditableColumn(currentCell);
       if (targetCell) {
         if (this.dt.isEditingCellValid()) {
-          this.closeEditingCell(true, event2);
+          this.closeEditingCell(true, event);
         }
-        DomHandler.invokeElementMethod(event2.target, "blur");
+        DomHandler.invokeElementMethod(event.target, "blur");
         DomHandler.invokeElementMethod(targetCell, "click");
-        event2.preventDefault();
+        event.preventDefault();
       }
     }
   }
-  moveToNextCell(event2) {
-    let currentCell = this.findCell(event2.target);
+  moveToNextCell(event) {
+    let currentCell = this.findCell(event.target);
     if (currentCell) {
       let targetCell = this.findNextEditableColumn(currentCell);
       if (targetCell) {
         if (this.dt.isEditingCellValid()) {
-          this.closeEditingCell(true, event2);
+          this.closeEditingCell(true, event);
         }
-        DomHandler.invokeElementMethod(event2.target, "blur");
+        DomHandler.invokeElementMethod(event.target, "blur");
         DomHandler.invokeElementMethod(targetCell, "click");
-        event2.preventDefault();
+        event.preventDefault();
       } else {
         if (this.dt.isEditingCellValid()) {
-          this.closeEditingCell(true, event2);
+          this.closeEditingCell(true, event);
         }
       }
     }
@@ -17652,9 +8914,9 @@ var InitEditableRow = class _InitEditableRow {
     this.dt = dt;
     this.editableRow = editableRow;
   }
-  onClick(event2) {
+  onClick(event) {
     this.dt.initRowEdit(this.editableRow.data);
-    event2.preventDefault();
+    event.preventDefault();
   }
   static ɵfac = function InitEditableRow_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _InitEditableRow)(ɵɵdirectiveInject(Table), ɵɵdirectiveInject(EditableRow));
@@ -17699,9 +8961,9 @@ var SaveEditableRow = class _SaveEditableRow {
     this.dt = dt;
     this.editableRow = editableRow;
   }
-  onClick(event2) {
+  onClick(event) {
     this.dt.saveRowEdit(this.editableRow.data, this.editableRow.el.nativeElement);
-    event2.preventDefault();
+    event.preventDefault();
   }
   static ɵfac = function SaveEditableRow_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _SaveEditableRow)(ɵɵdirectiveInject(Table), ɵɵdirectiveInject(EditableRow));
@@ -17746,9 +9008,9 @@ var CancelEditableRow = class _CancelEditableRow {
     this.dt = dt;
     this.editableRow = editableRow;
   }
-  onClick(event2) {
+  onClick(event) {
     this.dt.cancelRowEdit(this.editableRow.data);
-    event2.preventDefault();
+    event.preventDefault();
   }
   static ɵfac = function CancelEditableRow_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _CancelEditableRow)(ɵɵdirectiveInject(Table), ɵɵdirectiveInject(EditableRow));
@@ -17908,10 +9170,10 @@ var TableRadioButton = class _TableRadioButton {
   ngOnInit() {
     this.checked = this.dt.isSelected(this.value);
   }
-  onClick(event2) {
+  onClick(event) {
     if (!this.disabled) {
       this.dt.toggleRowWithRadio({
-        originalEvent: event2,
+        originalEvent: event,
         rowIndex: this.index
       }, this.value);
       this.inputViewChild?.nativeElement?.focus();
@@ -17979,12 +9241,12 @@ var TableRadioButton = class _TableRadioButton {
         ɵɵelementEnd()();
       }
       if (rf & 2) {
-        ɵɵproperty("ngClass", ɵɵpureFunction3(8, _c242, ctx.focused, ctx.checked, ctx.disabled));
+        ɵɵproperty("ngClass", ɵɵpureFunction3(8, _c24, ctx.focused, ctx.checked, ctx.disabled));
         ɵɵadvance(2);
         ɵɵproperty("checked", ctx.checked)("disabled", ctx.disabled)("tabindex", ctx.disabled ? null : "0");
         ɵɵattribute("id", ctx.inputId)("name", ctx.name)("aria-label", ctx.ariaLabel);
         ɵɵadvance(2);
-        ɵɵproperty("ngClass", ɵɵpureFunction3(12, _c252, ctx.checked, ctx.focused, ctx.disabled));
+        ɵɵproperty("ngClass", ɵɵpureFunction3(12, _c25, ctx.checked, ctx.focused, ctx.disabled));
       }
     },
     dependencies: [NgClass],
@@ -18082,10 +9344,10 @@ var TableCheckbox = class _TableCheckbox {
   ngOnInit() {
     this.checked = this.dt.isSelected(this.value);
   }
-  onClick(event2) {
+  onClick(event) {
     if (!this.disabled) {
       this.dt.toggleRowWithCheckbox({
-        originalEvent: event2,
+        originalEvent: event,
         rowIndex: this.index
       }, this.value);
       this.tableService.onHeaderCheckboxSelection(false);
@@ -18148,7 +9410,7 @@ var TableCheckbox = class _TableCheckbox {
         ɵɵelementEnd()();
       }
       if (rf & 2) {
-        ɵɵproperty("ngClass", ɵɵpureFunction2(11, _c262, ctx.focused, ctx.disabled));
+        ɵɵproperty("ngClass", ɵɵpureFunction2(11, _c26, ctx.focused, ctx.disabled));
         ɵɵadvance(2);
         ɵɵproperty("checked", ctx.checked)("disabled", ctx.disabled)("tabindex", ctx.disabled ? null : "0");
         ɵɵattribute("id", ctx.inputId)("name", ctx.name)("required", ctx.required)("aria-label", ctx.ariaLabel);
@@ -18269,11 +9531,11 @@ var TableHeaderCheckbox = class _TableHeaderCheckbox {
   ngOnInit() {
     this.checked = this.updateCheckedState();
   }
-  onClick(event2) {
+  onClick(event) {
     if (!this.disabled) {
       if (this.dt.value && this.dt.value.length > 0) {
         this.tableService.onHeaderCheckboxSelection(true);
-        this.dt.toggleRowsWithCheckbox(event2, !this.checked);
+        this.dt.toggleRowsWithCheckbox(event, !this.checked);
       }
     }
     DomHandler.clearSelection();
@@ -18348,7 +9610,7 @@ var TableHeaderCheckbox = class _TableHeaderCheckbox {
         ɵɵelementEnd()();
       }
       if (rf & 2) {
-        ɵɵproperty("ngClass", ɵɵpureFunction2(10, _c262, ctx.focused, ctx.isDisabled()));
+        ɵɵproperty("ngClass", ɵɵpureFunction2(10, _c26, ctx.focused, ctx.isDisabled()));
         ɵɵadvance(2);
         ɵɵproperty("tabindex", ctx.disabled ? null : "0")("checked", ctx.checked)("disabled", ctx.isDisabled());
         ɵɵattribute("id", ctx.inputId)("name", ctx.name)("aria-label", ctx.ariaLabel);
@@ -18501,8 +9763,8 @@ var ReorderableRow = class _ReorderableRow {
       this.dragLeaveListener = null;
     }
   }
-  onMouseDown(event2) {
-    const targetElement = event2.target;
+  onMouseDown(event) {
+    const targetElement = event.target;
     const isHandleClicked = this.isHandleElement(targetElement);
     this.el.nativeElement.draggable = isHandleClicked;
   }
@@ -18515,28 +9777,28 @@ var ReorderableRow = class _ReorderableRow {
     }
     return false;
   }
-  onDragStart(event2) {
-    this.dt.onRowDragStart(event2, this.index);
+  onDragStart(event) {
+    this.dt.onRowDragStart(event, this.index);
   }
-  onDragEnd(event2) {
-    this.dt.onRowDragEnd(event2);
+  onDragEnd(event) {
+    this.dt.onRowDragEnd(event);
     this.el.nativeElement.draggable = false;
   }
-  onDragOver(event2) {
-    this.dt.onRowDragOver(event2, this.index, this.el.nativeElement);
-    event2.preventDefault();
+  onDragOver(event) {
+    this.dt.onRowDragOver(event, this.index, this.el.nativeElement);
+    event.preventDefault();
   }
-  onDragLeave(event2) {
-    this.dt.onRowDragLeave(event2, this.el.nativeElement);
+  onDragLeave(event) {
+    this.dt.onRowDragLeave(event, this.el.nativeElement);
   }
   isEnabled() {
     return this.pReorderableRowDisabled !== true;
   }
-  onDrop(event2) {
+  onDrop(event) {
     if (this.isEnabled() && this.dt.rowDragging) {
-      this.dt.onRowDrop(event2, this.el.nativeElement);
+      this.dt.onRowDrop(event, this.el.nativeElement);
     }
-    event2.preventDefault();
+    event.preventDefault();
   }
   ngOnDestroy() {
     this.unbindEvents();
@@ -18910,9 +10172,9 @@ var ColumnFilter = class _ColumnFilter {
     }
     this.hide();
   }
-  onRowMatchModeKeyDown(event2) {
-    let item = event2.target;
-    switch (event2.key) {
+  onRowMatchModeKeyDown(event) {
+    let item = event.target;
+    switch (event.key) {
       case "ArrowDown":
         var nextItem = this.findNextItem(item);
         if (nextItem) {
@@ -18920,7 +10182,7 @@ var ColumnFilter = class _ColumnFilter {
           nextItem.tabIndex = "0";
           nextItem.focus();
         }
-        event2.preventDefault();
+        event.preventDefault();
         break;
       case "ArrowUp":
         var prevItem = this.findPrevItem(item);
@@ -18929,7 +10191,7 @@ var ColumnFilter = class _ColumnFilter {
           prevItem.tabIndex = "0";
           prevItem.focus();
         }
-        event2.preventDefault();
+        event.preventDefault();
         break;
     }
   }
@@ -18967,8 +10229,8 @@ var ColumnFilter = class _ColumnFilter {
   toggleMenu() {
     this.overlayVisible = !this.overlayVisible;
   }
-  onToggleButtonKeyDown(event2) {
-    switch (event2.key) {
+  onToggleButtonKeyDown(event) {
+    switch (event.key) {
       case "Escape":
       case "Tab":
         this.overlayVisible = false;
@@ -18979,15 +10241,15 @@ var ColumnFilter = class _ColumnFilter {
           if (focusable) {
             focusable[0].focus();
           }
-          event2.preventDefault();
-        } else if (event2.altKey) {
+          event.preventDefault();
+        } else if (event.altKey) {
           this.overlayVisible = true;
-          event2.preventDefault();
+          event.preventDefault();
         }
         break;
       case "Enter":
         this.toggleMenu();
-        event2.preventDefault();
+        event.preventDefault();
         break;
     }
   }
@@ -19007,10 +10269,10 @@ var ColumnFilter = class _ColumnFilter {
   onContentClick() {
     this.selfClick = true;
   }
-  onOverlayAnimationStart(event2) {
-    switch (event2.toState) {
+  onOverlayAnimationStart(event) {
+    switch (event.toState) {
       case "visible":
-        this.overlay = event2.element;
+        this.overlay = event.element;
         this.renderer.appendChild(this.document.body, this.overlay);
         zindexutils.set("overlay", this.overlay, this.config.zIndex.overlay);
         DomHandler.absolutePosition(this.overlay, this.icon?.nativeElement);
@@ -19024,7 +10286,7 @@ var ColumnFilter = class _ColumnFilter {
         };
         this.overlaySubscription = this.overlayService.clickObservable.subscribe(this.overlayEventListener);
         this.onShow.emit({
-          originalEvent: event2
+          originalEvent: event
         });
         break;
       case "void":
@@ -19035,15 +10297,15 @@ var ColumnFilter = class _ColumnFilter {
         break;
     }
   }
-  onOverlayAnimationEnd(event2) {
-    switch (event2.toState) {
+  onOverlayAnimationEnd(event) {
+    switch (event.toState) {
       case "visible":
         this.focusOnFirstElement();
         break;
       case "void":
-        zindexutils.clear(event2.element);
+        zindexutils.clear(event.element);
         this.onHide.emit({
-          originalEvent: event2
+          originalEvent: event
         });
         break;
     }
@@ -19077,19 +10339,19 @@ var ColumnFilter = class _ColumnFilter {
     }
     return false;
   }
-  isOutsideClicked(event2) {
-    return !(DomHandler.hasClass(this.overlay?.nextElementSibling, "p-overlay") || this.overlay?.isSameNode(event2.target) || this.overlay?.contains(event2.target) || this.icon?.nativeElement.isSameNode(event2.target) || this.icon?.nativeElement.contains(event2.target) || DomHandler.hasClass(event2.target, "p-column-filter-add-button") || DomHandler.hasClass(event2.target.parentElement, "p-column-filter-add-button") || DomHandler.hasClass(event2.target, "p-column-filter-remove-button") || DomHandler.hasClass(event2.target.parentElement, "p-column-filter-remove-button"));
+  isOutsideClicked(event) {
+    return !(DomHandler.hasClass(this.overlay?.nextElementSibling, "p-overlay") || this.overlay?.isSameNode(event.target) || this.overlay?.contains(event.target) || this.icon?.nativeElement.isSameNode(event.target) || this.icon?.nativeElement.contains(event.target) || DomHandler.hasClass(event.target, "p-column-filter-add-button") || DomHandler.hasClass(event.target.parentElement, "p-column-filter-add-button") || DomHandler.hasClass(event.target, "p-column-filter-remove-button") || DomHandler.hasClass(event.target.parentElement, "p-column-filter-remove-button"));
   }
   bindDocumentClickListener() {
     if (!this.documentClickListener) {
       const documentTarget = this.el ? this.el.nativeElement.ownerDocument : "document";
-      this.documentClickListener = this.renderer.listen(documentTarget, "mousedown", (event2) => {
+      this.documentClickListener = this.renderer.listen(documentTarget, "mousedown", (event) => {
         let isDateDialog = false;
         document.querySelectorAll('[role="dialog"]').forEach((d) => {
           if (DomHandler.hasClass(d, "p-datepicker")) isDateDialog = true;
         });
-        const targetIsColumnFilterMenuButton = event2.target.closest(".p-column-filter-menu-button");
-        if (this.overlayVisible && this.isOutsideClicked(event2) && (targetIsColumnFilterMenuButton || !isDateDialog)) {
+        const targetIsColumnFilterMenuButton = event.target.closest(".p-column-filter-menu-button");
+        if (this.overlayVisible && this.isOutsideClicked(event) && (targetIsColumnFilterMenuButton || !isDateDialog)) {
           this.hide();
         }
         this.selfClick = false;
@@ -19105,7 +10367,7 @@ var ColumnFilter = class _ColumnFilter {
   }
   bindDocumentResizeListener() {
     if (!this.documentResizeListener) {
-      this.documentResizeListener = this.renderer.listen(this.window, "resize", (event2) => {
+      this.documentResizeListener = this.renderer.listen(this.window, "resize", (event) => {
         if (this.overlayVisible && !DomHandler.isTouchDevice()) {
           this.hide();
         }
@@ -19601,14 +10863,14 @@ var ColumnFilterFormElement = class _ColumnFilterFormElement {
       this.dt._filter();
     }
   }
-  onTextInputEnterKeyDown(event2) {
+  onTextInputEnterKeyDown(event) {
     this.dt._filter();
-    event2.preventDefault();
+    event.preventDefault();
   }
-  onNumericInputKeyDown(event2) {
-    if (event2.key === "Enter") {
+  onNumericInputKeyDown(event) {
+    if (event.key === "Enter") {
       this.dt._filter();
-      event2.preventDefault();
+      event.preventDefault();
     }
   }
   static ɵfac = function ColumnFilterFormElement_Factory(__ngFactoryType__) {

@@ -1,16 +1,16 @@
-.p-dropdown {
+.todos .p-dialog-content {
+  overflow-y: inherit !important;
+}
+.p-calendar{
   width: 100%;
 }
-
-.p-dialog-content {
-  overflow-y: inherit;
-}
-
 .delete-selected {
   margin-left: 10px
 }
 
 .button-group {
+  height: 100px;
+  align-items: center;
   display: flex;
   justify-content: space-around;
 }
@@ -62,9 +62,11 @@
   margin-bottom: 15px;
   display: inline-block;
 }
-.p-inputtext {
+.p-inputtext, .p-dropdown {
   width: 100%;
+  //margin-top: 10px;
 }
+
 .field{
   margin-bottom: 15px;
 }
@@ -89,6 +91,9 @@
   border: #d32f2f;
   margin-left: 8px;
   color: white;
+}
+.p-button.p-button-success, .p-button-group.p-button-success > .p-button, .p-splitbutton.p-button-success > .p-button{
+  margin-left: 8px;
 }
 @media screen and (max-width: 870px) {
   .button-group {

@@ -1,29 +1,239 @@
-<div class="container">
-  <div class="p-field">
-    <div class="grid">
-      <div class="col-12">
-        <div class="card px-6 py-6">
-          <h2>Список пользователей</h2>
-          <div class="actions mt-4">
-            <button
-              pButton
-              label="Удалить выбранных"
-              class="p-button-danger"
-              [disabled]="!selectedUsers.length"
-              (click)="onDeleteSelected()"
-            ></button>
-          </div>
-          <app-shared-table
+<div class="card px-6 py-6">
+    <p-toast></p-toast>
+    <p-toolbar styleClass="mb-4">
+        <ng-template pTemplate="right">
+            <div class="my-2 buttons">
+                <button *ngIf="isAdmin" pButton pRipple label="Создать" icon="pi pi-plus"
+                        class="p-button-success mr-2"
+                        (click)="openNew()"></button>
+                <button
+                        *ngIf="isAdmin"
+                        pButton
+                        pRipple
+                        label="Удалить"
+                        icon="pi pi-trash"
+                        class="p-button-danger ml-5 delete-selected"
+                        (click)="deleteSelectedUsers()"
+                        [disabled]="!selectedUsers || !selectedUsers.length"
+                ></button>
+            </div>
+        </ng-template>
+
+        <ng-template pTemplate="left">
+            <h2>Список пользователей</h2>
+        </ng-template>
+    </p-toolbar>
+
+    <app-shared-table
             [data]="users"
-            [columns]="userColumns"
+            [columns]="cols"
             [rows]="5"
-            [isAdmin]="true"
+            [isAdmin]="isAdmin"
             [(selectedItems)]="selectedUsers"
-            (edit)="onEditUser($event)"
-            (delete)="onDeleteUser($event)"
-          ></app-shared-table>
-        </div>
-      </div>
-    </div>
-  </div>
+            [transformColumn]="getRoleDisplayName"
+            [showViewButton]="true"
+    (viewDetails)="viewUserDetails($event)"
+    (edit)="editUser($event)"
+    (delete)="deleteUser($event)"
+    ></app-shared-table>
+
+
 </div>
+
+<p-dialog [(visible)]="userDialog" [style]="{width: '450px'}" header="Подробности пользователя"
+          [modal]="true">
+    <ng-template class="creat-edit-modal" pTemplate="content">
+        <!-- Поле для имени -->
+        <div class="field">
+            <label for="name">Имя пользователя</label>
+            <input type="text" id="name" pInputText [(ngModel)]="user.firstName" required>
+        </div>
+
+        <!-- Поле для фамилии -->
+        <div class="field">
+            <label for="lastName">Фамилия пользователя</label>
+            <input type="text" id="lastName" pInputText [(ngModel)]="user.lastName" required>
+        </div>
+
+        <!-- Поле для Email -->
+        <div class="field">
+            <label for="email">Email</label>
+            <textarea id="email" pInputTextarea [(ngModel)]="user.email" required
+                      rows="3"></textarea>
+        </div>
+
+        <!-- Поле для номера телефона -->
+        <div class="field">
+            <label for="phoneNumber">Номер телефона</label>
+            <div class="phone-input">
+                <span>+996</span>
+                <input
+                        type="text"
+                        id="phoneNumber"
+                        pInputText
+                        [(ngModel)]="user.phoneNumber"
+                        (ngModelChange)="formatPhoneNumber($event)"
+                        maxlength="12"
+                required
+                />
+            </div>
+            <small *ngIf="!isValidPhoneNumber(user.phoneNumber || '')" class="p-error">
+                Введите корректный номер телефона (9 цифр, первая цифра не 0).
+            </small>
+
+
+        </div>
+
+
+        <!-- Поле для возраста -->
+        <div class="field">
+            <label for="age">Возраст</label>
+            <input type="number" id="age" pInputText [(ngModel)]="user.age" required>
+        </div>
+
+        <!-- Поле для пола -->
+        <div class="field">
+            <label for="gender">Пол</label>
+            <p-dropdown
+                    [(ngModel)]="user.gender"
+                    [options]="genderOptions"
+                    optionLabel="label"
+                    optionValue="value"
+                    placeholder="Выберите пол"
+                    required>
+            </p-dropdown>
+        </div>
+
+        <!-- Поле для адреса -->
+        <div class="field">
+            <label for="address">Адрес</label>
+            <textarea id="address" pInputTextarea [(ngModel)]="user.address" required
+                      rows="3"></textarea>
+        </div>
+
+        <!-- Поле для даты рождения -->
+        <div class="field">
+            <label for="dateOfBirth">Дата рождения</label>
+            <p-calendar [(ngModel)]="user.dateOfBirth" dateFormat="yy-mm-dd" showIcon></p-calendar>
+        </div>
+
+        <!-- Поле для роли -->
+        <div class="field">
+            <label for="role">Роль</label>
+            <p-dropdown
+                    [(ngModel)]="user.role"
+                    [options]="roleOptions"
+                    optionLabel="label"
+                    optionValue="value"
+                    placeholder="Выберите роль"
+                    required>
+            </p-dropdown>
+        </div>
+
+        <small *ngIf="submitted && !user.role" class="p-error">Роль обязательна для выбора.</small>
+
+        <!-- Поле для фотографии профиля -->
+        <div class="field">
+            <label for="profilePicture">Фотография профиля</label>
+            <input type="text" id="profilePicture" pInputText [(ngModel)]="user.profilePicture" placeholder="URL изображения">
+        </div>
+
+        <!-- Превью изображения -->
+        <div *ngIf="user.profilePicture" class="profile-picture-preview">
+            <img [src]="user.profilePicture" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 50%;">
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Отмена" icon="pi pi-times" class="p-button-text"
+                (click)="hideDialog()"></button>
+        <button pButton pRipple label="Сохранить" icon="pi pi-check" class="p-button-text"
+                (click)="saveUser()"></button>
+    </ng-template>
+</p-dialog>
+
+<p-dialog
+        [(visible)]="deleteUsersDialog"
+        [style]="{ width: '400px' }"
+        header="Подтверждение"
+        [modal]="true"
+        [closable]="false"
+>
+    <div class="flex align-items-center justify-content-center">
+        <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem;"></i>
+        <span *ngIf="selectedUsers.length === 1">
+      Вы уверены, что хотите удалить <b>{{ selectedUsers[0]?.firstName }}</b>?
+    </span>
+        <span *ngIf="selectedUsers.length > 1">
+    Вы уверены, что хотите удалить выбранные пользователи?
+    </span>
+    </div>
+
+    <ng-template pTemplate="footer">
+        <button
+                pButton
+                pRipple
+                icon="pi pi-times"
+                label="Нет"
+                class="p-button-text"
+                (click)="deleteUsersDialog = false"
+        ></button>
+        <button
+                pButton
+                pRipple
+                icon="pi pi-check"
+                label="Да"
+                class="p-button-text"
+                (click)="confirmDeleteSelected()"
+        ></button>
+    </ng-template>
+</p-dialog>
+
+<p-dialog
+        [(visible)]="deleteUserDialog"
+        [style]="{ width: '400px' }"
+        header="Подтверждение"
+        [modal]="true"
+        [closable]="false"
+>
+    <div class="flex align-items-center justify-content-center">
+        <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem;"></i>
+        <span *ngIf="user">Вы уверены, что хотите удалить пользователь <b>{{ user.firstName }}</b>?</span>
+    </div>
+    <ng-template pTemplate="footer">
+        <button
+                pButton
+                pRipple
+                icon="pi pi-times"
+                label="Нет"
+                class="p-button-text"
+                (click)="deleteUserDialog = false"
+        ></button>
+        <button
+                pButton
+                pRipple
+                icon="pi pi-check"
+                label="Да"
+                class="p-button-text"
+                (click)="confirmDelete()"
+        ></button>
+    </ng-template>
+</p-dialog>
+
+<p-dialog [(visible)]="displayModal" [modal]="true" header="Информация о пользователе" [closable]="true">
+    <div *ngIf="selectedUser">
+        <img [src]="selectedUser.profilePicture" alt="Profile Picture" style="width: 100px; border-radius: 50%;">
+        <p><strong>Имя:</strong> {{ selectedUser.firstName }} {{ selectedUser.lastName }}</p>
+        <p><strong>Email:</strong> {{ selectedUser.email }}</p>
+        <p><strong>Телефон:</strong> {{ selectedUser.phoneNumber | phoneNumberFormat}}</p>
+        <p><strong>Роль:</strong> {{ selectedUser.role === 'admin' ? 'Админ' : 'Пользователь' }}</p>
+        <p><strong>Возраст:</strong> {{ selectedUser.age }}</p>
+        <p><strong>Пол:</strong> {{ selectedUser.gender }}</p>
+        <p *ngIf="selectedUser.dateOfBirth"><strong>Дата рождения:</strong> {{ selectedUser.dateOfBirth | date: 'yyyy-MM-dd' }}</p>
+        <p *ngIf="!selectedUser.dateOfBirth"><strong>Дата рождения:</strong> Не указана</p>
+        <p><strong>Адрес:</strong> {{ selectedUser.address }}</p>
+    </div>
+    <footer>
+        <button pButton label="Закрыть" icon="pi pi-times" (click)="displayModal = false"></button>
+    </footer>
+</p-dialog>

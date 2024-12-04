@@ -50,29 +50,15 @@ export class RegisterComponent {
     this.authService.register(this.email, this.password)
       .then(() => {
         alert('Registration successful!');
-        this.router.navigate(['/main']);
+        this.router.navigate(['/main']).then(r =>
+            window.location.reload()
+        );
       })
       .catch(err => {
         alert('Registration failed: ' + err.message);
       });
   }
 
-
-  validateEmail(email: string): boolean {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-
-  clearInputs() {
-    this.email = '';
-    this.password = '';
-  }
-
-  // onGoogleSignIn() {
-  //   this.authService.googleSignIn()
-  //     .then(user => alert(`Welcome, ${user.displayName}!`))
-  //     .catch(err => alert(`Google Sign-In Failed: ${err.message}`));
-  // }
   protected readonly name = name;
 }
 

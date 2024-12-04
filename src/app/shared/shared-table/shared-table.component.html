@@ -35,13 +35,27 @@
         <ng-container *ngIf="col.field === 'status'">
           {{ item[col.field] ? 'Выполнено' : 'Не выполнено' }}
         </ng-container>
+        <ng-container *ngIf="col.field === 'role'">
+          {{ transformColumn(item[col.field]) }}
+        </ng-container>
+        <ng-container *ngIf="col.field === 'phoneNumber'">
+          {{ item[col.field] | phoneNumberFormat }}
+        </ng-container>
         <!-- Вывод остальных данных -->
-        <ng-container *ngIf="col.field !== 'status'">
+        <ng-container *ngIf="col.field !== 'status'&&col.field !== 'role'&&col.field !== 'phoneNumber'">
           {{ item[col.field] }}
         </ng-container>
       </td>
 
       <td *ngIf="isAdmin" class="button-group">
+        <button
+                *ngIf="showViewButton"
+                pButton
+                pRipple
+                icon="pi pi-eye"
+                class="p-button-rounded p-button-info mr-2"
+                (click)="onViewDetails(item)"
+        ></button>
         <button
           pButton
           pRipple

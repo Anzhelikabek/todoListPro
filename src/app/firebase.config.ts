@@ -1,13 +1,13 @@
 import { initializeApp } from "firebase/app";
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyD_jwjpiSnbYOy-tBtI1puwhV1QLSdvEEI",
-  authDomain: "todolist-f5dba.firebaseapp.com",
-  projectId: "todolist-f5dba",
-  storageBucket: "todolist-f5dba.firebasestorage.app",
-  messagingSenderId: "847661364323",
-  appId: "1:847661364323:web:7cc7120f2fa3af401cb456",
-  measurementId: "G-RPL9CWB2RV"
+  apiKey: "AIzaSyABEWT8lxmvq67WAz4kpzFl6XiZXHRgYGk",
+  authDomain: "todolistpro-31fa4.firebaseapp.com",
+  projectId: "todolistpro-31fa4",
+  storageBucket: "todolistpro-31fa4.firebasestorage.app",
+  messagingSenderId: "594966594591",
+  appId: "1:594966594591:web:1b0442948d98a52913412a",
+  measurementId: "G-Q55GTQ9P73"
 };
 
 // Initialize Firebase

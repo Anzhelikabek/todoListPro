@@ -17,7 +17,7 @@ export const routes: Routes = [
   { path: 'main', component: MainComponent, canActivate: [AuthGuard] },
 
   // Доступ к /users только для авторизованных пользователей
-  { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
+  // { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
 
   // Редирект на /login, если путь не указан
   { path: '', redirectTo: '/login', pathMatch: 'full' },

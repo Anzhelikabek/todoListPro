@@ -3,6 +3,7 @@ import {NgClass, NgForOf, NgIf, NgStyle} from '@angular/common';
 import {TableModule} from 'primeng/table';
 import {Ripple} from 'primeng/ripple';
 import {ButtonDirective} from 'primeng/button';
+import {PhoneNumberFormatPipe} from "../../pipes/phone-number-format.pipe";
 
 @Component({
   selector: 'app-shared-table',
@@ -16,7 +17,8 @@ import {ButtonDirective} from 'primeng/button';
     Ripple,
     ButtonDirective,
     NgClass,
-    NgStyle
+    NgStyle,
+    PhoneNumberFormatPipe,
   ]
 })
 export class SharedTableComponent {
@@ -34,14 +36,20 @@ export class SharedTableComponent {
     this.selectedItemsChange.emit(this._selectedItems); // Генерация события при изменении
   }
 
+  @Output() viewDetails = new EventEmitter<any>();
+  @Input() transformColumn: (value: string) => string = (value) => value;
   @Input() data: any[] = [];
   @Input() columns: { field: string; header: string }[] = [];
   @Input() rows: number = 5;
   @Input() isAdmin: boolean = false;
+  @Input() showViewButton: boolean = false; // По умолчанию кнопка не отображается
 
   @Output() edit = new EventEmitter<any>();
   @Output() delete = new EventEmitter<any>();
 
+  onViewDetails(item: any): void {
+    this.viewDetails.emit(item);
+  }
   onRowSelect(event: any) {
     this.selectedItemsChange.emit(this._selectedItems); // Обновляем привязку при выборе строки
   }
