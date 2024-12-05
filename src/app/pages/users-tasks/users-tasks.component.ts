@@ -18,6 +18,7 @@ import {TodoService} from "../../services/todo.service";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {Table} from "primeng/table";
+import {SharedStateService} from "../../services/shared-state.service";
 
 @Component({
   selector: 'app-users-tasks',
@@ -48,13 +49,10 @@ export class UsersTasksComponent {
 
   userOptions: { label: string; value: string }[] = []; // Массив для выпадающего списка пользователей
   todosWithUsers: any[] = []; // Задачи с данными пользователей
-  currentUser: any = null;
   todos: Todo[] = [];
-  userTodos: User[] = [];
   todo: Todo = {};
   selectedTodos: any[] = [];
   userEmail: string | null = '';
-  displayModal: boolean = false;
 
   submitted: boolean = false;
   cols: any[] = [];
@@ -70,7 +68,8 @@ export class UsersTasksComponent {
       private todoService: TodoService,
       private messageService: MessageService,
       private authService: AuthService,
-      private router: Router
+      private router: Router,
+      private sharedStateService: SharedStateService,
   ) {}
 
   ngOnInit() {
@@ -84,7 +83,12 @@ export class UsersTasksComponent {
     }
 
     this.loadTodosWithUsers();
+    this.removeTasksWithoutUsers()
 
+    this.sharedStateService.todos$.subscribe((todos) => {
+      // Автоматически обновляем список задач, если в SharedStateService произошли изменения
+      this.loadTodosWithUsers();
+    });
     this.cols = [
       { field: 'name', header: 'Заголовок' },
       { field: 'description', header: 'Описание' },
@@ -94,13 +98,8 @@ export class UsersTasksComponent {
   }
 
   loadTodosWithUsers(): void {
-    this.userService.getUsers().subscribe((users) => {
-      this.userOptions = users.map((user) => ({
-        label: `${user.firstName} ${user.lastName}`, // Отображаемое имя
-        value: user.id // Значение (userId)
-      }));
-
-      this.todoService.getTodos().subscribe((todos) => {
+    this.sharedStateService.getUsers().subscribe((users) => {
+      this.sharedStateService.getTodos().subscribe((todos) => {
         this.todosWithUsers = todos.map((todo) => {
           const user = users.find((user) => user.id === todo.userId);
           return {
@@ -108,10 +107,11 @@ export class UsersTasksComponent {
             userName: user ? `${user.firstName} ${user.lastName}` : 'Неизвестный пользователь'
           };
         });
-        console.log('Задачи с данными пользователей:', this.todosWithUsers);
+
+        console.log('Обновленные задачи с пользователями:', this.todosWithUsers);
       });
-    });
-  }
+    });}
+
   openNew() {
     this.todo = {};
     this.submitted = false;
@@ -137,7 +137,7 @@ export class UsersTasksComponent {
     Promise.all(deleteRequests)
         .then(() => {
           // Удаляем только те задачи, которые успешно удалены
-          this.todos = this.todos.filter(
+          this.todosWithUsers = this.todosWithUsers.filter(
               (todo) => !this.selectedTodos.some((selected) => selected.id === todo.id)
           );
 
@@ -176,7 +176,7 @@ export class UsersTasksComponent {
     this.deleteTodoDialog = false;
     this.todoService.deleteTodo(this.todo.id!).subscribe({
       next: () => {
-        this.todos = this.todos.filter((t) => t.id !== this.todo.id);
+        this.todosWithUsers = this.todosWithUsers.filter((t) => t.id !== this.todo.id);
         this.messageService.add({
           severity: 'success',
           summary: 'Успешно',
@@ -248,6 +248,26 @@ export class UsersTasksComponent {
 
     this.todoDialog = false;
     this.todo = {};
+  }
+  removeTasksWithoutUsers(): void {
+    this.todosWithUsers = this.todosWithUsers.filter((todo) => {
+      return todo.userName !== 'Неизвестный пользователь';
+    });
+
+    // Обновляем данные в `TodoService` или `SharedStateService`
+    const updatedTodos = this.todosWithUsers.map((todo) => {
+      const { userName, ...rest } = todo; // Убираем userName
+      return rest;
+    });
+
+    this.sharedStateService.setTodos(updatedTodos);
+
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Успешно',
+      detail: 'Удалены задачи с неизвестными пользователями.',
+      life: 3000
+    });
   }
 
 }

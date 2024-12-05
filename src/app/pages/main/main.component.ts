@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ToastModule} from 'primeng/toast';
-import {ButtonDirective} from 'primeng/button';
+import {Button, ButtonDirective} from 'primeng/button';
 import {Todo} from '../../interfaces/todo';
 import {MessageService} from 'primeng/api';
 import {TodoService} from '../../services/todo.service';
@@ -21,29 +21,32 @@ import {UsersComponent} from "../users/users.component";
 import {TodosComponent} from "../todos/todos.component";
 import {UsersTasksComponent} from "../users-tasks/users-tasks.component";
 import {UserService} from "../../services/user.service";
+import {SidebarModule} from "primeng/sidebar";
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [
-    ToastModule,
-    ButtonDirective,
-    ToolbarModule,
-    Ripple,
-    TableModule,
-    DialogModule,
-    FormsModule,
-    InputTextModule,
-    NgClass,
-    DropdownModule,
-    NgIf,
-    InputTextareaModule,
-    SharedTableComponent,
-    TabViewModule,
-    UsersComponent,
-    TodosComponent,
-    UsersTasksComponent,
-  ],
+    imports: [
+        ToastModule,
+        ButtonDirective,
+        ToolbarModule,
+        Ripple,
+        TableModule,
+        DialogModule,
+        FormsModule,
+        InputTextModule,
+        NgClass,
+        DropdownModule,
+        NgIf,
+        InputTextareaModule,
+        SharedTableComponent,
+        TabViewModule,
+        UsersComponent,
+        TodosComponent,
+        UsersTasksComponent,
+        SidebarModule,
+        Button,
+    ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
@@ -52,7 +55,7 @@ export class MainComponent {
   displayModal: boolean = false;
   currentUser: any = ''
   userName: string = ''; // Имя пользователя
-
+  sidebarVisible2: boolean = false;
   constructor(
       private userService: UserService,
       private todoService: TodoService,
@@ -77,11 +80,12 @@ export class MainComponent {
       const user = users.find((user) => user.email === email);
 
       if (user) {
-        this.userName = user.firstName; // Сохраняем имя пользователя
+        this.userName = user.firstName ?? 'Гость'; // Задаём значение по умолчанию
       } else {
-        console.warn('Пользователь с таким email не найден!');
-        this.userName = 'Гость'; // Значение по умолчанию
+        this.userName = 'Гость'; // Если `user` undefined, задаём "Гость"
       }
+
+
     });
   }
 

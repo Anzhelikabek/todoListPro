@@ -4,15 +4,23 @@
             <div class="col-12">
                 <div class="header-content">
                     <h1>Привет, {{ userName }}!</h1>
-                    <button
-                            pButton
-                            type="button"
-                            icon="pi pi-sign-out"
-                            label="Logout"
-                            class="logout-button"
-                            (click)="onLogout()">
-                    </button>
+                    <div>
+                        <button
+                                pButton
+                                type="button"
+                                icon="pi pi-sign-out"
+                                label="Logout"
+                                class="logout-button"
+                                (click)="onLogout()">
+                        </button>
+                        <p-button
+                                type="button"
+                                class="sidebar"
+                                (onClick)="sidebarVisible2 = true"
+                                icon="pi pi-arrow-left" />
+                    </div>
                 </div>
+
 
                 <p-tabView>
                     <p-tabPanel header="Мои задачи">
@@ -29,7 +37,9 @@
         </div>
     </div>
 </div>
-
+<p-sidebar [(visible)]="sidebarVisible2" position="right">
+    <h3>История изменений</h3>
+</p-sidebar>
 <p-dialog [(visible)]="displayModal" [modal]="true" [closable]="true" header="Подтверждение выхода">
     <p>Вы действительно хотите выйти, <b>{{ userEmail }}</b>?</p>
     <ng-template pTemplate="footer">

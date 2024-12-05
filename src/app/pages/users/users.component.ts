@@ -17,6 +17,8 @@ import {AuthService} from "../../services/auth.service";
 import {User} from "../../interfaces/user";
 import {CalendarModule} from "primeng/calendar";
 import {PhoneNumberFormatPipe} from "../../pipes/phone-number-format.pipe";
+import {SharedStateService} from "../../services/shared-state.service";
+import {forkJoin} from "rxjs";
 
 @Component({
     selector: 'app-users',
@@ -76,6 +78,7 @@ export class UsersComponent {
         private userService: UserService,
         private authService: AuthService,
         private messageService: MessageService,
+        private sharedStateService: SharedStateService,
     ) {
     }
 
@@ -148,26 +151,44 @@ export class UsersComponent {
             return;
         }
 
-        this.selectedUsers.forEach((selected) => {
+        const deleteRequests = this.selectedUsers.map((selected) => {
             if (selected.id) {
-                this.userService.deleteUser(selected.id).subscribe({
-                    next: () => {
-                        this.users = this.users.filter((user) => user.id !== selected.id);
-                    },
-                    error: (err) => console.error('Ошибка удаления пользователя:', err)
-                });
+                return this.sharedStateService.deleteUserWithTodos(selected.id); // Удаляем пользователя вместе с задачами
             }
-        });
+            return null;
+        }).filter(req => req !== null); // Фильтруем только валидные запросы
 
-        this.selectedUsers = [];
-        this.deleteUsersDialog = false;
+        if (deleteRequests.length > 0) {
+            forkJoin(deleteRequests).subscribe({
+                next: () => {
+                    // Обновляем список пользователей
+                    const selectedIds = this.selectedUsers.map(user => user.id);
+                    this.users = this.users.filter(user => !selectedIds.includes(user.id));
 
-        this.messageService.add({
-            severity: 'success',
-            summary: 'Успешно',
-            detail: 'Выбранные пользователи удалены',
-            life: 3000
-        });
+                    // Уведомление об успешном удалении
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: 'Успешно',
+                        detail: 'Выбранные пользователи и их задачи удалены',
+                        life: 3000
+                    });
+
+                    // Очищаем список выбранных пользователей
+                    this.selectedUsers = [];
+                    this.deleteUsersDialog = false;
+                },
+                error: (err) => {
+                    console.error('Ошибка удаления пользователей и их задач:', err);
+
+                    this.messageService.add({
+                        severity: 'error',
+                        summary: 'Ошибка',
+                        detail: 'Не удалось удалить некоторых пользователей и их задачи',
+                        life: 3000
+                    });
+                }
+            });
+        }
     }
 
     viewUserDetails(user: any): void {
@@ -175,22 +196,43 @@ export class UsersComponent {
         this.displayModal = true; // Показать модальное окно
     }
 
-    confirmDelete() {
+    confirmDelete(user: User): void {
         this.deleteUserDialog = false;
-        this.userService.deleteUser(this.user.id!).subscribe({
-            next: () => {
-                this.users = this.users.filter((t) => t.id !== this.user.id);
-                this.messageService.add({
-                    severity: 'success',
-                    summary: 'Успешно',
-                    detail: 'Пользователь удален',
-                    life: 3000
-                });
-            },
-            error: (err) => console.error('Ошибка удаления пользователя:', err)
-        });
-        this.user = {};
+
+        if (user.id) {
+            this.sharedStateService.deleteUserWithTodos(user.id).subscribe({
+                next: () => {
+                    // Обновляем список пользователей
+                    this.users = this.users.filter(u => u.id !== user.id);
+
+                    // Триггер обновления задач для всех пользователей
+                    this.sharedStateService.getTodos().subscribe((todos) => {
+                        // Отправьте событие или обновите состояние в компоненте задач
+                        console.log('Обновленные задачи:', todos);
+                    });
+
+                    // Уведомление об успешном удалении
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: 'Успешно',
+                        detail: 'Пользователь и его задачи удалены',
+                        life: 3000
+                    });
+                },
+                error: (err) => {
+                    console.error('Ошибка удаления пользователя и его задач:', err);
+
+                    this.messageService.add({
+                        severity: 'error',
+                        summary: 'Ошибка',
+                        detail: 'Не удалось удалить пользователя и его задачи',
+                        life: 3000
+                    });
+                }
+            });
+        }
     }
+
 
     getRoleDisplayName(role: string): string {
         switch (role) {
@@ -282,6 +324,7 @@ export class UsersComponent {
         const digits = phoneNumber.replace(/\D/g, ''); // Удаляем все символы, кроме цифр
         return digits.length === 9 && digits[0] !== '0'; // Проверяем длину и первую цифру
     }
+
     refreshTable() {
         this.users = [...this.users]; // Создаём новый массив, чтобы Angular обнаружил изменения
     }
