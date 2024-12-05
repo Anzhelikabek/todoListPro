@@ -8,15 +8,15 @@ import {
 import "./chunk-U7BGZH7Q.js";
 import "./chunk-BUGEQH7Q.js";
 import {
-  NG_VALUE_ACCESSOR,
-  NgControl
-} from "./chunk-RHHXR5VX.js";
-import {
   ObjectUtils,
   PrimeNGConfig,
   PrimeTemplate,
   SharedModule
 } from "./chunk-POA3PGMA.js";
+import {
+  NG_VALUE_ACCESSOR,
+  NgControl
+} from "./chunk-RHHXR5VX.js";
 import {
   CommonModule,
   NgClass,
@@ -71,8 +71,8 @@ import {
   ɵɵtextInterpolate1,
   ɵɵviewQuery
 } from "./chunk-SUIQAVP4.js";
-import "./chunk-YSN7JSTZ.js";
 import "./chunk-P4UHYYRR.js";
+import "./chunk-YSN7JSTZ.js";
 import "./chunk-IGY35UNU.js";
 import "./chunk-IYEYSCYL.js";
 import "./chunk-5K356HEJ.js";

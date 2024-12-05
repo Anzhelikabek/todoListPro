@@ -1,7 +1,4 @@
 import {
-  __rest
-} from "./chunk-IYEYSCYL.js";
-import {
   Component,
   ErrorFactory,
   FirebaseError,
@@ -30,6 +27,9 @@ import {
   querystringDecode,
   registerVersion
 } from "./chunk-L2NFDERQ.js";
+import {
+  __rest
+} from "./chunk-IYEYSCYL.js";
 import {
   __async,
   __superGet
@@ -8564,4 +8564,4 @@ export {
    * limitations under the License.
    *)
 */
-//# sourceMappingURL=chunk-2F233CZW.js.map
+//# sourceMappingURL=chunk-MYQZX657.js.map
