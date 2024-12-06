@@ -95,6 +95,9 @@
 .p-button.p-button-success, .p-button-group.p-button-success > .p-button, .p-splitbutton.p-button-success > .p-button{
   margin-left: 8px;
 }
+.p-sidebar-right{
+  width: 50%;
+}
 @media screen and (max-width: 870px) {
   .button-group {
     height: 147px;

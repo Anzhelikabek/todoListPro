@@ -1,0 +1,23 @@
+<div class="card">
+    <h2>История изменений</h2>
+    <p-table [value]="auditRecords" [tableStyle]="{ 'min-width': '50rem' }" [paginator]="true" [rows]="10">
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="timestamp">Дата <p-sortIcon field="timestamp"></p-sortIcon></th>
+                <th pSortableColumn="action">Действие <p-sortIcon field="action"></p-sortIcon></th>
+                <th pSortableColumn="entity">Сущность <p-sortIcon field="entity"></p-sortIcon></th>
+                <th>Детали</th>
+                <th pSortableColumn="performedBy">Выполнено кем <p-sortIcon field="performedBy"></p-sortIcon></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-record>
+            <tr>
+                <td>{{ record.timestamp | date: 'short' }}</td>
+                <td>{{ record.action }}</td>
+                <td>{{ record.entity }}</td>
+                <td>{{ record.details }}</td>
+                <td>{{ record.performedBy }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

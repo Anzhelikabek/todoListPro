@@ -22,6 +22,7 @@ import {TodosComponent} from "../todos/todos.component";
 import {UsersTasksComponent} from "../users-tasks/users-tasks.component";
 import {UserService} from "../../services/user.service";
 import {SidebarModule} from "primeng/sidebar";
+import {AuditTrailComponent} from "../../components/audit-trail/audit-trail.component";
 
 @Component({
   selector: 'app-main',
@@ -46,6 +47,7 @@ import {SidebarModule} from "primeng/sidebar";
         UsersTasksComponent,
         SidebarModule,
         Button,
+        AuditTrailComponent,
     ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],

@@ -51,7 +51,7 @@ export class AuthService {
         .then((result) => {
           if (result.user?.email) {
             localStorage.setItem('userEmail', result.user.email); // Сохраняем email
-            console.log('Email сохранён при регистрации:', result.user.email);
+              console.log('Email сохранён при регистрации:', result.user.email);
           }
           console.log('Registration Successful:', result.user);
           return result.user;
@@ -67,7 +67,8 @@ export class AuthService {
         .then((result) => {
           if (result.user?.email) {
             localStorage.setItem('userEmail', result.user.email); // Сохраняем email
-            console.log('Email сохранён при входе:', result.user.email);
+
+              console.log('Email сохранён при входе:', result.user.email);
           }
           console.log('Login Successful:', result.user);
           return result.user;

@@ -38,7 +38,7 @@
     </div>
 </div>
 <p-sidebar [(visible)]="sidebarVisible2" position="right">
-    <h3>История изменений</h3>
+    <app-audit-trail></app-audit-trail>
 </p-sidebar>
 <p-dialog [(visible)]="displayModal" [modal]="true" [closable]="true" header="Подтверждение выхода">
     <p>Вы действительно хотите выйти, <b>{{ userEmail }}</b>?</p>

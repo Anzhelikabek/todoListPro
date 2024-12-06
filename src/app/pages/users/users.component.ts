@@ -18,7 +18,9 @@ import {User} from "../../interfaces/user";
 import {CalendarModule} from "primeng/calendar";
 import {PhoneNumberFormatPipe} from "../../pipes/phone-number-format.pipe";
 import {SharedStateService} from "../../services/shared-state.service";
-import {forkJoin} from "rxjs";
+import {forkJoin, tap} from "rxjs";
+import {AuditTrailService} from "../../services/audit-trail.service";
+import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 
 @Component({
     selector: 'app-users',
@@ -77,6 +79,7 @@ export class UsersComponent {
     constructor(
         private userService: UserService,
         private authService: AuthService,
+        private auditTrailService: AuditTrailService,
         private messageService: MessageService,
         private sharedStateService: SharedStateService,
     ) {
@@ -146,21 +149,35 @@ export class UsersComponent {
         this.submitted = false;
     }
 
-    confirmDeleteSelected() {
+    confirmDeleteSelected(): void {
         if (!this.selectedUsers || !this.selectedUsers.length) {
             return;
         }
 
-        const deleteRequests = this.selectedUsers.map((selected) => {
-            if (selected.id) {
-                return this.sharedStateService.deleteUserWithTodos(selected.id); // Удаляем пользователя вместе с задачами
-            }
-            return null;
-        }).filter(req => req !== null); // Фильтруем только валидные запросы
+        const deleteRequests = this.selectedUsers
+            .filter((selected) => selected.id) // Убедимся, что есть ID
+            .map((selected) => this.sharedStateService.deleteUserWithTodos(selected.id)); // Удаляем пользователя и его задачи
 
         if (deleteRequests.length > 0) {
             forkJoin(deleteRequests).subscribe({
                 next: () => {
+                    const currentUser = localStorage.getItem('userEmail') || 'Неизвестно';
+
+                    // Аудит-трейл для каждого удалённого пользователя
+                    this.selectedUsers.forEach((user) => {
+                        if (user.id) {
+                            this.auditTrailService.addAuditRecord({
+                                id: this.sharedStateService.generateId(),
+                                timestamp: new Date(),
+                                action: 'Удаление',
+                                entity: 'Пользователь',
+                                entityId: user.id,
+                                performedBy: currentUser,
+                                details: `Удален пользователь: ${user.firstName || 'undefined'} ${user.lastName || 'undefined'}`
+                            });
+                        }
+                    });
+
                     // Обновляем список пользователей
                     const selectedIds = this.selectedUsers.map(user => user.id);
                     this.users = this.users.filter(user => !selectedIds.includes(user.id));
@@ -191,6 +208,7 @@ export class UsersComponent {
         }
     }
 
+
     viewUserDetails(user: any): void {
         this.selectedUser = user; // Сохранить данные пользователя
         this.displayModal = true; // Показать модальное окно
@@ -205,13 +223,18 @@ export class UsersComponent {
                     // Обновляем список пользователей
                     this.users = this.users.filter(u => u.id !== user.id);
 
-                    // Триггер обновления задач для всех пользователей
-                    this.sharedStateService.getTodos().subscribe((todos) => {
-                        // Отправьте событие или обновите состояние в компоненте задач
-                        console.log('Обновленные задачи:', todos);
+                    // Добавляем запись в историю изменений
+                    const currentUser = localStorage.getItem('userEmail');
+                    this.auditTrailService.addAuditRecord({
+                        id: this.sharedStateService.generateId(),
+                        timestamp: new Date(),
+                        action: 'Удаление',
+                        entity: 'Пользователь',
+                        entityId: user.id,
+                        performedBy: currentUser || 'Неизвестно',
+                        details: `Удален пользователь: ${user.firstName || 'undefined'} ${user.lastName || 'undefined'}`
                     });
 
-                    // Уведомление об успешном удалении
                     this.messageService.add({
                         severity: 'success',
                         summary: 'Успешно',
@@ -233,6 +256,10 @@ export class UsersComponent {
         }
     }
 
+
+    private generateId(): string {
+        return Math.random().toString(36).substring(2, 15);
+    }
 
     getRoleDisplayName(role: string): string {
         switch (role) {
@@ -285,18 +312,29 @@ export class UsersComponent {
         // Удаляем пробелы при сохранении номера в базу
         this.user.phoneNumber = this.user.phoneNumber.replace(/\D/g, '');
 
+        const currentUserEmail = localStorage.getItem('userEmail') || 'Неизвестно';
+
         if (this.user.id) {
             // Обновление пользователя
             this.userService.updateUser(this.user.id, this.user).subscribe({
                 next: () => {
+                    this.auditTrailService.addAuditRecord({
+                        id: this.sharedStateService.generateId(),
+                        timestamp: new Date(),
+                        action: 'Обновление',
+                        entity: 'Пользователь',
+                        entityId: this.user.id,
+                        performedBy: currentUserEmail,
+                        details: `Обновлен пользователь: ${this.user.firstName} ${this.user.lastName}`
+                    });
+
                     this.messageService.add({
                         severity: 'success',
                         summary: 'Успешно',
                         detail: 'Пользователь обновлен',
                         life: 3000
                     });
-                    this.refreshTable();
-                    this.loadUsers(); // Перезагружаем список пользователей
+                    this.loadUsers(); // Обновляем список
                 },
                 error: (err) => console.error('Ошибка обновления пользователя:', err)
             });
@@ -304,7 +342,19 @@ export class UsersComponent {
             // Добавление нового пользователя
             this.userService.addUser(this.user).subscribe({
                 next: (newUser) => {
-                    this.users.push(newUser);
+                    this.auditTrailService.addAuditRecord({
+                        id: this.sharedStateService.generateId(),
+                        timestamp: new Date(),
+                        action: 'Добавление',
+                        entity: 'Пользователь',
+                        entityId: newUser.id,
+                        performedBy: currentUserEmail,
+                        details: `Добавлен новый пользователь: ${newUser.firstName} ${newUser.lastName}`
+                    });
+
+                    // Загружаем весь список вместо ручного добавления
+                    this.loadUsers();
+
                     this.messageService.add({
                         severity: 'success',
                         summary: 'Успешно',
@@ -319,6 +369,8 @@ export class UsersComponent {
         this.userDialog = false;
         this.user = {};
     }
+
+
 
     isValidPhoneNumber(phoneNumber: string): boolean {
         const digits = phoneNumber.replace(/\D/g, ''); // Удаляем все символы, кроме цифр

@@ -16,6 +16,8 @@ import {TodoService} from "../../services/todo.service";
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {forkJoin} from "rxjs";
+import {AuditTrailService} from "../../services/audit-trail.service";
+import {SharedStateService} from "../../services/shared-state.service";
 
 @Component({
     selector: 'app-todos',
@@ -60,6 +62,8 @@ export class TodosComponent {
     constructor(
         private userService: UserService,
         private todoService: TodoService,
+        private auditTrailService: AuditTrailService,
+        private sharedStateService: SharedStateService,
         private messageService: MessageService,
         private router: Router,
     ) {}
@@ -109,23 +113,56 @@ export class TodosComponent {
 
         this.deleteTodosDialog = true;
     }
+    editTodo(todo: Todo) {
+        this.todo = { ...todo };
+        this.todoDialog = true;
+    }
 
-    confirmDeleteSelected() {
-        const deleteRequests = this.selectedTodos.map((todo) => this.todoService.deleteTodo(todo.id!));
+    deleteTodo(todo: Todo) {
+        this.todo = { ...todo };
+        this.deleteTodoDialog = true;
+    }
+
+    confirmDeleteSelected(): void {
+        const deleteRequests = this.selectedTodos.map((todo) =>
+            this.todoService.deleteTodo(todo.id!)
+        );
 
         forkJoin(deleteRequests).subscribe({
             next: () => {
-                this.selectedTodos.forEach((todo) => {
-                    this.userTodos = this.userTodos.filter((t) => t.id !== todo.id);
-                });
-                this.selectedTodos = [];
-                this.deleteTodosDialog = false;
+                const currentUser = localStorage.getItem('userEmail') || 'Неизвестно';
 
-                this.messageService.add({
-                    severity: 'success',
-                    summary: 'Успешно',
-                    detail: 'Выбранные задачи удалены',
-                    life: 3000
+                this.userService.getUsers().subscribe((users) => {
+                    // Аудит-трейл для каждого удалённого задания
+                    this.selectedTodos.forEach((todo) => {
+                        const owner = users.find((user) => user.id === todo.userId);
+
+                        this.auditTrailService.addAuditRecord({
+                            id: this.sharedStateService.generateId(),
+                            timestamp: new Date(),
+                            action: 'Удаление',
+                            entity: 'Задача',
+                            entityId: todo.id,
+                            performedBy: currentUser,
+                            details: `Удалена задача: ${todo.name || 'Без названия'}, принадлежавшая пользователю: ${
+                                owner ? `${owner.firstName} ${owner.lastName}` : 'Неизвестный пользователь'
+                            }`
+                        });
+                    });
+
+                    this.selectedTodos.forEach((todo) => {
+                        this.userTodos = this.userTodos.filter((t) => t.id !== todo.id);
+                    });
+
+                    this.selectedTodos = [];
+                    this.deleteTodosDialog = false;
+
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: 'Успешно',
+                        detail: 'Выбранные задачи удалены',
+                        life: 3000
+                    });
                 });
             },
             error: (err) => {
@@ -140,30 +177,41 @@ export class TodosComponent {
         });
     }
 
-    editTodo(todo: Todo) {
-        this.todo = { ...todo };
-        this.todoDialog = true;
-    }
 
-    deleteTodo(todo: Todo) {
-        this.todo = { ...todo };
-        this.deleteTodoDialog = true;
-    }
+    confirmDelete(): void {
+        const currentUser = localStorage.getItem('userEmail') || 'Неизвестно';
 
-    confirmDelete() {
         this.todoService.deleteTodo(this.todo.id!).subscribe({
             next: () => {
-                this.userTodos = this.userTodos.filter((t) => t.id !== this.todo.id);
-                this.todos = this.todos.filter((t) => t.id !== this.todo.id);
+                this.userService.getUsers().subscribe((users) => {
+                    const owner = users.find((user) => user.id === this.todo.userId);
 
-                this.messageService.add({
-                    severity: 'success',
-                    summary: 'Успешно',
-                    detail: 'Задача удалена',
-                    life: 3000
+                    // Аудит-трейл для удалённого задания
+                    this.auditTrailService.addAuditRecord({
+                        id: this.sharedStateService.generateId(),
+                        timestamp: new Date(),
+                        action: 'Удаление',
+                        entity: 'Задача',
+                        entityId: this.todo.id,
+                        performedBy: currentUser,
+                        details: `Удалена задача: ${this.todo.name || 'Без названия'}, принадлежавшая пользователю: ${
+                            owner ? `${owner.firstName} ${owner.lastName}` : 'Неизвестный пользователь'
+                        }`
+                    });
+
+                    this.userTodos = this.userTodos.filter((t) => t.id !== this.todo.id);
+                    this.todos = this.todos.filter((t) => t.id !== this.todo.id);
+
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: 'Успешно',
+                        detail: 'Задача удалена',
+                        life: 3000
+                    });
+
+                    this.deleteTodoDialog = false;
+                    this.todo = {};
                 });
-                this.deleteTodoDialog = false;
-                this.todo = {};
             },
             error: (err) => {
                 console.error('Ошибка удаления задачи:', err);
@@ -177,36 +225,84 @@ export class TodosComponent {
         });
     }
 
+
     hideDialog() {
         this.todoDialog = false;
         this.submitted = false;
     }
 
-    saveTodo() {
+    saveTodo(): void {
         this.submitted = true;
 
         if (this.todo.name?.trim()) {
-            const saveOperation = this.todo.id
-                ? this.todoService.updateTodo(this.todo.id, this.todo)
-                : this.todoService.addTodo(this.todo);
+            const currentUserEmail = localStorage.getItem('userEmail') || 'Неизвестно';
+            console.log('Текущий пользователь (email):', currentUserEmail);
 
-            saveOperation.subscribe({
-                next: () => {
-                    this.loadUserTodos(); // Перезагружаем задачи
+            this.sharedStateService.getUsers().subscribe(users => {
+                console.log('Пользователи:', users);
+
+                const currentUser = users.find(user => user.email === currentUserEmail);
+                if (!currentUser) {
+                    console.error('Не удалось определить текущего пользователя');
                     this.messageService.add({
-                        severity: 'success',
-                        summary: 'Успешно',
-                        detail: this.todo.id ? 'Задача обновлена' : 'Задача создана',
+                        severity: 'error',
+                        summary: 'Ошибка',
+                        detail: 'Не удалось определить текущего пользователя',
                         life: 3000
                     });
-                },
-                error: (err) => console.error('Ошибка сохранения задачи:', err),
-                complete: () => {
-                    this.todoDialog = false;
-                    this.todo = {};
+                    return;
                 }
+
+                // Устанавливаем userId для новой задачи
+                if (!this.todo.id) {
+                    this.todo.userId = currentUser.id;
+                }
+
+                const isUpdate = !!this.todo.id;
+                const saveOperation = isUpdate
+                    ? this.todoService.updateTodo(this.todo.id!, this.todo)
+                    : this.todoService.addTodo(this.todo);
+
+                saveOperation.subscribe({
+                    next: (savedTodo) => {
+                        this.auditTrailService.addAuditRecord({
+                            id: this.sharedStateService.generateId(),
+                            timestamp: new Date(),
+                            action: isUpdate ? 'Обновление' : 'Добавление',
+                            entity: 'Задача',
+                            entityId: savedTodo.id,
+                            performedBy: currentUserEmail,
+                            details: isUpdate
+                                ? `Обновлена задача: ${this.todo.name} для пользователя: ${currentUser.firstName} ${currentUser.lastName}`
+                                : `Добавлена новая задача: ${this.todo.name} для пользователя: ${currentUser.firstName} ${currentUser.lastName}`
+                        });
+
+                        this.loadUserTodos();
+                        this.messageService.add({
+                            severity: 'success',
+                            summary: 'Успешно',
+                            detail: isUpdate ? 'Задача обновлена' : 'Задача создана',
+                            life: 3000
+                        });
+                    },
+                    error: (err) => {
+                        console.error('Ошибка сохранения задачи:', err);
+                        this.messageService.add({
+                            severity: 'error',
+                            summary: 'Ошибка',
+                            detail: 'Не удалось сохранить задачу',
+                            life: 3000
+                        });
+                    },
+                    complete: () => {
+                        this.todoDialog = false;
+                        this.todo = {};
+                    }
+                });
             });
         }
     }
+
+
 
 }

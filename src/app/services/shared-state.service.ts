@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import {User} from "../interfaces/user";
 import {Todo} from "../interfaces/todo";
+import {AuditRecord} from "../interfaces/audit-record";
 
 @Injectable({
   providedIn: 'root',
@@ -10,11 +11,40 @@ export class SharedStateService {
   private usersSubject = new BehaviorSubject<User[]>([]);
   private todosSubject = new BehaviorSubject<Todo[]>([]);
 
+  private auditTrailSubject = new BehaviorSubject<AuditRecord[]>([]); // Предполагается, что AuditRecord определён
+
+  auditTrail$ = this.auditTrailSubject.asObservable();
+
   users$ = this.usersSubject.asObservable();
   todos$ = this.todosSubject.asObservable();
 
   constructor() {
     this.initializeState();
+  }
+
+  addAuditRecord(record: AuditRecord): void {
+    const currentAuditTrail: AuditRecord[] = this.auditTrailSubject.getValue();
+    this.auditTrailSubject.next([...currentAuditTrail, record]); // Добавляем запись
+    this.saveAuditTrailToLocalStorage(); // Сохраняем изменения в localStorage
+  }
+
+
+  getAuditTrail(): AuditRecord[] {
+    return this.auditTrailSubject.getValue();
+  }
+
+  // Сохранение данных в localStorage
+  private saveAuditTrailToLocalStorage(): void {
+    const auditTrail = this.auditTrailSubject.getValue();
+    localStorage.setItem('auditTrail', JSON.stringify(auditTrail));
+  }
+
+  // Загрузка данных из localStorage
+  private loadAuditTrailFromLocalStorage(): void {
+    const storedAuditTrail = localStorage.getItem('auditTrail');
+    if (storedAuditTrail) {
+      this.auditTrailSubject.next(JSON.parse(storedAuditTrail));
+    }
   }
 
   private initializeState(): void {
@@ -54,7 +84,7 @@ export class SharedStateService {
     this.todosSubject.next(updatedTodos);
   }
 
-  private generateId(): string {
+  generateId(): string {
     return Math.random().toString(36).substring(2, 15);
   }
   deleteUserWithTodos(userId: string): Observable<boolean> {
