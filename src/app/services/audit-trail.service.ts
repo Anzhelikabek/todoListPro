@@ -9,8 +9,7 @@ export class AuditTrailService {
   private readonly localStorageKey = 'auditTrail'; // Ключ для localStorage
   private auditRecordsSubject = new BehaviorSubject<AuditRecord[]>([]); // Реактивное состояние записей
   auditRecords$ = this.auditRecordsSubject.asObservable(); // Observable для подписки
-  private auditTrailSubject = new BehaviorSubject<AuditRecord[]>([]);
-  auditTrail$ = this.auditTrailSubject.asObservable();
+
   constructor() {
     this.loadAuditTrailFromLocalStorage();
   }
@@ -40,5 +39,12 @@ export class AuditTrailService {
   // Получение всех записей аудита
   getAuditRecords(): Observable<AuditRecord[]> {
     return this.auditRecords$;
+  }
+
+  // Очистка всех записей аудита
+  clearAuditTrail(): Observable<boolean> {
+    this.auditRecordsSubject.next([]); // Очищаем реактивное состояние
+    localStorage.removeItem(this.localStorageKey); // Удаляем из localStorage
+    return of(true);
   }
 }

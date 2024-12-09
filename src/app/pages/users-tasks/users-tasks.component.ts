@@ -76,6 +76,12 @@ export class UsersTasksComponent {
   ) {}
 
   ngOnInit() {
+    this.initUserPermissions();
+    this.initDataStreams();
+    this.setupColumns();
+  }
+
+  private initUserPermissions(): void {
     const userEmail = localStorage.getItem('userEmail');
     if (userEmail) {
       this.authService.isAdmin(userEmail).subscribe((isAdmin) => {
@@ -84,20 +90,29 @@ export class UsersTasksComponent {
     } else {
       console.error('Email не найден в localStorage!');
     }
-    this.refreshTasksWithUsers();
-    this.loadUsers()
-    this.loadTodosWithUsers();
-    this.removeTasksWithoutUsers()
+  }
 
-    this.sharedStateService.todos$.subscribe((todos) => {
-      // Автоматически обновляем список задач, если в SharedStateService произошли изменения
+  private initDataStreams(): void {
+    // Подписываемся на изменения списка пользователей
+    this.sharedStateService.userOptions$.subscribe((options) => {
+      this.userOptions = options;
+    });
+
+    // Подписываемся на изменения задач
+    this.sharedStateService.todos$.subscribe(() => {
       this.loadTodosWithUsers();
     });
+
+    // Загружаем задачи с данными пользователей при инициализации
+    this.loadTodosWithUsers();
+  }
+
+  private setupColumns(): void {
     this.cols = [
       { field: 'name', header: 'Заголовок' },
       { field: 'description', header: 'Описание' },
       { field: 'userName', header: 'Имя' },
-      { field: 'status', header: 'Статус' }
+      { field: 'status', header: 'Статус' },
     ];
   }
   loadUsers(): void {
@@ -116,20 +131,20 @@ export class UsersTasksComponent {
     console.log(this.userOptions)
   }
 
-  loadTodosWithUsers(): void {
-    this.sharedStateService.getUsers().subscribe((users) => {
-      this.sharedStateService.getTodos().subscribe((todos) => {
-        this.todosWithUsers = todos.map((todo) => {
-          const user = users.find((user) => user.id === todo.userId);
-          return {
-            ...todo,
-            userName: user ? `${user.firstName} ${user.lastName}` : 'Неизвестный пользователь'
-          };
-        });
-
-        console.log('Обновленные задачи с пользователями:', this.todosWithUsers);
+  private loadTodosWithUsers(): void {
+    forkJoin({
+      users: this.sharedStateService.getUsers(),
+      todos: this.sharedStateService.getTodos(),
+    }).subscribe(({ users, todos }) => {
+      this.todosWithUsers = todos.map((todo) => {
+        const user = users.find((user) => user.id === todo.userId);
+        return {
+          ...todo,
+          userName: user ? `${user.firstName} ${user.lastName}` : 'Неизвестный пользователь',
+        };
       });
-    });}
+    });
+  }
 
   openNew() {
     this.todo = {};
@@ -289,46 +304,45 @@ export class UsersTasksComponent {
     this.submitted = false;
   }
 
+
   saveTodo(): void {
     this.submitted = true;
 
     if (this.todo.name?.trim()) {
       const isUpdate = !!this.todo.id; // Проверяем, обновляется или добавляется задача
-      const currentUserEmail = localStorage.getItem('userEmail') || 'Неизвестно'; // Получаем текущего пользователя
+      const currentUserEmail = localStorage.getItem('userEmail') || 'Неизвестно';
 
-      // Находим пользователя, которому принадлежит задача
+      // Находим владельца задачи
       const owner = this.userOptions.find((user) => user.value === this.todo.userId);
       const ownerName = owner ? `${owner.label}` : 'Неизвестный пользователь';
 
       const saveOperation = isUpdate
-          ? this.todoService.updateTodo(this.todo.id!, this.todo)
-          : this.todoService.addTodo(this.todo);
+          ? this.sharedStateService.updateTodo(this.todo.id!, this.todo)
+          : this.sharedStateService.addTodo(this.todo);
 
       saveOperation.subscribe({
-        next: (savedTodo) => {
-          // Логируем аудит
+        next: () => {
           this.auditTrailService.addAuditRecord({
             id: this.sharedStateService.generateId(),
             timestamp: new Date(),
             action: isUpdate ? 'Обновление' : 'Добавление',
             entity: 'Задача',
-            entityId: savedTodo.id,
+            entityId: this.todo.id || '',
             performedBy: currentUserEmail,
             details: isUpdate
-                ? `Обновлена задача: ${this.todo.name || 'Без названия'}, принадлежит: ${ownerName}`
-                : `Добавлена новая задача: ${this.todo.name || 'Без названия'}, принадлежит: ${ownerName}`
+                ? `Обновлена задача: ${this.todo.name}, принадлежит: ${ownerName}`
+                : `Добавлена новая задача: ${this.todo.name}, принадлежит: ${ownerName}`,
           });
 
           this.messageService.add({
             severity: 'success',
             summary: 'Успешно',
             detail: isUpdate ? 'Задача обновлена' : 'Задача добавлена',
-            life: 3000
+            life: 3000,
           });
 
           this.todoDialog = false;
           this.todo = {};
-          this.refreshTasksWithUsers(); // Обновляем раздел задач
         },
         error: (err) => {
           console.error('Ошибка сохранения задачи:', err);
@@ -336,9 +350,9 @@ export class UsersTasksComponent {
             severity: 'error',
             summary: 'Ошибка',
             detail: 'Не удалось сохранить задачу',
-            life: 3000
+            life: 3000,
           });
-        }
+        },
       });
     }
   }

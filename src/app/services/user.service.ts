@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, of, throwError} from 'rxjs';
-import { User } from '../interfaces/user'; // Предполагаем, что ваш интерфейс находится в user.interface.ts
+import { User } from '../interfaces/user';
+import {map} from "rxjs/operators"; // Предполагаем, что ваш интерфейс находится в user.interface.ts
 
 @Injectable({
   providedIn: 'root',
@@ -218,5 +219,17 @@ export class UserService {
   // Генерация уникального ID
   private generateId(): string {
     return (Math.random() * 100000).toFixed(0).toString();
+  }
+
+  // Метод для получения userOptions
+  getUserOptions(): Observable<{ label: string; value: string | undefined }[]> {
+    return this.users$.pipe(
+        map(users =>
+            users.map(user => ({
+              label: `${user.firstName} ${user.lastName}`,
+              value: user.id,
+            }))
+        )
+    );
   }
 }

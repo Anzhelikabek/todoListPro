@@ -83,7 +83,7 @@
     <div class="flex align-items-center justify-content-center">
         <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem;"></i>
         <span *ngIf="selectedTodos.length === 1">
-      Вы уверены, что хотите удалить <b>{{ selectedTodos[0]?.name }}</b>?
+      Вы уверены, что хотите удалить <b> {{ selectedTodos[0].name }} </b>?
     </span>
         <span *ngIf="selectedTodos.length > 1">
     Вы уверены, что хотите удалить выбранные задачи?

@@ -1,5 +1,15 @@
 <div class="card">
     <h2>История изменений</h2>
+    <div class="toolbar">
+        <button
+                pButton
+                type="button"
+                label="Очистить историю"
+                icon="pi pi-trash"
+                class="p-button-danger"
+                (click)="confirmClearAuditTrail()"
+        ></button>
+    </div>
     <p-table [value]="auditRecords" [tableStyle]="{ 'min-width': '50rem' }" [paginator]="true" [rows]="10">
         <ng-template pTemplate="header">
             <tr>
@@ -20,4 +30,7 @@
             </tr>
         </ng-template>
     </p-table>
+
+    <!-- Подключение ConfirmDialog -->
+    <p-confirmDialog></p-confirmDialog>
 </div>
