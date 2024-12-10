@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, of, throwError} from 'rxjs';
 import { User } from '../interfaces/user';
+import { v4 as uuidv4 } from 'uuid';
+
 import {map} from "rxjs/operators"; // Предполагаем, что ваш интерфейс находится в user.interface.ts
 
 @Injectable({
@@ -195,14 +197,21 @@ export class UserService {
     return (Math.random() * 100000).toFixed(0).toString();
   }
   addUser(user: User): Observable<User> {
-    user.id = this.generateId(); // Генерация уникального ID
-    user.dateAdded = new Date().toISOString().split('T')[0]; // Устанавливаем только дату
+    user.id = uuidv4(); // Генерация UUID
+    user.code = this.generateRandomCode(); // Генерация кода (рандомное число)
+
     const currentUsers = this.usersSubject.getValue();
     const updatedUsers = [...currentUsers, user]; // Добавляем пользователя
     this.usersSubject.next(updatedUsers); // Обновляем состояние
     this.saveUsersToLocalStorage(); // Сохраняем изменения
     return of(user); // Возвращаем нового пользователя
   }
+
+// Генерация случайного кода
+  private generateRandomCode(): number {
+    return Math.floor(10000 + Math.random() * 90000); // Генерирует число от 10000 до 99999
+  }
+
 
 
   updateUser(userId: string, updatedUser: Partial<User>): Observable<User> {

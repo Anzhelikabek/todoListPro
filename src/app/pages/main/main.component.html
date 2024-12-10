@@ -4,17 +4,35 @@
             <div class="col-12">
                 <div class="header-content">
                     <h1>Привет, {{ userName }}!</h1>
-                    <div>
+                    <div class="buttons">
                         <p-button
                                 type="button"
                                 class="logout-button"
                                 (click)="onLogout()"
-                                icon="pi pi-sign-out" />
+                                icon="pi pi-sign-out"
+                                label="Выйти"/>
+                        <!-- Кнопка экспорта -->
+                        <p-button type="button" (click)="exportToExcel()">Экспорт в Excel</p-button>
+                        <!-- Кнопка импорта -->
+                        <p-fileUpload
+                            #fileUpload
+                            mode="basic"
+                            name="file"
+                            accept=".xlsx"
+                            chooseLabel="Импортировать Excel"
+                            (onSelect)="importUsers($event, fileUpload)"
+                        >
+                        </p-fileUpload>
+
+
+                        <!--                        <p-button type="button" icon="pi pi-upload" label="Загрузить"/>-->
+
+                        <!--                        <p-button type="button" icon="pi pi-download" label="Выгрузить"/>-->
                         <p-button
                                 type="button"
                                 class="sidebar"
                                 (onClick)="sidebarVisible2 = true"
-                                icon="pi pi-arrow-left" />
+                                icon="pi pi-arrow-left"/>
                     </div>
                 </div>
 

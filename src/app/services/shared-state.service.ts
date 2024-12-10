@@ -18,6 +18,7 @@ export class SharedStateService {
   users$ = this.usersSubject.asObservable();
   todos$ = this.todosSubject.asObservable();
 
+
   constructor() {
     this.initializeState();
   }
@@ -48,13 +49,6 @@ export class SharedStateService {
     localStorage.setItem('users', JSON.stringify(users));
   }
 
-  private updateUserOptions(): void {
-    const userOptions = this.usersSubject.getValue().map((user) => ({
-      label: `${user.firstName} ${user.lastName}`,
-      value: user.id,
-    }));
-    this.userOptionsSubject.next(userOptions);
-  }
 
   deleteUserWithTodos(userId: string): Observable<boolean> {
     // Удаляем пользователя
@@ -74,6 +68,16 @@ export class SharedStateService {
 
     return of(true);
   }
+
+
+  private updateUserOptions(): void {
+    const userOptions = this.usersSubject.getValue().map((user) => ({
+      label: `${user.firstName} ${user.lastName}`,
+      value: user.id,
+    }));
+    this.userOptionsSubject.next(userOptions); // Обновляем userOptions
+  }
+
 
   // === Задачи ===
 

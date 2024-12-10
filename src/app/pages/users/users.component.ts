@@ -103,6 +103,10 @@ export class UsersComponent {
             {field: 'phoneNumber', header: 'Номер телефона'},
             {field: 'role', header: 'Роль'}
         ];
+
+        this.sharedStateService.users$.subscribe((users) => {
+            this.users = users; // Обновляем список пользователей
+        });
     }
 
     loadUsers(): void {

@@ -3,6 +3,9 @@
   justify-content: space-between;
   align-items: center;
 }
-.sidebar{
-  margin-left: 5px;
+.buttons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 6px;
 }
