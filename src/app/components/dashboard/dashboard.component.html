@@ -1,0 +1,23 @@
+<div class="dashboard">
+    <h2>Распределение пользователей по ролям</h2>
+    <ngx-charts-pie-chart
+            [view]="view"
+            [results]="roleDistribution"
+            [scheme]="colorScheme"
+            [legend]="true"
+            [labels]="true"
+    ></ngx-charts-pie-chart>
+    <div>
+        <h2>Добавленные пользователи за последние 7 дней</h2>
+        <ngx-charts-line-chart
+                *ngIf="usersLast7Days.length > 0"
+                [view]="view"
+                [results]="usersLast7Days"
+                [scheme]="colorScheme"
+                [legend]="true"
+                [xAxis]="true"
+                [yAxis]="true"
+                [autoScale]="true"
+        ></ngx-charts-line-chart>
+    </div>
+</div>
