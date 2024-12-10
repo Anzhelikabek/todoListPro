@@ -2,7 +2,7 @@ import {
   CommonModule,
   NgClass,
   NgStyle
-} from "./chunk-MFDKE2YR.js";
+} from "./chunk-J5RAIWSF.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -20,12 +20,12 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵproperty
-} from "./chunk-6JZVI6Z5.js";
+} from "./chunk-TDPKYNEQ.js";
 import "./chunk-Z4GY3YUB.js";
 import "./chunk-WGFE6ZO7.js";
 import "./chunk-MOTLY3TU.js";
 import "./chunk-S3YC363S.js";
-import "./chunk-5K356HEJ.js";
+import "./chunk-K4KU7J5H.js";
 
 // node_modules/primeng/fesm2022/primeng-divider.mjs
 var _c0 = ["*"];

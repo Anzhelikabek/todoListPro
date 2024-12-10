@@ -1,6 +1,6 @@
 import {
   registerVersion
-} from "./chunk-L2NFDERQ.js";
+} from "./chunk-TKDPBJDW.js";
 
 // node_modules/firebase/app/dist/esm/index.esm.js
 var name = "firebase";
@@ -26,4 +26,4 @@ firebase/app/dist/esm/index.esm.js:
    * limitations under the License.
    *)
 */
-//# sourceMappingURL=chunk-QE4TXKB6.js.map
+//# sourceMappingURL=chunk-6HNYVMGD.js.map
