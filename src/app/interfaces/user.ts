@@ -10,5 +10,6 @@ export interface User {
     address?: string; // Адрес пользователя
     dateOfBirth?: string; // Дата рождения (в формате ISO: "YYYY-MM-DD")
     profilePicture?: string; // URL профиля изображения
-    role?: "admin" | "user" | "moderator"; // Роль пользователя в системе
+    role?: "admin" | "user"; // Роль пользователя в системе
+    dateAdded?: string;
 }

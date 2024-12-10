@@ -334,7 +334,13 @@ export class UsersComponent {
                         detail: 'Пользователь обновлен',
                         life: 3000
                     });
-                    this.loadUsers(); // Обновляем список
+
+                    // Обновляем список пользователей через `usersSubject`
+                    const currentUsers = this.sharedStateService['usersSubject'].getValue();
+                    const updatedUsers = currentUsers.map((u) =>
+                        u.id === this.user.id ? { ...u, ...this.user } : u
+                    );
+                    this.sharedStateService.setUsers(updatedUsers);
                 },
                 error: (err) => console.error('Ошибка обновления пользователя:', err)
             });
@@ -352,8 +358,9 @@ export class UsersComponent {
                         details: `Добавлен новый пользователь: ${newUser.firstName} ${newUser.lastName}`
                     });
 
-                    // Загружаем весь список вместо ручного добавления
-                    this.loadUsers();
+                    // Обновляем список пользователей через `usersSubject`
+                    const currentUsers = this.sharedStateService['usersSubject'].getValue();
+                    this.sharedStateService.setUsers([...currentUsers, newUser]);
 
                     this.messageService.add({
                         severity: 'success',
@@ -369,7 +376,6 @@ export class UsersComponent {
         this.userDialog = false;
         this.user = {};
     }
-
 
 
     isValidPhoneNumber(phoneNumber: string): boolean {

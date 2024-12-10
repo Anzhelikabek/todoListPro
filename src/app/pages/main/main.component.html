@@ -5,14 +5,11 @@
                 <div class="header-content">
                     <h1>Привет, {{ userName }}!</h1>
                     <div>
-                        <button
-                                pButton
+                        <p-button
                                 type="button"
-                                icon="pi pi-sign-out"
-                                label="Logout"
                                 class="logout-button"
-                                (click)="onLogout()">
-                        </button>
+                                (click)="onLogout()"
+                                icon="pi pi-sign-out" />
                         <p-button
                                 type="button"
                                 class="sidebar"
@@ -32,6 +29,10 @@
                     <p-tabPanel header="Список задач всех пользователей">
                         <app-users-tasks/>
                     </p-tabPanel>
+                    <p-tabPanel header="Aналитика пользователей">
+                        <app-dashboard/>
+                    </p-tabPanel>
+
                 </p-tabView>
             </div>
         </div>

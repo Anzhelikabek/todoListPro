@@ -19,6 +19,8 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "@swimlane/ngx-charts": "^21.0.0",
+    "d3": "^7.9.0",
     "firebase": "^10.14.1",
     "primeicons": "^7.0.0",
     "primeng": "^17.18.12",

@@ -1,10 +1,9 @@
 import {Component} from '@angular/core';
 import {ToastModule} from 'primeng/toast';
 import {Button, ButtonDirective} from 'primeng/button';
-import {Todo} from '../../interfaces/todo';
 import {MessageService} from 'primeng/api';
 import {TodoService} from '../../services/todo.service';
-import {Table, TableModule} from 'primeng/table';
+import {TableModule} from 'primeng/table';
 import {ToolbarModule} from 'primeng/toolbar';
 import {Ripple} from 'primeng/ripple';
 import {DialogModule} from 'primeng/dialog';
@@ -23,6 +22,7 @@ import {UsersTasksComponent} from "../users-tasks/users-tasks.component";
 import {UserService} from "../../services/user.service";
 import {SidebarModule} from "primeng/sidebar";
 import {AuditTrailComponent} from "../../components/audit-trail/audit-trail.component";
+import {DashboardComponent} from "../../components/dashboard/dashboard.component";
 
 @Component({
   selector: 'app-main',
@@ -48,6 +48,7 @@ import {AuditTrailComponent} from "../../components/audit-trail/audit-trail.comp
         SidebarModule,
         Button,
         AuditTrailComponent,
+        DashboardComponent,
     ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],

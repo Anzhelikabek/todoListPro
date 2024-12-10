@@ -90,6 +90,13 @@ export class UsersTasksComponent {
     } else {
       console.error('Email не найден в localStorage!');
     }
+
+    this.sharedStateService.users$.subscribe((users) => {
+      this.userOptions = users.map((user) => ({
+        label: `${user.firstName} ${user.lastName}`,
+        value: user.id,
+      }));
+    });
   }
 
   private initDataStreams(): void {
@@ -135,7 +142,7 @@ export class UsersTasksComponent {
     forkJoin({
       users: this.sharedStateService.getUsers(),
       todos: this.sharedStateService.getTodos(),
-    }).subscribe(({ users, todos }) => {
+    }).subscribe(({users: users, todos }) => {
       this.todosWithUsers = todos.map((todo) => {
         const user = users.find((user) => user.id === todo.userId);
         return {
@@ -304,7 +311,6 @@ export class UsersTasksComponent {
     this.submitted = false;
   }
 
-
   saveTodo(): void {
     this.submitted = true;
 
@@ -312,7 +318,7 @@ export class UsersTasksComponent {
       const isUpdate = !!this.todo.id; // Проверяем, обновляется или добавляется задача
       const currentUserEmail = localStorage.getItem('userEmail') || 'Неизвестно';
 
-      // Находим владельца задачи
+      // Находим владельца задачи из актуального `userOptions`
       const owner = this.userOptions.find((user) => user.value === this.todo.userId);
       const ownerName = owner ? `${owner.label}` : 'Неизвестный пользователь';
 

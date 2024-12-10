@@ -33,7 +33,8 @@ export class UserService {
           "address": "Ош, ул. Мира, д. 12",
           "dateOfBirth": "2001-10-26",
           "profilePicture": "https://picsum.photos/seed/67ec0f1a-10e1-4d4e-add5-9e0fa6bf9016/200/200",
-          "role": "user"
+          "role": "user",
+          "dateAdded": "2024-12-01"
         },
         {
           "id": "874a2920-3a63-4c02-8953-a7bdd770f8af",
@@ -47,7 +48,8 @@ export class UserService {
           "address": "Бишкек, ул. Панфилова, д. 45",
           "dateOfBirth": "1977-10-12",
           "profilePicture": "https://picsum.photos/seed/122ff46f-6d2e-4111-b2ac-046e4a3eb0e8/200/200",
-          "role": "admin"
+          "role": "admin",
+          "dateAdded": "2024-12-02"
         },
         {
           "id": "9547ae61-aad0-4172-87ea-cf65c5c9abe3",
@@ -61,7 +63,8 @@ export class UserService {
           "address": "Жалал-Абад, ул. Ленина, д. 33",
           "dateOfBirth": "1994-11-04",
           "profilePicture": "https://picsum.photos/seed/55d527d7-4e94-44c3-ae11-df0275bfcd8d/200/200",
-          "role": "user"
+          "role": "user",
+          "dateAdded": "2024-12-02"
         },
         {
           "id": "18f3e371-9b90-4789-89fa-61434c8ff35f",
@@ -75,7 +78,8 @@ export class UserService {
           "address": "Каракол, ул. Абдрахманова, д. 16",
           "dateOfBirth": "1972-11-14",
           "profilePicture": "https://picsum.photos/seed/1c1931c6-1822-4c14-8272-c84b448f56eb/200/200",
-          "role": "user"
+          "role": "user",
+          "dateAdded": "2024-12-04"
         },
         {
           "id": "37c67794-4142-45a7-b1e6-c91968326a0c",
@@ -89,7 +93,8 @@ export class UserService {
           "address": "Нарын, ул. Манаса, д. 54",
           "dateOfBirth": "1965-06-12",
           "profilePicture": "https://picsum.photos/seed/495b8ff1-5985-4e2f-82a3-0b3b3edb10dc/200/200",
-          "role": "admin"
+          "role": "admin",
+          "dateAdded": "2024-12-06"
         },
         {
           "id": "edfb1725-1253-43cc-97da-a39cce94e776",
@@ -103,7 +108,8 @@ export class UserService {
           "address": "Талас, ул. Рыскулова, д. 7",
           "dateOfBirth": "1972-11-26",
           "profilePicture": "https://picsum.photos/seed/4383d59e-2fa4-4685-9fae-66fd6fc8af44/200/200",
-          "role": "user"
+          "role": "user",
+          "dateAdded": "2024-12-06"
         },
         {
           "id": "a4e38640-76bf-4ab7-a8bd-50e7be2dcb86",
@@ -117,7 +123,8 @@ export class UserService {
           "address": "Каракол, ул. Лесная, д. 21",
           "dateOfBirth": "2004-01-30",
           "profilePicture": "https://picsum.photos/seed/362e79ee-c5a8-4160-b66b-98d0857e59ae/200/200",
-          "role": "user"
+          "role": "user",
+          "dateAdded": "2024-12-07"
         },
         {
           "id": "c2443267-4b12-433e-acef-e93c60506404",
@@ -131,7 +138,8 @@ export class UserService {
           "address": "Баткен, ул. Советская, д. 8",
           "dateOfBirth": "1985-04-03",
           "profilePicture": "https://picsum.photos/seed/ef6e7fd9-ccd9-4398-ad9a-24d2471437ac/200/200",
-          "role": "user"
+          "role": "user",
+          "dateAdded": "2024-12-08"
         },
         {
           "id": "0ccf8ef3-cf5a-45fa-b8b2-5f76838ad7d7",
@@ -145,7 +153,8 @@ export class UserService {
           "address": "Токмок, ул. Бейшеналиева, д. 12",
           "dateOfBirth": "1978-07-10",
           "profilePicture": "https://picsum.photos/seed/4f380d03-baef-42ac-b31f-a1100b4efe73/200/200",
-          "role": "admin"
+          "role": "admin",
+          "dateAdded": "2024-12-08"
         },
         {
           "id": "be76c3fe-7208-4b3e-ad39-49e32636d38e",
@@ -159,32 +168,35 @@ export class UserService {
           "address": "Бишкек, ул. Молодой Гвардии, д. 3",
           "dateOfBirth": "2000-03-09",
           "profilePicture": "https://picsum.photos/seed/b552cc0d-cabd-49c1-8cd3-c20cf4c41171/200/200",
-          "role": "admin"
+          "role": "admin",
+          "dateAdded": "2024-12-08"
         }
       ];
+
       localStorage.setItem(this.localStorageKey, JSON.stringify(initialUsers)); // Сохраняем начальные данные
     }
   }
+
   private loadUsersFromLocalStorage(): void {
     const storedUsers = localStorage.getItem(this.localStorageKey);
     const users = storedUsers ? JSON.parse(storedUsers) : [];
-    this.usersSubject.next(users); // Устанавливаем начальное состояние
+    this.usersSubject.next(users);
   }
 
-  // Метод для сохранения данных в localStorage
   private saveUsersToLocalStorage(): void {
     const users = this.usersSubject.getValue();
     localStorage.setItem(this.localStorageKey, JSON.stringify(users));
   }
 
-  // Получение всех пользователей
   getUsers(): Observable<User[]> {
-    return this.users$; // Возвращаем Observable
+    return this.users$;
   }
-
-  // Добавление нового пользователя
+  private generateId(): string {
+    return (Math.random() * 100000).toFixed(0).toString();
+  }
   addUser(user: User): Observable<User> {
     user.id = this.generateId(); // Генерация уникального ID
+    user.dateAdded = new Date().toISOString().split('T')[0]; // Устанавливаем только дату
     const currentUsers = this.usersSubject.getValue();
     const updatedUsers = [...currentUsers, user]; // Добавляем пользователя
     this.usersSubject.next(updatedUsers); // Обновляем состояние
@@ -192,44 +204,62 @@ export class UserService {
     return of(user); // Возвращаем нового пользователя
   }
 
-  // Обновление пользователя
+
   updateUser(userId: string, updatedUser: Partial<User>): Observable<User> {
     const currentUsers = this.usersSubject.getValue();
     const index = currentUsers.findIndex((user) => user.id === userId);
     if (index !== -1) {
-      currentUsers[index] = { ...currentUsers[index], ...updatedUser };
-      this.usersSubject.next([...currentUsers]); // Обновляем состояние
-      this.saveUsersToLocalStorage(); // Сохраняем изменения
-      return of(currentUsers[index]); // Возвращаем обновлённого пользователя
+      currentUsers[index] = {...currentUsers[index], ...updatedUser};
+      this.usersSubject.next([...currentUsers]);
+      this.saveUsersToLocalStorage();
+      return of(currentUsers[index]);
     } else {
       return throwError(() => new Error('Пользователь не найден'));
     }
   }
 
-  // Удаление пользователя
   deleteUser(userId: string): Observable<boolean> {
     const currentUsers = this.usersSubject.getValue();
     const updatedUsers = currentUsers.filter((user) => user.id !== userId);
     const wasDeleted = currentUsers.length > updatedUsers.length;
-    this.usersSubject.next(updatedUsers); // Обновляем состояние
-    this.saveUsersToLocalStorage(); // Сохраняем изменения
-    return of(wasDeleted); // true, если пользователь был удалён
+    this.usersSubject.next(updatedUsers);
+    this.saveUsersToLocalStorage();
+    return of(wasDeleted);
   }
 
-  // Генерация уникального ID
-  private generateId(): string {
-    return (Math.random() * 100000).toFixed(0).toString();
+  getUsersByRoles(): { name: string; value: number }[] {
+    const users = this.usersSubject.getValue();
+    const roleCounts = users.reduce((acc, user) => {
+      const role = user.role || 'Unknown';
+      acc[role] = (acc[role] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+
+    return Object.entries(roleCounts).map(([role, count]) => ({
+      name: role,
+      value: count,
+    }));
   }
 
-  // Метод для получения userOptions
-  getUserOptions(): Observable<{ label: string; value: string | undefined }[]> {
-    return this.users$.pipe(
-        map(users =>
-            users.map(user => ({
-              label: `${user.firstName} ${user.lastName}`,
-              value: user.id,
-            }))
-        )
-    );
+  getUsersAddedLast7Days(): { name: string; value: number }[] {
+    const now = new Date();
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(now.getDate() - 7);
+
+    const users = this.usersSubject.getValue();
+    const dailyCounts = Array.from({length: 7}, (_, i) => {
+      const date = new Date(sevenDaysAgo);
+      date.setDate(sevenDaysAgo.getDate() + i);
+      const dateString = date.toISOString().split('T')[0];
+
+      return {
+        name: dateString,
+        value: users.filter(
+            (user) => user.dateAdded && user.dateAdded.split('T')[0] === dateString
+        ).length,
+      };
+    });
+
+    return dailyCounts;
   }
 }
