@@ -12,9 +12,6 @@ import {InputTextareaModule} from "primeng/inputtextarea";
 import {PaginatorModule} from "primeng/paginator";
 import {SharedTableComponent} from "../../shared/shared-table/shared-table.component";
 import {Todo} from "../../interfaces/todo";
-import {User} from "firebase/auth";
-import {UserService} from "../../services/user.service";
-import {TodoService} from "../../services/todo.service";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {Table} from "primeng/table";
@@ -66,8 +63,6 @@ export class UsersTasksComponent {
   ];
 
   constructor(
-      private userService: UserService,
-      private todoService: TodoService,
       private auditTrailService: AuditTrailService,
       private messageService: MessageService,
       private authService: AuthService,
@@ -123,7 +118,7 @@ export class UsersTasksComponent {
     ];
   }
   loadUsers(): void {
-    this.userService.getUsers().subscribe({
+    this.sharedStateService.getUsers().subscribe({
       next: (users) => {
         this.userOptions = users.map((user) => ({
           label: `${user.firstName} ${user.lastName}`,
@@ -187,7 +182,7 @@ export class UsersTasksComponent {
 
       const owner = this.userOptions.find((user) => user.value === this.todo.userId);
 
-      this.todoService.deleteTodo(this.todo.id).subscribe({
+      this.sharedStateService.deleteTodo(this.todo.id).subscribe({
         next: () => {
           this.todosWithUsers = this.todosWithUsers.filter((t) => t.id !== this.todo.id);
 
@@ -226,14 +221,14 @@ export class UsersTasksComponent {
   }
 
   refreshTasksWithUsers(): void {
-    this.userService.getUsers().subscribe({
+    this.sharedStateService.getUsers().subscribe({
       next: (users) => {
         this.userOptions = users.map(user => ({
           label: `${user.firstName} ${user.lastName}`,
           value: user.id
         }));
 
-        this.todoService.getTodos().subscribe({
+        this.sharedStateService.getTodos().subscribe({
           next: (todos) => {
             this.todosWithUsers = todos.map(todo => {
               const user = users.find(u => u.id === todo.userId);
@@ -258,7 +253,7 @@ export class UsersTasksComponent {
     const currentUser = localStorage.getItem('userEmail') || 'Неизвестно';
 
     const deleteRequests = this.selectedTodos.map((selected) => {
-      return this.todoService.deleteTodo(selected.id).toPromise();
+      return this.sharedStateService.deleteTodo(selected.id).toPromise();
     });
 
     Promise.all(deleteRequests)

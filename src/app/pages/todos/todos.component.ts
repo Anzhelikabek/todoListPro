@@ -12,9 +12,7 @@ import {SharedTableComponent} from "../../shared/shared-table/shared-table.compo
 import {ToastModule} from "primeng/toast";
 import {ToolbarModule} from "primeng/toolbar";
 import {Todo} from "../../interfaces/todo";
-import {TodoService} from "../../services/todo.service";
 import {Router} from "@angular/router";
-import {UserService} from "../../services/user.service";
 import {forkJoin} from "rxjs";
 import {AuditTrailService} from "../../services/audit-trail.service";
 import {SharedStateService} from "../../services/shared-state.service";
@@ -60,8 +58,6 @@ export class TodosComponent {
     ];
 
     constructor(
-        private userService: UserService,
-        private todoService: TodoService,
         private auditTrailService: AuditTrailService,
         private sharedStateService: SharedStateService,
         private messageService: MessageService,
@@ -82,7 +78,7 @@ export class TodosComponent {
     }
 
     loadCurrentUser(email: string): void {
-        this.userService.getUsers().subscribe((users) => {
+        this.sharedStateService.getUsers().subscribe((users) => {
             this.currentUser = users.find((user) => user.email === email);
 
             if (this.currentUser) {
@@ -94,7 +90,7 @@ export class TodosComponent {
     }
 
     loadUserTodos(): void {
-        this.todoService.getTodos().subscribe((todos) => {
+        this.sharedStateService.getTodos().subscribe((todos) => {
             this.todos = todos;
             this.userTodos = todos.filter((todo) => todo.userId === this.currentUser.id);
         });
@@ -125,14 +121,14 @@ export class TodosComponent {
 
     confirmDeleteSelected(): void {
         const deleteRequests = this.selectedTodos.map((todo) =>
-            this.todoService.deleteTodo(todo.id!)
+            this.sharedStateService.deleteTodo(todo.id!)
         );
 
         forkJoin(deleteRequests).subscribe({
             next: () => {
                 const currentUser = localStorage.getItem('userEmail') || 'Неизвестно';
 
-                this.userService.getUsers().subscribe((users) => {
+                this.sharedStateService.getUsers().subscribe((users) => {
                     // Аудит-трейл для каждого удалённого задания
                     this.selectedTodos.forEach((todo) => {
                         const owner = users.find((user) => user.id === todo.userId);
@@ -181,9 +177,9 @@ export class TodosComponent {
     confirmDelete(): void {
         const currentUser = localStorage.getItem('userEmail') || 'Неизвестно';
 
-        this.todoService.deleteTodo(this.todo.id!).subscribe({
+        this.sharedStateService.deleteTodo(this.todo.id!).subscribe({
             next: () => {
-                this.userService.getUsers().subscribe((users) => {
+                this.sharedStateService.getUsers().subscribe((users) => {
                     const owner = users.find((user) => user.id === this.todo.userId);
 
                     // Аудит-трейл для удалённого задания
@@ -260,8 +256,8 @@ export class TodosComponent {
 
                 const isUpdate = !!this.todo.id;
                 const saveOperation = isUpdate
-                    ? this.todoService.updateTodo(this.todo.id!, this.todo)
-                    : this.todoService.addTodo(this.todo);
+                    ? this.sharedStateService.updateTodo(this.todo.id!, this.todo)
+                    : this.sharedStateService.addTodo(this.todo);
 
                 saveOperation.subscribe({
                     next: (savedTodo) => {

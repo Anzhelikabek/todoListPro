@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {SharedTableComponent} from '../../shared/shared-table/shared-table.component';
 import {ButtonDirective} from 'primeng/button';
-import {UserService} from "../../services/user.service";
 import {ToastModule} from "primeng/toast";
 import {ToolbarModule} from "primeng/toolbar";
 import {Ripple} from "primeng/ripple";
@@ -20,7 +19,6 @@ import {PhoneNumberFormatPipe} from "../../pipes/phone-number-format.pipe";
 import {SharedStateService} from "../../services/shared-state.service";
 import {forkJoin, tap} from "rxjs";
 import {AuditTrailService} from "../../services/audit-trail.service";
-import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 
 @Component({
     selector: 'app-users',
@@ -77,7 +75,6 @@ export class UsersComponent {
     selectedUser: any = null;
 
     constructor(
-        private userService: UserService,
         private authService: AuthService,
         private auditTrailService: AuditTrailService,
         private messageService: MessageService,
@@ -110,7 +107,7 @@ export class UsersComponent {
     }
 
     loadUsers(): void {
-        this.userService.getUsers().subscribe({
+        this.sharedStateService.getUsers().subscribe({
             next: (data) => {
                 this.users = data;
             },
@@ -182,9 +179,12 @@ export class UsersComponent {
                         }
                     });
 
-                    // Обновляем список пользователей
-                    const selectedIds = this.selectedUsers.map(user => user.id);
-                    this.users = this.users.filter(user => !selectedIds.includes(user.id));
+                    // Обновляем состояние в SharedStateService
+                    const selectedIds = this.selectedUsers.map((user) => user.id);
+                    const remainingUsers = this.sharedStateService['usersSubject']
+                        .getValue()
+                        .filter((user) => !selectedIds.includes(user.id));
+                    this.sharedStateService.setUsers(remainingUsers);
 
                     // Уведомление об успешном удалении
                     this.messageService.add({
@@ -320,7 +320,7 @@ export class UsersComponent {
 
         if (this.user.id) {
             // Обновление пользователя
-            this.userService.updateUser(this.user.id, this.user).subscribe({
+            this.sharedStateService.updateUser(this.user.id, this.user).subscribe({
                 next: () => {
                     this.auditTrailService.addAuditRecord({
                         id: this.sharedStateService.generateId(),
@@ -350,7 +350,7 @@ export class UsersComponent {
             });
         } else {
             // Добавление нового пользователя
-            this.userService.addUser(this.user).subscribe({
+            this.sharedStateService.addUser(this.user).subscribe({
                 next: (newUser) => {
                     this.auditTrailService.addAuditRecord({
                         id: this.sharedStateService.generateId(),

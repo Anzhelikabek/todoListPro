@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
 import {LineChartModule, PieChartModule} from "@swimlane/ngx-charts";
 import {NgIf} from "@angular/common";
+import {SharedStateService} from "../../services/shared-state.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   colorScheme = 'cool';
   view: [number, number] = [700, 400];
 
-  constructor(private userService: UserService) {}
+  constructor(private sharedStateService: SharedStateService) {}
 
   ngOnInit(): void {
     this.subscribeToUserChanges(); // Подписываемся на изменения пользователей
@@ -29,10 +29,11 @@ export class DashboardComponent implements OnInit {
 
   // Подписка на изменения пользователей
   private subscribeToUserChanges(): void {
-    this.userService.users$.subscribe((users) => {
+    this.sharedStateService.users$.subscribe((users) => {
       this.roleDistribution = this.calculateRoleDistribution(users); // Обновляем распределение ролей
     });
   }
+
 
   // Пересчёт распределения ролей
   private calculateRoleDistribution(users: any[]): { name: string; value: unknown }[] {
@@ -51,7 +52,7 @@ export class DashboardComponent implements OnInit {
     this.usersLast7Days = [
       {
         name: 'Added Users',
-        series: this.userService.getUsersAddedLast7Days(),
+        series: this.sharedStateService.getUsersAddedLast7Days(),
       },
     ];
   }

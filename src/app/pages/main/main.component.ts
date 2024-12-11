@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {ToastModule} from 'primeng/toast';
 import {Button, ButtonDirective} from 'primeng/button';
 import {MessageService} from 'primeng/api';
-import {TodoService} from '../../services/todo.service';
 import {TableModule} from 'primeng/table';
 import {ToolbarModule} from 'primeng/toolbar';
 import {Ripple} from 'primeng/ripple';
@@ -19,7 +18,6 @@ import {TabViewModule} from "primeng/tabview";
 import {UsersComponent} from "../users/users.component";
 import {TodosComponent} from "../todos/todos.component";
 import {UsersTasksComponent} from "../users-tasks/users-tasks.component";
-import {UserService} from "../../services/user.service";
 import {SidebarModule} from "primeng/sidebar";
 import {AuditTrailComponent} from "../../components/audit-trail/audit-trail.component";
 import {DashboardComponent} from "../../components/dashboard/dashboard.component";
@@ -27,8 +25,10 @@ import {User} from "../../interfaces/user";
 import * as Papa from 'papaparse';
 import * as XLSX from 'xlsx';
 import {SharedStateService} from "../../services/shared-state.service";
-import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
+import { v4 as uuidv4 } from 'uuid'; // Импорт функции для генерации UUID
+
 import {FileUploadModule} from "primeng/fileupload";
+import {AuditTrailService} from "../../services/audit-trail.service";
 
 @Component({
   selector: 'app-main',
@@ -70,11 +70,10 @@ export class MainComponent {
 
 
   constructor(
-      private userService: UserService,
       private sharedStateService: SharedStateService,
-      private todoService: TodoService,
       private messageService: MessageService,
       private authService: AuthService,
+      private auditTrailService: AuditTrailService,
       private router: Router
   ) {}
 
@@ -90,7 +89,7 @@ export class MainComponent {
   }
 
   loadUserName(email: string): void {
-    this.userService.getUsers().subscribe((users) => {
+    this.sharedStateService.getUsers().subscribe((users) => {
       const user = users.find((user) => user.email === email);
 
       if (user) {
@@ -163,13 +162,25 @@ export class MainComponent {
 
         reader.readAsBinaryString(file);
     }
-    validateAndSaveUsers(users: User[]): void {
-        const invalidUsers = users.filter(
+
+
+    validateAndSaveUsers(users: Partial<User>[]): void {
+        // Обогащаем пользователей автоматически генерируемыми данными
+        const enrichedUsers = users.map((user) => ({
+            ...user,
+            id: uuidv4(), // Генерация уникального UUID
+            code: Math.floor(1000 + Math.random() * 9000), // Случайный 4-значный код
+            dateAdded: new Date().toISOString().split('T')[0], // Текущая дата в формате YYYY-MM-DD
+            phoneNumber: user.phoneNumber ? user.phoneNumber.toString() : '',
+        }));
+
+        // Проверяем корректность данных
+        const invalidUsers = enrichedUsers.filter(
             (user) =>
                 !user.email || // Проверка на наличие email
-                !this.isValidEmail(user.email) ||
-                !user.id ||
-                this.isDuplicateId(user.id)
+                !this.isValidEmail(user.email) || // Проверка формата email
+                !user.firstName || // Проверка на наличие имени
+                !user.lastName    // Проверка на наличие фамилии
         );
 
         if (invalidUsers.length > 0) {
@@ -184,15 +195,30 @@ export class MainComponent {
 
         // Получаем текущий список пользователей
         const existingUsers = this.sharedStateService['usersSubject'].getValue();
-        // Обновляем общий список пользователей
-        const updatedUsers = [...existingUsers, ...users];
-        this.sharedStateService.setUsers(updatedUsers); // Вызов метода setUsers
 
+        // Обновляем общий список пользователей
+        const updatedUsers = [...existingUsers, ...enrichedUsers];
+        this.sharedStateService.setUsers(updatedUsers); // Вызов метода setUsers для обновления состояния
+
+        // Уведомление об успешном импорте
         this.messageService.add({ severity: 'success', summary: 'Успешно', detail: 'Пользователи импортированы' });
+
+        // Добавляем запись в аудит
+        this.auditTrailService.addAuditRecord({
+            id: this.sharedStateService.generateId(), // Уникальный ID записи
+            timestamp: new Date(), // Время действия
+            action: 'Импорт', // Действие
+            entity: 'Пользователи', // Сущность
+            entityId: `Импортировано ${enrichedUsers.length} пользователей`, // Идентификатор (например, описание импорта)
+            performedBy: localStorage.getItem('userEmail') || 'Неизвестный', // Пользователь, выполняющий импорт
+            details: `${enrichedUsers.length} пользователей добавлено в систему.`, // Подробности действия
+        }).subscribe(() => {
+            console.log('Запись аудита успешно добавлена.');
+        });
     }
 
 
-    isValidEmail(email: string): boolean {
+isValidEmail(email: string): boolean {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }

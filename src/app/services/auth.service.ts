@@ -11,7 +11,7 @@ import {
 import {firebaseApp} from '../firebase.config';
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
-import {UserService} from "./user.service"; // Убедитесь, что путь к файлу firebase.config.ts корректен
+import {SharedStateService} from "./shared-state.service"; // Убедитесь, что путь к файлу firebase.config.ts корректен
 
 @Injectable({
   providedIn: 'root',
@@ -20,14 +20,14 @@ export class AuthService {
   private auth = getAuth(firebaseApp);
   private currentUser: User | null = null;
 
-  constructor(private userService: UserService) {
+  constructor(private sharedStateService: SharedStateService,) {
     // Слушатель состояния аутентификации
     onAuthStateChanged(this.auth, (user) => {
       this.currentUser = user;
     });
   }
   getRoleByEmail(email: string): Observable<string> {
-    return this.userService.getUsers().pipe(
+    return this.sharedStateService.getUsers().pipe(
         map((users) => {
           const user = users.find((user) => user.email === email);
           return user?.role || 'user'; // Возвращаем роль или "user" по умолчанию
