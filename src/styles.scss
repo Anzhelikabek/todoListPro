@@ -1,11 +1,324 @@
+// Переменные для основных цветов и стилей
+$primary-color: #4caf50;
+$secondary-color: #f6f6f6;
+$border-color: #ccc;
+$border-radius: 4px;
+$white-color: #fff;
+$red-color: #f44336;
+$green-color: #4caf50;
+$yellow-color: #ffec3d;
+$blue-color: #4267b2;
+$google-color: #db4437;
+$facebook-hover-color: #365899;
+$google-hover-color: #c33627;
+
+$dark-background: #1e1e2f; // Мягкий тёмно-серый фон
+$dark-text-color: #e0e0e0; // Светлый текст
+$dark-border-color: #3c3c4c; // Светлее границы
+$dark-card-color: #29293d; // Для карточек
+$secondary-color: #5C9ED8; // Голубой акцентный цвет
+
+$light-background: #ffffff;
+$light-text-color: #333333;
+$light-border-color: #ddd;
+$light-card-color: #f9f9f9;
+
+
+.dark-theme {
+  // Основные стили для темной темы
+  background-color: $dark-background;
+  color: $dark-text-color;
+
+  .container {
+    border: 1px solid $dark-border-color;
+    background-color: $dark-card-color;
+  }
+
+  .p-tabview .p-tabview-panels {
+    background: $dark-background;
+    color: $dark-text-color;
+  }
+
+  .p-tabview .p-tabview-nav {
+    background: $dark-background;
+    border: 0 0 2px 0 solid $dark-border-color;
+  }
+
+  .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    border: 0 0 2px 0 solid $dark-border-color;
+    background: $dark-background;
+    color: $dark-text-color;
+  }
+
+  .p-toolbar {
+    background: $dark-card-color;
+    border: 1px solid $dark-border-color;
+  }
+
+  .p-datatable .p-datatable-tbody > tr > td {
+    background: $dark-background;
+    color: $dark-text-color;
+    border: 0 0 1px 0 solid $dark-border-color;
+  }
+
+  .p-datatable .p-datatable-thead > tr > th {
+    border: 0 0 1px 0 solid $dark-border-color;
+    color: $dark-text-color;
+    background: $dark-card-color;
+  }
+
+  .p-paginator {
+    background: $dark-background;
+    color: $dark-text-color;
+    border: 0 solid $dark-border-color;
+  }
+
+  .p-dialog .p-dialog-content {
+    background: $dark-background;
+    color: $dark-text-color;
+  }
+
+  .p-dialog .p-dialog-header {
+    background: $dark-background;
+    color: $dark-text-color;
+  }
+
+  .p-inputtext {
+    color: $dark-text-color;
+    background: $dark-background;
+    //border: 1px solid $dark-border-color;
+  }
+
+  .phone-input span {
+    background-color: $dark-background;
+    border: 1px solid $dark-border-color;
+  }
+
+  .p-dropdown .p-dropdown-trigger {
+    background: $dark-background;
+    color: $dark-text-color;
+  }
+
+  .p-dialog .p-dialog-footer {
+    background: $dark-background;
+    color: $dark-text-color;
+  }
+
+  .p-sidebar .p-sidebar-header + .p-sidebar-content {
+    background: $dark-background;
+    color: $dark-text-color;
+  }
+
+  .p-sidebar .p-sidebar-header {
+    background: $dark-background;
+  }
+
+  .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: $secondary-color;
+    border-color: $dark-border-color;
+    color: $dark-text-color;
+  }
+}
+
+.light-theme {
+  // Основные стили для светлой темы
+  background-color: $light-background;
+  color: $light-text-color;
+
+  // Контейнеры и компоненты
+  .login-container {
+    background: $light-card-color;
+    color: $light-text-color;
+  }
+
+  .login-card {
+    background: $light-card-color;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-field, .p-inputtext, .p-dropdown {
+    background-color: $white-color;
+    color: $light-text-color;
+    //border: 1px solid $light-border-color;
+  }
+
+  .login-button, .facebook-button, .google-button {
+    color: $white-color;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  .forgot-password, .create-now {
+    color: $primary-color;
+  }
+}
+
+//.p-button:not(:disabled):active {
+//  background-color: #007bff; /* Синий фон для активной кнопки */
+//  color: white; /* Белый текст для контраста */
+//  border-radius: 5px;
+//}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  //padding: 20px;
+  max-width: 1140px;
+  margin: 25px auto;
+}
+
+.p-inputtext {
+  border-radius: 0
+}
+
+// Основные контейнеры
+.phone-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  span {
+    background-color: #f0f0f0;
+    padding: 0.5rem;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+  }
+}
+
+.status-false, .status-true {
+  width: 150px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.status-false {
+  color: red;
+}
+
+.status-true {
+  color: green;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: $secondary-color;
+}
+
+.login-card {
+  width: 500px;
+  padding: 30px;
+  background: $white-color;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.create-now {
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.p-inputgroup {
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.login-button {
+  width: 100%;
+  background: $primary-color;
+  color: $white-color;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 5px;
+  transition: background 0.3s;
+
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+}
+
+.forgot-password {
+  font-size: 14px;
+  color: #757575;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.facebook-button, .google-button {
+  width: 100%;
+  margin: 10px 0;
+  color: $white-color;
+  border: none;
+  padding: 10px;
+}
+
+.facebook-button {
+  background-color: $blue-color;
+
+  &:hover {
+    background-color: $facebook-hover-color;
+  }
+}
+
+.google-button {
+  background-color: $google-color;
+
+  &:hover {
+    background-color: $google-hover-color;
+  }
+}
+
+.header-content {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 15px 0 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 6px;
+}
+
+.toolbar {
+  margin-bottom: 15px;
+}
+
 .todos .p-dialog-content {
   overflow-y: inherit !important;
 }
-.p-calendar{
+
+.p-calendar {
   width: 100%;
 }
+
 .delete-selected {
-  margin-left: 10px
+  margin-left: 10px;
 }
 
 .button-group {
@@ -14,6 +327,7 @@
   display: flex;
   justify-content: space-around;
 }
+
 .p-password-panel .p-password-meter {
   margin-top: 10px;
 }
@@ -24,15 +338,15 @@
 }
 
 .p-password-strength.weak {
-  background-color: #ff4d4f; // Красный для слабого пароля
+  background-color: #ff4d4f;
 }
 
 .p-password-strength.medium {
-  background-color: #ffec3d; // Жёлтый для среднего пароля
+  background-color: $yellow-color;
 }
 
 .p-password-strength.strong {
-  background-color: #52c41a; // Зелёный для сильного пароля
+  background-color: $green-color;
 }
 
 .container {
@@ -41,8 +355,9 @@
   border-radius: 8px;
   background-color: #f9f9f9;
   max-width: 1140px;
-  margin: 50px auto 0;
+  margin: 0 auto;
 }
+
 :host ::ng-deep .p-dialog {
   border-radius: 10px;
 }
@@ -54,7 +369,7 @@
 
 :host ::ng-deep .p-dialog .p-dialog-footer {
   padding-top: 10px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $border-color;
 }
 
 :host ::ng-deep .p-field label {
@@ -62,14 +377,15 @@
   margin-bottom: 15px;
   display: inline-block;
 }
+
 .p-inputtext, .p-dropdown {
   width: 100%;
-  //margin-top: 10px;
 }
 
-.field{
+.field {
   margin-bottom: 15px;
 }
+
 .status-badge {
   display: inline-block;
   padding: 5px 10px;
@@ -78,32 +394,37 @@
 }
 
 .status-completed {
-  background-color: #4caf50; /* Зелёный */
-  color: white;
+  background-color: $green-color;
+  color: $white-color;
 }
 
 .status-pending {
-  background-color: #f44336; /* Красный */
-  color: white;
+  background-color: $red-color;
+  color: $white-color;
 }
-.p-button.p-button-warning, .p-button-group.p-button-warning > .p-button, .p-splitbutton.p-button-warning > .p-button{
+
+.p-button.p-button-warning, .p-button-group.p-button-warning > .p-button, .p-splitbutton.p-button-warning > .p-button {
   background-color: #d32f2f;
   border: #d32f2f;
   margin-left: 8px;
-  color: white;
+  color: $white-color;
 }
-.p-button.p-button-success, .p-button-group.p-button-success > .p-button, .p-splitbutton.p-button-success > .p-button{
+
+.p-button.p-button-success, .p-button-group.p-button-success > .p-button, .p-splitbutton.p-button-success > .p-button {
   margin-left: 8px;
 }
-.p-sidebar-right{
+
+.p-sidebar-right {
   width: 50%;
 }
+
 @media screen and (max-width: 870px) {
   .button-group {
     height: 147px;
     align-items: center;
   }
- .buttons .p-button .p-button-label {
+
+  .buttons .p-button .p-button-label {
     font-size: 12px !important;
   }
 }
@@ -112,7 +433,4 @@
   .p-datatable .p-datatable-thead > tr > th {
     font-size: 14px;
   }
-
 }
-
-

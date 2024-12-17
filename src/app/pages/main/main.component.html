@@ -1,33 +1,38 @@
+<div class="navbar">
+    <h1>{{'greeting' | translate}}, {{ userName }}!</h1>
+    <div class="buttons">
+        <p-button (click)="switchLanguage('ru')" [ngClass]="{'active': currentLang === 'ru'}">Русский</p-button>
+        <p-button (click)="switchLanguage('ky')" [ngClass]="{'active': currentLang === 'ky'}">Кыргыз тили</p-button>
+        <p-button (click)="switchLanguage('en')" [ngClass]="{'active': currentLang === 'en'}">English</p-button>
+    </div>
+</div>
+
 <div class="container">
     <div class="p-field">
         <div class="grid">
             <div class="col-12">
                 <div class="header-content">
-                    <h1>Привет, {{ userName }}!</h1>
                     <div class="buttons">
-                        <p-button
-                                type="button"
-                                class="logout-button"
-                                (click)="onLogout()"
-                                icon="pi pi-sign-out"
-                                label="Выйти"/>
+                        <!-- theme-toggle.component.html -->
+                        <p-button icon="pi pi-moon" [label]="'switchTheme' | translate" (click)="toggleTheme()"></p-button>
                         <!-- Кнопка экспорта -->
-                        <p-button type="button" (click)="exportToExcel()">Экспорт в Excel</p-button>
+                        <p-button type="button" (click)="exportToExcel()">{{'exportToExcel' | translate}}</p-button>
                         <!-- Кнопка импорта -->
                         <p-fileUpload
                             #fileUpload
                             mode="basic"
                             name="file"
                             accept=".xlsx"
-                            chooseLabel="Импортировать Excel"
+                            [chooseLabel]="'importExcel' | translate"
                             (onSelect)="importUsers($event, fileUpload)"
                         >
                         </p-fileUpload>
-
-
-                        <!--                        <p-button type="button" icon="pi pi-upload" label="Загрузить"/>-->
-
-                        <!--                        <p-button type="button" icon="pi pi-download" label="Выгрузить"/>-->
+                        <p-button
+                                type="button"
+                                class="logout-button"
+                                (click)="onLogout()"
+                                icon="pi pi-sign-out"
+                                [label]="'logOut' | translate"/>
                         <p-button
                                 type="button"
                                 class="sidebar"
@@ -35,19 +40,17 @@
                                 icon="pi pi-arrow-left"/>
                     </div>
                 </div>
-
-
                 <p-tabView>
-                    <p-tabPanel header="Мои задачи">
+                    <p-tabPanel [header]="'myTasks' | translate">
                         <app-todos/>
                     </p-tabPanel>
-                    <p-tabPanel header="Список пользователей">
+                    <p-tabPanel [header]="'users' | translate">
                         <app-users/>
                     </p-tabPanel>
-                    <p-tabPanel header="Список задач всех пользователей">
+                    <p-tabPanel [header]="'tasksUsers' | translate">
                         <app-users-tasks/>
                     </p-tabPanel>
-                    <p-tabPanel header="Aналитика пользователей">
+                    <p-tabPanel [header]="'userAnalytics' | translate">
                         <app-dashboard/>
                     </p-tabPanel>
 
@@ -59,14 +62,14 @@
 <p-sidebar [(visible)]="sidebarVisible2" position="right">
     <app-audit-trail></app-audit-trail>
 </p-sidebar>
-<p-dialog [(visible)]="displayModal" [modal]="true" [closable]="true" header="Подтверждение выхода">
-    <p>Вы действительно хотите выйти, <b>{{ userEmail }}</b>?</p>
+<p-dialog [(visible)]="displayModal" [modal]="true" [closable]="true" [header]="'exitConfirmation' | translate">
+    <p>{{'wantToLogOut' | translate}}, <b>{{ userEmail }}</b>?</p>
     <ng-template pTemplate="footer">
         <button
                 pButton
                 pRipple
                 icon="pi pi-times"
-                label="Нет"
+                [label]="'no' | translate"
                 class="p-button-text"
                 (click)="displayModal = false"
         ></button>
@@ -74,7 +77,7 @@
                 pButton
                 pRipple
                 icon="pi pi-check"
-                label="Да"
+                [label]="'yes' | translate"
                 class="p-button-text"
                 (click)="performLogout()"
         ></button>

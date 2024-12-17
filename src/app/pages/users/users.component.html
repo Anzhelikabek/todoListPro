@@ -3,14 +3,14 @@
     <p-toolbar styleClass="mb-4">
         <ng-template pTemplate="right">
             <div class="my-2 buttons">
-                <button *ngIf="isAdmin" pButton pRipple label="Создать" icon="pi pi-plus"
+                <button *ngIf="isAdmin" pButton pRipple [label]="'create' | translate" icon="pi pi-plus"
                         class="p-button-success mr-2"
                         (click)="openNew()"></button>
                 <button
                         *ngIf="isAdmin"
                         pButton
                         pRipple
-                        label="Удалить"
+                        [label]="'delete' | translate"
                         icon="pi pi-trash"
                         class="p-button-danger ml-5 delete-selected"
                         (click)="deleteSelectedUsers()"
@@ -20,7 +20,7 @@
         </ng-template>
 
         <ng-template pTemplate="left">
-            <h2>Список пользователей</h2>
+            <h2>{{'userList' | translate}}</h2>
         </ng-template>
     </p-toolbar>
 
@@ -40,31 +40,31 @@
 
 </div>
 
-<p-dialog [(visible)]="userDialog" [style]="{width: '450px'}" header="Подробности пользователя"
+<p-dialog [(visible)]="userDialog" [style]="{width: '450px'}" [header]="'userDetails' | translate"
           [modal]="true">
     <ng-template class="creat-edit-modal" pTemplate="content">
         <!-- Поле для имени -->
         <div class="field">
-            <label for="name">Имя пользователя</label>
+            <label for="name">{{'userFirstName' | translate}}</label>
             <input type="text" id="name" pInputText [(ngModel)]="user.firstName" required>
         </div>
 
         <!-- Поле для фамилии -->
         <div class="field">
-            <label for="lastName">Фамилия пользователя</label>
+            <label for="lastName">{{'userLastName' | translate}}</label>
             <input type="text" id="lastName" pInputText [(ngModel)]="user.lastName" required>
         </div>
 
         <!-- Поле для Email -->
         <div class="field">
-            <label for="email">Email</label>
+            <label for="email">{{'email' |translate}}</label>
             <textarea id="email" pInputTextarea [(ngModel)]="user.email" required
                       rows="3"></textarea>
         </div>
 
         <!-- Поле для номера телефона -->
         <div class="field">
-            <label for="phoneNumber">Номер телефона</label>
+            <label for="phoneNumber">{{'phoneNumber' | translate}}</label>
             <div class="phone-input">
                 <span>+996</span>
                 <input
@@ -78,64 +78,61 @@
                 />
             </div>
             <small *ngIf="!isValidPhoneNumber(user.phoneNumber || '')" class="p-error">
-                Введите корректный номер телефона (9 цифр, первая цифра не 0).
+                {{'invalidPhoneNumberMsg' | translate}}
             </small>
-
-
         </div>
-
 
         <!-- Поле для возраста -->
         <div class="field">
-            <label for="age">Возраст</label>
+            <label for="age">{{'age' | translate}}</label>
             <input type="number" id="age" pInputText [(ngModel)]="user.age" required>
         </div>
 
         <!-- Поле для пола -->
         <div class="field">
-            <label for="gender">Пол</label>
+            <label for="gender">{{'gender' | translate}}</label>
             <p-dropdown
                     [(ngModel)]="user.gender"
                     [options]="genderOptions"
                     optionLabel="label"
                     optionValue="value"
-                    placeholder="Выберите пол"
+                    [placeholder]="'selectGender' | translate"
                     required>
             </p-dropdown>
         </div>
 
         <!-- Поле для адреса -->
         <div class="field">
-            <label for="address">Адрес</label>
+            <label for="address">{{'address' | translate}}</label>
             <textarea id="address" pInputTextarea [(ngModel)]="user.address" required
                       rows="3"></textarea>
         </div>
 
         <!-- Поле для даты рождения -->
         <div class="field">
-            <label for="dateOfBirth">Дата рождения</label>
+            <label for="dateOfBirth">{{'birthDate' | translate}}</label>
             <p-calendar [(ngModel)]="user.dateOfBirth" dateFormat="yy-mm-dd" showIcon></p-calendar>
         </div>
 
         <!-- Поле для роли -->
         <div class="field">
-            <label for="role">Роль</label>
+            <label for="role">{{'role' | translate}}</label>
             <p-dropdown
                     [(ngModel)]="user.role"
                     [options]="roleOptions"
                     optionLabel="label"
                     optionValue="value"
-                    placeholder="Выберите роль"
+                    [placeholder]="'selectRole' | translate"
                     required>
             </p-dropdown>
         </div>
 
-        <small *ngIf="submitted && !user.role" class="p-error">Роль обязательна для выбора.</small>
+        <small *ngIf="submitted && !user.role" class="p-error">{{'roleRequiredMsg' | translate}}</small>
 
         <!-- Поле для фотографии профиля -->
         <div class="field">
-            <label for="profilePicture">Фотография профиля</label>
-            <input type="text" id="profilePicture" pInputText [(ngModel)]="user.profilePicture" placeholder="URL изображения">
+            <label for="profilePicture">{{'profilePicture' | translate}}</label>
+            <input type="text" id="profilePicture" pInputText [(ngModel)]="user.profilePicture" [placeholder]="'imageUrl' | translate">
         </div>
 
         <!-- Превью изображения -->
@@ -145,9 +142,9 @@
     </ng-template>
 
     <ng-template pTemplate="footer">
-        <button pButton pRipple label="Отмена" icon="pi pi-times" class="p-button-text"
+        <button pButton pRipple [label]="'cancel' | translate" icon="pi pi-times" class="p-button-text"
                 (click)="hideDialog()"></button>
-        <button pButton pRipple label="Сохранить" icon="pi pi-check" class="p-button-text"
+        <button pButton pRipple [label]="'save' | translate" icon="pi pi-check" class="p-button-text"
                 (click)="saveUser()"></button>
     </ng-template>
 </p-dialog>
@@ -155,17 +152,17 @@
 <p-dialog
         [(visible)]="deleteUsersDialog"
         [style]="{ width: '400px' }"
-        header="Подтверждение"
+        [header]="'confirmation' | translate"
         [modal]="true"
         [closable]="false"
 >
     <div class="flex align-items-center justify-content-center">
         <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem;"></i>
         <span *ngIf="selectedUsers.length === 1">
-      Вы уверены, что хотите удалить <b>{{ selectedUsers[0]?.firstName }}</b>?
+      {{'confirmDelete' | translate}} <b>{{ selectedUsers[0]?.firstName }}</b>?
     </span>
         <span *ngIf="selectedUsers.length > 1">
-    Вы уверены, что хотите удалить выбранные пользователи?
+    {{'confirmDeleteSelectedUsers' | translate}}
     </span>
     </div>
 
@@ -174,7 +171,7 @@
                 pButton
                 pRipple
                 icon="pi pi-times"
-                label="Нет"
+                [label]="'cancel' | translate"
                 class="p-button-text"
                 (click)="deleteUsersDialog = false"
         ></button>
@@ -182,7 +179,7 @@
                 pButton
                 pRipple
                 icon="pi pi-check"
-                label="Да"
+                [label]="'yes' | translate"
                 class="p-button-text"
                 (click)="confirmDeleteSelected()"
         ></button>
@@ -192,20 +189,20 @@
 <p-dialog
         [(visible)]="deleteUserDialog"
         [style]="{ width: '400px' }"
-        header="Подтверждение"
+        [header]="'confirmation' | translate"
         [modal]="true"
         [closable]="false"
 >
     <div class="flex align-items-center justify-content-center">
         <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem;"></i>
-        <span *ngIf="user">Вы уверены, что хотите удалить пользователь <b>{{ user.firstName }}</b>?</span>
+        <span *ngIf="user">{{'confirmDeleteUser' | translate}} <b>{{ user.firstName }}</b>?</span>
     </div>
     <ng-template pTemplate="footer">
         <button
                 pButton
                 pRipple
                 icon="pi pi-times"
-                label="Нет"
+                [label]="'no' | translate"
                 class="p-button-text"
                 (click)="deleteUserDialog = false"
         ></button>
@@ -213,27 +210,27 @@
                 pButton
                 pRipple
                 icon="pi pi-check"
-                label="Да"
+                [label]="'yes' | translate"
                 class="p-button-text"
                 (click)="confirmDelete(user)"
         ></button>
     </ng-template>
 </p-dialog>
 
-<p-dialog [(visible)]="displayModal" [modal]="true" header="Информация о пользователе" [closable]="true">
+<p-dialog [(visible)]="displayModal" [modal]="true" [header]="'userInformation' | translate"  [closable]="true">
     <div *ngIf="selectedUser">
         <img [src]="selectedUser.profilePicture" alt="Profile Picture" style="width: 100px; border-radius: 50%;">
-        <p><strong>Имя:</strong> {{ selectedUser.firstName }} {{ selectedUser.lastName }}</p>
-        <p><strong>Email:</strong> {{ selectedUser.email }}</p>
-        <p><strong>Телефон:</strong> {{ selectedUser.phoneNumber | phoneNumberFormat}}</p>
-        <p><strong>Роль:</strong> {{ selectedUser.role === 'admin' ? 'Админ' : 'Пользователь' }}</p>
-        <p><strong>Возраст:</strong> {{ selectedUser.age }}</p>
-        <p><strong>Пол:</strong> {{ selectedUser.gender }}</p>
-        <p *ngIf="selectedUser.dateOfBirth"><strong>Дата рождения:</strong> {{ selectedUser.dateOfBirth | date: 'yyyy-MM-dd' }}</p>
-        <p *ngIf="!selectedUser.dateOfBirth"><strong>Дата рождения:</strong> Не указана</p>
-        <p><strong>Адрес:</strong> {{ selectedUser.address }}</p>
+        <p><strong>{{'firstName' | translate}}:</strong> {{ selectedUser.firstName }} {{ selectedUser.lastName }}</p>
+        <p><strong>{{'emailShort' | translate}}:</strong> {{ selectedUser.email }}</p>
+        <p><strong>{{'phoneShort' | translate}}:</strong> {{ selectedUser.phoneNumber | phoneNumberFormat}}</p>
+        <p><strong>{{'roleShort' | translate}}:</strong> {{ selectedUser.role === 'admin' ? 'Админ' : 'Пользователь' }}</p>
+        <p><strong>{{'ageShort' | translate}}:</strong> {{ selectedUser.age }}</p>
+        <p><strong>{{'genderShort' | translate}}:</strong> {{ selectedUser.gender }}</p>
+        <p *ngIf="selectedUser.dateOfBirth"><strong>{{'birthDateShort' | translate}}:</strong> {{ selectedUser.dateOfBirth | date: 'yyyy-MM-dd' }}</p>
+        <p *ngIf="!selectedUser.dateOfBirth"><strong>{{'birthDateShort' | translate}}:</strong> {{'notSpecified' | translate}}</p>
+        <p><strong>{{'address' | translate}}:</strong> {{ selectedUser.address }}</p>
     </div>
     <footer>
-        <button pButton label="Закрыть" icon="pi pi-times" (click)="displayModal = false"></button>
+        <button pButton [label]="'close' | translate" icon="pi pi-times" (click)="displayModal = false"></button>
     </footer>
 </p-dialog>

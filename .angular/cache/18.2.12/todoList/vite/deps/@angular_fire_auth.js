@@ -83,7 +83,7 @@ import {
   validatePassword,
   verifyBeforeUpdateEmail,
   verifyPasswordResetCode
-} from "./chunk-OAADY6SH.js";
+} from "./chunk-ACKMLHLK.js";
 import {
   FirebaseApp,
   FirebaseApps,
@@ -93,11 +93,11 @@ import {
   ɵgetAllInstancesOf,
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
-} from "./chunk-SR5SPHQF.js";
-import "./chunk-6HNYVMGD.js";
+} from "./chunk-NY347BWN.js";
+import "./chunk-QE4TXKB6.js";
 import {
   registerVersion
-} from "./chunk-TKDPBJDW.js";
+} from "./chunk-L2NFDERQ.js";
 import {
   InjectionToken,
   Injector,
@@ -108,7 +108,7 @@ import {
   setClassMetadata,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-TDPKYNEQ.js";
+} from "./chunk-6JZVI6Z5.js";
 import "./chunk-Z4GY3YUB.js";
 import "./chunk-WGFE6ZO7.js";
 import {
@@ -121,7 +121,7 @@ import {
   timer
 } from "./chunk-MOTLY3TU.js";
 import "./chunk-S3YC363S.js";
-import "./chunk-K4KU7J5H.js";
+import "./chunk-5K356HEJ.js";
 
 // node_modules/rxfire/auth/index.esm.js
 function authState(auth) {

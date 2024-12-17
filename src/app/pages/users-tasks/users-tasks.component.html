@@ -3,14 +3,14 @@
     <p-toolbar styleClass="mb-4">
         <ng-template pTemplate="right">
             <div class="my-2 buttons">
-                <button *ngIf="isAdmin" pButton pRipple label="Создать" icon="pi pi-plus"
+                <button *ngIf="isAdmin" pButton pRipple [label]="'create' | translate" icon="pi pi-plus"
                         class="p-button-success mr-2"
                         (click)="openNew()"></button>
                 <button
                         *ngIf="isAdmin"
                         pButton
                         pRipple
-                        label="Удалить"
+                        [label]="'delete' | translate"
                         icon="pi pi-trash"
                         class="p-button-danger ml-5 delete-selected"
                         (click)="deleteSelectedTodos()"
@@ -20,7 +20,7 @@
         </ng-template>
 
         <ng-template pTemplate="left">
-            <h2>Список задач всех пользователей</h2>
+            <h2>{{'tasksUsers' | translate}}</h2>
         </ng-template>
     </p-toolbar>
     <app-shared-table
@@ -34,49 +34,53 @@
     ></app-shared-table>
 </div>
 <!-- Модальное окно для создания/редактирования -->
-<p-dialog [(visible)]="todoDialog" [style]="{width: '450px'}" class="todos" header="Подробности задачи" [modal]="true">
+<p-dialog [(visible)]="todoDialog" [style]="{width: '450px'}" class="todos" [header]="'taskDetails' | translate"
+          [modal]="true">
     <ng-template class="creat-edit-modal" pTemplate="content">
         <!-- Поле для заголовка -->
         <div class="field">
-            <label for="name">Заголовок</label>
-            <input type="text" id="name" pInputText [(ngModel)]="todo.name" required />
+            <label for="name">{{'title' | translate}}</label>
+            <input type="text" id="name" pInputText [(ngModel)]="todo.name" required/>
         </div>
 
         <!-- Поле для описания -->
         <div class="field">
-            <label for="description">Описание</label>
+            <label for="description">{{'description' | translate}}</label>
             <textarea id="description" pInputTextarea [(ngModel)]="todo.description" required rows="3"></textarea>
         </div>
 
         <!-- Выпадающий список для назначения пользователя -->
         <div class="field">
-            <label for="user">Пользователь</label>
+            <label for="user">{{'user' | translate}}</label>
             <p-dropdown
                     id="user"
                     [(ngModel)]="todo.userId"
                     [options]="userOptions"
-                    placeholder="Выберите пользователя"
+                    [placeholder]="'selectUser' | translate"
                     required
             ></p-dropdown>
-            <small *ngIf="submitted && !todo.userId" class="p-error">Пользователь обязателен для выбора.</small>
+            <small *ngIf="submitted && !todo.userId" class="p-error">{{'userRequired' | translate}}</small>
         </div>
 
         <!-- Выпадающий список для выбора статуса -->
         <p-dropdown
                 [(ngModel)]="todo.status"
                 [options]="statusOptions"
-                placeholder="Выберите статус"
+                [placeholder]="'selectStatus' | translate"
                 required
                 [ngClass]="{ 'ng-invalid ng-dirty': submitted && !todo.status }"
         ></p-dropdown>
-        <span *ngIf="todo.status !== undefined" class="status-badge" [ngClass]="{ 'status-true': todo.status, 'status-false': !todo.status }"></span>
-        <small *ngIf="submitted && !todo.status" class="p-error">Статус обязателен для выбора.</small>
+        <span *ngIf="todo.status !== undefined" class="status-badge"
+              [ngClass]="{ 'status-true': todo.status, 'status-false': !todo.status }"></span>
+        <small *ngIf="submitted && !todo.status" class="p-error">{{'statusRequired' | translate}}</small>
     </ng-template>
 
     <!-- Кнопки в футере -->
     <ng-template pTemplate="footer">
-        <button pButton pRipple label="Отмена" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-        <button pButton pRipple label="Сохранить" icon="pi pi-check" class="p-button-text" (click)="saveTodo()"></button>
+        <button pButton pRipple [label]="'cancel' | translate" icon="pi pi-times" class="p-button-text"
+                (click)="hideDialog()"></button>
+        <button pButton pRipple [label]="'save' | translate" icon="pi pi-check" class="p-button-text"
+                (click)="saveTodo()"></button>
     </ng-template>
 </p-dialog>
 
@@ -84,17 +88,17 @@
 <p-dialog
         [(visible)]="deleteTodosDialog"
         [style]="{ width: '400px' }"
-        header="Подтверждение"
+        [header]="'confirmation' | translate"
         [modal]="true"
         [closable]="false"
 >
     <div class="flex align-items-center justify-content-center">
         <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem;"></i>
         <span *ngIf="selectedTodos.length === 1">
-      Вы уверены, что хотите удалить <b>{{ selectedTodos[0]?.name }}</b>?
+     {{'confirmDelete' | translate}} <b>{{ selectedTodos[0]?.name }}</b>?
     </span>
         <span *ngIf="selectedTodos.length > 1">
-    Вы уверены, что хотите удалить выбранные задачи?
+    {{'confirmDeleteSelectedTasks' | translate}}
     </span>
     </div>
 
@@ -103,7 +107,7 @@
                 pButton
                 pRipple
                 icon="pi pi-times"
-                label="Нет"
+                [label]="'no' | translate"
                 class="p-button-text"
                 (click)="deleteTodosDialog = false"
         ></button>
@@ -111,7 +115,7 @@
                 pButton
                 pRipple
                 icon="pi pi-check"
-                label="Да"
+                [label]="'yes' | translate"
                 class="p-button-text"
                 (click)="confirmDeleteSelected()"
         ></button>
@@ -121,20 +125,20 @@
 <p-dialog
         [(visible)]="deleteTodoDialog"
         [style]="{ width: '400px' }"
-        header="Подтверждение"
+        [header]="'confirmation' | translate"
         [modal]="true"
         [closable]="false"
 >
     <div class="flex align-items-center justify-content-center">
         <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem;"></i>
-        <span *ngIf="todo">Вы уверены, что хотите удалить задачу <b>{{ todo.name }}</b>?</span>
+        <span *ngIf="todo">{{'confirmDeleteTask' | translate}} <b>{{ todo.name }}</b>?</span>
     </div>
     <ng-template pTemplate="footer">
         <button
                 pButton
                 pRipple
                 icon="pi pi-times"
-                label="Нет"
+                [label]="'no' | translate"
                 class="p-button-text"
                 (click)="deleteTodoDialog = false"
         ></button>
@@ -142,7 +146,7 @@
                 pButton
                 pRipple
                 icon="pi pi-check"
-                label="Да"
+                [label]="'yes' | translate"
                 class="p-button-text"
                 (click)="confirmDelete()"
         ></button>

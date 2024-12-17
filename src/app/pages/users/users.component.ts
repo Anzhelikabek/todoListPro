@@ -19,6 +19,7 @@ import {PhoneNumberFormatPipe} from "../../pipes/phone-number-format.pipe";
 import {SharedStateService} from "../../services/shared-state.service";
 import {forkJoin, tap} from "rxjs";
 import {AuditTrailService} from "../../services/audit-trail.service";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 
 @Component({
     selector: 'app-users',
@@ -44,6 +45,7 @@ import {AuditTrailService} from "../../services/audit-trail.service";
         CalendarModule,
         PhoneNumberFormatPipe,
         DatePipe,
+        TranslatePipe,
     ]
 })
 export class UsersComponent {
@@ -60,26 +62,35 @@ export class UsersComponent {
     userEmail: string | null = '';
     displayModal: boolean = false;
 
-    genderOptions = [
-        {label: 'Мужчина', value: 'male'},
-        {label: 'Женщина', value: 'female'},
-        {label: 'Другой', value: 'other'},
-    ];
-
-    roleOptions = [
-        {label: 'Админ', value: 'admin'},
-        {label: 'Пользователь', value: 'user'},
-    ];
+    genderOptions: any[] = [];
+    roleOptions: any[] = [];
 
 
     selectedUser: any = null;
 
     constructor(
+        private translate: TranslateService,
         private authService: AuthService,
         private auditTrailService: AuditTrailService,
         private messageService: MessageService,
         private sharedStateService: SharedStateService,
     ) {
+        this.initializeOptions();
+    }
+
+    initializeOptions() {
+        this.translate.get(['male', 'female', 'other', 'admin', 'user']).subscribe(translations => {
+            this.genderOptions = [
+                { label: translations['male'], value: 'male' },
+                { label: translations['female'], value: 'female' },
+                { label: translations['other'], value: 'other' },
+            ];
+
+            this.roleOptions = [
+                { label: translations['admin'], value: 'admin' },
+                { label: translations['user'], value: 'user' },
+            ];
+        });
     }
 
     ngOnInit() {

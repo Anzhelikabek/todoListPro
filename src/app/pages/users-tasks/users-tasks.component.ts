@@ -18,26 +18,28 @@ import {Table} from "primeng/table";
 import {SharedStateService} from "../../services/shared-state.service";
 import {AuditTrailService} from "../../services/audit-trail.service";
 import {forkJoin} from "rxjs";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-users-tasks',
   standalone: true,
-  imports: [
-    ButtonDirective,
-    NgIf,
-    PrimeTemplate,
-    Ripple,
-    ToastModule,
-    ToolbarModule,
-    DialogModule,
-    DropdownModule,
-    InputTextModule,
-    InputTextareaModule,
-    PaginatorModule,
-    SharedTableComponent,
-    NgClass,
-    JsonPipe
-  ],
+    imports: [
+        ButtonDirective,
+        NgIf,
+        PrimeTemplate,
+        Ripple,
+        ToastModule,
+        ToolbarModule,
+        DialogModule,
+        DropdownModule,
+        InputTextModule,
+        InputTextareaModule,
+        PaginatorModule,
+        SharedTableComponent,
+        NgClass,
+        JsonPipe,
+        TranslatePipe
+    ],
   templateUrl: './users-tasks.component.html',
   styleUrl: './users-tasks.component.scss'
 })

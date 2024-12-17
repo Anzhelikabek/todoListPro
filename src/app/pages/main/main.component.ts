@@ -22,17 +22,17 @@ import {SidebarModule} from "primeng/sidebar";
 import {AuditTrailComponent} from "../../components/audit-trail/audit-trail.component";
 import {DashboardComponent} from "../../components/dashboard/dashboard.component";
 import {User} from "../../interfaces/user";
-import * as Papa from 'papaparse';
 import * as XLSX from 'xlsx';
 import {SharedStateService} from "../../services/shared-state.service";
-import { v4 as uuidv4 } from 'uuid'; // Импорт функции для генерации UUID
+import {v4 as uuidv4} from 'uuid'; // Импорт функции для генерации UUID
 
 import {FileUploadModule} from "primeng/fileupload";
 import {AuditTrailService} from "../../services/audit-trail.service";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
+    selector: 'app-main',
+    standalone: true,
     imports: [
         ToastModule,
         ButtonDirective,
@@ -56,71 +56,111 @@ import {AuditTrailService} from "../../services/audit-trail.service";
         AuditTrailComponent,
         DashboardComponent,
         FileUploadModule,
+        TranslatePipe,
     ],
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+    templateUrl: './main.component.html',
+    styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
-  userEmail: string | null = '';
-  displayModal: boolean = false;
-  currentUser: any = ''
-  userName: string = ''; // Имя пользователя
-  sidebarVisible2: boolean = false;
-  selectedFile: File | null = null; // Хранение выбранного файла
+    userEmail: string | null = '';
+    displayModal: boolean = false;
+    currentUser: any = ''
+    userName: string = ''; // Имя пользователя
+    sidebarVisible2: boolean = false;
+    selectedFile: File | null = null; // Хранение выбранного файла
+    isDarkTheme = false; // начальное значение светлой темы
+    selectedLanguage = 'ru';
+    currentLang: string;
 
-
-  constructor(
-      private sharedStateService: SharedStateService,
-      private messageService: MessageService,
-      private authService: AuthService,
-      private auditTrailService: AuditTrailService,
-      private router: Router
-  ) {}
-
-
-  ngOnInit(): void {
-    const email = localStorage.getItem('userEmail'); // Получаем email из localStorage
-
-    if (email) {
-      this.loadUserName(email);
-    } else {
-      console.error('Email не найден в localStorage!');
+    constructor(
+        private translate: TranslateService,
+        private sharedStateService: SharedStateService,
+        private messageService: MessageService,
+        private authService: AuthService,
+        private auditTrailService: AuditTrailService,
+        private router: Router
+    ) {
+        this.currentLang =  localStorage.getItem('language') || 'ru'; // Получаем язык из localStorage или используем 'ru' по умолчанию
+        translate.addLangs(['ru', 'kg', 'en']);
+        translate.setDefaultLang(this.currentLang);
+        translate.use(this.currentLang);
     }
-  }
-
-  loadUserName(email: string): void {
-    this.sharedStateService.getUsers().subscribe((users) => {
-      const user = users.find((user) => user.email === email);
-
-      if (user) {
-        this.userName = user.firstName ?? 'Гость'; // Задаём значение по умолчанию
-      } else {
-        this.userName = 'Гость'; // Если `user` undefined, задаём "Гость"
-      }
-
-
-    });
-  }
-
-  onLogout() {
-    this.currentUser = this.authService.getCurrentUser();
-    console.log(this.currentUser)
-    if (this.currentUser) {
-      this.userEmail = this.currentUser.email; // Установите email для отображения в модалке
-      this.displayModal = true; // Открыть модальное окно
-    } else {
-      this.performLogout(); // Выполните выход без подтверждения
+    switchLanguage(lang: string) {
+        this.currentLang = lang;
+        this.translate.use(lang); // Переключаем язык
+        localStorage.setItem('language', lang); // Сохраняем выбранный язык в localStorage
     }
-  }
-  performLogout() {
-    this.authService.logout()
-        .then(() => {
-          this.router.navigate(['/login']).then(() => {
-            window.location.reload();
-          });
-        })
-        .catch(err => alert('Error signing out: ' + err.message));
-  }
+    ngOnInit(): void {
+        const email = localStorage.getItem('userEmail'); // Получаем email из localStorage
+        const savedTheme = localStorage.getItem('theme');
+
+        if (email) {
+            this.loadUserName(email);
+        } else {
+            console.error('Email не найден в localStorage!');
+        }
+
+        if (savedTheme === 'dark') {
+            this.isDarkTheme = true;
+        } else {
+            this.isDarkTheme = false;
+        }
+        this.applyTheme();
+    }
+    setLanguage(lang: string) {
+        this.selectedLanguage = lang;
+    }
+
+    toggleTheme() {
+        this.isDarkTheme = !this.isDarkTheme;
+        this.applyTheme();
+        // Сохраняем выбранную тему в localStorage
+        localStorage.setItem('theme', this.isDarkTheme ? 'dark' : 'light');
+    }
+    private applyTheme() {
+        if (this.isDarkTheme) {
+            document.body.classList.add('dark-theme');
+            document.body.classList.remove('light-theme');
+            console.log("dark-theme")
+        } else {
+            document.body.classList.add('light-theme');
+            document.body.classList.remove('dark-theme');
+            console.log(document.body, "light-theme")
+        }
+    }
+
+    loadUserName(email: string): void {
+        this.sharedStateService.getUsers().subscribe((users) => {
+            const user = users.find((user) => user.email === email);
+
+            if (user) {
+                this.userName = user.firstName ?? 'Гость'; // Задаём значение по умолчанию
+            } else {
+                this.userName = 'Гость'; // Если `user` undefined, задаём "Гость"
+            }
+        });
+    }
+
+    onLogout() {
+        this.currentUser = this.authService.getCurrentUser();
+        console.log(this.currentUser)
+        if (this.currentUser) {
+            this.userEmail = this.currentUser.email; // Установите email для отображения в модалке
+            this.displayModal = true; // Открыть модальное окно
+        } else {
+            this.performLogout(); // Выполните выход без подтверждения
+        }
+    }
+
+    performLogout() {
+        this.authService.logout()
+            .then(() => {
+                this.router.navigate(['/login']).then(() => {
+                    window.location.reload();
+                });
+            })
+            .catch(err => alert('Error signing out: ' + err.message));
+    }
 
     onFileSelected(event: any): void {
         console.log(event)
@@ -128,15 +168,16 @@ export class MainComponent {
         if (file && file.name.endsWith('.csv')) {
             this.selectedFile = file;
         } else {
-            this.messageService.add({ severity: 'error', summary: 'Ошибка', detail: 'Выберите CSV-файл' });
+            this.messageService.add({severity: 'error', summary: 'Ошибка', detail: 'Выберите CSV-файл'});
             this.selectedFile = null;
         }
     }
+
     importUsers(event: any, fileUpload: any): void {
         const file = event.files[0]; // Получаем первый файл из массива files
 
         if (!file) {
-            this.messageService.add({ severity: 'error', summary: 'Ошибка', detail: 'Файл не выбран' });
+            this.messageService.add({severity: 'error', summary: 'Ошибка', detail: 'Файл не выбран'});
             return;
         }
 
@@ -144,7 +185,7 @@ export class MainComponent {
 
         reader.onload = (e: any) => {
             const binaryData = e.target.result;
-            const workbook = XLSX.read(binaryData, { type: 'binary' });
+            const workbook = XLSX.read(binaryData, {type: 'binary'});
 
             // Читаем данные с первого листа
             const sheetName = workbook.SheetNames[0];
@@ -157,7 +198,7 @@ export class MainComponent {
         };
 
         reader.onerror = () => {
-            this.messageService.add({ severity: 'error', summary: 'Ошибка', detail: 'Не удалось прочитать файл' });
+            this.messageService.add({severity: 'error', summary: 'Ошибка', detail: 'Не удалось прочитать файл'});
         };
 
         reader.readAsBinaryString(file);
@@ -201,7 +242,7 @@ export class MainComponent {
         this.sharedStateService.setUsers(updatedUsers); // Вызов метода setUsers для обновления состояния
 
         // Уведомление об успешном импорте
-        this.messageService.add({ severity: 'success', summary: 'Успешно', detail: 'Пользователи импортированы' });
+        this.messageService.add({severity: 'success', summary: 'Успешно', detail: 'Пользователи импортированы'});
 
         // Добавляем запись в аудит
         this.auditTrailService.addAuditRecord({
@@ -218,7 +259,7 @@ export class MainComponent {
     }
 
 
-isValidEmail(email: string): boolean {
+    isValidEmail(email: string): boolean {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
@@ -226,36 +267,6 @@ isValidEmail(email: string): boolean {
     isDuplicateId(id: string): boolean {
         const currentUsers = this.sharedStateService['usersSubject'].getValue();
         return currentUsers.some((user) => user.id === id);
-    }
-    exportToCsv(): void {
-        const users = this.sharedStateService['usersSubject'].getValue(); // Получаем текущих пользователей
-
-        // Оставляем только нужные поля
-        const filteredUsers = users.map((user) => ({
-            "Имя": `${user.firstName} ${user.lastName}`,
-            "Email": user.email,
-            "Роль": user.role,
-            "Возраст": user.age,
-            "Номер телефона": user.phoneNumber,
-            "Пол": user.gender,
-            "Дата рождение": user.dateOfBirth,
-            "Изображение": user.profilePicture,
-        }));
-
-        const csvData = Papa.unparse(filteredUsers);
-
-        // Добавляем BOM для корректного отображения кириллицы
-        const bom = '\uFEFF';
-        const blob = new Blob([bom + csvData], { type: 'text/csv;charset=utf-8;' });
-
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'users.csv';
-        link.click();
-
-        // Освобождаем память
-        URL.revokeObjectURL(url);
     }
 
     exportToExcel(): void {
@@ -274,7 +285,7 @@ isValidEmail(email: string): boolean {
         }));
 
         const worksheet = XLSX.utils.json_to_sheet(filteredUsers);
-        const workbook = { Sheets: { 'Users': worksheet }, SheetNames: ['Users'] };
+        const workbook = {Sheets: {'Users': worksheet}, SheetNames: ['Users']};
 
         XLSX.writeFile(workbook, 'users.xlsx');
     }

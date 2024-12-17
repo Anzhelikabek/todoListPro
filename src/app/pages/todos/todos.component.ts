@@ -16,6 +16,7 @@ import {Router} from "@angular/router";
 import {forkJoin} from "rxjs";
 import {AuditTrailService} from "../../services/audit-trail.service";
 import {SharedStateService} from "../../services/shared-state.service";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 
 @Component({
     selector: 'app-todos',
@@ -33,7 +34,8 @@ import {SharedStateService} from "../../services/shared-state.service";
         ToastModule,
         ToolbarModule,
         FormsModule,
-        NgClass
+        NgClass,
+        TranslatePipe
     ],
     templateUrl: './todos.component.html',
     styleUrls: ['./todos.component.scss']
@@ -58,6 +60,7 @@ export class TodosComponent {
     ];
 
     constructor(
+        private translate: TranslateService,
         private auditTrailService: AuditTrailService,
         private sharedStateService: SharedStateService,
         private messageService: MessageService,
@@ -71,9 +74,9 @@ export class TodosComponent {
         }
 
         this.cols = [
-            { field: 'name', header: 'Заголовок' },
-            { field: 'description', header: 'Описание' },
-            { field: 'status', header: 'Статус' }
+            { field: 'name', header: this.translate.instant('title') },
+            { field: 'description', header: this.translate.instant('description') },
+            { field: 'status', header: this.translate.instant('status') }
         ];
     }
 
