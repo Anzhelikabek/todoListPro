@@ -65,19 +65,30 @@ export class TodosComponent {
         private sharedStateService: SharedStateService,
         private messageService: MessageService,
         private router: Router,
-    ) {}
+    ) {
+        this.initializeColumns();
+
+        this.translate.onLangChange.subscribe(() => {
+            this.initializeColumns();
+        });
+    }
+
+    initializeColumns() {
+        this.translate.get(['title', 'description', 'status']).subscribe(translations => {
+            this.cols = [
+                { field: 'name', header: translations['title'] },
+                { field: 'description', header: translations['description'] },
+                { field: 'status', header: translations['status'] }
+            ];
+        });
+    }
+
 
     ngOnInit() {
         const userEmail = localStorage.getItem('userEmail');
         if (userEmail) {
             this.loadCurrentUser(userEmail);
         }
-
-        this.cols = [
-            { field: 'name', header: this.translate.instant('title') },
-            { field: 'description', header: this.translate.instant('description') },
-            { field: 'status', header: this.translate.instant('status') }
-        ];
     }
 
     loadCurrentUser(email: string): void {
@@ -156,22 +167,28 @@ export class TodosComponent {
                     this.selectedTodos = [];
                     this.deleteTodosDialog = false;
 
-                    this.messageService.add({
-                        severity: 'success',
-                        summary: 'Успешно',
-                        detail: 'Выбранные задачи удалены',
-                        life: 3000
+                    this.translate.get(['success', 'selectedTasksDeleted']).subscribe(translations => {
+                        this.messageService.add({
+                            severity: 'success',
+                            summary: translations['success'],
+                            detail: translations['selectedTasksDeleted'],
+                            life: 3000
+                        });
                     });
+
                 });
             },
             error: (err) => {
                 console.error('Ошибка удаления задач:', err);
-                this.messageService.add({
-                    severity: 'error',
-                    summary: 'Ошибка',
-                    detail: 'Не удалось удалить выбранные задачи',
-                    life: 3000
+                this.translate.get(['error', 'selectedTasksNotDeleted']).subscribe(translations => {
+                    this.messageService.add({
+                        severity: 'error',
+                        summary: translations['error'],
+                        detail: translations['selectedTasksNotDeleted'],
+                        life: 3000
+                    });
                 });
+
             }
         });
     }
@@ -201,24 +218,27 @@ export class TodosComponent {
                     this.userTodos = this.userTodos.filter((t) => t.id !== this.todo.id);
                     this.todos = this.todos.filter((t) => t.id !== this.todo.id);
 
-                    this.messageService.add({
-                        severity: 'success',
-                        summary: 'Успешно',
-                        detail: 'Задача удалена',
-                        life: 3000
+                    this.translate.get(['success', 'taskDeleted']).subscribe(translations => {
+                        this.messageService.add({
+                            severity: 'success',
+                            summary: translations['success'],
+                            detail: translations['taskDeleted'],
+                            life: 3000
+                        });
                     });
-
                     this.deleteTodoDialog = false;
                     this.todo = {};
                 });
             },
             error: (err) => {
                 console.error('Ошибка удаления задачи:', err);
-                this.messageService.add({
-                    severity: 'error',
-                    summary: 'Ошибка',
-                    detail: 'Не удалось удалить задачу',
-                    life: 3000
+                this.translate.get(['error', 'taskDeleteFailed']).subscribe(translations => {
+                    this.messageService.add({
+                        severity: 'error',
+                        summary: translations['error'],
+                        detail: translations['taskDeleteFailed'],
+                        life: 3000
+                    });
                 });
             }
         });
@@ -243,12 +263,15 @@ export class TodosComponent {
                 const currentUser = users.find(user => user.email === currentUserEmail);
                 if (!currentUser) {
                     console.error('Не удалось определить текущего пользователя');
-                    this.messageService.add({
-                        severity: 'error',
-                        summary: 'Ошибка',
-                        detail: 'Не удалось определить текущего пользователя',
-                        life: 3000
+                    this.translate.get(['error', 'currentUserNotDetermined']).subscribe(translations => {
+                        this.messageService.add({
+                            severity: 'error',
+                            summary: translations['error'],
+                            detail: translations['currentUserNotDetermined'],
+                            life: 3000
+                        });
                     });
+
                     return;
                 }
 
@@ -277,20 +300,25 @@ export class TodosComponent {
                         });
 
                         this.loadUserTodos();
-                        this.messageService.add({
-                            severity: 'success',
-                            summary: 'Успешно',
-                            detail: isUpdate ? 'Задача обновлена' : 'Задача создана',
-                            life: 3000
+                        this.translate.get(['success', 'taskUpdated', 'taskCreated']).subscribe(translations => {
+                            this.messageService.add({
+                                severity: 'success',
+                                summary: translations['success'],
+                                detail: isUpdate ? translations['taskUpdated'] : translations['taskCreated'],
+                                life: 3000
+                            });
                         });
+
                     },
                     error: (err) => {
                         console.error('Ошибка сохранения задачи:', err);
-                        this.messageService.add({
-                            severity: 'error',
-                            summary: 'Ошибка',
-                            detail: 'Не удалось сохранить задачу',
-                            life: 3000
+                        this.translate.get(['error', 'taskSaveFailed']).subscribe(translations => {
+                            this.messageService.add({
+                                severity: 'error',
+                                summary: translations['error'],
+                                detail: translations['taskSaveFailed'],
+                                life: 3000
+                            });
                         });
                     },
                     complete: () => {

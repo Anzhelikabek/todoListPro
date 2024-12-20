@@ -1,31 +1,31 @@
 import {
+  PlusIcon
+} from "./chunk-WS7AFFPW.js";
+import {
   ExclamationTriangleIcon,
   InfoCircleIcon,
   TimesCircleIcon
-} from "./chunk-NDPMQ3W6.js";
-import {
-  PlusIcon
-} from "./chunk-4PMGBFIM.js";
+} from "./chunk-ZJWCX4CW.js";
 import {
   CheckIcon
-} from "./chunk-O26RC2JS.js";
+} from "./chunk-GG74TZ4D.js";
 import {
   TimesIcon
-} from "./chunk-GVGJQXV6.js";
+} from "./chunk-3LNWY6SJ.js";
 import {
   Button,
   ButtonDirective,
   ButtonModule
-} from "./chunk-5QBXOZ4R.js";
-import "./chunk-RHO2FWFI.js";
+} from "./chunk-FJRISX2D.js";
+import "./chunk-OKEL6OKV.js";
 import {
   Ripple,
   RippleModule
-} from "./chunk-UJKIGXTY.js";
+} from "./chunk-SMCPN7ER.js";
 import "./chunk-EX6TMLQX.js";
 import {
   BaseIcon
-} from "./chunk-2UORLY3V.js";
+} from "./chunk-EUEDRJOA.js";
 import {
   DomHandler
 } from "./chunk-BUGEQH7Q.js";
@@ -36,7 +36,7 @@ import {
   SharedModule,
   TranslationKeys,
   UniqueComponentId
-} from "./chunk-EBWD4N7J.js";
+} from "./chunk-ZBUO6BYL.js";
 import {
   animate,
   style,
@@ -69,6 +69,7 @@ import {
   EventEmitter,
   Inject,
   Input,
+  LOCALE_ID,
   NgModule,
   NgZone,
   Optional,
@@ -1811,6 +1812,7 @@ function FileUpload_div_1_Template(rf, ctx) {
 var FileUpload = class _FileUpload {
   document;
   platformId;
+  locale;
   renderer;
   el;
   sanitizer;
@@ -2100,9 +2102,11 @@ var FileUpload = class _FileUpload {
   dragOverListener;
   uploadedFiles = [];
   fileUploadSubcription;
-  constructor(document, platformId, renderer, el, sanitizer, zone, http, cd, config) {
+  formatter;
+  constructor(document, platformId, locale, renderer, el, sanitizer, zone, http, cd, config) {
     this.document = document;
     this.platformId = platformId;
+    this.locale = locale;
     this.renderer = renderer;
     this.el = el;
     this.sanitizer = sanitizer;
@@ -2110,6 +2114,9 @@ var FileUpload = class _FileUpload {
     this.http = http;
     this.cd = cd;
     this.config = config;
+    this.formatter = new Intl.NumberFormat(this.locale, {
+      maximumFractionDigits: 3
+    });
   }
   ngAfterContentInit() {
     this.templates?.forEach((item) => {
@@ -2473,13 +2480,12 @@ var FileUpload = class _FileUpload {
   }
   formatSize(bytes) {
     const k = 1024;
-    const dm = 3;
     const sizes = this.getTranslation(TranslationKeys.FILE_SIZE_TYPES);
     if (bytes === 0) {
       return `0 ${sizes[0]}`;
     }
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    const formattedSize = (bytes / Math.pow(k, i)).toFixed(dm);
+    const formattedSize = this.formatter.format(bytes / Math.pow(k, i));
     return `${formattedSize} ${sizes[i]}`;
   }
   onBasicUploaderClick() {
@@ -2525,7 +2531,7 @@ var FileUpload = class _FileUpload {
     }
   }
   static ɵfac = function FileUpload_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _FileUpload)(ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(PLATFORM_ID), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(DomSanitizer), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(HttpClient), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(PrimeNGConfig));
+    return new (__ngFactoryType__ || _FileUpload)(ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(PLATFORM_ID), ɵɵdirectiveInject(LOCALE_ID), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(DomSanitizer), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(HttpClient), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(PrimeNGConfig));
   };
   static ɵcmp = ɵɵdefineComponent({
     type: _FileUpload,
@@ -2807,6 +2813,12 @@ var FileUpload = class _FileUpload {
     decorators: [{
       type: Inject,
       args: [PLATFORM_ID]
+    }]
+  }, {
+    type: void 0,
+    decorators: [{
+      type: Inject,
+      args: [LOCALE_ID]
     }]
   }, {
     type: Renderer2

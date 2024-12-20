@@ -164,7 +164,7 @@ $light-card-color: #f9f9f9;
 .navbar {
   display: flex;
   justify-content: space-between;
-  //padding: 20px;
+  //padding: 0 0 0 20px;
   max-width: 1140px;
   margin: 25px auto;
 }
@@ -293,14 +293,14 @@ $light-card-color: #f9f9f9;
 
 .header-content {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
   margin: 15px 0 30px;
 }
 
 .buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: end;
   align-items: center;
   gap: 6px;
 }
@@ -357,7 +357,9 @@ $light-card-color: #f9f9f9;
   max-width: 1140px;
   margin: 0 auto;
 }
-
+.navbar .container{
+  width: 100%;
+}
 :host ::ng-deep .p-dialog {
   border-radius: 10px;
 }
@@ -392,7 +394,12 @@ $light-card-color: #f9f9f9;
   border-radius: 5px;
   text-align: center;
 }
-
+.custom-dropdown{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+}
 .status-completed {
   background-color: $green-color;
   color: $white-color;

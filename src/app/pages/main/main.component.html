@@ -1,38 +1,41 @@
-<div class="navbar">
-    <h1>{{'greeting' | translate}}, {{ userName }}!</h1>
-    <div class="buttons">
-        <p-button (click)="switchLanguage('ru')" [ngClass]="{'active': currentLang === 'ru'}">Русский</p-button>
-        <p-button (click)="switchLanguage('ky')" [ngClass]="{'active': currentLang === 'ky'}">Кыргыз тили</p-button>
-        <p-button (click)="switchLanguage('en')" [ngClass]="{'active': currentLang === 'en'}">English</p-button>
-    </div>
-</div>
-
 <div class="container">
     <div class="p-field">
         <div class="grid">
             <div class="col-12">
                 <div class="header-content">
+                    <h1>{{'greeting' | translate}}, {{ userName }}!</h1>
                     <div class="buttons">
-                        <!-- theme-toggle.component.html -->
-                        <p-button icon="pi pi-moon" [label]="'switchTheme' | translate" (click)="toggleTheme()"></p-button>
-                        <!-- Кнопка экспорта -->
-                        <p-button type="button" (click)="exportToExcel()">{{'exportToExcel' | translate}}</p-button>
-                        <!-- Кнопка импорта -->
-                        <p-fileUpload
-                            #fileUpload
-                            mode="basic"
-                            name="file"
-                            accept=".xlsx"
-                            [chooseLabel]="'importExcel' | translate"
-                            (onSelect)="importUsers($event, fileUpload)"
-                        >
-                        </p-fileUpload>
+                        <div class="custom-dropdown">
+                            <p-dropdown
+                                    [options]="languages"
+                                    [(ngModel)]="selectedLanguage"
+                                    optionLabel="label"
+                                    placeholder="Выберите язык"
+                                    [ngStyle]="{'width': '100%'}"
+                                    (onChange)="onLanguageChange($event.value)">
+                            </p-dropdown>
+                        </div>
                         <p-button
-                                type="button"
-                                class="logout-button"
-                                (click)="onLogout()"
+                                icon="pi pi-moon"
+                                pTooltip="{{ 'switchTheme' | translate }}"
+                                tooltipPosition="bottom"
+                                (click)="toggleTheme()">
+                        </p-button>
+
+                        <p-button
+                                icon="pi pi-file-excel"
+                                pTooltip="{{ 'exportToExcel' | translate }}"
+                                tooltipPosition="bottom"
+                                (click)="exportToExcel()">
+                        </p-button>
+
+                        <p-button
                                 icon="pi pi-sign-out"
-                                [label]="'logOut' | translate"/>
+                                pTooltip="{{ 'logOut' | translate }}"
+                                tooltipPosition="bottom"
+                                class="logout-button"
+                                (click)="onLogout()">
+                        </p-button>
                         <p-button
                                 type="button"
                                 class="sidebar"
@@ -53,7 +56,9 @@
                     <p-tabPanel [header]="'userAnalytics' | translate">
                         <app-dashboard/>
                     </p-tabPanel>
-
+                    <p-tabPanel header="Календарь событий">
+<!--                        <app-calendar/>-->
+                    </p-tabPanel>
                 </p-tabView>
             </div>
         </div>

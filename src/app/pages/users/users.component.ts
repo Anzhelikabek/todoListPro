@@ -20,6 +20,9 @@ import {SharedStateService} from "../../services/shared-state.service";
 import {forkJoin, tap} from "rxjs";
 import {AuditTrailService} from "../../services/audit-trail.service";
 import {TranslatePipe, TranslateService} from "@ngx-translate/core";
+import {FileUploadModule} from "primeng/fileupload";
+import * as XLSX from "xlsx";
+import {v4 as uuidv4} from "uuid";
 
 @Component({
     selector: 'app-users',
@@ -46,6 +49,7 @@ import {TranslatePipe, TranslateService} from "@ngx-translate/core";
         PhoneNumberFormatPipe,
         DatePipe,
         TranslatePipe,
+        FileUploadModule,
     ]
 })
 export class UsersComponent {
@@ -65,7 +69,6 @@ export class UsersComponent {
     genderOptions: any[] = [];
     roleOptions: any[] = [];
 
-
     selectedUser: any = null;
 
     constructor(
@@ -75,11 +78,29 @@ export class UsersComponent {
         private messageService: MessageService,
         private sharedStateService: SharedStateService,
     ) {
-        this.initializeOptions();
+        this.initializeTranslations(); // Каждый раз при смене языка заново подгружаем переводы
+
+        this.translate.onLangChange.subscribe(() => {
+            this.initializeTranslations(); // Каждый раз при смене языка заново подгружаем переводы
+        });
     }
 
-    initializeOptions() {
-        this.translate.get(['male', 'female', 'other', 'admin', 'user']).subscribe(translations => {
+    initializeTranslations() {
+        this.translate.get([
+            // Для колонок
+            'firstName', 'email', 'phoneNumber', 'role',
+            // Для опций
+            'male', 'female', 'other', 'admin', 'user'
+        ]).subscribe(translations => {
+            // Инициализация колонок
+            this.cols = [
+                { field: 'firstName', header: translations['firstName'] },
+                { field: 'email', header: translations['email'] },
+                { field: 'phoneNumber', header: translations['phoneNumber'] },
+                { field: 'role', header: translations['role'] }
+            ];
+
+            // Инициализация опций
             this.genderOptions = [
                 { label: translations['male'], value: 'male' },
                 { label: translations['female'], value: 'female' },
@@ -93,6 +114,7 @@ export class UsersComponent {
         });
     }
 
+
     ngOnInit() {
         const userEmail = localStorage.getItem('userEmail');
         if (userEmail) {
@@ -105,13 +127,6 @@ export class UsersComponent {
 
         this.loadUsers();
 
-        this.cols = [
-            {field: 'firstName', header: 'Имя'},
-            {field: 'email', header: 'Email'},
-            {field: 'phoneNumber', header: 'Номер телефона'},
-            {field: 'role', header: 'Роль'}
-        ];
-
         this.sharedStateService.users$.subscribe((users) => {
             this.users = users; // Обновляем список пользователей
         });
@@ -123,12 +138,15 @@ export class UsersComponent {
                 this.users = data;
             },
             error: (err) => {
-                this.messageService.add({
-                    severity: 'error',
-                    summary: 'Ошибка',
-                    detail: 'Не удалось загрузить данные пользователя',
-                    life: 3000
+                this.translate.get(['error', 'userDataLoadFailed']).subscribe(translations => {
+                    this.messageService.add({
+                        severity: 'error',
+                        summary: translations['error'],
+                        detail: translations['userDataLoadFailed'],
+                        life: 3000
+                    });
                 });
+
             }
         });
     }
@@ -198,12 +216,15 @@ export class UsersComponent {
                     this.sharedStateService.setUsers(remainingUsers);
 
                     // Уведомление об успешном удалении
-                    this.messageService.add({
-                        severity: 'success',
-                        summary: 'Успешно',
-                        detail: 'Выбранные пользователи и их задачи удалены',
-                        life: 3000
+                    this.translate.get(['success', 'selectedUsersAndTasksDeleted']).subscribe(translations => {
+                        this.messageService.add({
+                            severity: 'success',
+                            summary: translations['success'],
+                            detail: translations['selectedUsersAndTasksDeleted'],
+                            life: 3000
+                        });
                     });
+
 
                     // Очищаем список выбранных пользователей
                     this.selectedUsers = [];
@@ -212,11 +233,13 @@ export class UsersComponent {
                 error: (err) => {
                     console.error('Ошибка удаления пользователей и их задач:', err);
 
-                    this.messageService.add({
-                        severity: 'error',
-                        summary: 'Ошибка',
-                        detail: 'Не удалось удалить некоторых пользователей и их задачи',
-                        life: 3000
+                    this.translate.get(['error', 'someUsersAndTasksNotDeleted']).subscribe(translations => {
+                        this.messageService.add({
+                            severity: 'error',
+                            summary: translations['error'],
+                            detail: translations['someUsersAndTasksNotDeleted'],
+                            life: 3000
+                        });
                     });
                 }
             });
@@ -250,30 +273,29 @@ export class UsersComponent {
                         details: `Удален пользователь: ${user.firstName || 'undefined'} ${user.lastName || 'undefined'}`
                     });
 
-                    this.messageService.add({
-                        severity: 'success',
-                        summary: 'Успешно',
-                        detail: 'Пользователь и его задачи удалены',
-                        life: 3000
+                    this.translate.get(['success', 'userAndTasksDeleted']).subscribe(translations => {
+                        this.messageService.add({
+                            severity: 'success',
+                            summary: translations['success'],
+                            detail: translations['userAndTasksDeleted'],
+                            life: 3000
+                        });
                     });
                 },
                 error: (err) => {
                     console.error('Ошибка удаления пользователя и его задач:', err);
 
-                    this.messageService.add({
-                        severity: 'error',
-                        summary: 'Ошибка',
-                        detail: 'Не удалось удалить пользователя и его задачи',
-                        life: 3000
+                    this.translate.get(['error', 'userAndTasksNotDeleted']).subscribe(translations => {
+                        this.messageService.add({
+                            severity: 'error',
+                            summary: translations['error'],
+                            detail: translations['userAndTasksNotDeleted'],
+                            life: 3000
+                        });
                     });
                 }
             });
         }
-    }
-
-
-    private generateId(): string {
-        return Math.random().toString(36).substring(2, 15);
     }
 
     getRoleDisplayName(role: string): string {
@@ -310,6 +332,94 @@ export class UsersComponent {
         // Обновляем значение в объекте user
         this.user.phoneNumber = phone;
     }
+    importUsers(event: any, fileUpload: any): void {
+        const file = event.files[0]; // Получаем первый файл из массива files
+
+        if (!file) {
+            this.messageService.add({severity: 'error', summary: 'Ошибка', detail: 'Файл не выбран'});
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = (e: any) => {
+            const binaryData = e.target.result;
+            const workbook = XLSX.read(binaryData, {type: 'binary'});
+
+            // Читаем данные с первого листа
+            const sheetName = workbook.SheetNames[0];
+            const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+            console.log('Импортированные данные:', data);
+
+            // Вызов метода для валидации и сохранения данных
+            this.validateAndSaveUsers(data as User[]);
+            fileUpload.clear();
+        };
+
+        reader.onerror = () => {
+            this.messageService.add({severity: 'error', summary: 'Ошибка', detail: 'Не удалось прочитать файл'});
+        };
+
+        reader.readAsBinaryString(file);
+    }
+
+    validateAndSaveUsers(users: Partial<User>[]): void {
+        // Обогащаем пользователей автоматически генерируемыми данными
+        const enrichedUsers = users.map((user) => ({
+            ...user,
+            id: uuidv4(), // Генерация уникального UUID
+            code: Math.floor(1000 + Math.random() * 9000), // Случайный 4-значный код
+            dateAdded: new Date().toISOString().split('T')[0], // Текущая дата в формате YYYY-MM-DD
+            phoneNumber: user.phoneNumber ? user.phoneNumber.toString() : '',
+        }));
+
+        // Проверяем корректность данных
+        const invalidUsers = enrichedUsers.filter(
+            (user) =>
+                !user.email || // Проверка на наличие email
+                !this.isValidEmail(user.email) || // Проверка формата email
+                !user.firstName || // Проверка на наличие имени
+                !user.lastName    // Проверка на наличие фамилии
+        );
+
+        if (invalidUsers.length > 0) {
+            this.messageService.add({
+                severity: 'error',
+                summary: 'Ошибка',
+                detail: `Некорректные данные у ${invalidUsers.length} пользователей`,
+            });
+            console.warn('Некорректные пользователи:', invalidUsers);
+            return;
+        }
+
+        // Получаем текущий список пользователей
+        const existingUsers = this.sharedStateService['usersSubject'].getValue();
+
+        // Обновляем общий список пользователей
+        const updatedUsers = [...existingUsers, ...enrichedUsers];
+        this.sharedStateService.setUsers(updatedUsers); // Вызов метода setUsers для обновления состояния
+
+        // Уведомление об успешном импорте
+        this.messageService.add({severity: 'success', summary: 'Успешно', detail: 'Пользователи импортированы'});
+
+        // Добавляем запись в аудит
+        this.auditTrailService.addAuditRecord({
+            id: this.sharedStateService.generateId(), // Уникальный ID записи
+            timestamp: new Date(), // Время действия
+            action: 'Импорт', // Действие
+            entity: 'Пользователи', // Сущность
+            entityId: `Импортировано ${enrichedUsers.length} пользователей`, // Идентификатор (например, описание импорта)
+            performedBy: localStorage.getItem('userEmail') || 'Неизвестный', // Пользователь, выполняющий импорт
+            details: `${enrichedUsers.length} пользователей добавлено в систему.`, // Подробности действия
+        }).subscribe(() => {
+            console.log('Запись аудита успешно добавлена.');
+        });
+    }
+    isValidEmail(email: string): boolean {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
 
     saveUser() {
         this.submitted = true;
@@ -343,11 +453,13 @@ export class UsersComponent {
                         details: `Обновлен пользователь: ${this.user.firstName} ${this.user.lastName}`
                     });
 
-                    this.messageService.add({
-                        severity: 'success',
-                        summary: 'Успешно',
-                        detail: 'Пользователь обновлен',
-                        life: 3000
+                    this.translate.get(['success', 'userUpdated']).subscribe(translations => {
+                        this.messageService.add({
+                            severity: 'success',
+                            summary: translations['success'],
+                            detail: translations['userUpdated'],
+                            life: 3000
+                        });
                     });
 
                     // Обновляем список пользователей через `usersSubject`
@@ -377,11 +489,13 @@ export class UsersComponent {
                     const currentUsers = this.sharedStateService['usersSubject'].getValue();
                     this.sharedStateService.setUsers([...currentUsers, newUser]);
 
-                    this.messageService.add({
-                        severity: 'success',
-                        summary: 'Успешно',
-                        detail: 'Пользователь создан',
-                        life: 3000
+                    this.translate.get(['success', 'userCreated']).subscribe(translations => {
+                        this.messageService.add({
+                            severity: 'success',
+                            summary: translations['success'],
+                            detail: translations['userCreated'],
+                            life: 3000
+                        });
                     });
                 },
                 error: (err) => console.error('Ошибка создания пользователя:', err)
@@ -391,15 +505,8 @@ export class UsersComponent {
         this.userDialog = false;
         this.user = {};
     }
-
-
     isValidPhoneNumber(phoneNumber: string): boolean {
         const digits = phoneNumber.replace(/\D/g, ''); // Удаляем все символы, кроме цифр
         return digits.length === 9 && digits[0] !== '0'; // Проверяем длину и первую цифру
     }
-
-    refreshTable() {
-        this.users = [...this.users]; // Создаём новый массив, чтобы Angular обнаружил изменения
-    }
-
 }

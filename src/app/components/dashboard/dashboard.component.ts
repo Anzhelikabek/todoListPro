@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {LineChartModule, PieChartModule} from "@swimlane/ngx-charts";
 import {NgIf} from "@angular/common";
 import {SharedStateService} from "../../services/shared-state.service";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,8 @@ import {SharedStateService} from "../../services/shared-state.service";
   imports: [
     PieChartModule,
     NgIf,
-    LineChartModule
+    LineChartModule,
+    TranslatePipe
   ]
 })
 export class DashboardComponent implements OnInit {

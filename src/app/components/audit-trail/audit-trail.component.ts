@@ -7,12 +7,13 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonDirective} from "primeng/button";
 import {ConfirmationService, MessageService} from "primeng/api";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 
 @Component({
     selector: 'app-audit-trail',
     standalone: true,
     templateUrl: './audit-trail.component.html',
-    imports: [DatePipe, CommonModule, TableModule, InputTextModule, ButtonDirective, ConfirmDialogModule],
+    imports: [DatePipe, CommonModule, TableModule, InputTextModule, ButtonDirective, ConfirmDialogModule, TranslatePipe],
     styleUrls: ['./audit-trail.component.scss'],
     providers: [ConfirmationService, MessageService],
 })
@@ -21,6 +22,7 @@ export class AuditTrailComponent {
     filteredRecords: AuditRecord[] = []; // Отфильтрованные записи
 
     constructor(private auditTrailService: AuditTrailService,
+                private translate: TranslateService,
                 private messageService: MessageService,
                 private confirmationService: ConfirmationService,) {
     }
@@ -33,13 +35,17 @@ export class AuditTrailComponent {
     }
 
     confirmClearAuditTrail(): void {
-        this.confirmationService.confirm({
-            message: 'Вы уверены, что хотите очистить историю изменений?',
-            header: 'Подтверждение',
-            icon: 'pi pi-exclamation-triangle',
-            accept: () => {
-                this.clearAuditTrail();
-            },
+        this.translate.get(['areYouSureClearHistory', 'confirmation', 'yes', 'no']).subscribe(translations => {
+            this.confirmationService.confirm({
+                message: translations['areYouSureClearHistory'],
+                header: translations['confirmation'],
+                icon: 'pi pi-exclamation-triangle',
+                acceptLabel: translations['yes'],
+                rejectLabel: translations['no'],
+                accept: () => {
+                    this.clearAuditTrail();
+                },
+            });
         });
     }
 

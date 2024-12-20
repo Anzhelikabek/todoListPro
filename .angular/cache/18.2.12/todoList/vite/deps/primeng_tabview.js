@@ -1,19 +1,19 @@
 import {
-  Tooltip,
-  TooltipModule
-} from "./chunk-MZYYLRIU.js";
-import {
   ChevronLeftIcon,
   ChevronRightIcon
-} from "./chunk-UOMVQ7AR.js";
+} from "./chunk-OO4FDG4G.js";
+import {
+  Tooltip,
+  TooltipModule
+} from "./chunk-DZF2MTN6.js";
 import {
   TimesIcon
-} from "./chunk-GVGJQXV6.js";
+} from "./chunk-3LNWY6SJ.js";
 import {
   Ripple,
   RippleModule
-} from "./chunk-UJKIGXTY.js";
-import "./chunk-2UORLY3V.js";
+} from "./chunk-SMCPN7ER.js";
+import "./chunk-EUEDRJOA.js";
 import {
   DomHandler
 } from "./chunk-BUGEQH7Q.js";
@@ -21,7 +21,7 @@ import {
   PrimeTemplate,
   SharedModule,
   UniqueComponentId
-} from "./chunk-EBWD4N7J.js";
+} from "./chunk-ZBUO6BYL.js";
 import {
   CommonModule,
   NgClass,
@@ -1026,7 +1026,7 @@ var TabView = class _TabView {
       tab.selected = false;
       for (let i = 0; i < this.tabs.length; i++) {
         let tabPanel = this.tabs[i];
-        if (!tabPanel.closed && !tab.disabled) {
+        if (!tabPanel.closed && !tab.disabled && tabPanel != tab) {
           tabPanel.selected = true;
           break;
         }

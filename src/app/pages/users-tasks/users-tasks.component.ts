@@ -14,11 +14,10 @@ import {SharedTableComponent} from "../../shared/shared-table/shared-table.compo
 import {Todo} from "../../interfaces/todo";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
-import {Table} from "primeng/table";
 import {SharedStateService} from "../../services/shared-state.service";
 import {AuditTrailService} from "../../services/audit-trail.service";
 import {forkJoin} from "rxjs";
-import {TranslatePipe} from "@ngx-translate/core";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-users-tasks',
@@ -57,20 +56,42 @@ export class UsersTasksComponent {
 
   submitted: boolean = false;
   cols: any[] = [];
+  statusOptions: any[] = [];
   isAdmin: boolean = false;
 
-  statusOptions = [
-    { label: 'Выполнено', value: true },
-    { label: 'Не выполнено', value: false }
-  ];
-
   constructor(
+      private translate: TranslateService,
       private auditTrailService: AuditTrailService,
       private messageService: MessageService,
       private authService: AuthService,
       private router: Router,
       private sharedStateService: SharedStateService,
-  ) {}
+  ) {
+    this.initializeColumns();
+
+    this.translate.onLangChange.subscribe(() => {
+      this.initializeColumns();
+    });
+  }
+
+  initializeColumns() {
+    this.translate.get(['title', 'description', 'firstName', 'status', 'completed', 'notCompleted'])
+        .subscribe(translations => {
+          this.cols = [
+            { field: 'name', header: translations['title'] },
+            { field: 'description', header: translations['description'] },
+            { field: 'userName', header: translations['firstName'] },
+            { field: 'status', header: translations['status'] }
+          ];
+
+          this.statusOptions = [
+            { label: translations['completed'], value: true },
+            { label: translations['notCompleted'], value: false }
+          ];
+        });
+  }
+
+
 
   ngOnInit() {
     this.initUserPermissions();
@@ -112,12 +133,7 @@ export class UsersTasksComponent {
   }
 
   private setupColumns(): void {
-    this.cols = [
-      { field: 'name', header: 'Заголовок' },
-      { field: 'description', header: 'Описание' },
-      { field: 'userName', header: 'Имя' },
-      { field: 'status', header: 'Статус' },
-    ];
+    this.initializeColumns()
   }
   loadUsers(): void {
     this.sharedStateService.getUsers().subscribe({
@@ -200,51 +216,32 @@ export class UsersTasksComponent {
             }`
           });
 
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Успешно',
-            detail: 'Задача удалена',
-            life: 3000
+          this.translate.get(['success', 'taskDeleted']).subscribe(translations => {
+            this.messageService.add({
+              severity: 'success',
+              summary: translations['success'],
+              detail: translations['taskDeleted'],
+              life: 3000
+            });
           });
+
 
           this.todo = {};
         },
         error: (err) => {
           console.error('Ошибка удаления задачи:', err);
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Ошибка',
-            detail: 'Не удалось удалить задачу',
-            life: 3000
+          this.translate.get(['error', 'taskDeleteFailed']).subscribe(translations => {
+            this.messageService.add({
+              severity: 'error',
+              summary: translations['error'],
+              detail: translations['taskDeleteFailed'],
+              life: 3000
+            });
           });
+
         }
       });
     }
-  }
-
-  refreshTasksWithUsers(): void {
-    this.sharedStateService.getUsers().subscribe({
-      next: (users) => {
-        this.userOptions = users.map(user => ({
-          label: `${user.firstName} ${user.lastName}`,
-          value: user.id
-        }));
-
-        this.sharedStateService.getTodos().subscribe({
-          next: (todos) => {
-            this.todosWithUsers = todos.map(todo => {
-              const user = users.find(u => u.id === todo.userId);
-              return {
-                ...todo,
-                userName: user ? `${user.firstName} ${user.lastName}` : 'Неизвестный пользователь'
-              };
-            });
-          },
-          error: (err) => console.error('Ошибка загрузки задач:', err)
-        });
-      },
-      error: (err) => console.error('Ошибка загрузки пользователей:', err)
-    });
   }
 
   confirmDeleteSelected() {
@@ -285,21 +282,27 @@ export class UsersTasksComponent {
           this.selectedTodos = [];
           this.deleteTodosDialog = false;
 
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Успешно',
-            detail: 'Выбранные задачи удалены',
-            life: 3000
+          this.translate.get(['success', 'selectedTasksDeleted']).subscribe(translations => {
+            this.messageService.add({
+              severity: 'success',
+              summary: translations['success'],
+              detail: translations['selectedTasksDeleted'],
+              life: 3000
+            });
           });
+
         })
         .catch((err) => {
           console.error('Ошибка удаления задач:', err);
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Ошибка',
-            detail: 'Не удалось удалить некоторые задачи',
-            life: 3000
+          this.translate.get(['error', 'someTasksNotDeleted']).subscribe(translations => {
+            this.messageService.add({
+              severity: 'error',
+              summary: translations['error'],
+              detail: translations['someTasksNotDeleted'],
+              life: 3000
+            });
           });
+
         });
   }
 
@@ -337,49 +340,32 @@ export class UsersTasksComponent {
                 : `Добавлена новая задача: ${this.todo.name}, принадлежит: ${ownerName}`,
           });
 
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Успешно',
-            detail: isUpdate ? 'Задача обновлена' : 'Задача добавлена',
-            life: 3000,
+          this.translate.get(['success', 'taskUpdated', 'taskAdded']).subscribe(translations => {
+            this.messageService.add({
+              severity: 'success',
+              summary: translations['success'],
+              detail: isUpdate ? translations['taskUpdated'] : translations['taskAdded'],
+              life: 3000,
+            });
           });
+
 
           this.todoDialog = false;
           this.todo = {};
         },
         error: (err) => {
           console.error('Ошибка сохранения задачи:', err);
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Ошибка',
-            detail: 'Не удалось сохранить задачу',
-            life: 3000,
+          this.translate.get(['error', 'taskSaveFailed']).subscribe(translations => {
+            this.messageService.add({
+              severity: 'error',
+              summary: translations['error'],
+              detail: translations['taskSaveFailed'],
+              life: 3000,
+            });
           });
+
         },
       });
     }
   }
-
-
-  removeTasksWithoutUsers(): void {
-    this.todosWithUsers = this.todosWithUsers.filter((todo) => {
-      return todo.userName !== 'Неизвестный пользователь';
-    });
-
-    // Обновляем данные в `TodoService` или `SharedStateService`
-    const updatedTodos = this.todosWithUsers.map((todo) => {
-      const { userName, ...rest } = todo; // Убираем userName
-      return rest;
-    });
-
-    this.sharedStateService.setTodos(updatedTodos);
-
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Успешно',
-      detail: 'Удалены задачи с неизвестными пользователями.',
-      life: 3000
-    });
-  }
-
 }

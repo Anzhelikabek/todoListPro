@@ -2909,38 +2909,38 @@ function attrRemoveNS2(fullname) {
     this.removeAttributeNS(fullname.space, fullname.local);
   };
 }
-function attrConstant2(name, interpolate, value1) {
+function attrConstant2(name, interpolate2, value1) {
   var string00, string1 = value1 + "", interpolate0;
   return function() {
     var string0 = this.getAttribute(name);
-    return string0 === string1 ? null : string0 === string00 ? interpolate0 : interpolate0 = interpolate(string00 = string0, value1);
+    return string0 === string1 ? null : string0 === string00 ? interpolate0 : interpolate0 = interpolate2(string00 = string0, value1);
   };
 }
-function attrConstantNS2(fullname, interpolate, value1) {
+function attrConstantNS2(fullname, interpolate2, value1) {
   var string00, string1 = value1 + "", interpolate0;
   return function() {
     var string0 = this.getAttributeNS(fullname.space, fullname.local);
-    return string0 === string1 ? null : string0 === string00 ? interpolate0 : interpolate0 = interpolate(string00 = string0, value1);
+    return string0 === string1 ? null : string0 === string00 ? interpolate0 : interpolate0 = interpolate2(string00 = string0, value1);
   };
 }
-function attrFunction2(name, interpolate, value2) {
+function attrFunction2(name, interpolate2, value2) {
   var string00, string10, interpolate0;
   return function() {
     var string0, value1 = value2(this), string1;
     if (value1 == null) return void this.removeAttribute(name);
     string0 = this.getAttribute(name);
     string1 = value1 + "";
-    return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : (string10 = string1, interpolate0 = interpolate(string00 = string0, value1));
+    return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : (string10 = string1, interpolate0 = interpolate2(string00 = string0, value1));
   };
 }
-function attrFunctionNS2(fullname, interpolate, value2) {
+function attrFunctionNS2(fullname, interpolate2, value2) {
   var string00, string10, interpolate0;
   return function() {
     var string0, value1 = value2(this), string1;
     if (value1 == null) return void this.removeAttributeNS(fullname.space, fullname.local);
     string0 = this.getAttributeNS(fullname.space, fullname.local);
     string1 = value1 + "";
-    return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : (string10 = string1, interpolate0 = interpolate(string00 = string0, value1));
+    return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : (string10 = string1, interpolate0 = interpolate2(string00 = string0, value1));
   };
 }
 function attr_default2(name, value2) {
@@ -3150,11 +3150,11 @@ function selection_default2() {
 }
 
 // node_modules/d3-transition/src/transition/style.js
-function styleNull(name, interpolate) {
+function styleNull(name, interpolate2) {
   var string00, string10, interpolate0;
   return function() {
     var string0 = styleValue(this, name), string1 = (this.style.removeProperty(name), styleValue(this, name));
-    return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : interpolate0 = interpolate(string00 = string0, string10 = string1);
+    return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : interpolate0 = interpolate2(string00 = string0, string10 = string1);
   };
 }
 function styleRemove2(name) {
@@ -3162,19 +3162,19 @@ function styleRemove2(name) {
     this.style.removeProperty(name);
   };
 }
-function styleConstant2(name, interpolate, value1) {
+function styleConstant2(name, interpolate2, value1) {
   var string00, string1 = value1 + "", interpolate0;
   return function() {
     var string0 = styleValue(this, name);
-    return string0 === string1 ? null : string0 === string00 ? interpolate0 : interpolate0 = interpolate(string00 = string0, value1);
+    return string0 === string1 ? null : string0 === string00 ? interpolate0 : interpolate0 = interpolate2(string00 = string0, value1);
   };
 }
-function styleFunction2(name, interpolate, value2) {
+function styleFunction2(name, interpolate2, value2) {
   var string00, string10, interpolate0;
   return function() {
     var string0 = styleValue(this, name), value1 = value2(this), string1 = value1 + "";
     if (value1 == null) string1 = value1 = (this.style.removeProperty(name), styleValue(this, name));
-    return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : (string10 = string1, interpolate0 = interpolate(string00 = string0, value1));
+    return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : (string10 = string1, interpolate0 = interpolate2(string00 = string0, value1));
   };
 }
 function styleMaybeRemove(id3, name) {
@@ -4609,15 +4609,15 @@ function clamper(a3, b) {
     return Math.max(a3, Math.min(b, x3));
   };
 }
-function bimap(domain, range2, interpolate) {
+function bimap(domain, range2, interpolate2) {
   var d0 = domain[0], d1 = domain[1], r0 = range2[0], r1 = range2[1];
-  if (d1 < d0) d0 = normalize(d1, d0), r0 = interpolate(r1, r0);
-  else d0 = normalize(d0, d1), r0 = interpolate(r0, r1);
+  if (d1 < d0) d0 = normalize(d1, d0), r0 = interpolate2(r1, r0);
+  else d0 = normalize(d0, d1), r0 = interpolate2(r0, r1);
   return function(x3) {
     return r0(d0(x3));
   };
 }
-function polymap(domain, range2, interpolate) {
+function polymap(domain, range2, interpolate2) {
   var j = Math.min(domain.length, range2.length) - 1, d = new Array(j), r = new Array(j), i = -1;
   if (domain[j] < domain[0]) {
     domain = domain.slice().reverse();
@@ -4625,7 +4625,7 @@ function polymap(domain, range2, interpolate) {
   }
   while (++i < j) {
     d[i] = normalize(domain[i], domain[i + 1]);
-    r[i] = interpolate(range2[i], range2[i + 1]);
+    r[i] = interpolate2(range2[i], range2[i + 1]);
   }
   return function(x3) {
     var i2 = bisect_default(domain, x3, 1, j) - 1;
@@ -4636,7 +4636,7 @@ function copy(source, target) {
   return target.domain(source.domain()).range(source.range()).interpolate(source.interpolate()).clamp(source.clamp()).unknown(source.unknown());
 }
 function transformer() {
-  var domain = unit, range2 = unit, interpolate = value_default, transform, untransform, unknown, clamp = identity3, piecewise2, output, input;
+  var domain = unit, range2 = unit, interpolate2 = value_default, transform, untransform, unknown, clamp = identity3, piecewise2, output, input;
   function rescale() {
     var n = Math.min(domain.length, range2.length);
     if (clamp !== identity3) clamp = clamper(domain[0], domain[n - 1]);
@@ -4645,7 +4645,7 @@ function transformer() {
     return scale;
   }
   function scale(x3) {
-    return x3 == null || isNaN(x3 = +x3) ? unknown : (output || (output = piecewise2(domain.map(transform), range2, interpolate)))(transform(clamp(x3)));
+    return x3 == null || isNaN(x3 = +x3) ? unknown : (output || (output = piecewise2(domain.map(transform), range2, interpolate2)))(transform(clamp(x3)));
   }
   scale.invert = function(y3) {
     return clamp(untransform((input || (input = piecewise2(range2, domain.map(transform), number_default)))(y3)));
@@ -4657,13 +4657,13 @@ function transformer() {
     return arguments.length ? (range2 = Array.from(_), rescale()) : range2.slice();
   };
   scale.rangeRound = function(_) {
-    return range2 = Array.from(_), interpolate = round_default, rescale();
+    return range2 = Array.from(_), interpolate2 = round_default, rescale();
   };
   scale.clamp = function(_) {
     return arguments.length ? (clamp = _ ? true : identity3, rescale()) : clamp !== identity3;
   };
   scale.interpolate = function(_) {
-    return arguments.length ? (interpolate = _, rescale()) : interpolate;
+    return arguments.length ? (interpolate2 = _, rescale()) : interpolate2;
   };
   scale.unknown = function(_) {
     return arguments.length ? (unknown = _, scale) : unknown;
@@ -7855,6 +7855,1618 @@ var resquarify_default = function custom18(ratio) {
   };
   return resquarify;
 }(phi);
+
+// node_modules/gradient-path/dist/index.esm.js
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+  if (Object.getOwnPropertySymbols) {
+    var symbols2 = Object.getOwnPropertySymbols(object);
+    enumerableOnly && (symbols2 = symbols2.filter(function(sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    })), keys.push.apply(keys, symbols2);
+  }
+  return keys;
+}
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = null != arguments[i] ? arguments[i] : {};
+    i % 2 ? ownKeys(Object(source), true).forEach(function(key) {
+      _defineProperty(target, key, source[key]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function(key) {
+      Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+    });
+  }
+  return target;
+}
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+  return Constructor;
+}
+function _defineProperty(obj, key, value2) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value2,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value2;
+  }
+  return obj;
+}
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+var Sample = _createClass(function Sample2(_ref) {
+  var x3 = _ref.x, y3 = _ref.y, progress = _ref.progress, segment = _ref.segment;
+  _classCallCheck(this, Sample2);
+  this.x = x3;
+  this.y = y3;
+  this.progress = progress;
+  this.segment = segment;
+});
+function createCommonjsModule(fn, module) {
+  return module = {
+    exports: {}
+  }, fn(module, module.exports), module.exports;
+}
+var tinycolor = createCommonjsModule(function(module) {
+  (function(Math2) {
+    var trimLeft = /^\s+/, trimRight = /\s+$/, tinyCounter = 0, mathRound = Math2.round, mathMin = Math2.min, mathMax = Math2.max, mathRandom = Math2.random;
+    function tinycolor2(color2, opts) {
+      color2 = color2 ? color2 : "";
+      opts = opts || {};
+      if (color2 instanceof tinycolor2) {
+        return color2;
+      }
+      if (!(this instanceof tinycolor2)) {
+        return new tinycolor2(color2, opts);
+      }
+      var rgb2 = inputToRGB(color2);
+      this._originalInput = color2, this._r = rgb2.r, this._g = rgb2.g, this._b = rgb2.b, this._a = rgb2.a, this._roundA = mathRound(100 * this._a) / 100, this._format = opts.format || rgb2.format;
+      this._gradientType = opts.gradientType;
+      if (this._r < 1) {
+        this._r = mathRound(this._r);
+      }
+      if (this._g < 1) {
+        this._g = mathRound(this._g);
+      }
+      if (this._b < 1) {
+        this._b = mathRound(this._b);
+      }
+      this._ok = rgb2.ok;
+      this._tc_id = tinyCounter++;
+    }
+    tinycolor2.prototype = {
+      isDark: function() {
+        return this.getBrightness() < 128;
+      },
+      isLight: function() {
+        return !this.isDark();
+      },
+      isValid: function() {
+        return this._ok;
+      },
+      getOriginalInput: function() {
+        return this._originalInput;
+      },
+      getFormat: function() {
+        return this._format;
+      },
+      getAlpha: function() {
+        return this._a;
+      },
+      getBrightness: function() {
+        var rgb2 = this.toRgb();
+        return (rgb2.r * 299 + rgb2.g * 587 + rgb2.b * 114) / 1e3;
+      },
+      getLuminance: function() {
+        var rgb2 = this.toRgb();
+        var RsRGB, GsRGB, BsRGB, R, G, B2;
+        RsRGB = rgb2.r / 255;
+        GsRGB = rgb2.g / 255;
+        BsRGB = rgb2.b / 255;
+        if (RsRGB <= 0.03928) {
+          R = RsRGB / 12.92;
+        } else {
+          R = Math2.pow((RsRGB + 0.055) / 1.055, 2.4);
+        }
+        if (GsRGB <= 0.03928) {
+          G = GsRGB / 12.92;
+        } else {
+          G = Math2.pow((GsRGB + 0.055) / 1.055, 2.4);
+        }
+        if (BsRGB <= 0.03928) {
+          B2 = BsRGB / 12.92;
+        } else {
+          B2 = Math2.pow((BsRGB + 0.055) / 1.055, 2.4);
+        }
+        return 0.2126 * R + 0.7152 * G + 0.0722 * B2;
+      },
+      setAlpha: function(value2) {
+        this._a = boundAlpha(value2);
+        this._roundA = mathRound(100 * this._a) / 100;
+        return this;
+      },
+      toHsv: function() {
+        var hsv = rgbToHsv(this._r, this._g, this._b);
+        return {
+          h: hsv.h * 360,
+          s: hsv.s,
+          v: hsv.v,
+          a: this._a
+        };
+      },
+      toHsvString: function() {
+        var hsv = rgbToHsv(this._r, this._g, this._b);
+        var h = mathRound(hsv.h * 360), s3 = mathRound(hsv.s * 100), v = mathRound(hsv.v * 100);
+        return this._a == 1 ? "hsv(" + h + ", " + s3 + "%, " + v + "%)" : "hsva(" + h + ", " + s3 + "%, " + v + "%, " + this._roundA + ")";
+      },
+      toHsl: function() {
+        var hsl3 = rgbToHsl(this._r, this._g, this._b);
+        return {
+          h: hsl3.h * 360,
+          s: hsl3.s,
+          l: hsl3.l,
+          a: this._a
+        };
+      },
+      toHslString: function() {
+        var hsl3 = rgbToHsl(this._r, this._g, this._b);
+        var h = mathRound(hsl3.h * 360), s3 = mathRound(hsl3.s * 100), l = mathRound(hsl3.l * 100);
+        return this._a == 1 ? "hsl(" + h + ", " + s3 + "%, " + l + "%)" : "hsla(" + h + ", " + s3 + "%, " + l + "%, " + this._roundA + ")";
+      },
+      toHex: function(allow3Char) {
+        return rgbToHex(this._r, this._g, this._b, allow3Char);
+      },
+      toHexString: function(allow3Char) {
+        return "#" + this.toHex(allow3Char);
+      },
+      toHex8: function(allow4Char) {
+        return rgbaToHex(this._r, this._g, this._b, this._a, allow4Char);
+      },
+      toHex8String: function(allow4Char) {
+        return "#" + this.toHex8(allow4Char);
+      },
+      toRgb: function() {
+        return {
+          r: mathRound(this._r),
+          g: mathRound(this._g),
+          b: mathRound(this._b),
+          a: this._a
+        };
+      },
+      toRgbString: function() {
+        return this._a == 1 ? "rgb(" + mathRound(this._r) + ", " + mathRound(this._g) + ", " + mathRound(this._b) + ")" : "rgba(" + mathRound(this._r) + ", " + mathRound(this._g) + ", " + mathRound(this._b) + ", " + this._roundA + ")";
+      },
+      toPercentageRgb: function() {
+        return {
+          r: mathRound(bound01(this._r, 255) * 100) + "%",
+          g: mathRound(bound01(this._g, 255) * 100) + "%",
+          b: mathRound(bound01(this._b, 255) * 100) + "%",
+          a: this._a
+        };
+      },
+      toPercentageRgbString: function() {
+        return this._a == 1 ? "rgb(" + mathRound(bound01(this._r, 255) * 100) + "%, " + mathRound(bound01(this._g, 255) * 100) + "%, " + mathRound(bound01(this._b, 255) * 100) + "%)" : "rgba(" + mathRound(bound01(this._r, 255) * 100) + "%, " + mathRound(bound01(this._g, 255) * 100) + "%, " + mathRound(bound01(this._b, 255) * 100) + "%, " + this._roundA + ")";
+      },
+      toName: function() {
+        if (this._a === 0) {
+          return "transparent";
+        }
+        if (this._a < 1) {
+          return false;
+        }
+        return hexNames[rgbToHex(this._r, this._g, this._b, true)] || false;
+      },
+      toFilter: function(secondColor) {
+        var hex8String = "#" + rgbaToArgbHex(this._r, this._g, this._b, this._a);
+        var secondHex8String = hex8String;
+        var gradientType = this._gradientType ? "GradientType = 1, " : "";
+        if (secondColor) {
+          var s3 = tinycolor2(secondColor);
+          secondHex8String = "#" + rgbaToArgbHex(s3._r, s3._g, s3._b, s3._a);
+        }
+        return "progid:DXImageTransform.Microsoft.gradient(" + gradientType + "startColorstr=" + hex8String + ",endColorstr=" + secondHex8String + ")";
+      },
+      toString: function(format2) {
+        var formatSet = !!format2;
+        format2 = format2 || this._format;
+        var formattedString = false;
+        var hasAlpha = this._a < 1 && this._a >= 0;
+        var needsAlphaFormat = !formatSet && hasAlpha && (format2 === "hex" || format2 === "hex6" || format2 === "hex3" || format2 === "hex4" || format2 === "hex8" || format2 === "name");
+        if (needsAlphaFormat) {
+          if (format2 === "name" && this._a === 0) {
+            return this.toName();
+          }
+          return this.toRgbString();
+        }
+        if (format2 === "rgb") {
+          formattedString = this.toRgbString();
+        }
+        if (format2 === "prgb") {
+          formattedString = this.toPercentageRgbString();
+        }
+        if (format2 === "hex" || format2 === "hex6") {
+          formattedString = this.toHexString();
+        }
+        if (format2 === "hex3") {
+          formattedString = this.toHexString(true);
+        }
+        if (format2 === "hex4") {
+          formattedString = this.toHex8String(true);
+        }
+        if (format2 === "hex8") {
+          formattedString = this.toHex8String();
+        }
+        if (format2 === "name") {
+          formattedString = this.toName();
+        }
+        if (format2 === "hsl") {
+          formattedString = this.toHslString();
+        }
+        if (format2 === "hsv") {
+          formattedString = this.toHsvString();
+        }
+        return formattedString || this.toHexString();
+      },
+      clone: function() {
+        return tinycolor2(this.toString());
+      },
+      _applyModification: function(fn, args) {
+        var color2 = fn.apply(null, [this].concat([].slice.call(args)));
+        this._r = color2._r;
+        this._g = color2._g;
+        this._b = color2._b;
+        this.setAlpha(color2._a);
+        return this;
+      },
+      lighten: function() {
+        return this._applyModification(lighten, arguments);
+      },
+      brighten: function() {
+        return this._applyModification(brighten, arguments);
+      },
+      darken: function() {
+        return this._applyModification(darken, arguments);
+      },
+      desaturate: function() {
+        return this._applyModification(desaturate, arguments);
+      },
+      saturate: function() {
+        return this._applyModification(saturate, arguments);
+      },
+      greyscale: function() {
+        return this._applyModification(greyscale, arguments);
+      },
+      spin: function() {
+        return this._applyModification(spin, arguments);
+      },
+      _applyCombination: function(fn, args) {
+        return fn.apply(null, [this].concat([].slice.call(args)));
+      },
+      analogous: function() {
+        return this._applyCombination(analogous, arguments);
+      },
+      complement: function() {
+        return this._applyCombination(complement, arguments);
+      },
+      monochromatic: function() {
+        return this._applyCombination(monochromatic, arguments);
+      },
+      splitcomplement: function() {
+        return this._applyCombination(splitcomplement, arguments);
+      },
+      triad: function() {
+        return this._applyCombination(triad, arguments);
+      },
+      tetrad: function() {
+        return this._applyCombination(tetrad, arguments);
+      }
+    };
+    tinycolor2.fromRatio = function(color2, opts) {
+      if (typeof color2 == "object") {
+        var newColor = {};
+        for (var i in color2) {
+          if (color2.hasOwnProperty(i)) {
+            if (i === "a") {
+              newColor[i] = color2[i];
+            } else {
+              newColor[i] = convertToPercentage(color2[i]);
+            }
+          }
+        }
+        color2 = newColor;
+      }
+      return tinycolor2(color2, opts);
+    };
+    function inputToRGB(color2) {
+      var rgb2 = {
+        r: 0,
+        g: 0,
+        b: 0
+      };
+      var a3 = 1;
+      var s3 = null;
+      var v = null;
+      var l = null;
+      var ok = false;
+      var format2 = false;
+      if (typeof color2 == "string") {
+        color2 = stringInputToObject(color2);
+      }
+      if (typeof color2 == "object") {
+        if (isValidCSSUnit(color2.r) && isValidCSSUnit(color2.g) && isValidCSSUnit(color2.b)) {
+          rgb2 = rgbToRgb(color2.r, color2.g, color2.b);
+          ok = true;
+          format2 = String(color2.r).substr(-1) === "%" ? "prgb" : "rgb";
+        } else if (isValidCSSUnit(color2.h) && isValidCSSUnit(color2.s) && isValidCSSUnit(color2.v)) {
+          s3 = convertToPercentage(color2.s);
+          v = convertToPercentage(color2.v);
+          rgb2 = hsvToRgb(color2.h, s3, v);
+          ok = true;
+          format2 = "hsv";
+        } else if (isValidCSSUnit(color2.h) && isValidCSSUnit(color2.s) && isValidCSSUnit(color2.l)) {
+          s3 = convertToPercentage(color2.s);
+          l = convertToPercentage(color2.l);
+          rgb2 = hslToRgb(color2.h, s3, l);
+          ok = true;
+          format2 = "hsl";
+        }
+        if (color2.hasOwnProperty("a")) {
+          a3 = color2.a;
+        }
+      }
+      a3 = boundAlpha(a3);
+      return {
+        ok,
+        format: color2.format || format2,
+        r: mathMin(255, mathMax(rgb2.r, 0)),
+        g: mathMin(255, mathMax(rgb2.g, 0)),
+        b: mathMin(255, mathMax(rgb2.b, 0)),
+        a: a3
+      };
+    }
+    function rgbToRgb(r, g, b) {
+      return {
+        r: bound01(r, 255) * 255,
+        g: bound01(g, 255) * 255,
+        b: bound01(b, 255) * 255
+      };
+    }
+    function rgbToHsl(r, g, b) {
+      r = bound01(r, 255);
+      g = bound01(g, 255);
+      b = bound01(b, 255);
+      var max6 = mathMax(r, g, b), min6 = mathMin(r, g, b);
+      var h, s3, l = (max6 + min6) / 2;
+      if (max6 == min6) {
+        h = s3 = 0;
+      } else {
+        var d = max6 - min6;
+        s3 = l > 0.5 ? d / (2 - max6 - min6) : d / (max6 + min6);
+        switch (max6) {
+          case r:
+            h = (g - b) / d + (g < b ? 6 : 0);
+            break;
+          case g:
+            h = (b - r) / d + 2;
+            break;
+          case b:
+            h = (r - g) / d + 4;
+            break;
+        }
+        h /= 6;
+      }
+      return {
+        h,
+        s: s3,
+        l
+      };
+    }
+    function hslToRgb(h, s3, l) {
+      var r, g, b;
+      h = bound01(h, 360);
+      s3 = bound01(s3, 100);
+      l = bound01(l, 100);
+      function hue2rgb(p2, q2, t) {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1 / 6) return p2 + (q2 - p2) * 6 * t;
+        if (t < 1 / 2) return q2;
+        if (t < 2 / 3) return p2 + (q2 - p2) * (2 / 3 - t) * 6;
+        return p2;
+      }
+      if (s3 === 0) {
+        r = g = b = l;
+      } else {
+        var q = l < 0.5 ? l * (1 + s3) : l + s3 - l * s3;
+        var p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1 / 3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1 / 3);
+      }
+      return {
+        r: r * 255,
+        g: g * 255,
+        b: b * 255
+      };
+    }
+    function rgbToHsv(r, g, b) {
+      r = bound01(r, 255);
+      g = bound01(g, 255);
+      b = bound01(b, 255);
+      var max6 = mathMax(r, g, b), min6 = mathMin(r, g, b);
+      var h, s3, v = max6;
+      var d = max6 - min6;
+      s3 = max6 === 0 ? 0 : d / max6;
+      if (max6 == min6) {
+        h = 0;
+      } else {
+        switch (max6) {
+          case r:
+            h = (g - b) / d + (g < b ? 6 : 0);
+            break;
+          case g:
+            h = (b - r) / d + 2;
+            break;
+          case b:
+            h = (r - g) / d + 4;
+            break;
+        }
+        h /= 6;
+      }
+      return {
+        h,
+        s: s3,
+        v
+      };
+    }
+    function hsvToRgb(h, s3, v) {
+      h = bound01(h, 360) * 6;
+      s3 = bound01(s3, 100);
+      v = bound01(v, 100);
+      var i = Math2.floor(h), f = h - i, p = v * (1 - s3), q = v * (1 - f * s3), t = v * (1 - (1 - f) * s3), mod = i % 6, r = [v, q, p, p, t, v][mod], g = [t, v, v, q, p, p][mod], b = [p, p, t, v, v, q][mod];
+      return {
+        r: r * 255,
+        g: g * 255,
+        b: b * 255
+      };
+    }
+    function rgbToHex(r, g, b, allow3Char) {
+      var hex2 = [pad2(mathRound(r).toString(16)), pad2(mathRound(g).toString(16)), pad2(mathRound(b).toString(16))];
+      if (allow3Char && hex2[0].charAt(0) == hex2[0].charAt(1) && hex2[1].charAt(0) == hex2[1].charAt(1) && hex2[2].charAt(0) == hex2[2].charAt(1)) {
+        return hex2[0].charAt(0) + hex2[1].charAt(0) + hex2[2].charAt(0);
+      }
+      return hex2.join("");
+    }
+    function rgbaToHex(r, g, b, a3, allow4Char) {
+      var hex2 = [pad2(mathRound(r).toString(16)), pad2(mathRound(g).toString(16)), pad2(mathRound(b).toString(16)), pad2(convertDecimalToHex(a3))];
+      if (allow4Char && hex2[0].charAt(0) == hex2[0].charAt(1) && hex2[1].charAt(0) == hex2[1].charAt(1) && hex2[2].charAt(0) == hex2[2].charAt(1) && hex2[3].charAt(0) == hex2[3].charAt(1)) {
+        return hex2[0].charAt(0) + hex2[1].charAt(0) + hex2[2].charAt(0) + hex2[3].charAt(0);
+      }
+      return hex2.join("");
+    }
+    function rgbaToArgbHex(r, g, b, a3) {
+      var hex2 = [pad2(convertDecimalToHex(a3)), pad2(mathRound(r).toString(16)), pad2(mathRound(g).toString(16)), pad2(mathRound(b).toString(16))];
+      return hex2.join("");
+    }
+    tinycolor2.equals = function(color1, color2) {
+      if (!color1 || !color2) {
+        return false;
+      }
+      return tinycolor2(color1).toRgbString() == tinycolor2(color2).toRgbString();
+    };
+    tinycolor2.random = function() {
+      return tinycolor2.fromRatio({
+        r: mathRandom(),
+        g: mathRandom(),
+        b: mathRandom()
+      });
+    };
+    function desaturate(color2, amount) {
+      amount = amount === 0 ? 0 : amount || 10;
+      var hsl3 = tinycolor2(color2).toHsl();
+      hsl3.s -= amount / 100;
+      hsl3.s = clamp01(hsl3.s);
+      return tinycolor2(hsl3);
+    }
+    function saturate(color2, amount) {
+      amount = amount === 0 ? 0 : amount || 10;
+      var hsl3 = tinycolor2(color2).toHsl();
+      hsl3.s += amount / 100;
+      hsl3.s = clamp01(hsl3.s);
+      return tinycolor2(hsl3);
+    }
+    function greyscale(color2) {
+      return tinycolor2(color2).desaturate(100);
+    }
+    function lighten(color2, amount) {
+      amount = amount === 0 ? 0 : amount || 10;
+      var hsl3 = tinycolor2(color2).toHsl();
+      hsl3.l += amount / 100;
+      hsl3.l = clamp01(hsl3.l);
+      return tinycolor2(hsl3);
+    }
+    function brighten(color2, amount) {
+      amount = amount === 0 ? 0 : amount || 10;
+      var rgb2 = tinycolor2(color2).toRgb();
+      rgb2.r = mathMax(0, mathMin(255, rgb2.r - mathRound(255 * -(amount / 100))));
+      rgb2.g = mathMax(0, mathMin(255, rgb2.g - mathRound(255 * -(amount / 100))));
+      rgb2.b = mathMax(0, mathMin(255, rgb2.b - mathRound(255 * -(amount / 100))));
+      return tinycolor2(rgb2);
+    }
+    function darken(color2, amount) {
+      amount = amount === 0 ? 0 : amount || 10;
+      var hsl3 = tinycolor2(color2).toHsl();
+      hsl3.l -= amount / 100;
+      hsl3.l = clamp01(hsl3.l);
+      return tinycolor2(hsl3);
+    }
+    function spin(color2, amount) {
+      var hsl3 = tinycolor2(color2).toHsl();
+      var hue2 = (hsl3.h + amount) % 360;
+      hsl3.h = hue2 < 0 ? 360 + hue2 : hue2;
+      return tinycolor2(hsl3);
+    }
+    function complement(color2) {
+      var hsl3 = tinycolor2(color2).toHsl();
+      hsl3.h = (hsl3.h + 180) % 360;
+      return tinycolor2(hsl3);
+    }
+    function triad(color2) {
+      var hsl3 = tinycolor2(color2).toHsl();
+      var h = hsl3.h;
+      return [tinycolor2(color2), tinycolor2({
+        h: (h + 120) % 360,
+        s: hsl3.s,
+        l: hsl3.l
+      }), tinycolor2({
+        h: (h + 240) % 360,
+        s: hsl3.s,
+        l: hsl3.l
+      })];
+    }
+    function tetrad(color2) {
+      var hsl3 = tinycolor2(color2).toHsl();
+      var h = hsl3.h;
+      return [tinycolor2(color2), tinycolor2({
+        h: (h + 90) % 360,
+        s: hsl3.s,
+        l: hsl3.l
+      }), tinycolor2({
+        h: (h + 180) % 360,
+        s: hsl3.s,
+        l: hsl3.l
+      }), tinycolor2({
+        h: (h + 270) % 360,
+        s: hsl3.s,
+        l: hsl3.l
+      })];
+    }
+    function splitcomplement(color2) {
+      var hsl3 = tinycolor2(color2).toHsl();
+      var h = hsl3.h;
+      return [tinycolor2(color2), tinycolor2({
+        h: (h + 72) % 360,
+        s: hsl3.s,
+        l: hsl3.l
+      }), tinycolor2({
+        h: (h + 216) % 360,
+        s: hsl3.s,
+        l: hsl3.l
+      })];
+    }
+    function analogous(color2, results, slices) {
+      results = results || 6;
+      slices = slices || 30;
+      var hsl3 = tinycolor2(color2).toHsl();
+      var part = 360 / slices;
+      var ret = [tinycolor2(color2)];
+      for (hsl3.h = (hsl3.h - (part * results >> 1) + 720) % 360; --results; ) {
+        hsl3.h = (hsl3.h + part) % 360;
+        ret.push(tinycolor2(hsl3));
+      }
+      return ret;
+    }
+    function monochromatic(color2, results) {
+      results = results || 6;
+      var hsv = tinycolor2(color2).toHsv();
+      var h = hsv.h, s3 = hsv.s, v = hsv.v;
+      var ret = [];
+      var modification = 1 / results;
+      while (results--) {
+        ret.push(tinycolor2({
+          h,
+          s: s3,
+          v
+        }));
+        v = (v + modification) % 1;
+      }
+      return ret;
+    }
+    tinycolor2.mix = function(color1, color2, amount) {
+      amount = amount === 0 ? 0 : amount || 50;
+      var rgb1 = tinycolor2(color1).toRgb();
+      var rgb2 = tinycolor2(color2).toRgb();
+      var p = amount / 100;
+      var rgba2 = {
+        r: (rgb2.r - rgb1.r) * p + rgb1.r,
+        g: (rgb2.g - rgb1.g) * p + rgb1.g,
+        b: (rgb2.b - rgb1.b) * p + rgb1.b,
+        a: (rgb2.a - rgb1.a) * p + rgb1.a
+      };
+      return tinycolor2(rgba2);
+    };
+    tinycolor2.readability = function(color1, color2) {
+      var c1 = tinycolor2(color1);
+      var c2 = tinycolor2(color2);
+      return (Math2.max(c1.getLuminance(), c2.getLuminance()) + 0.05) / (Math2.min(c1.getLuminance(), c2.getLuminance()) + 0.05);
+    };
+    tinycolor2.isReadable = function(color1, color2, wcag2) {
+      var readability = tinycolor2.readability(color1, color2);
+      var wcag2Parms, out;
+      out = false;
+      wcag2Parms = validateWCAG2Parms(wcag2);
+      switch (wcag2Parms.level + wcag2Parms.size) {
+        case "AAsmall":
+        case "AAAlarge":
+          out = readability >= 4.5;
+          break;
+        case "AAlarge":
+          out = readability >= 3;
+          break;
+        case "AAAsmall":
+          out = readability >= 7;
+          break;
+      }
+      return out;
+    };
+    tinycolor2.mostReadable = function(baseColor, colorList, args) {
+      var bestColor = null;
+      var bestScore = 0;
+      var readability;
+      var includeFallbackColors, level, size;
+      args = args || {};
+      includeFallbackColors = args.includeFallbackColors;
+      level = args.level;
+      size = args.size;
+      for (var i = 0; i < colorList.length; i++) {
+        readability = tinycolor2.readability(baseColor, colorList[i]);
+        if (readability > bestScore) {
+          bestScore = readability;
+          bestColor = tinycolor2(colorList[i]);
+        }
+      }
+      if (tinycolor2.isReadable(baseColor, bestColor, {
+        "level": level,
+        "size": size
+      }) || !includeFallbackColors) {
+        return bestColor;
+      } else {
+        args.includeFallbackColors = false;
+        return tinycolor2.mostReadable(baseColor, ["#fff", "#000"], args);
+      }
+    };
+    var names = tinycolor2.names = {
+      aliceblue: "f0f8ff",
+      antiquewhite: "faebd7",
+      aqua: "0ff",
+      aquamarine: "7fffd4",
+      azure: "f0ffff",
+      beige: "f5f5dc",
+      bisque: "ffe4c4",
+      black: "000",
+      blanchedalmond: "ffebcd",
+      blue: "00f",
+      blueviolet: "8a2be2",
+      brown: "a52a2a",
+      burlywood: "deb887",
+      burntsienna: "ea7e5d",
+      cadetblue: "5f9ea0",
+      chartreuse: "7fff00",
+      chocolate: "d2691e",
+      coral: "ff7f50",
+      cornflowerblue: "6495ed",
+      cornsilk: "fff8dc",
+      crimson: "dc143c",
+      cyan: "0ff",
+      darkblue: "00008b",
+      darkcyan: "008b8b",
+      darkgoldenrod: "b8860b",
+      darkgray: "a9a9a9",
+      darkgreen: "006400",
+      darkgrey: "a9a9a9",
+      darkkhaki: "bdb76b",
+      darkmagenta: "8b008b",
+      darkolivegreen: "556b2f",
+      darkorange: "ff8c00",
+      darkorchid: "9932cc",
+      darkred: "8b0000",
+      darksalmon: "e9967a",
+      darkseagreen: "8fbc8f",
+      darkslateblue: "483d8b",
+      darkslategray: "2f4f4f",
+      darkslategrey: "2f4f4f",
+      darkturquoise: "00ced1",
+      darkviolet: "9400d3",
+      deeppink: "ff1493",
+      deepskyblue: "00bfff",
+      dimgray: "696969",
+      dimgrey: "696969",
+      dodgerblue: "1e90ff",
+      firebrick: "b22222",
+      floralwhite: "fffaf0",
+      forestgreen: "228b22",
+      fuchsia: "f0f",
+      gainsboro: "dcdcdc",
+      ghostwhite: "f8f8ff",
+      gold: "ffd700",
+      goldenrod: "daa520",
+      gray: "808080",
+      green: "008000",
+      greenyellow: "adff2f",
+      grey: "808080",
+      honeydew: "f0fff0",
+      hotpink: "ff69b4",
+      indianred: "cd5c5c",
+      indigo: "4b0082",
+      ivory: "fffff0",
+      khaki: "f0e68c",
+      lavender: "e6e6fa",
+      lavenderblush: "fff0f5",
+      lawngreen: "7cfc00",
+      lemonchiffon: "fffacd",
+      lightblue: "add8e6",
+      lightcoral: "f08080",
+      lightcyan: "e0ffff",
+      lightgoldenrodyellow: "fafad2",
+      lightgray: "d3d3d3",
+      lightgreen: "90ee90",
+      lightgrey: "d3d3d3",
+      lightpink: "ffb6c1",
+      lightsalmon: "ffa07a",
+      lightseagreen: "20b2aa",
+      lightskyblue: "87cefa",
+      lightslategray: "789",
+      lightslategrey: "789",
+      lightsteelblue: "b0c4de",
+      lightyellow: "ffffe0",
+      lime: "0f0",
+      limegreen: "32cd32",
+      linen: "faf0e6",
+      magenta: "f0f",
+      maroon: "800000",
+      mediumaquamarine: "66cdaa",
+      mediumblue: "0000cd",
+      mediumorchid: "ba55d3",
+      mediumpurple: "9370db",
+      mediumseagreen: "3cb371",
+      mediumslateblue: "7b68ee",
+      mediumspringgreen: "00fa9a",
+      mediumturquoise: "48d1cc",
+      mediumvioletred: "c71585",
+      midnightblue: "191970",
+      mintcream: "f5fffa",
+      mistyrose: "ffe4e1",
+      moccasin: "ffe4b5",
+      navajowhite: "ffdead",
+      navy: "000080",
+      oldlace: "fdf5e6",
+      olive: "808000",
+      olivedrab: "6b8e23",
+      orange: "ffa500",
+      orangered: "ff4500",
+      orchid: "da70d6",
+      palegoldenrod: "eee8aa",
+      palegreen: "98fb98",
+      paleturquoise: "afeeee",
+      palevioletred: "db7093",
+      papayawhip: "ffefd5",
+      peachpuff: "ffdab9",
+      peru: "cd853f",
+      pink: "ffc0cb",
+      plum: "dda0dd",
+      powderblue: "b0e0e6",
+      purple: "800080",
+      rebeccapurple: "663399",
+      red: "f00",
+      rosybrown: "bc8f8f",
+      royalblue: "4169e1",
+      saddlebrown: "8b4513",
+      salmon: "fa8072",
+      sandybrown: "f4a460",
+      seagreen: "2e8b57",
+      seashell: "fff5ee",
+      sienna: "a0522d",
+      silver: "c0c0c0",
+      skyblue: "87ceeb",
+      slateblue: "6a5acd",
+      slategray: "708090",
+      slategrey: "708090",
+      snow: "fffafa",
+      springgreen: "00ff7f",
+      steelblue: "4682b4",
+      tan: "d2b48c",
+      teal: "008080",
+      thistle: "d8bfd8",
+      tomato: "ff6347",
+      turquoise: "40e0d0",
+      violet: "ee82ee",
+      wheat: "f5deb3",
+      white: "fff",
+      whitesmoke: "f5f5f5",
+      yellow: "ff0",
+      yellowgreen: "9acd32"
+    };
+    var hexNames = tinycolor2.hexNames = flip(names);
+    function flip(o) {
+      var flipped = {};
+      for (var i in o) {
+        if (o.hasOwnProperty(i)) {
+          flipped[o[i]] = i;
+        }
+      }
+      return flipped;
+    }
+    function boundAlpha(a3) {
+      a3 = parseFloat(a3);
+      if (isNaN(a3) || a3 < 0 || a3 > 1) {
+        a3 = 1;
+      }
+      return a3;
+    }
+    function bound01(n, max6) {
+      if (isOnePointZero(n)) {
+        n = "100%";
+      }
+      var processPercent = isPercentage(n);
+      n = mathMin(max6, mathMax(0, parseFloat(n)));
+      if (processPercent) {
+        n = parseInt(n * max6, 10) / 100;
+      }
+      if (Math2.abs(n - max6) < 1e-6) {
+        return 1;
+      }
+      return n % max6 / parseFloat(max6);
+    }
+    function clamp01(val) {
+      return mathMin(1, mathMax(0, val));
+    }
+    function parseIntFromHex(val) {
+      return parseInt(val, 16);
+    }
+    function isOnePointZero(n) {
+      return typeof n == "string" && n.indexOf(".") != -1 && parseFloat(n) === 1;
+    }
+    function isPercentage(n) {
+      return typeof n === "string" && n.indexOf("%") != -1;
+    }
+    function pad2(c) {
+      return c.length == 1 ? "0" + c : "" + c;
+    }
+    function convertToPercentage(n) {
+      if (n <= 1) {
+        n = n * 100 + "%";
+      }
+      return n;
+    }
+    function convertDecimalToHex(d) {
+      return Math2.round(parseFloat(d) * 255).toString(16);
+    }
+    function convertHexToDecimal(h) {
+      return parseIntFromHex(h) / 255;
+    }
+    var matchers = function() {
+      var CSS_INTEGER = "[-\\+]?\\d+%?";
+      var CSS_NUMBER = "[-\\+]?\\d*\\.\\d+%?";
+      var CSS_UNIT = "(?:" + CSS_NUMBER + ")|(?:" + CSS_INTEGER + ")";
+      var PERMISSIVE_MATCH3 = "[\\s|\\(]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")\\s*\\)?";
+      var PERMISSIVE_MATCH4 = "[\\s|\\(]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")\\s*\\)?";
+      return {
+        CSS_UNIT: new RegExp(CSS_UNIT),
+        rgb: new RegExp("rgb" + PERMISSIVE_MATCH3),
+        rgba: new RegExp("rgba" + PERMISSIVE_MATCH4),
+        hsl: new RegExp("hsl" + PERMISSIVE_MATCH3),
+        hsla: new RegExp("hsla" + PERMISSIVE_MATCH4),
+        hsv: new RegExp("hsv" + PERMISSIVE_MATCH3),
+        hsva: new RegExp("hsva" + PERMISSIVE_MATCH4),
+        hex3: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
+        hex6: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/,
+        hex4: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
+        hex8: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/
+      };
+    }();
+    function isValidCSSUnit(color2) {
+      return !!matchers.CSS_UNIT.exec(color2);
+    }
+    function stringInputToObject(color2) {
+      color2 = color2.replace(trimLeft, "").replace(trimRight, "").toLowerCase();
+      var named2 = false;
+      if (names[color2]) {
+        color2 = names[color2];
+        named2 = true;
+      } else if (color2 == "transparent") {
+        return {
+          r: 0,
+          g: 0,
+          b: 0,
+          a: 0,
+          format: "name"
+        };
+      }
+      var match;
+      if (match = matchers.rgb.exec(color2)) {
+        return {
+          r: match[1],
+          g: match[2],
+          b: match[3]
+        };
+      }
+      if (match = matchers.rgba.exec(color2)) {
+        return {
+          r: match[1],
+          g: match[2],
+          b: match[3],
+          a: match[4]
+        };
+      }
+      if (match = matchers.hsl.exec(color2)) {
+        return {
+          h: match[1],
+          s: match[2],
+          l: match[3]
+        };
+      }
+      if (match = matchers.hsla.exec(color2)) {
+        return {
+          h: match[1],
+          s: match[2],
+          l: match[3],
+          a: match[4]
+        };
+      }
+      if (match = matchers.hsv.exec(color2)) {
+        return {
+          h: match[1],
+          s: match[2],
+          v: match[3]
+        };
+      }
+      if (match = matchers.hsva.exec(color2)) {
+        return {
+          h: match[1],
+          s: match[2],
+          v: match[3],
+          a: match[4]
+        };
+      }
+      if (match = matchers.hex8.exec(color2)) {
+        return {
+          r: parseIntFromHex(match[1]),
+          g: parseIntFromHex(match[2]),
+          b: parseIntFromHex(match[3]),
+          a: convertHexToDecimal(match[4]),
+          format: named2 ? "name" : "hex8"
+        };
+      }
+      if (match = matchers.hex6.exec(color2)) {
+        return {
+          r: parseIntFromHex(match[1]),
+          g: parseIntFromHex(match[2]),
+          b: parseIntFromHex(match[3]),
+          format: named2 ? "name" : "hex"
+        };
+      }
+      if (match = matchers.hex4.exec(color2)) {
+        return {
+          r: parseIntFromHex(match[1] + "" + match[1]),
+          g: parseIntFromHex(match[2] + "" + match[2]),
+          b: parseIntFromHex(match[3] + "" + match[3]),
+          a: convertHexToDecimal(match[4] + "" + match[4]),
+          format: named2 ? "name" : "hex8"
+        };
+      }
+      if (match = matchers.hex3.exec(color2)) {
+        return {
+          r: parseIntFromHex(match[1] + "" + match[1]),
+          g: parseIntFromHex(match[2] + "" + match[2]),
+          b: parseIntFromHex(match[3] + "" + match[3]),
+          format: named2 ? "name" : "hex"
+        };
+      }
+      return false;
+    }
+    function validateWCAG2Parms(parms) {
+      var level, size;
+      parms = parms || {
+        "level": "AA",
+        "size": "small"
+      };
+      level = (parms.level || "AA").toUpperCase();
+      size = (parms.size || "small").toLowerCase();
+      if (level !== "AA" && level !== "AAA") {
+        level = "AA";
+      }
+      if (size !== "small" && size !== "large") {
+        size = "small";
+      }
+      return {
+        "level": level,
+        "size": size
+      };
+    }
+    if (module.exports) {
+      module.exports = tinycolor2;
+    } else {
+      window.tinycolor = tinycolor2;
+    }
+  })(Math);
+});
+var RGBA_MAX = {
+  r: 256,
+  g: 256,
+  b: 256,
+  a: 1
+};
+var HSVA_MAX = {
+  h: 360,
+  s: 1,
+  v: 1,
+  a: 1
+};
+function stepize(start2, end, steps) {
+  let step = {};
+  for (let k3 in start2) {
+    if (start2.hasOwnProperty(k3)) {
+      step[k3] = steps === 0 ? 0 : (end[k3] - start2[k3]) / steps;
+    }
+  }
+  return step;
+}
+function interpolate(step, start2, i, max6) {
+  let color2 = {};
+  for (let k3 in start2) {
+    if (start2.hasOwnProperty(k3)) {
+      color2[k3] = step[k3] * i + start2[k3];
+      color2[k3] = color2[k3] < 0 ? color2[k3] + max6[k3] : max6[k3] !== 1 ? color2[k3] % max6[k3] : color2[k3];
+    }
+  }
+  return color2;
+}
+function interpolateRgb(stop1, stop2, steps) {
+  const start2 = stop1.color.toRgb();
+  const end = stop2.color.toRgb();
+  const step = stepize(start2, end, steps);
+  let gradient = [stop1.color];
+  for (let i = 1; i < steps; i++) {
+    const color2 = interpolate(step, start2, i, RGBA_MAX);
+    gradient.push(tinycolor(color2));
+  }
+  return gradient;
+}
+function interpolateHsv(stop1, stop2, steps, mode2) {
+  const start2 = stop1.color.toHsv();
+  const end = stop2.color.toHsv();
+  if (start2.s === 0 || end.s === 0) {
+    return interpolateRgb(stop1, stop2, steps);
+  }
+  let trigonometric;
+  if (typeof mode2 === "boolean") {
+    trigonometric = mode2;
+  } else {
+    const trigShortest = start2.h < end.h && end.h - start2.h < 180 || start2.h > end.h && start2.h - end.h > 180;
+    trigonometric = mode2 === "long" && trigShortest || mode2 === "short" && !trigShortest;
+  }
+  const step = stepize(start2, end, steps);
+  let gradient = [stop1.color];
+  let diff;
+  if (start2.h <= end.h && !trigonometric || start2.h >= end.h && trigonometric) {
+    diff = end.h - start2.h;
+  } else if (trigonometric) {
+    diff = 360 - end.h + start2.h;
+  } else {
+    diff = 360 - start2.h + end.h;
+  }
+  step.h = Math.pow(-1, trigonometric ? 1 : 0) * Math.abs(diff) / steps;
+  for (let i = 1; i < steps; i++) {
+    const color2 = interpolate(step, start2, i, HSVA_MAX);
+    gradient.push(tinycolor(color2));
+  }
+  return gradient;
+}
+function computeSubsteps(stops, steps) {
+  const l = stops.length;
+  steps = parseInt(steps, 10);
+  if (isNaN(steps) || steps < 2) {
+    throw new Error("Invalid number of steps (< 2)");
+  }
+  if (steps < l) {
+    throw new Error("Number of steps cannot be inferior to number of stops");
+  }
+  let substeps = [];
+  for (let i = 1; i < l; i++) {
+    const step = (steps - 1) * (stops[i].pos - stops[i - 1].pos);
+    substeps.push(Math.max(1, Math.round(step)));
+  }
+  let totalSubsteps = 1;
+  for (let n = l - 1; n--; ) totalSubsteps += substeps[n];
+  while (totalSubsteps !== steps) {
+    if (totalSubsteps < steps) {
+      const min6 = Math.min.apply(null, substeps);
+      substeps[substeps.indexOf(min6)]++;
+      totalSubsteps++;
+    } else {
+      const max6 = Math.max.apply(null, substeps);
+      substeps[substeps.indexOf(max6)]--;
+      totalSubsteps--;
+    }
+  }
+  return substeps;
+}
+function computeAt(stops, pos, method, max6) {
+  if (pos < 0 || pos > 1) {
+    throw new Error("Position must be between 0 and 1");
+  }
+  let start2, end;
+  for (let i = 0, l = stops.length; i < l - 1; i++) {
+    if (pos >= stops[i].pos && pos < stops[i + 1].pos) {
+      start2 = stops[i];
+      end = stops[i + 1];
+      break;
+    }
+  }
+  if (!start2) {
+    start2 = end = stops[stops.length - 1];
+  }
+  const step = stepize(start2.color[method](), end.color[method](), (end.pos - start2.pos) * 100);
+  const color2 = interpolate(step, start2.color[method](), (pos - start2.pos) * 100, max6);
+  return tinycolor(color2);
+}
+var TinyGradient = class _TinyGradient {
+  /**
+   * @param {StopInput[]|ColorInput[]} stops
+   * @returns {TinyGradient}
+   */
+  constructor(stops) {
+    if (stops.length < 2) {
+      throw new Error("Invalid number of stops (< 2)");
+    }
+    const havingPositions = stops[0].pos !== void 0;
+    let l = stops.length;
+    let p = -1;
+    let lastColorLess = false;
+    this.stops = stops.map((stop, i) => {
+      const hasPosition = stop.pos !== void 0;
+      if (havingPositions ^ hasPosition) {
+        throw new Error("Cannot mix positionned and not posionned color stops");
+      }
+      if (hasPosition) {
+        const hasColor = stop.color !== void 0;
+        if (!hasColor && (lastColorLess || i === 0 || i === l - 1)) {
+          throw new Error("Cannot define two consecutive position-only stops");
+        }
+        lastColorLess = !hasColor;
+        stop = {
+          color: hasColor ? tinycolor(stop.color) : null,
+          colorLess: !hasColor,
+          pos: stop.pos
+        };
+        if (stop.pos < 0 || stop.pos > 1) {
+          throw new Error("Color stops positions must be between 0 and 1");
+        } else if (stop.pos < p) {
+          throw new Error("Color stops positions are not ordered");
+        }
+        p = stop.pos;
+      } else {
+        stop = {
+          color: tinycolor(stop.color !== void 0 ? stop.color : stop),
+          pos: i / (l - 1)
+        };
+      }
+      return stop;
+    });
+    if (this.stops[0].pos !== 0) {
+      this.stops.unshift({
+        color: this.stops[0].color,
+        pos: 0
+      });
+      l++;
+    }
+    if (this.stops[l - 1].pos !== 1) {
+      this.stops.push({
+        color: this.stops[l - 1].color,
+        pos: 1
+      });
+    }
+  }
+  /**
+   * Return new instance with reversed stops
+   * @return {TinyGradient}
+   */
+  reverse() {
+    let stops = [];
+    this.stops.forEach(function(stop) {
+      stops.push({
+        color: stop.color,
+        pos: 1 - stop.pos
+      });
+    });
+    return new _TinyGradient(stops.reverse());
+  }
+  /**
+   * Return new instance with looped stops
+   * @return {TinyGradient}
+   */
+  loop() {
+    let stops1 = [];
+    let stops2 = [];
+    this.stops.forEach((stop) => {
+      stops1.push({
+        color: stop.color,
+        pos: stop.pos / 2
+      });
+    });
+    this.stops.slice(0, -1).forEach((stop) => {
+      stops2.push({
+        color: stop.color,
+        pos: 1 - stop.pos / 2
+      });
+    });
+    return new _TinyGradient(stops1.concat(stops2.reverse()));
+  }
+  /**
+   * Generate gradient with RGBa interpolation
+   * @param {number} steps
+   * @return {tinycolor[]}
+   */
+  rgb(steps) {
+    const substeps = computeSubsteps(this.stops, steps);
+    let gradient = [];
+    this.stops.forEach((stop, i) => {
+      if (stop.colorLess) {
+        stop.color = interpolateRgb(this.stops[i - 1], this.stops[i + 1], 2)[1];
+      }
+    });
+    for (let i = 0, l = this.stops.length; i < l - 1; i++) {
+      const rgb2 = interpolateRgb(this.stops[i], this.stops[i + 1], substeps[i]);
+      gradient.splice(gradient.length, 0, ...rgb2);
+    }
+    gradient.push(this.stops[this.stops.length - 1].color);
+    return gradient;
+  }
+  /**
+   * Generate gradient with HSVa interpolation
+   * @param {number} steps
+   * @param {boolean|'long'|'short'} [mode=false]
+   *    - false to step in clockwise
+   *    - true to step in trigonometric order
+   *    - 'short' to use the shortest way
+   *    - 'long' to use the longest way
+   * @return {tinycolor[]}
+   */
+  hsv(steps, mode2) {
+    const substeps = computeSubsteps(this.stops, steps);
+    let gradient = [];
+    this.stops.forEach((stop, i) => {
+      if (stop.colorLess) {
+        stop.color = interpolateHsv(this.stops[i - 1], this.stops[i + 1], 2, mode2)[1];
+      }
+    });
+    for (let i = 0, l = this.stops.length; i < l - 1; i++) {
+      const hsv = interpolateHsv(this.stops[i], this.stops[i + 1], substeps[i], mode2);
+      gradient.splice(gradient.length, 0, ...hsv);
+    }
+    gradient.push(this.stops[this.stops.length - 1].color);
+    return gradient;
+  }
+  /**
+   * Generate CSS3 command (no prefix) for this gradient
+   * @param {String} [mode=linear] - 'linear' or 'radial'
+   * @param {String} [direction] - default is 'to right' or 'ellipse at center'
+   * @return {String}
+   */
+  css(mode2, direction) {
+    mode2 = mode2 || "linear";
+    direction = direction || (mode2 === "linear" ? "to right" : "ellipse at center");
+    let css = mode2 + "-gradient(" + direction;
+    this.stops.forEach(function(stop) {
+      css += ", " + (stop.colorLess ? "" : stop.color.toRgbString() + " ") + stop.pos * 100 + "%";
+    });
+    css += ")";
+    return css;
+  }
+  /**
+   * Returns the color at specific position with RGBa interpolation
+   * @param {number} pos, between 0 and 1
+   * @return {tinycolor}
+   */
+  rgbAt(pos) {
+    return computeAt(this.stops, pos, "toRgb", RGBA_MAX);
+  }
+  /**
+   * Returns the color at specific position with HSVa interpolation
+   * @param {number} pos, between 0 and 1
+   * @return {tinycolor}
+   */
+  hsvAt(pos) {
+    return computeAt(this.stops, pos, "toHsv", HSVA_MAX);
+  }
+};
+var tinygradient = function(stops) {
+  if (arguments.length === 1) {
+    if (!Array.isArray(arguments[0])) {
+      throw new Error('"stops" is not an array');
+    }
+    stops = arguments[0];
+  } else {
+    stops = Array.prototype.slice.call(arguments);
+  }
+  return new TinyGradient(stops);
+};
+var svgElem = function svgElem2(type2, attrs) {
+  var elem = document.createElementNS("http://www.w3.org/2000/svg", type2), attributes = Object.keys(attrs);
+  for (var i = 0; i < attributes.length; i++) {
+    var attr = attributes[i];
+    elem.setAttribute(attr, attrs[attr]);
+  }
+  return elem;
+};
+var styleAttrs = function styleAttrs2(fill, stroke, strokeWidth, progress) {
+  var determineColor = function determineColor2(type2, progress2) {
+    return typeof type2 === "string" ? type2 : tinygradient(type2).rgbAt(progress2);
+  };
+  var attrs = {};
+  if (stroke) {
+    attrs["stroke"] = determineColor(stroke, progress);
+    attrs["stroke-width"] = strokeWidth;
+  }
+  if (fill) {
+    attrs["fill"] = determineColor(fill, progress);
+  }
+  return attrs;
+};
+var segmentToD = function segmentToD2(samples) {
+  var d = "";
+  for (var i = 0; i < samples.length; i++) {
+    var _samples$i = samples[i], x3 = _samples$i.x, y3 = _samples$i.y, prevSample = i === 0 ? null : samples[i - 1];
+    if (i === 0 && i !== samples.length - 1) {
+      d += "M".concat(x3, ",").concat(y3);
+    } else if (x3 !== prevSample.x && y3 !== prevSample.y) {
+      d += "L".concat(x3, ",").concat(y3);
+    } else if (x3 !== prevSample.x) {
+      d += "H".concat(x3);
+    } else if (y3 !== prevSample.y) {
+      d += "V".concat(y3);
+    }
+    if (i === samples.length - 1) {
+      d += "Z";
+    }
+  }
+  return d;
+};
+var getMiddleSample = function getMiddleSample2(samples) {
+  var sortedSamples = _toConsumableArray(samples).sort(function(a3, b) {
+    return a3.progress - b.progress;
+  });
+  return sortedSamples[sortedSamples.length / 2 | 0];
+};
+var convertPathToNode = function convertPathToNode2(path3) {
+  return path3 instanceof Element || path3 instanceof HTMLDocument ? path3 : path3.node();
+};
+var Segment = _createClass(function Segment2(_ref) {
+  var samples = _ref.samples;
+  _classCallCheck(this, Segment2);
+  this.samples = samples;
+  this.progress = getMiddleSample(samples).progress;
+});
+var DEFAULT_PRECISION = 2;
+var getData = function getData2(_ref) {
+  var path3 = _ref.path, segments = _ref.segments, samples = _ref.samples, _ref$precision = _ref.precision, precision = _ref$precision === void 0 ? DEFAULT_PRECISION : _ref$precision;
+  path3 = convertPathToNode(path3);
+  if (samples > 1) samples--;
+  var pathLength = path3.getTotalLength(), totalSamples = segments * samples, allSamples = [], allSegments = [];
+  for (var sample = 0; sample <= totalSamples; sample++) {
+    var progress = sample / totalSamples;
+    var _path$getPointAtLengt = path3.getPointAtLength(progress * pathLength), x3 = _path$getPointAtLengt.x, y3 = _path$getPointAtLengt.y;
+    if (precision) {
+      x3 = +x3.toFixed(precision);
+      y3 = +y3.toFixed(precision);
+    }
+    allSamples.push(new Sample({
+      x: x3,
+      y: y3,
+      progress
+    }));
+  }
+  for (var segment = 0; segment < segments; segment++) {
+    var currentStart = segment * samples, nextStart = currentStart + samples, segmentSamples = [];
+    for (var samInSeg = 0; samInSeg < samples; samInSeg++) {
+      segmentSamples.push(allSamples[currentStart + samInSeg]);
+    }
+    segmentSamples.push(allSamples[nextStart]);
+    allSegments.push(new Segment({
+      samples: segmentSamples
+    }));
+  }
+  return allSegments;
+};
+var strokeToFill = function strokeToFill2(data, width, precision, pathClosed) {
+  var outlinedStrokes = outlineStrokes(data, width, precision), averagedSegmentJoins = averageSegmentJoins(outlinedStrokes, precision, pathClosed);
+  return averagedSegmentJoins;
+};
+var outlineStrokes = function outlineStrokes2(data, width, precision) {
+  var getPerpSamples = function getPerpSamples2(angle2, radius2, precision2, startPoint) {
+    var p02 = new Sample(_objectSpread2(_objectSpread2({}, startPoint), {}, {
+      x: Math.sin(angle2) * radius2 + startPoint.x,
+      y: -Math.cos(angle2) * radius2 + startPoint.y
+    })), p12 = new Sample(_objectSpread2(_objectSpread2({}, startPoint), {}, {
+      x: -Math.sin(angle2) * radius2 + startPoint.x,
+      y: Math.cos(angle2) * radius2 + startPoint.y
+    }));
+    if (precision2) {
+      p02.x = +p02.x.toFixed(precision2);
+      p02.y = +p02.y.toFixed(precision2);
+      p12.x = +p12.x.toFixed(precision2);
+      p12.y = +p12.y.toFixed(precision2);
+    }
+    return [p02, p12];
+  };
+  var radius = width / 2, outlinedData = [];
+  for (var i = 0; i < data.length; i++) {
+    var samples = data[i].samples, segmentSamples = [];
+    for (var j = 0; j < samples.length; j++) {
+      if (samples[j + 1] === void 0) break;
+      var p0 = samples[j], p1 = samples[j + 1], angle = Math.atan2(p1.y - p0.y, p1.x - p0.x), p0Perps = getPerpSamples(angle, radius, precision, p0), p1Perps = getPerpSamples(angle, radius, precision, p1);
+      if (j === 0) {
+        segmentSamples.push.apply(segmentSamples, _toConsumableArray(p0Perps));
+      }
+      segmentSamples.push.apply(segmentSamples, _toConsumableArray(p1Perps));
+    }
+    outlinedData.push(new Segment({
+      samples: [].concat(_toConsumableArray(segmentSamples.filter(function(s3, i2) {
+        return i2 % 2 === 0;
+      })), _toConsumableArray(segmentSamples.filter(function(s3, i2) {
+        return i2 % 2 === 1;
+      }).reverse()))
+    }));
+  }
+  return outlinedData;
+};
+var averageSegmentJoins = function averageSegmentJoins2(outlinedData, precision, pathClosed) {
+  var avg = function avg2(p0, p1) {
+    return {
+      x: (p0.x + p1.x) / 2,
+      y: (p0.y + p1.y) / 2
+    };
+  };
+  var combine = function combine2(segment, pos, avg2) {
+    return _objectSpread2(_objectSpread2({}, segment[pos]), {}, {
+      x: avg2.x,
+      y: avg2.y
+    });
+  };
+  var init_outlinedData = JSON.parse(JSON.stringify(outlinedData));
+  for (var i = 0; i < outlinedData.length; i++) {
+    var currentSamples = pathClosed ? outlinedData[i].samples : outlinedData[i + 1] ? outlinedData[i].samples : init_outlinedData[i].samples, nextSamples = pathClosed ? outlinedData[i + 1] ? outlinedData[i + 1].samples : outlinedData[0].samples : outlinedData[i + 1] ? outlinedData[i + 1].samples : init_outlinedData[0].samples, currentMiddle = currentSamples.length / 2, nextEnd = nextSamples.length - 1;
+    var p0Average = avg(currentSamples[currentMiddle - 1], nextSamples[0]), p1Average = avg(currentSamples[currentMiddle], nextSamples[nextEnd]);
+    if (precision) {
+      p0Average.x = +p0Average.x.toFixed(precision);
+      p0Average.y = +p0Average.y.toFixed(precision);
+      p1Average.x = +p1Average.x.toFixed(precision);
+      p1Average.y = +p1Average.y.toFixed(precision);
+    }
+    currentSamples[currentMiddle - 1] = new Sample(_objectSpread2({}, combine(currentSamples, currentMiddle - 1, p0Average)));
+    currentSamples[currentMiddle] = new Sample(_objectSpread2({}, combine(currentSamples, currentMiddle, p1Average)));
+    nextSamples[0] = new Sample(_objectSpread2({}, combine(nextSamples, 0, p0Average)));
+    nextSamples[nextEnd] = new Sample(_objectSpread2({}, combine(nextSamples, nextEnd, p1Average)));
+  }
+  return outlinedData;
+};
+var GradientPath = function() {
+  function GradientPath2(_ref) {
+    var path3 = _ref.path, segments = _ref.segments, samples = _ref.samples, _ref$precision = _ref.precision, precision = _ref$precision === void 0 ? DEFAULT_PRECISION : _ref$precision;
+    _classCallCheck(this, GradientPath2);
+    this.path = convertPathToNode(path3);
+    this.segments = segments;
+    this.samples = samples;
+    this.precision = precision;
+    this.pathClosed = this.path.nodeName == "path" ? this.path.getAttribute("d").match(/z/gi) : true;
+    this.renders = [];
+    this.svg = path3.closest("svg");
+    this.group = svgElem("g", {
+      class: "gradient-path"
+    });
+    this.data = getData({
+      path: path3,
+      segments,
+      samples,
+      precision
+    });
+    this.svg.appendChild(this.group);
+    this.path.parentNode.removeChild(this.path);
+  }
+  _createClass(GradientPath2, [{
+    key: "render",
+    value: function render(_ref2) {
+      var type2 = _ref2.type, stroke = _ref2.stroke, strokeWidth = _ref2.strokeWidth, fill = _ref2.fill, width = _ref2.width;
+      var renderCycle = {};
+      var elemGroup = svgElem("g", {
+        class: "element-".concat(type2)
+      });
+      this.group.appendChild(elemGroup);
+      renderCycle.group = elemGroup;
+      if (type2 === "path") {
+        renderCycle.data = width && fill ? strokeToFill(this.data, width, this.precision, this.pathClosed) : this.data;
+        for (var j = 0; j < renderCycle.data.length; j++) {
+          var _renderCycle$data$j = renderCycle.data[j], samples = _renderCycle$data$j.samples, progress = _renderCycle$data$j.progress;
+          elemGroup.appendChild(svgElem("path", _objectSpread2({
+            class: "path-segment",
+            d: segmentToD(samples)
+          }, styleAttrs(fill, stroke, strokeWidth, progress))));
+        }
+      } else if (type2 === "circle") {
+        renderCycle.data = this.data.flatMap(function(_ref3) {
+          var samples2 = _ref3.samples;
+          return samples2;
+        });
+        for (var _j = 0; _j < renderCycle.data.length; _j++) {
+          var _renderCycle$data$_j = renderCycle.data[_j], x3 = _renderCycle$data$_j.x, y3 = _renderCycle$data$_j.y, _progress = _renderCycle$data$_j.progress;
+          elemGroup.appendChild(svgElem("circle", _objectSpread2({
+            class: "circle-sample",
+            cx: x3,
+            cy: y3,
+            r: width / 2
+          }, styleAttrs(fill, stroke, strokeWidth, _progress))));
+        }
+      }
+      this.renders.push(renderCycle);
+      return this;
+    }
+  }]);
+  return GradientPath2;
+}();
 
 // node_modules/d3-sankey/node_modules/d3-array/src/ascending.js
 function ascending_default2(a3, b) {
@@ -12787,6 +14399,35 @@ function GaugeComponent__svg_text_4_Template(rf, ctx) {
     ɵɵtextInterpolate(ctx_r1.displayValue);
     ɵɵadvance(2);
     ɵɵtextInterpolate(ctx_r1.units);
+  }
+}
+var _c55 = ["circleEl"];
+function PercentGaugeComponent__svg_g_11_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵnamespaceSVG();
+    ɵɵelementStart(0, "g");
+    ɵɵelement(1, "rect");
+    ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    const tic_r2 = ctx.$implicit;
+    ɵɵattribute("transform", tic_r2.transform);
+    ɵɵadvance();
+    ɵɵattribute("y", -tic_r2.height / 2)("x", -tic_r2.width)("width", tic_r2.width)("height", tic_r2.height)("fill", tic_r2.fill);
+  }
+}
+function PercentGaugeComponent__svg_g_19_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵnamespaceSVG();
+    ɵɵelementStart(0, "g")(1, "text", 13);
+    ɵɵtext(2);
+    ɵɵelementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r2 = ɵɵnextContext();
+    ɵɵattribute("transform", ctx_r2.labelTransform);
+    ɵɵadvance(2);
+    ɵɵtextInterpolate1(" ", ctx_r2.label, " ");
   }
 }
 function SankeyComponent__svg_g_2_Template(rf, ctx) {
@@ -35140,6 +36781,343 @@ var GaugeComponent = class _GaugeComponent extends BaseChartComponent {
     }]
   });
 })();
+var PercentGaugeComponent = class _PercentGaugeComponent extends BaseChartComponent {
+  constructor() {
+    super(...arguments);
+    this.max = 100;
+    this.value = 0;
+    this.target = 75;
+    this.targetLabel = "Target";
+    this.showLabel = true;
+    this.defaultMargin = [20, 40, 20, 40];
+    this.margin = [20, 40, 20, 40];
+    this.ticks = [];
+  }
+  update() {
+    super.update();
+    this.margin = [...this.defaultMargin];
+    if (this.showLabel) {
+      this.margin[2] = 50;
+    }
+    this.dims = calculateViewDimensions({
+      width: this.width,
+      height: this.height,
+      margins: this.margin
+    });
+    this.percent = this.getPercentage();
+    this.ticHeight = Math.min(this.dims.width, this.dims.height) / 10;
+    this.radius = Math.min(this.dims.width, this.dims.height) / 2 - this.ticHeight / 2;
+    this.circumference = 2 * Math.PI * this.radius;
+    this.dashes = `${this.radius / 60} ${this.circumference / 60 - this.radius / 60}`;
+    this.valueFontSize = Math.floor(this.radius / 3);
+    this.targetRadius = this.radius / 4;
+    this.targetTextTransform = `translate(${-this.targetRadius / 2}, ${-this.targetRadius / 2}), scale(${this.targetRadius / 28})`;
+    this.valueDomain = this.getValueDomain();
+    this.displayValue = this.getDisplayValue();
+    this.setColors();
+    this.targetColor = this.colors.getColor(this.target / 100 * this.max);
+    const xOffset = this.margin[3] + this.dims.width / 2;
+    const yOffset = this.margin[0] + this.dims.height / 2;
+    this.transform = `translate(${xOffset}, ${yOffset})`;
+    this.labelTransform = `translate(0, ${this.height / 2 + this.radius + this.margin[0] + this.ticHeight / 2 - 3})`;
+    const angle = this.target / 100 * Math.PI * 2 - Math.PI / 2;
+    this.targetTransform = `translate(${this.radius * 0.97 * Math.cos(angle) + this.targetRadius / 2}, ${this.radius * 0.97 * Math.sin(angle) + this.targetRadius / 2})`;
+    this.generateticks();
+    this.cd.markForCheck();
+  }
+  generateticks() {
+    if (this.circleElement?.nativeElement) {
+      const clonedCircle = this.circleElement.nativeElement.cloneNode(true);
+      clonedCircle.setAttribute("stroke-width", this.radius / 5);
+      clonedCircle.setAttribute("r", this.radius);
+      this.circleElement.nativeElement.parentElement.appendChild(clonedCircle);
+      try {
+        const gp = new GradientPath({
+          path: clonedCircle,
+          segments: 60,
+          samples: 2,
+          precision: 2
+        });
+        clonedCircle.remove();
+        const data = gp.data.flatMap(({
+          samples
+        }) => samples);
+        this.ticks = [];
+        this.circleTransform = `rotate(-90,0,0)`;
+        for (let j = 0; j < data.length; j++) {
+          const {
+            x: x3,
+            y: y3
+          } = data[j];
+          let progress = data[j].progress;
+          if (progress === 1) {
+            progress = 0;
+          }
+          this.ticks.push({
+            height: this.ticHeight,
+            width: this.radius / 60,
+            fill: this.colors.getColor(progress * this.max),
+            transform: `translate(${x3}, ${y3}), rotate(${360 * progress - 90})`
+          });
+        }
+      } catch (e) {
+        console.log("Unable to generate ticks for percent gauge chart", e);
+      } finally {
+        clonedCircle.remove();
+      }
+    }
+  }
+  getValueDomain() {
+    return [0, this.max];
+  }
+  getDisplayValue() {
+    if (this.valueFormatting) {
+      return this.valueFormatting(this.value);
+    }
+    return this.percent + "%";
+  }
+  getPercentage() {
+    return Math.round(this.value / this.max * 100);
+  }
+  onClick() {
+    this.select.emit({
+      name: "Value",
+      value: this.value
+    });
+  }
+  setColors() {
+    this.colors = new ColorHelper(this.scheme, ScaleType.Linear, this.valueDomain, this.customColors);
+  }
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵPercentGaugeComponent_BaseFactory;
+      return function PercentGaugeComponent_Factory(__ngFactoryType__) {
+        return (ɵPercentGaugeComponent_BaseFactory || (ɵPercentGaugeComponent_BaseFactory = ɵɵgetInheritedFactory(_PercentGaugeComponent)))(__ngFactoryType__ || _PercentGaugeComponent);
+      };
+    })();
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _PercentGaugeComponent,
+      selectors: [["ngx-charts-percent-gauge"]],
+      viewQuery: function PercentGaugeComponent_Query(rf, ctx) {
+        if (rf & 1) {
+          ɵɵviewQuery(_c55, 5);
+        }
+        if (rf & 2) {
+          let _t;
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.circleElement = _t.first);
+        }
+      },
+      inputs: {
+        max: "max",
+        value: "value",
+        target: "target",
+        targetLabel: "targetLabel",
+        label: "label",
+        valueFormatting: "valueFormatting",
+        showLabel: "showLabel"
+      },
+      features: [ɵɵInheritDefinitionFeature],
+      decls: 20,
+      vars: 38,
+      consts: [["circleEl", ""], [3, "view", "showLegend", "animations"], [1, "percent-gauge", "chart", 3, "click"], ["id", "circleMask"], ["cx", "0", "cy", "0", "stroke", "white", "fill", "transparent", "transform", "rotate(-90,0,0)"], ["x", "0", "y", "0", "fill", "white", "stroke", "none", 1, "total"], ["cx", "0", "cy", "0", "fill", "none", 1, "dashes-back"], ["mask", "url(#circleMask)"], [4, "ngFor", "ngForOf"], [1, "target-circle"], ["transform", "translate(0, -4)", "stroke", "none", "text-anchor", "middle", 1, "target-label"], ["transform", "translate(0, 11)", "stroke", "none", "text-anchor", "middle", 1, "target-value"], [4, "ngIf"], ["x", "50%", "dominant-baseline", "middle", "text-anchor", "middle", "stroke", "none", 1, "gauge-label"]],
+      template: function PercentGaugeComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          const _r1 = ɵɵgetCurrentView();
+          ɵɵelementStart(0, "ngx-charts-chart", 1);
+          ɵɵnamespaceSVG();
+          ɵɵelementStart(1, "g", 2);
+          ɵɵlistener("click", function PercentGaugeComponent_Template_g_click_1_listener() {
+            ɵɵrestoreView(_r1);
+            return ɵɵresetView(ctx.onClick());
+          });
+          ɵɵelementStart(2, "g")(3, "mask", 3);
+          ɵɵelement(4, "circle", 4);
+          ɵɵelementEnd();
+          ɵɵelementStart(5, "text", 5);
+          ɵɵtext(6);
+          ɵɵelementEnd();
+          ɵɵelement(7, "circle", 6, 0);
+          ɵɵelementStart(9, "g", 7)(10, "g");
+          ɵɵtemplate(11, PercentGaugeComponent__svg_g_11_Template, 2, 6, "g", 8);
+          ɵɵelementEnd()();
+          ɵɵelementStart(12, "g");
+          ɵɵelement(13, "circle", 9);
+          ɵɵelementStart(14, "g")(15, "text", 10);
+          ɵɵtext(16);
+          ɵɵelementEnd();
+          ɵɵelementStart(17, "text", 11);
+          ɵɵtext(18);
+          ɵɵelementEnd()()()();
+          ɵɵtemplate(19, PercentGaugeComponent__svg_g_19_Template, 3, 2, "g", 12);
+          ɵɵelementEnd()();
+        }
+        if (rf & 2) {
+          ɵɵproperty("view", ɵɵpureFunction2(35, _c24, ctx.width, ctx.height))("showLegend", false)("animations", ctx.animations);
+          ɵɵadvance(2);
+          ɵɵattribute("transform", ctx.transform);
+          ɵɵadvance(2);
+          ɵɵstyleProp("stroke-width", ctx.radius / 5)("stroke-dashoffset", ctx.circumference * (1 - ctx.percent / 100));
+          ɵɵattribute("r", ctx.radius)("stroke-dasharray", ctx.circumference);
+          ɵɵadvance();
+          ɵɵstyleProp("font-size", ctx.valueFontSize);
+          ɵɵadvance();
+          ɵɵtextInterpolate1(" ", ctx.displayValue, " ");
+          ɵɵadvance();
+          ɵɵstyleProp("stroke-width", ctx.radius / 5)("stroke-dasharray", ctx.dashes);
+          ɵɵattribute("r", ctx.radius);
+          ɵɵadvance(3);
+          ɵɵattribute("transform", ctx.circleTransform);
+          ɵɵadvance();
+          ɵɵproperty("ngForOf", ctx.ticks);
+          ɵɵadvance();
+          ɵɵattribute("transform", ctx.targetTransform);
+          ɵɵadvance();
+          ɵɵstyleProp("stroke-width", ctx.targetRadius / 10);
+          ɵɵattribute("r", ctx.targetRadius)("stroke", ctx.targetColor)("cx", -ctx.targetRadius / 2)("cy", -ctx.targetRadius / 2);
+          ɵɵadvance();
+          ɵɵattribute("transform", ctx.targetTextTransform);
+          ɵɵadvance();
+          ɵɵstyleProp("font-size", 12);
+          ɵɵadvance();
+          ɵɵtextInterpolate1(" ", ctx.targetLabel, " ");
+          ɵɵadvance();
+          ɵɵstyleProp("font-size", 14);
+          ɵɵadvance();
+          ɵɵtextInterpolate1(" ", ctx.target, "% ");
+          ɵɵadvance();
+          ɵɵproperty("ngIf", ctx.showLabel);
+        }
+      },
+      dependencies: [NgForOf, NgIf, ChartComponent],
+      styles: [_c25, ".percent-gauge{cursor:pointer}.percent-gauge text{text-anchor:middle}.percent-gauge .dashes-back{stroke:#455066}.percent-gauge .target-circle{fill:#1b1e27}.percent-gauge .target-label{fill:#a0aabe}.percent-gauge .target-value{fill:#cdd2dd}.percent-gauge .total{dominant-baseline:middle}.percent-gauge .label{display:block;text-anchor:middle}\n"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PercentGaugeComponent, [{
+    type: Component,
+    args: [{
+      selector: "ngx-charts-percent-gauge",
+      template: `
+    <ngx-charts-chart [view]="[width, height]" [showLegend]="false" [animations]="animations">
+      <svg:g class="percent-gauge chart" (click)="onClick()">
+        <svg:g [attr.transform]="transform">
+          <mask id="circleMask">
+            <circle
+              [attr.r]="radius"
+              [style.stroke-width]="radius / 5"
+              cx="0"
+              cy="0"
+              stroke="white"
+              fill="transparent"
+              [attr.stroke-dasharray]="circumference"
+              transform="rotate(-90,0,0)"
+              [style.stroke-dashoffset]="circumference * (1 - percent / 100)"
+            />
+          </mask>
+          <text x="0" y="0" fill="white" stroke="none" class="total" [style.font-size]="valueFontSize">
+            {{ displayValue }}
+          </text>
+          <circle
+            #circleEl
+            class="dashes-back"
+            [style.stroke-width]="radius / 5"
+            [attr.r]="radius"
+            cx="0"
+            cy="0"
+            fill="none"
+            [style.stroke-dasharray]="dashes"
+          />
+
+          <svg:g mask="url(#circleMask)">
+            <svg:g [attr.transform]="circleTransform">
+              <svg:g *ngFor="let tic of ticks" [attr.transform]="tic.transform">
+                <rect
+                  [attr.y]="-tic.height / 2"
+                  [attr.x]="-tic.width"
+                  [attr.width]="tic.width"
+                  [attr.height]="tic.height"
+                  [attr.fill]="tic.fill"
+                />
+              </svg:g>
+            </svg:g>
+          </svg:g>
+
+          <svg:g [attr.transform]="targetTransform">
+            <circle
+              class="target-circle"
+              [attr.r]="targetRadius"
+              [style.stroke-width]="targetRadius / 10"
+              [attr.stroke]="targetColor"
+              [attr.cx]="-targetRadius / 2"
+              [attr.cy]="-targetRadius / 2"
+            />
+            <svg:g [attr.transform]="targetTextTransform">
+              <text
+                transform="translate(0, -4)"
+                class="target-label"
+                stroke="none"
+                text-anchor="middle"
+                [style.font-size]="12"
+              >
+                {{ targetLabel }}
+              </text>
+              <text
+                transform="translate(0, 11)"
+                class="target-value"
+                stroke="none"
+                text-anchor="middle"
+                [style.font-size]="14"
+              >
+                {{ target }}%
+              </text>
+            </svg:g>
+          </svg:g>
+        </svg:g>
+        <svg:g *ngIf="showLabel" [attr.transform]="labelTransform">
+          <text class="gauge-label" x="50%" dominant-baseline="middle" text-anchor="middle" stroke="none">
+            {{ label }}
+          </text>
+        </svg:g>
+      </svg:g>
+    </ngx-charts-chart>
+  `,
+      encapsulation: ViewEncapsulation$1.None,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      styles: [".ngx-charts-outer{animation:chartFadeIn linear .6s}@keyframes chartFadeIn{0%{opacity:0}20%{opacity:0}to{opacity:1}}.ngx-charts{float:left;overflow:visible}.ngx-charts .circle,.ngx-charts .cell,.ngx-charts .bar,.ngx-charts .node,.ngx-charts .link,.ngx-charts .arc{cursor:pointer}.ngx-charts .bar.active,.ngx-charts .bar:hover,.ngx-charts .cell.active,.ngx-charts .cell:hover,.ngx-charts .arc.active,.ngx-charts .arc:hover,.ngx-charts .node.active,.ngx-charts .node:hover,.ngx-charts .link.active,.ngx-charts .link:hover,.ngx-charts .card.active,.ngx-charts .card:hover{opacity:.8;transition:opacity .1s ease-in-out}.ngx-charts .bar:focus,.ngx-charts .cell:focus,.ngx-charts .arc:focus,.ngx-charts .node:focus,.ngx-charts .link:focus,.ngx-charts .card:focus{outline:none}.ngx-charts .bar.hidden,.ngx-charts .cell.hidden,.ngx-charts .arc.hidden,.ngx-charts .node.hidden,.ngx-charts .link.hidden,.ngx-charts .card.hidden{display:none}.ngx-charts g:focus{outline:none}.ngx-charts .line-series.inactive,.ngx-charts .line-series-range.inactive,.ngx-charts .polar-series-path.inactive,.ngx-charts .polar-series-area.inactive,.ngx-charts .area-series.inactive{transition:opacity .1s ease-in-out;opacity:.2}.ngx-charts .line-highlight{display:none}.ngx-charts .line-highlight.active{display:block}.ngx-charts .area{opacity:.6}.ngx-charts .circle:hover{cursor:pointer}.ngx-charts .label{font-size:12px;font-weight:400}.ngx-charts .tooltip-anchor{fill:#000}.ngx-charts .gridline-path{stroke:#ddd;stroke-width:1;fill:none}.ngx-charts .refline-path{stroke:#a8b2c7;stroke-width:1;stroke-dasharray:5;stroke-dashoffset:5}.ngx-charts .refline-label{font-size:9px}.ngx-charts .reference-area{fill-opacity:.05;fill:#000}.ngx-charts .gridline-path-dotted{stroke:#ddd;stroke-width:1;fill:none;stroke-dasharray:1,20;stroke-dashoffset:3}.ngx-charts .grid-panel rect{fill:none}.ngx-charts .grid-panel.odd rect{fill:#0000000d}\n", ".percent-gauge{cursor:pointer}.percent-gauge text{text-anchor:middle}.percent-gauge .dashes-back{stroke:#455066}.percent-gauge .target-circle{fill:#1b1e27}.percent-gauge .target-label{fill:#a0aabe}.percent-gauge .target-value{fill:#cdd2dd}.percent-gauge .total{dominant-baseline:middle}.percent-gauge .label{display:block;text-anchor:middle}\n"]
+    }]
+  }], null, {
+    max: [{
+      type: Input
+    }],
+    value: [{
+      type: Input
+    }],
+    target: [{
+      type: Input
+    }],
+    targetLabel: [{
+      type: Input
+    }],
+    label: [{
+      type: Input
+    }],
+    valueFormatting: [{
+      type: Input
+    }],
+    showLabel: [{
+      type: Input
+    }],
+    circleElement: [{
+      type: ViewChild,
+      args: ["circleEl"]
+    }]
+  });
+})();
 var GaugeModule = class _GaugeModule {
   static {
     this.ɵfac = function GaugeModule_Factory(__ngFactoryType__) {
@@ -35149,9 +37127,9 @@ var GaugeModule = class _GaugeModule {
   static {
     this.ɵmod = ɵɵdefineNgModule({
       type: _GaugeModule,
-      declarations: [LinearGaugeComponent, GaugeComponent, GaugeArcComponent, GaugeAxisComponent],
+      declarations: [LinearGaugeComponent, GaugeComponent, GaugeArcComponent, GaugeAxisComponent, PercentGaugeComponent],
       imports: [ChartCommonModule, PieChartModule, BarChartModule],
-      exports: [LinearGaugeComponent, GaugeComponent, GaugeArcComponent, GaugeAxisComponent]
+      exports: [LinearGaugeComponent, GaugeComponent, GaugeArcComponent, GaugeAxisComponent, PercentGaugeComponent]
     });
   }
   static {
@@ -35165,8 +37143,8 @@ var GaugeModule = class _GaugeModule {
     type: NgModule,
     args: [{
       imports: [ChartCommonModule, PieChartModule, BarChartModule],
-      declarations: [LinearGaugeComponent, GaugeComponent, GaugeArcComponent, GaugeAxisComponent],
-      exports: [LinearGaugeComponent, GaugeComponent, GaugeArcComponent, GaugeAxisComponent]
+      declarations: [LinearGaugeComponent, GaugeComponent, GaugeArcComponent, GaugeAxisComponent, PercentGaugeComponent],
+      exports: [LinearGaugeComponent, GaugeComponent, GaugeArcComponent, GaugeAxisComponent, PercentGaugeComponent]
     }]
   }], null, null);
 })();
@@ -35587,6 +37565,7 @@ export {
   NumberCardComponent,
   NumberCardModule,
   Orientation,
+  PercentGaugeComponent,
   PieArcComponent,
   PieChartComponent,
   PieChartModule,

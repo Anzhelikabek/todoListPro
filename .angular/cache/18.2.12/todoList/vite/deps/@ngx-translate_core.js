@@ -122,7 +122,7 @@ function isDefined(value) {
   return typeof value !== "undefined" && value !== null;
 }
 function isDict(value) {
-  return isObject(value) && !isArray(value);
+  return isObject(value) && !isArray(value) && value !== null;
 }
 function isObject(value) {
   return typeof value === "object";
@@ -295,7 +295,7 @@ var TranslateStore = class {
    */
   onDefaultLangChange = new EventEmitter();
 };
-var ISOALTE_TRANSLATE_SERVICE = new InjectionToken("ISOALTE_TRANSLATE_SERVICE");
+var ISOLATE_TRANSLATE_SERVICE = new InjectionToken("ISOLATE_TRANSLATE_SERVICE");
 var USE_DEFAULT_LANG = new InjectionToken("USE_DEFAULT_LANG");
 var DEFAULT_LANGUAGE = new InjectionToken("DEFAULT_LANGUAGE");
 var USE_EXTEND = new InjectionToken("USE_EXTEND");
@@ -309,17 +309,9 @@ var TranslateService = class _TranslateService {
   parser;
   missingTranslationHandler;
   useDefaultLang;
-  isolate;
   extend;
   loadingTranslations;
   pending = false;
-  _onTranslationChange = new EventEmitter();
-  _onLangChange = new EventEmitter();
-  _onDefaultLangChange = new EventEmitter();
-  _defaultLang;
-  _currentLang;
-  _langs = [];
-  _translations = {};
   _translationRequests = {};
   lastUseLanguage = null;
   /**
@@ -329,7 +321,7 @@ var TranslateService = class _TranslateService {
      * });
    */
   get onTranslationChange() {
-    return this.isolate ? this._onTranslationChange : this.store.onTranslationChange;
+    return this.store.onTranslationChange;
   }
   /**
    * An EventEmitter to listen to lang change events
@@ -338,7 +330,7 @@ var TranslateService = class _TranslateService {
      * });
    */
   get onLangChange() {
-    return this.isolate ? this._onLangChange : this.store.onLangChange;
+    return this.store.onLangChange;
   }
   /**
    * An EventEmitter to listen to default lang change events
@@ -347,59 +339,43 @@ var TranslateService = class _TranslateService {
      * });
    */
   get onDefaultLangChange() {
-    return this.isolate ? this._onDefaultLangChange : this.store.onDefaultLangChange;
+    return this.store.onDefaultLangChange;
   }
   /**
    * The default lang to fallback when translations are missing on the current lang
    */
   get defaultLang() {
-    return this.isolate ? this._defaultLang : this.store.defaultLang;
+    return this.store.defaultLang;
   }
   set defaultLang(defaultLang) {
-    if (this.isolate) {
-      this._defaultLang = defaultLang;
-    } else {
-      this.store.defaultLang = defaultLang;
-    }
+    this.store.defaultLang = defaultLang;
   }
   /**
    * The lang currently used
    */
   get currentLang() {
-    return this.isolate ? this._currentLang : this.store.currentLang;
+    return this.store.currentLang;
   }
   set currentLang(currentLang) {
-    if (this.isolate) {
-      this._currentLang = currentLang;
-    } else {
-      this.store.currentLang = currentLang;
-    }
+    this.store.currentLang = currentLang;
   }
   /**
    * an array of langs
    */
   get langs() {
-    return this.isolate ? this._langs : this.store.langs;
+    return this.store.langs;
   }
   set langs(langs) {
-    if (this.isolate) {
-      this._langs = langs;
-    } else {
-      this.store.langs = langs;
-    }
+    this.store.langs = langs;
   }
   /**
    * a list of translations per lang
    */
   get translations() {
-    return this.isolate ? this._translations : this.store.translations;
+    return this.store.translations;
   }
   set translations(translations) {
-    if (this.isolate) {
-      this._translations = translations;
-    } else {
-      this.store.translations = translations;
-    }
+    this.store.translations = translations;
   }
   /**
    *
@@ -420,8 +396,10 @@ var TranslateService = class _TranslateService {
     this.parser = parser;
     this.missingTranslationHandler = missingTranslationHandler;
     this.useDefaultLang = useDefaultLang;
-    this.isolate = isolate;
     this.extend = extend;
+    if (isolate) {
+      this.store = new TranslateStore();
+    }
     if (defaultLanguage) {
       this.setDefaultLang(defaultLanguage);
     }
@@ -554,11 +532,10 @@ var TranslateService = class _TranslateService {
    * Add available languages
    */
   addLangs(langs) {
-    langs.forEach((lang) => {
-      if (this.langs.indexOf(lang) === -1) {
-        this.langs.push(lang);
-      }
-    });
+    const newLangs = langs.filter((lang) => !this.langs.includes(lang));
+    if (newLangs.length > 0) {
+      this.langs = [...this.langs, ...newLangs];
+    }
   }
   /**
    * Update the list of available languages
@@ -592,7 +569,10 @@ var TranslateService = class _TranslateService {
     } else if (isDict(translations)) {
       const result = {};
       for (const key in translations) {
-        result[key] = this.runInterpolation(translations[key], interpolateParams);
+        const res = this.runInterpolation(translations[key], interpolateParams);
+        if (res !== void 0) {
+          result[key] = res;
+        }
       }
       return result;
     } else {
@@ -743,7 +723,7 @@ var TranslateService = class _TranslateService {
     return window.navigator.languages ? window.navigator.languages[0] : window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
   }
   static ɵfac = function TranslateService_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _TranslateService)(ɵɵinject(TranslateStore), ɵɵinject(TranslateLoader), ɵɵinject(TranslateCompiler), ɵɵinject(TranslateParser), ɵɵinject(MissingTranslationHandler), ɵɵinject(USE_DEFAULT_LANG), ɵɵinject(ISOALTE_TRANSLATE_SERVICE), ɵɵinject(USE_EXTEND), ɵɵinject(DEFAULT_LANGUAGE));
+    return new (__ngFactoryType__ || _TranslateService)(ɵɵinject(TranslateStore), ɵɵinject(TranslateLoader), ɵɵinject(TranslateCompiler), ɵɵinject(TranslateParser), ɵɵinject(MissingTranslationHandler), ɵɵinject(USE_DEFAULT_LANG), ɵɵinject(ISOLATE_TRANSLATE_SERVICE), ɵɵinject(USE_EXTEND), ɵɵinject(DEFAULT_LANGUAGE));
   };
   static ɵprov = ɵɵdefineInjectable({
     token: _TranslateService,
@@ -777,7 +757,7 @@ var TranslateService = class _TranslateService {
     type: void 0,
     decorators: [{
       type: Inject,
-      args: [ISOALTE_TRANSLATE_SERVICE]
+      args: [ISOLATE_TRANSLATE_SERVICE]
     }]
   }, {
     type: void 0,
@@ -1110,7 +1090,7 @@ var provideTranslateService = (config = {}) => {
     provide: MissingTranslationHandler,
     useClass: FakeMissingTranslationHandler
   }, TranslateStore, {
-    provide: ISOALTE_TRANSLATE_SERVICE,
+    provide: ISOLATE_TRANSLATE_SERVICE,
     useValue: config.isolate
   }, {
     provide: USE_DEFAULT_LANG,
@@ -1143,7 +1123,7 @@ var TranslateModule = class _TranslateModule {
         provide: MissingTranslationHandler,
         useClass: FakeMissingTranslationHandler
       }, TranslateStore, {
-        provide: ISOALTE_TRANSLATE_SERVICE,
+        provide: ISOLATE_TRANSLATE_SERVICE,
         useValue: config.isolate
       }, {
         provide: USE_DEFAULT_LANG,
@@ -1158,7 +1138,7 @@ var TranslateModule = class _TranslateModule {
     };
   }
   /**
-   * Use this method in your other (non root) modules to import the directive/pipe
+   * Use this method in your other (non-root) modules to import the directive/pipe
    */
   static forChild(config = {}) {
     return {
@@ -1176,7 +1156,7 @@ var TranslateModule = class _TranslateModule {
         provide: MissingTranslationHandler,
         useClass: FakeMissingTranslationHandler
       }, {
-        provide: ISOALTE_TRANSLATE_SERVICE,
+        provide: ISOLATE_TRANSLATE_SERVICE,
         useValue: config.isolate
       }, {
         provide: USE_DEFAULT_LANG,
@@ -1212,7 +1192,7 @@ var TranslateModule = class _TranslateModule {
 export {
   DEFAULT_LANGUAGE,
   FakeMissingTranslationHandler,
-  ISOALTE_TRANSLATE_SERVICE,
+  ISOLATE_TRANSLATE_SERVICE,
   MissingTranslationHandler,
   TranslateCompiler,
   TranslateDefaultParser,

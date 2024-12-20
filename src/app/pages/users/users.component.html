@@ -3,6 +3,14 @@
     <p-toolbar styleClass="mb-4">
         <ng-template pTemplate="right">
             <div class="my-2 buttons">
+                <p-fileUpload
+                    #fileUpload
+                    mode="basic"
+                    name="file"
+                    accept=".xlsx"
+                    [chooseLabel]="'importExcel' | translate"
+                    (onSelect)="importUsers($event, fileUpload)">
+                </p-fileUpload>
                 <button *ngIf="isAdmin" pButton pRipple [label]="'create' | translate" icon="pi pi-plus"
                         class="p-button-success mr-2"
                         (click)="openNew()"></button>

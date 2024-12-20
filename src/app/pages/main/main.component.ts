@@ -1,14 +1,14 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ToastModule} from 'primeng/toast';
-import {Button, ButtonDirective} from 'primeng/button';
+import {Button, ButtonDirective, ButtonModule} from 'primeng/button';
 import {MessageService} from 'primeng/api';
 import {TableModule} from 'primeng/table';
 import {ToolbarModule} from 'primeng/toolbar';
 import {Ripple} from 'primeng/ripple';
 import {DialogModule} from 'primeng/dialog';
-import {FormsModule} from '@angular/forms';
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
-import {NgClass, NgIf} from '@angular/common';
+import {NgClass, NgIf, NgStyle} from '@angular/common';
 import {DropdownModule} from 'primeng/dropdown';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {AuthService} from '../../services/auth.service';
@@ -25,15 +25,21 @@ import {User} from "../../interfaces/user";
 import * as XLSX from 'xlsx';
 import {SharedStateService} from "../../services/shared-state.service";
 import {v4 as uuidv4} from 'uuid'; // Импорт функции для генерации UUID
-
 import {FileUploadModule} from "primeng/fileupload";
 import {AuditTrailService} from "../../services/audit-trail.service";
 import {TranslatePipe, TranslateService} from "@ngx-translate/core";
+import {ChatComponent} from "../../components/chat/chat.component";
+import {CalendarModule} from "primeng/calendar";
+import {Language} from "../../interfaces/language";
+import {TooltipModule} from "primeng/tooltip";
+import {CalendarComponent} from "../../components/calendar/calendar.component";
 
 @Component({
     selector: 'app-main',
     standalone: true,
     imports: [
+        ButtonModule,
+        TooltipModule,
         ToastModule,
         ButtonDirective,
         ToolbarModule,
@@ -57,11 +63,16 @@ import {TranslatePipe, TranslateService} from "@ngx-translate/core";
         DashboardComponent,
         FileUploadModule,
         TranslatePipe,
+        ChatComponent,
+        CalendarModule,
+        ReactiveFormsModule,
+        NgStyle,
+        CalendarComponent,
     ],
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss'],
 })
-export class MainComponent {
+export class MainComponent implements OnInit{
     userEmail: string | null = '';
     displayModal: boolean = false;
     currentUser: any = ''
@@ -69,8 +80,9 @@ export class MainComponent {
     sidebarVisible2: boolean = false;
     selectedFile: File | null = null; // Хранение выбранного файла
     isDarkTheme = false; // начальное значение светлой темы
-    selectedLanguage = 'ru';
-    currentLang: string;
+    languages: Language[] = [];
+    selectedLanguage: Language | null = null;
+
 
     constructor(
         private translate: TranslateService,
@@ -80,15 +92,6 @@ export class MainComponent {
         private auditTrailService: AuditTrailService,
         private router: Router
     ) {
-        this.currentLang =  localStorage.getItem('language') || 'ru'; // Получаем язык из localStorage или используем 'ru' по умолчанию
-        translate.addLangs(['ru', 'kg', 'en']);
-        translate.setDefaultLang(this.currentLang);
-        translate.use(this.currentLang);
-    }
-    switchLanguage(lang: string) {
-        this.currentLang = lang;
-        this.translate.use(lang); // Переключаем язык
-        localStorage.setItem('language', lang); // Сохраняем выбранный язык в localStorage
     }
     ngOnInit(): void {
         const email = localStorage.getItem('userEmail'); // Получаем email из localStorage
@@ -106,9 +109,33 @@ export class MainComponent {
             this.isDarkTheme = false;
         }
         this.applyTheme();
+        this.initializeLanguages();
     }
-    setLanguage(lang: string) {
-        this.selectedLanguage = lang;
+
+    private initializeLanguages() {
+        // Инициализация языков
+        this.languages = [
+            { label: 'Русский', code: 'ru' },
+            { label: 'Кыргыз тили', code: 'ky' },
+            { label: 'English', code: 'en' }
+        ];
+
+        // Получаем текущий язык из localStorage или используем 'ru' по умолчанию
+        const currentLangCode = localStorage.getItem('language') || 'ru';
+
+        // Устанавливаем текущий язык в TranslateService
+        this.translate.addLangs(this.languages.map(lang => lang.code));
+        this.translate.setDefaultLang(currentLangCode);
+        this.translate.use(currentLangCode);
+
+        // Устанавливаем выбранный язык в выпадающем списке
+        this.selectedLanguage = this.languages.find(lang => lang.code === currentLangCode) || null;
+    }
+
+    onLanguageChange(selectedLang: Language) {
+        const langCode = selectedLang.code; // Получаем код языка
+        this.translate.use(langCode); // Переключаем язык
+        localStorage.setItem('language', langCode); // Сохраняем язык в localStorage
     }
 
     toggleTheme() {
@@ -125,7 +152,6 @@ export class MainComponent {
         } else {
             document.body.classList.add('light-theme');
             document.body.classList.remove('dark-theme');
-            console.log(document.body, "light-theme")
         }
     }
 
@@ -171,97 +197,6 @@ export class MainComponent {
             this.messageService.add({severity: 'error', summary: 'Ошибка', detail: 'Выберите CSV-файл'});
             this.selectedFile = null;
         }
-    }
-
-    importUsers(event: any, fileUpload: any): void {
-        const file = event.files[0]; // Получаем первый файл из массива files
-
-        if (!file) {
-            this.messageService.add({severity: 'error', summary: 'Ошибка', detail: 'Файл не выбран'});
-            return;
-        }
-
-        const reader = new FileReader();
-
-        reader.onload = (e: any) => {
-            const binaryData = e.target.result;
-            const workbook = XLSX.read(binaryData, {type: 'binary'});
-
-            // Читаем данные с первого листа
-            const sheetName = workbook.SheetNames[0];
-            const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-            console.log('Импортированные данные:', data);
-
-            // Вызов метода для валидации и сохранения данных
-            this.validateAndSaveUsers(data as User[]);
-            fileUpload.clear();
-        };
-
-        reader.onerror = () => {
-            this.messageService.add({severity: 'error', summary: 'Ошибка', detail: 'Не удалось прочитать файл'});
-        };
-
-        reader.readAsBinaryString(file);
-    }
-
-
-    validateAndSaveUsers(users: Partial<User>[]): void {
-        // Обогащаем пользователей автоматически генерируемыми данными
-        const enrichedUsers = users.map((user) => ({
-            ...user,
-            id: uuidv4(), // Генерация уникального UUID
-            code: Math.floor(1000 + Math.random() * 9000), // Случайный 4-значный код
-            dateAdded: new Date().toISOString().split('T')[0], // Текущая дата в формате YYYY-MM-DD
-            phoneNumber: user.phoneNumber ? user.phoneNumber.toString() : '',
-        }));
-
-        // Проверяем корректность данных
-        const invalidUsers = enrichedUsers.filter(
-            (user) =>
-                !user.email || // Проверка на наличие email
-                !this.isValidEmail(user.email) || // Проверка формата email
-                !user.firstName || // Проверка на наличие имени
-                !user.lastName    // Проверка на наличие фамилии
-        );
-
-        if (invalidUsers.length > 0) {
-            this.messageService.add({
-                severity: 'error',
-                summary: 'Ошибка',
-                detail: `Некорректные данные у ${invalidUsers.length} пользователей`,
-            });
-            console.warn('Некорректные пользователи:', invalidUsers);
-            return;
-        }
-
-        // Получаем текущий список пользователей
-        const existingUsers = this.sharedStateService['usersSubject'].getValue();
-
-        // Обновляем общий список пользователей
-        const updatedUsers = [...existingUsers, ...enrichedUsers];
-        this.sharedStateService.setUsers(updatedUsers); // Вызов метода setUsers для обновления состояния
-
-        // Уведомление об успешном импорте
-        this.messageService.add({severity: 'success', summary: 'Успешно', detail: 'Пользователи импортированы'});
-
-        // Добавляем запись в аудит
-        this.auditTrailService.addAuditRecord({
-            id: this.sharedStateService.generateId(), // Уникальный ID записи
-            timestamp: new Date(), // Время действия
-            action: 'Импорт', // Действие
-            entity: 'Пользователи', // Сущность
-            entityId: `Импортировано ${enrichedUsers.length} пользователей`, // Идентификатор (например, описание импорта)
-            performedBy: localStorage.getItem('userEmail') || 'Неизвестный', // Пользователь, выполняющий импорт
-            details: `${enrichedUsers.length} пользователей добавлено в систему.`, // Подробности действия
-        }).subscribe(() => {
-            console.log('Запись аудита успешно добавлена.');
-        });
-    }
-
-
-    isValidEmail(email: string): boolean {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
     }
 
     isDuplicateId(id: string): boolean {

@@ -1,53 +1,53 @@
 import {
-  PlusIcon
-} from "./chunk-4PMGBFIM.js";
-import {
   InputNumber,
   InputNumberModule,
   Paginator,
   PaginatorModule
-} from "./chunk-6OCSUQVQ.js";
+} from "./chunk-2CAEONCM.js";
 import {
-  InputText,
-  InputTextModule
-} from "./chunk-HX55BNGW.js";
+  Calendar,
+  CalendarModule
+} from "./chunk-YP3ABMKW.js";
+import "./chunk-OO4FDG4G.js";
 import {
   Dropdown,
   DropdownModule,
   Scroller,
   ScrollerModule
-} from "./chunk-Y3RCSHMP.js";
-import "./chunk-MZYYLRIU.js";
+} from "./chunk-IQHQLIUA.js";
+import "./chunk-DZF2MTN6.js";
+import "./chunk-LQG4QGPE.js";
+import {
+  PlusIcon
+} from "./chunk-WS7AFFPW.js";
 import {
   CheckIcon
-} from "./chunk-O26RC2JS.js";
-import {
-  Calendar,
-  CalendarModule
-} from "./chunk-CBLTSICQ.js";
-import "./chunk-UOMVQ7AR.js";
-import "./chunk-2FXVZ5N2.js";
+} from "./chunk-GG74TZ4D.js";
 import {
   TimesIcon
-} from "./chunk-GVGJQXV6.js";
+} from "./chunk-3LNWY6SJ.js";
+import {
+  InputText,
+  InputTextModule
+} from "./chunk-6QGNX6VT.js";
 import {
   ButtonDirective,
   ButtonModule
-} from "./chunk-5QBXOZ4R.js";
+} from "./chunk-FJRISX2D.js";
 import {
   SpinnerIcon
-} from "./chunk-RHO2FWFI.js";
+} from "./chunk-OKEL6OKV.js";
 import {
   Ripple,
   RippleModule
-} from "./chunk-UJKIGXTY.js";
+} from "./chunk-SMCPN7ER.js";
 import {
   AutoFocus,
   AutoFocusModule
 } from "./chunk-EX6TMLQX.js";
 import {
   BaseIcon
-} from "./chunk-2UORLY3V.js";
+} from "./chunk-EUEDRJOA.js";
 import {
   ConnectedOverlayScrollHandler,
   DomHandler
@@ -64,7 +64,7 @@ import {
   TranslationKeys,
   UniqueComponentId,
   zindexutils
-} from "./chunk-EBWD4N7J.js";
+} from "./chunk-ZBUO6BYL.js";
 import {
   animate,
   style,
@@ -72,15 +72,15 @@ import {
   trigger
 } from "./chunk-FNRGZDKO.js";
 import {
-  DomSanitizer
-} from "./chunk-YGY6YGW5.js";
-import "./chunk-IABO2K34.js";
-import {
   FormsModule,
   NG_VALUE_ACCESSOR,
   NgControlStatus,
   NgModel
 } from "./chunk-45QHWVG5.js";
+import {
+  DomSanitizer
+} from "./chunk-YGY6YGW5.js";
+import "./chunk-IABO2K34.js";
 import {
   CommonModule,
   DOCUMENT,
@@ -3435,7 +3435,7 @@ function ColumnFilterFormElement_ng_container_0_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext();
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r0.filterTemplate)("ngTemplateOutletContext", ɵɵpureFunctionV(2, _c36, [ctx_r0.filterConstraint.value, ctx_r0.filterCallback, ctx_r0.type, ctx_r0.field, ctx_r0.filterConstraint, ctx_r0.placeholder, ctx_r0.minFractionDigits, ctx_r0.maxFractionDigits, ctx_r0.prefix, ctx_r0.suffix, ctx_r0.locale, ctx_r0.localeMatcher, ctx_r0.currency, ctx_r0.currencyDisplay, ctx_r0.useGrouping, ctx_r0.showButtons]));
+    ɵɵproperty("ngTemplateOutlet", ctx_r0.filterTemplate)("ngTemplateOutletContext", ɵɵpureFunctionV(2, _c36, [ctx_r0.filterConstraint == null ? null : ctx_r0.filterConstraint.value, ctx_r0.filterCallback, ctx_r0.type, ctx_r0.field, ctx_r0.filterConstraint, ctx_r0.placeholder, ctx_r0.minFractionDigits, ctx_r0.maxFractionDigits, ctx_r0.prefix, ctx_r0.suffix, ctx_r0.locale, ctx_r0.localeMatcher, ctx_r0.currency, ctx_r0.currencyDisplay, ctx_r0.useGrouping, ctx_r0.showButtons]));
   }
 }
 function ColumnFilterFormElement_ng_template_1_input_1_Template(rf, ctx) {
@@ -5512,7 +5512,7 @@ var Table = class _Table {
   }
   onColumnResizeBegin(event) {
     let containerLeft = DomHandler.getOffset(this.containerViewChild?.nativeElement).left;
-    this.resizeColumnElement = event.target.parentElement;
+    this.resizeColumnElement = event.target.closest("th");
     this.columnResizing = true;
     if (event.type == "touchstart") {
       this.lastResizerHelperX = event.changedTouches[0].clientX - containerLeft + this.containerViewChild?.nativeElement.scrollLeft;
@@ -5535,20 +5535,21 @@ var Table = class _Table {
     this.resizeHelperViewChild.nativeElement.style.display = "block";
   }
   onColumnResizeEnd() {
-    let delta = this.resizeHelperViewChild?.nativeElement.offsetLeft - this.lastResizerHelperX;
-    let columnWidth = this.resizeColumnElement.offsetWidth;
-    let newColumnWidth = columnWidth + delta;
-    let minWidth = this.resizeColumnElement.style.minWidth.replace(/[^\d.]/g, "") || 15;
+    const delta = this.resizeHelperViewChild?.nativeElement.offsetLeft - this.lastResizerHelperX;
+    const columnWidth = this.resizeColumnElement.offsetWidth;
+    const newColumnWidth = columnWidth + delta;
+    const elementMinWidth = this.resizeColumnElement.style.minWidth.replace(/[^\d.]/g, "");
+    const minWidth = elementMinWidth ? parseFloat(elementMinWidth) : 15;
     if (newColumnWidth >= minWidth) {
       if (this.columnResizeMode === "fit") {
-        let nextColumn = this.resizeColumnElement.nextElementSibling;
-        let nextColumnWidth = nextColumn.offsetWidth - delta;
+        const nextColumn = this.resizeColumnElement.nextElementSibling;
+        const nextColumnWidth = nextColumn.offsetWidth - delta;
         if (newColumnWidth > 15 && nextColumnWidth > 15) {
           this.resizeTableCells(newColumnWidth, nextColumnWidth);
         }
       } else if (this.columnResizeMode === "expand") {
         this._initialColWidths = this._totalTableWidth();
-        let tableWidth = this.tableViewChild?.nativeElement.offsetWidth + delta;
+        const tableWidth = this.tableViewChild?.nativeElement.offsetWidth + delta;
         this.setResizeTableWidth(tableWidth + "px");
         this.resizeTableCells(newColumnWidth, null);
       }
@@ -10135,7 +10136,7 @@ var ColumnFilter = class _ColumnFilter {
     this.hide();
   }
   isRowMatchModeSelected(matchMode) {
-    return this.dt.filters[this.field].matchMode === matchMode;
+    return this.dt.filters[this.field]?.matchMode === matchMode;
   }
   addConstraint() {
     this.dt.filters[this.field].push({
@@ -10860,7 +10861,7 @@ var ColumnFilterFormElement = class _ColumnFilterFormElement {
                 *ngTemplateOutlet="
                     filterTemplate;
                     context: {
-                        $implicit: filterConstraint.value,
+                        $implicit: filterConstraint?.value,
                         filterCallback: filterCallback,
                         type: type,
                         field: field,

@@ -1,10 +1,10 @@
 <div class="card">
-    <h2>История изменений</h2>
+    <h2>{{'historyOfChanges' | translate}}</h2>
     <div class="toolbar">
         <button
                 pButton
                 type="button"
-                label="Очистить историю"
+                [label]="'clearHistory' | translate"
                 icon="pi pi-trash"
                 class="p-button-danger"
                 (click)="confirmClearAuditTrail()"
@@ -13,11 +13,11 @@
     <p-table [value]="auditRecords" [tableStyle]="{ 'min-width': '50rem' }" [paginator]="true" [rows]="10">
         <ng-template pTemplate="header">
             <tr>
-                <th pSortableColumn="timestamp">Дата <p-sortIcon field="timestamp"></p-sortIcon></th>
-                <th pSortableColumn="action">Действие <p-sortIcon field="action"></p-sortIcon></th>
-                <th pSortableColumn="entity">Сущность <p-sortIcon field="entity"></p-sortIcon></th>
-                <th>Детали</th>
-                <th pSortableColumn="performedBy">Выполнено кем <p-sortIcon field="performedBy"></p-sortIcon></th>
+                <th pSortableColumn="timestamp">{{'date' | translate}} <p-sortIcon field="timestamp"></p-sortIcon></th>
+                <th pSortableColumn="action">{{'action' | translate}} <p-sortIcon field="action"></p-sortIcon></th>
+                <th pSortableColumn="entity">{{'entity' | translate}} <p-sortIcon field="entity"></p-sortIcon></th>
+                <th>{{'details' | translate}}</th>
+                <th pSortableColumn="performedBy">{{'performedBy' | translate}} <p-sortIcon field="performedBy"></p-sortIcon></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-record>

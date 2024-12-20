@@ -1,17 +1,17 @@
 import {
+  TimesIcon
+} from "./chunk-3LNWY6SJ.js";
+import {
   InputText,
   InputTextModule
-} from "./chunk-HX55BNGW.js";
-import {
-  TimesIcon
-} from "./chunk-GVGJQXV6.js";
+} from "./chunk-6QGNX6VT.js";
 import {
   AutoFocus,
   AutoFocusModule
 } from "./chunk-EX6TMLQX.js";
 import {
   BaseIcon
-} from "./chunk-2UORLY3V.js";
+} from "./chunk-EUEDRJOA.js";
 import {
   ConnectedOverlayScrollHandler,
   DomHandler
@@ -24,7 +24,7 @@ import {
   TranslationKeys,
   UniqueComponentId,
   zindexutils
-} from "./chunk-EBWD4N7J.js";
+} from "./chunk-ZBUO6BYL.js";
 import {
   animate,
   style,
@@ -300,8 +300,12 @@ function Password_ng_container_6_Template(rf, ctx) {
 function Password_ng_container_7_ng_container_1_EyeSlashIcon_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "EyeSlashIcon", 12);
-    ɵɵlistener("click", function Password_ng_container_7_ng_container_1_EyeSlashIcon_1_Template_EyeSlashIcon_click_0_listener() {
+    ɵɵelementStart(0, "EyeSlashIcon", 13);
+    ɵɵlistener("keypress", function Password_ng_container_7_ng_container_1_EyeSlashIcon_1_Template_EyeSlashIcon_keypress_0_listener($event) {
+      ɵɵrestoreView(_r5);
+      const ctx_r3 = ɵɵnextContext(3);
+      return ɵɵresetView(ctx_r3.onEyeIconPress($event));
+    })("click", function Password_ng_container_7_ng_container_1_EyeSlashIcon_1_Template_EyeSlashIcon_click_0_listener() {
       ɵɵrestoreView(_r5);
       const ctx_r3 = ɵɵnextContext(3);
       return ɵɵresetView(ctx_r3.onMaskToggle());
@@ -322,7 +326,7 @@ function Password_ng_container_7_ng_container_1_span_2_1_Template(rf, ctx) {
 function Password_ng_container_7_ng_container_1_span_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "span", 12);
+    ɵɵelementStart(0, "span", 14);
     ɵɵlistener("click", function Password_ng_container_7_ng_container_1_span_2_Template_span_click_0_listener() {
       ɵɵrestoreView(_r6);
       const ctx_r3 = ɵɵnextContext(3);
@@ -340,7 +344,7 @@ function Password_ng_container_7_ng_container_1_span_2_Template(rf, ctx) {
 function Password_ng_container_7_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, Password_ng_container_7_ng_container_1_EyeSlashIcon_1_Template, 1, 1, "EyeSlashIcon", 11)(2, Password_ng_container_7_ng_container_1_span_2_Template, 2, 1, "span", 11);
+    ɵɵtemplate(1, Password_ng_container_7_ng_container_1_EyeSlashIcon_1_Template, 1, 1, "EyeSlashIcon", 11)(2, Password_ng_container_7_ng_container_1_span_2_Template, 2, 1, "span", 12);
     ɵɵelementContainerEnd();
   }
   if (rf & 2) {
@@ -354,8 +358,12 @@ function Password_ng_container_7_ng_container_1_Template(rf, ctx) {
 function Password_ng_container_7_ng_container_2_EyeIcon_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "EyeIcon", 12);
-    ɵɵlistener("click", function Password_ng_container_7_ng_container_2_EyeIcon_1_Template_EyeIcon_click_0_listener() {
+    ɵɵelementStart(0, "EyeIcon", 13);
+    ɵɵlistener("keypress", function Password_ng_container_7_ng_container_2_EyeIcon_1_Template_EyeIcon_keypress_0_listener($event) {
+      ɵɵrestoreView(_r7);
+      const ctx_r3 = ɵɵnextContext(3);
+      return ɵɵresetView(ctx_r3.onEyeIconPress($event));
+    })("click", function Password_ng_container_7_ng_container_2_EyeIcon_1_Template_EyeIcon_click_0_listener() {
       ɵɵrestoreView(_r7);
       const ctx_r3 = ɵɵnextContext(3);
       return ɵɵresetView(ctx_r3.onMaskToggle());
@@ -376,7 +384,7 @@ function Password_ng_container_7_ng_container_2_span_2_1_Template(rf, ctx) {
 function Password_ng_container_7_ng_container_2_span_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "span", 12);
+    ɵɵelementStart(0, "span", 14);
     ɵɵlistener("click", function Password_ng_container_7_ng_container_2_span_2_Template_span_click_0_listener() {
       ɵɵrestoreView(_r8);
       const ctx_r3 = ɵɵnextContext(3);
@@ -394,7 +402,7 @@ function Password_ng_container_7_ng_container_2_span_2_Template(rf, ctx) {
 function Password_ng_container_7_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, Password_ng_container_7_ng_container_2_EyeIcon_1_Template, 1, 1, "EyeIcon", 11)(2, Password_ng_container_7_ng_container_2_span_2_Template, 2, 1, "span", 11);
+    ɵɵtemplate(1, Password_ng_container_7_ng_container_2_EyeIcon_1_Template, 1, 1, "EyeIcon", 11)(2, Password_ng_container_7_ng_container_2_span_2_Template, 2, 1, "span", 12);
     ɵɵelementContainerEnd();
   }
   if (rf & 2) {
@@ -443,11 +451,11 @@ function Password_div_8_ng_container_3_Template(rf, ctx) {
 }
 function Password_div_8_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 15);
+    ɵɵelementStart(0, "div", 17);
     ɵɵelement(1, "div", 3);
     ɵɵpipe(2, "mapper");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 16);
+    ɵɵelementStart(3, "div", 18);
     ɵɵtext(4);
     ɵɵelementEnd();
   }
@@ -471,7 +479,7 @@ function Password_div_8_ng_container_6_Template(rf, ctx) {
 function Password_div_8_Template(rf, ctx) {
   if (rf & 1) {
     const _r9 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 13, 1);
+    ɵɵelementStart(0, "div", 15, 1);
     ɵɵlistener("click", function Password_div_8_Template_div_click_0_listener($event) {
       ɵɵrestoreView(_r9);
       const ctx_r3 = ɵɵnextContext();
@@ -485,7 +493,7 @@ function Password_div_8_Template(rf, ctx) {
       const ctx_r3 = ɵɵnextContext();
       return ɵɵresetView(ctx_r3.onAnimationEnd($event));
     });
-    ɵɵtemplate(2, Password_div_8_ng_container_2_Template, 1, 0, "ng-container", 9)(3, Password_div_8_ng_container_3_Template, 2, 1, "ng-container", 14)(4, Password_div_8_ng_template_4_Template, 5, 11, "ng-template", null, 2, ɵɵtemplateRefExtractor)(6, Password_div_8_ng_container_6_Template, 1, 0, "ng-container", 9);
+    ɵɵtemplate(2, Password_div_8_ng_container_2_Template, 1, 0, "ng-container", 9)(3, Password_div_8_ng_container_3_Template, 2, 1, "ng-container", 16)(4, Password_div_8_ng_template_4_Template, 5, 11, "ng-template", null, 2, ɵɵtemplateRefExtractor)(6, Password_div_8_ng_container_6_Template, 1, 0, "ng-container", 9);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -1126,6 +1134,16 @@ var Password = class _Password {
     }
     this.onFocus.emit(event);
   }
+  onEyeIconPress(event) {
+    switch (event.code) {
+      case "Enter":
+        this.onMaskToggle();
+        event.preventDefault();
+        break;
+      default:
+        break;
+    }
+  }
   onInputBlur(event) {
     this.focused = false;
     if (this.feedback) {
@@ -1377,7 +1395,7 @@ var Password = class _Password {
     features: [ɵɵProvidersFeature([Password_VALUE_ACCESSOR]), ɵɵInputTransformsFeature],
     decls: 9,
     vars: 35,
-    consts: [["input", ""], ["overlay", ""], ["content", ""], [3, "ngClass", "ngStyle"], ["pInputText", "", "pAutoFocus", "", 3, "input", "focus", "blur", "keyup", "ngClass", "disabled", "ngStyle", "value", "variant", "autofocus"], [4, "ngIf"], [3, "ngClass", "click", 4, "ngIf"], [3, "styleClass", "click", 4, "ngIf"], [1, "p-password-clear-icon", 3, "click"], [4, "ngTemplateOutlet"], [3, "click", "styleClass"], [3, "click", 4, "ngIf"], [3, "click"], [3, "click", "ngClass"], [4, "ngIf", "ngIfElse"], [1, "p-password-meter"], [1, "p-password-info"]],
+    consts: [["input", ""], ["overlay", ""], ["content", ""], [3, "ngClass", "ngStyle"], ["pInputText", "", "pAutoFocus", "", 3, "input", "focus", "blur", "keyup", "ngClass", "disabled", "ngStyle", "value", "variant", "autofocus"], [4, "ngIf"], [3, "ngClass", "click", 4, "ngIf"], [3, "styleClass", "click", 4, "ngIf"], [1, "p-password-clear-icon", 3, "click"], [4, "ngTemplateOutlet"], [3, "click", "styleClass"], ["tabIndex", "0", 3, "keypress", "click", 4, "ngIf"], [3, "click", 4, "ngIf"], ["tabIndex", "0", 3, "keypress", "click"], [3, "click"], [3, "click", "ngClass"], [4, "ngIf", "ngIfElse"], [1, "p-password-meter"], [1, "p-password-info"]],
     template: function Password_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = ɵɵgetCurrentView();
@@ -1474,13 +1492,13 @@ var Password = class _Password {
 
             <ng-container *ngIf="toggleMask">
                 <ng-container *ngIf="unmasked">
-                    <EyeSlashIcon *ngIf="!hideIconTemplate" (click)="onMaskToggle()" [attr.data-pc-section]="'hideIcon'" />
+                    <EyeSlashIcon *ngIf="!hideIconTemplate" tabIndex="0" (keypress)="onEyeIconPress($event)" (click)="onMaskToggle()" [attr.data-pc-section]="'hideIcon'" />
                     <span *ngIf="hideIconTemplate" (click)="onMaskToggle()">
                         <ng-template *ngTemplateOutlet="hideIconTemplate"></ng-template>
                     </span>
                 </ng-container>
                 <ng-container *ngIf="!unmasked">
-                    <EyeIcon *ngIf="!showIconTemplate" (click)="onMaskToggle()" [attr.data-pc-section]="'showIcon'" />
+                    <EyeIcon *ngIf="!showIconTemplate" tabIndex="0" (keypress)="onEyeIconPress($event)" (click)="onMaskToggle()" [attr.data-pc-section]="'showIcon'" />
                     <span *ngIf="showIconTemplate" (click)="onMaskToggle()">
                         <ng-template *ngTemplateOutlet="showIconTemplate"></ng-template>
                     </span>
