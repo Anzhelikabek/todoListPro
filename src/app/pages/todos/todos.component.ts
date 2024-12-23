@@ -54,10 +54,8 @@ export class TodosComponent {
     cols: any[] = [];
     isAdmin: boolean = true;
 
-    statusOptions = [
-        { label: 'Выполнено', value: true },
-        { label: 'Не выполнено', value: false }
-    ];
+    statusOptions: any[] = [];
+
 
     constructor(
         private translate: TranslateService,
@@ -74,11 +72,15 @@ export class TodosComponent {
     }
 
     initializeColumns() {
-        this.translate.get(['title', 'description', 'status']).subscribe(translations => {
+        this.translate.get(['title', 'description', 'status', 'completed', 'notCompleted']).subscribe(translations => {
             this.cols = [
                 { field: 'name', header: translations['title'] },
                 { field: 'description', header: translations['description'] },
                 { field: 'status', header: translations['status'] }
+            ];
+            this.statusOptions = [
+                { label: translations['completed'], value: true },
+                { label: translations['notCompleted'], value: false }
             ];
         });
     }

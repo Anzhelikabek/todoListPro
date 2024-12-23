@@ -24,7 +24,7 @@ import {DashboardComponent} from "../../components/dashboard/dashboard.component
 import {User} from "../../interfaces/user";
 import * as XLSX from 'xlsx';
 import {SharedStateService} from "../../services/shared-state.service";
-import {v4 as uuidv4} from 'uuid'; // Импорт функции для генерации UUID
+import {v4 as uuidv4} from 'uuid';
 import {FileUploadModule} from "primeng/fileupload";
 import {AuditTrailService} from "../../services/audit-trail.service";
 import {TranslatePipe, TranslateService} from "@ngx-translate/core";
@@ -82,7 +82,6 @@ export class MainComponent implements OnInit{
     isDarkTheme = false; // начальное значение светлой темы
     languages: Language[] = [];
     selectedLanguage: Language | null = null;
-
 
     constructor(
         private translate: TranslateService,
@@ -224,6 +223,4 @@ export class MainComponent implements OnInit{
 
         XLSX.writeFile(workbook, 'users.xlsx');
     }
-
-
 }

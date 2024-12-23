@@ -1,9 +1,111 @@
-<div>
-    <h2>Календарь событий</h2>
-    <mwl-calendar-month-view
-            [viewDate]="viewDate"
-            [events]="events"
-            (dayClicked)="dayClicked($event)"
-    >
-    </mwl-calendar-month-view>
+<!-- Контейнер календаря -->
+<div class="calendar-container">
+    <!-- Заголовок с кнопками для изменения месяца -->
+    <div class="calendar-header">
+        <button (click)="changeMonth(-1)">&lt;</button>
+        <h2>{{ selectedMonth | date: 'MMMM yyyy' }}</h2>
+        <button (click)="changeMonth(1)">&gt;</button>
+    </div>
+
+    <!-- Отображение дней месяца -->
+    <div class="calendar-days">
+        <div *ngFor="let day of daysInMonth" (click)="selectDay(day)"
+             [class.selected]="isSelectedDay(day)"
+             [class.has-event]="isEventDay(day)">
+            {{ day }}
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно для добавления нового события -->
+<div *ngIf="isModalOpen" class="modal-overlay">
+    <div class="modal-content">
+        <h2>New Event for {{ selectedDay | date: 'fullDate' }}</h2>
+        <form (ngSubmit)="saveEvent()">
+            <div class="form-group">
+                <label [for]="'title' + selectedDay?.getDate()">Title</label>
+                <input [id]="'title' + selectedDay?.getDate()" [(ngModel)]="newEventTitle" name="title" required/>
+            </div>
+
+            <div class="form-group">
+                <label [for]="'description' + selectedDay?.getDate()">Description</label>
+                <textarea [id]="'description' + selectedDay?.getDate()" [(ngModel)]="newEventDescription"
+                          name="description" required rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label [for]="'startTime' + selectedDay?.getDate()">Start Time</label>
+                <input [id]="'startTime' + selectedDay?.getDate()" [(ngModel)]="newEventStartTime" name="startTime"
+                       type="time" required/>
+            </div>
+
+            <div class="form-group">
+                <label [for]="'endTime' + selectedDay?.getDate()">End Time</label>
+                <input [id]="'endTime' + selectedDay?.getDate()" [(ngModel)]="newEventEndTime" name="endTime"
+                       type="time" required/>
+            </div>
+
+            <button type="submit">Add Event</button>
+            <button type="button" (click)="closeModal()">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<!-- Список событий -->
+<div *ngFor="let event of events; let i = index">
+    <div class="event-details-container">
+        <div class="event-details-content">
+            <h2>{{ event.title }}</h2>
+            <p><strong>Description:</strong> {{ event.description }}</p> <!-- Отображаем описание -->
+            <p>{{ event.date | date: 'fullDate' }} from {{ event.startTime }} to {{ event.endTime }}</p>
+        </div>
+        <div class="event-actions">
+            <button
+                    pButton
+                    pRipple
+                    icon="pi pi-pencil"
+                    class="p-button-rounded p-button-success mr-2"
+                    (click)="openEditModal(event)"
+            ></button>
+            <button
+                    pButton
+                    pRipple
+                    icon="pi pi-trash"
+                    class="p-button-rounded p-button-warning"
+                    (click)="deleteEvent(event)"
+            ></button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Модальное окно для редактирования события -->
+<div *ngIf="isEditModalOpen" class="modal-overlay">
+    <div class="modal-content">
+        <h2>Edit Event</h2>
+        <form (ngSubmit)="saveEditedEvent()">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input id="title" [(ngModel)]="editingEvent.title" name="title" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input id="description" [(ngModel)]="editingEvent.description" name="description" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="startTime">Start Time</label>
+                <input id="startTime" [(ngModel)]="editingEvent.startTime" name="startTime" type="time" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="endTime">End Time</label>
+                <input id="endTime" [(ngModel)]="editingEvent.endTime" name="endTime" type="time" required/>
+            </div>
+
+            <button type="submit">Save Changes</button>
+            <button type="button" (click)="closeEditModal()">Cancel</button>
+        </form>
+    </div>
 </div>
