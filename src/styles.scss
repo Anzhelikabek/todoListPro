@@ -387,7 +387,10 @@ $light-card-color: #f9f9f9;
 .field {
   margin-bottom: 15px;
 }
-
+.add-new-event .p-button{
+  box-shadow: 0 2px 10px rgba(0, 19, 143, 0.1) !important;
+  z-index: 0;
+}
 .status-badge {
   display: inline-block;
   padding: 5px 10px;
