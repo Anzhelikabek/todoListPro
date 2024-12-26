@@ -39,7 +39,7 @@
   gap: 10px;
 }
 
-.calendar-days div {
+.calendar-days .calendar-day {
   background-color: #f1f1f1;
   padding: 9px;
   text-align: center;
@@ -48,16 +48,16 @@
   transition: background-color 0.2s ease;
 }
 
-.calendar-days div:hover {
+.calendar-days .calendar-day:hover {
   background-color: #ddd;
 }
 
-.calendar-days div.selected {
+.calendar-days .calendar-day.selected {
   background-color: #007bff;
   color: white;
 }
 
-.calendar-days div.selected:hover {
+.calendar-days .calendar-day.selected:hover {
   background-color: #0056b3;
   color: white;
 }
@@ -238,6 +238,7 @@ button[type="button"]:hover {
 
 .modal-content button {
   padding: 10px 20px;
+  margin-bottom:  5px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -297,4 +298,16 @@ button[type="button"]:hover {
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
 }
-
+.times{
+  display: flex;
+  justify-content: space-between;
+}
+.times p-dropdown{
+  width: 50%;
+}
+/* Стили для поля времени */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

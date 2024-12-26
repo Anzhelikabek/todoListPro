@@ -46,9 +46,12 @@ export class CalendarComponent implements OnInit {
         endTime: string;
     }> = [];
     newEventTitle: string = "";
-    newEventStartTime: string = "";
-    newEventEndTime: string = "";
+    newEventStartTime: string = '00:00';  // Значение по умолчанию
+    newEventEndTime: string = '00:00';
     newEventDescription: string = "";
+
+    editingStartTime: boolean = false;  // Флаг для отслеживания изменений
+    editingEndTime: boolean = false;
 
     editingEvent: any = null; // Событие для редактирования
     isEditModalOpen: boolean = false; // Флаг для отображения модального окна
@@ -72,7 +75,9 @@ export class CalendarComponent implements OnInit {
     hours: string[] = [];
     minutes: string[] = [];
 
-    constructor(public translate: TranslateService) {}
+    constructor(public translate: TranslateService) {
+        console.log(this.newEventStartTime)
+    }
 
     getMonthAndYear(date: Date): string {
         if (!date) {
@@ -158,20 +163,33 @@ export class CalendarComponent implements OnInit {
 
     openAddEventModal() {
         this.isModalOpen = true;
+        this.newEventStartTime = "00:00";
+        this.newEventEndTime = "00:00";
     }
 
     closeModal() {
-        this.isModalOpen = false; // Закрытие модального окна
-        this.newEventTitle = ""; // Очистка данных
-        this.newEventDescription = ""; // Очистка данных
-        this.newEventStartTime = ""; // Очистка данных
-        this.newEventEndTime = ""; // Очистка данных
+        // Закрытие модального окна
+        this.isModalOpen = false;
+
+        // Очистка данных
+        this.newEventTitle = "";
+        this.newEventDescription = "";
+        this.newEventStartTime = "00:00";  // Возвращаем значение по умолчанию
+        this.newEventEndTime = "00:00";    // Возвращаем значение по умолчанию
         this.selectedDay = null; // Сброс выбора дня
+
+        // Сброс значений для времени
         this.selectedStartHour = "";
         this.selectedStartMinute = "";
         this.selectedEndHour = "";
         this.selectedEndMinute = "";
+
+        // Сброс флагов, если вы используете их для отслеживания изменений
+        this.editingStartTime = false;
+        this.editingEndTime = false;
+
     }
+
 
     // Загрузка событий из localStorage
     loadEvents() {
@@ -252,7 +270,7 @@ export class CalendarComponent implements OnInit {
     // Сохранение нового события
     saveEvent(eventForm: NgForm) {
         // Проверка на валидность формы
-        if (eventForm.valid && this.selectedDay) {
+        if (eventForm.valid && this.selectedDay && this.newEventStartTime !== "00:00" && this.newEventEndTime !== "00:00") {
             console.log(eventForm);
             // Получаем полную дату (включая месяц и год)
             const fullDate = new Date(this.selectedDay); // selectedDay уже содержит месяц и год
@@ -287,6 +305,17 @@ export class CalendarComponent implements OnInit {
             this.newEventEndTime = "";
             this.selectedDay = null; // Сброс выбора дня
         }
+        else {
+            alert('Пожалуйста, выберите время');
+        }
+    }
+
+    onStartTimeChange() {
+        this.editingStartTime = true;
+    }
+
+    onEndTimeChange() {
+        this.editingEndTime = true;
     }
 
     // Сохранение отредактированного события

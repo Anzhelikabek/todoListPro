@@ -123,6 +123,7 @@
   "descriptionRequired": "Сүрөттөмө милдеттүү",
   "startTimeRequired": "Башталуу убактысы милдеттүү",
   "endTimeRequired": "Аягына чыгуу убактысы милдеттүү",
+  "eventsCalendar": "Окуялардын календары",
 
   "weekDays": {
     "Mon": "Дш",

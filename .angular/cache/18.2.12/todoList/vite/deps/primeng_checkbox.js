@@ -1,4 +1,8 @@
 import {
+  NG_VALUE_ACCESSOR,
+  NgControl
+} from "./chunk-45QHWVG5.js";
+import {
   CheckIcon
 } from "./chunk-GG74TZ4D.js";
 import {
@@ -13,10 +17,6 @@ import {
   PrimeTemplate,
   SharedModule
 } from "./chunk-ZBUO6BYL.js";
-import {
-  NG_VALUE_ACCESSOR,
-  NgControl
-} from "./chunk-45QHWVG5.js";
 import {
   CommonModule,
   NgClass,

@@ -116,6 +116,7 @@
   "descriptionRequired": "Описание обязательно",
   "startTimeRequired": "Время начала обязательно",
   "endTimeRequired": "Время окончания обязательно",
+  "eventsCalendar": "Календарь событий",
 
   "weekDays": {
     "Mon": "Пн",

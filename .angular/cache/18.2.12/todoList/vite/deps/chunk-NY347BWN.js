@@ -1,4 +1,14 @@
 import {
+  deleteApp,
+  getApp,
+  getApps,
+  initializeApp,
+  initializeServerApp,
+  onLog,
+  registerVersion,
+  setLogLevel
+} from "./chunk-L2NFDERQ.js";
+import {
   Inject,
   Injectable,
   InjectionToken,
@@ -30,16 +40,6 @@ import {
   tap,
   timer
 } from "./chunk-MOTLY3TU.js";
-import {
-  deleteApp,
-  getApp,
-  getApps,
-  initializeApp,
-  initializeServerApp,
-  onLog,
-  registerVersion,
-  setLogLevel
-} from "./chunk-L2NFDERQ.js";
 
 // node_modules/@angular/fire/fesm2022/angular-fire.mjs
 var VERSION2 = new Version("ANGULARFIRE2_VERSION");
@@ -345,4 +345,4 @@ export {
   registerVersion2 as registerVersion,
   setLogLevel2 as setLogLevel
 };
-//# sourceMappingURL=chunk-YGMNSCTF.js.map
+//# sourceMappingURL=chunk-NY347BWN.js.map

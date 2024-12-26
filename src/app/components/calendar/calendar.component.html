@@ -81,32 +81,33 @@
                     </div>
                 </div>
 
-                <!-- Выбор времени -->
                 <div class="form-group">
-                    <label for="startTime">{{ 'startTime' | translate }}</label>
-<!--                    <p-datepicker-->
-<!--                            [(ngModel)]="selectedStartTime"-->
-<!--                            [timeOnly]="true"-->
-<!--                            hourFormat="24"-->
-<!--                            [showIcon]="true"-->
-<!--                            inputId="startTime">-->
-<!--                    </p-datepicker>-->
-
-                    <div *ngIf="!selectedStartTime" class="error-message">
+                    <label for="startTimeAdd">{{ 'startTime' | translate }}</label>
+                    <input
+                            id="startTimeAdd"
+                            [(ngModel)]="newEventStartTime"
+                            name="startTime"
+                            type="time"
+                            (ngModelChange)="onStartTimeChange()"
+                    />
+                    <div *ngIf="newEventStartTime === '00:00' && editingStartTime" class="error-message">
                         {{ 'startTimeRequired' | translate }}
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="endTime">{{ 'endTime' | translate }}</label>
-<!--                    <p-datepicker [(ngModel)]="selectedEndTime" [timeOnly]="true" hourFormat="24" [showIcon]="true" inputId="endTime">-->
-<!--                    </p-datepicker>-->
-                    <div *ngIf="!selectedEndTime" class="error-message">
+                    <label for="endTimeAdd">{{ 'endTime' | translate }}</label>
+                    <input
+                            id="endTimeAdd"
+                            [(ngModel)]="newEventEndTime"
+                            name="endTime"
+                            type="time"
+                            (ngModelChange)="onEndTimeChange()"
+                    />
+                    <div *ngIf="newEventEndTime === '00:00' && editingEndTime" class="error-message">
                         {{ 'endTimeRequired' | translate }}
                     </div>
                 </div>
-
-
                 <div class="actions">
                     <button type="submit" [disabled]="eventForm.invalid">{{ 'addEvent' | translate }}</button>
                     <button type="button" (click)="closeModal()">{{ 'cancel' | translate }}</button>

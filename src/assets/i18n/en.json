@@ -123,6 +123,7 @@
   "descriptionRequired": "Description is required",
   "startTimeRequired": "Start time is required",
   "endTimeRequired": "End time is required",
+  "eventsCalendar": "Events calendar",
 
   "weekDays": {
     "Mon": "Mon",

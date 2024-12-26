@@ -83,7 +83,7 @@ import {
   validatePassword,
   verifyBeforeUpdateEmail,
   verifyPasswordResetCode
-} from "./chunk-RBPSILA7.js";
+} from "./chunk-ACKMLHLK.js";
 import {
   FirebaseApp,
   FirebaseApps,
@@ -93,7 +93,11 @@ import {
   ɵgetAllInstancesOf,
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
-} from "./chunk-YGMNSCTF.js";
+} from "./chunk-NY347BWN.js";
+import "./chunk-QE4TXKB6.js";
+import {
+  registerVersion
+} from "./chunk-L2NFDERQ.js";
 import {
   InjectionToken,
   Injector,
@@ -117,10 +121,6 @@ import {
   timer
 } from "./chunk-MOTLY3TU.js";
 import "./chunk-S3YC363S.js";
-import "./chunk-QE4TXKB6.js";
-import {
-  registerVersion
-} from "./chunk-L2NFDERQ.js";
 import "./chunk-5K356HEJ.js";
 
 // node_modules/rxfire/auth/index.esm.js
