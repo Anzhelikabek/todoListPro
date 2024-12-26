@@ -1,10 +1,10 @@
 import {
+  PrimeNGConfig
+} from "./chunk-ZBUO6BYL.js";
+import {
   NgControl,
   NgModel
 } from "./chunk-45QHWVG5.js";
-import {
-  PrimeNGConfig
-} from "./chunk-ZBUO6BYL.js";
 import {
   CommonModule
 } from "./chunk-MFDKE2YR.js";
@@ -28,8 +28,8 @@ import {
   ɵɵdirectiveInject,
   ɵɵlistener
 } from "./chunk-6JZVI6Z5.js";
-import "./chunk-WGFE6ZO7.js";
 import "./chunk-Z4GY3YUB.js";
+import "./chunk-WGFE6ZO7.js";
 import "./chunk-MOTLY3TU.js";
 import "./chunk-S3YC363S.js";
 import "./chunk-5K356HEJ.js";
