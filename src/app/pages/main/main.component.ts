@@ -31,6 +31,7 @@ import {ChatComponent} from "../../components/chat/chat.component";
 import {CalendarModule} from "primeng/calendar";
 import {Language} from "../../interfaces/language";
 import {TooltipModule} from "primeng/tooltip";
+import {ProgressSpinnerModule} from "primeng/progressspinner";
 
 @Component({
     selector: 'app-main',
@@ -66,6 +67,7 @@ import {TooltipModule} from "primeng/tooltip";
         ReactiveFormsModule,
         NgStyle,
         CalendarComponent,
+        ProgressSpinnerModule,
     ],
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss'],
@@ -80,6 +82,7 @@ export class MainComponent implements OnInit{
     isDarkTheme = false; // начальное значение светлой темы
     languages: Language[] = [];
     selectedLanguage: Language | null = null;
+    isLoading: boolean = false;
 
     constructor(
         private translate: TranslateService,
@@ -153,16 +156,28 @@ export class MainComponent implements OnInit{
     }
 
     loadUserName(email: string): void {
-        this.sharedStateService.getUsers().subscribe((users) => {
-            const user = users.find((user) => user.email === email);
+        this.isLoading = true;  // Начинаем загрузку, устанавливаем флаг в true
 
-            if (user) {
-                this.userName = user.firstName ?? 'Гость'; // Задаём значение по умолчанию
-            } else {
-                this.userName = 'Гость'; // Если `user` undefined, задаём "Гость"
+        this.sharedStateService.getUsers().subscribe(
+            (users) => {
+                const user = users.find((user) => user.email === email);
+
+                if (user) {
+                    this.userName = user.firstName ?? 'Гость'; // Задаём значение по умолчанию, если firstName не найден
+                } else {
+                    this.userName = 'Гость'; // Если пользователя с таким email не нашли
+                }
+            },
+            (error) => {
+                console.error('Ошибка при загрузке пользователя:', error);
+                this.userName = 'Гость';  // В случае ошибки показываем значение по умолчанию
+            },
+            () => {
+                this.isLoading = false;  // После завершения загрузки данных, флаг isLoading становится false
             }
-        });
+        );
     }
+
 
     onLogout() {
         this.currentUser = this.authService.getCurrentUser();

@@ -117,6 +117,7 @@
   "startTimeRequired": "Время начала обязательно",
   "endTimeRequired": "Время окончания обязательно",
   "eventsCalendar": "Календарь событий",
+  "today": "сегодня",
 
   "weekDays": {
     "Mon": "Пн",

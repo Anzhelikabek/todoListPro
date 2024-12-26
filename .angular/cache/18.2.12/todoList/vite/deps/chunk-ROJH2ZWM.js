@@ -6,9 +6,6 @@ import {
   ChevronDownIcon
 } from "./chunk-LQG4QGPE.js";
 import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-45QHWVG5.js";
-import {
   TimesIcon
 } from "./chunk-3LNWY6SJ.js";
 import {
@@ -51,6 +48,9 @@ import {
   trigger,
   useAnimation
 } from "./chunk-FNRGZDKO.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-45QHWVG5.js";
 import {
   CommonModule,
   DOCUMENT,
@@ -5699,4 +5699,4 @@ export {
   Dropdown,
   DropdownModule
 };
-//# sourceMappingURL=chunk-6C4HGLTA.js.map
+//# sourceMappingURL=chunk-ROJH2ZWM.js.map

@@ -6,9 +6,6 @@ import {
   ChevronDownIcon
 } from "./chunk-LQG4QGPE.js";
 import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-45QHWVG5.js";
-import {
   TimesIcon
 } from "./chunk-3LNWY6SJ.js";
 import {
@@ -47,6 +44,9 @@ import {
   transition,
   trigger
 } from "./chunk-FNRGZDKO.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-45QHWVG5.js";
 import {
   CommonModule,
   DOCUMENT,
@@ -5381,4 +5381,4 @@ export {
   Calendar,
   CalendarModule
 };
-//# sourceMappingURL=chunk-IXGZNESA.js.map
+//# sourceMappingURL=chunk-YP3ABMKW.js.map

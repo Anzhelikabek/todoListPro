@@ -1,4 +1,7 @@
 <div class="container">
+    <!-- Loading Spinner -->
+    <p-progressSpinner *ngIf="isLoading" styleClass="spinner"></p-progressSpinner>
+
     <div class="p-field">
         <div class="grid">
             <div class="col-12">
@@ -64,30 +67,3 @@
         </div>
     </div>
 </div>
-<p-sidebar [(visible)]="sidebarVisible2" position="right">
-    <app-audit-trail></app-audit-trail>
-</p-sidebar>
-<p-dialog [(visible)]="displayModal" [modal]="true" [closable]="true" [header]="'exitConfirmation' | translate">
-    <p>{{'wantToLogOut' | translate}}, <b>{{ userEmail }}</b>?</p>
-    <ng-template pTemplate="footer">
-        <button
-                pButton
-                pRipple
-                icon="pi pi-times"
-                [label]="'no' | translate"
-                class="p-button-text"
-                (click)="displayModal = false"
-        ></button>
-        <button
-                pButton
-                pRipple
-                icon="pi pi-check"
-                [label]="'yes' | translate"
-                class="p-button-text"
-                (click)="performLogout()"
-        ></button>
-    </ng-template>
-</p-dialog>
-
-
-

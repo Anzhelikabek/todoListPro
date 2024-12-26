@@ -12,7 +12,6 @@
   "wantToLogOut": "Do you really want to log out",
   "no": "No",
   "yes": "Yes",
-
   "create": "Create",
   "delete": "Delete",
   "taskDetails": "Task Details",
@@ -29,7 +28,6 @@
   "confirmDelete": "Are you sure you want to delete",
   "confirmDeleteSelectedTasks": "Are you sure you want to delete the selected tasks?",
   "confirmDeleteTask": "Are you sure you want to delete the task?",
-
   "userList": "User List",
   "userDetails": "User Details",
   "userFirstName": "User First Name",
@@ -60,19 +58,15 @@
   "close": "Close",
   "userInformation": "User information",
   "writeAndFinish": "Write it down and Finalize!",
-
   "male": "Male",
   "female": "Female",
   "other": "Other",
   "admin": "Admin",
-
   "status": "Status",
   "completed": "Completed",
   "notCompleted": "Not Completed",
-
   "userDistributionByRole": "User distribution by roles",
   "usersAddedInLast7Days": "Users added in the last 7 days",
-
   "historyOfChanges": "History of Changes",
   "date": "Date",
   "action": "Action",
@@ -80,7 +74,6 @@
   "details": "Details",
   "performedBy": "Performed by",
   "clearHistory": "Clear History",
-
   "deleteAction": "Deletion",
   "taskEntity": "Task",
   "noTitle": "No title",
@@ -105,7 +98,6 @@
   "userCreated": "User created",
   "currentUserNotDetermined": "Failed to determine the current user",
   "taskCreated": "Task created",
-
   "selectTime": "Select time",
   "hours": "Hours",
   "minutes": "Minutes",
@@ -124,6 +116,7 @@
   "startTimeRequired": "Start time is required",
   "endTimeRequired": "End time is required",
   "eventsCalendar": "Events calendar",
+  "today": "today",
 
   "weekDays": {
     "Mon": "Mon",
@@ -134,7 +127,6 @@
     "Sat": "Sat",
     "Sun": "Sun"
   },
-
   "months": {
     "January": "January",
     "February": "February",
