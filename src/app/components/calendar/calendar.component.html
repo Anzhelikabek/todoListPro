@@ -3,44 +3,52 @@
     <!-- Заголовок с кнопками для изменения месяца -->
     <div class="calendar-header">
         <button (click)="changeMonth(-1)">&lt;</button>
-        <h2>{{ selectedMonth | date: 'MMMM yyyy' }}</h2>
+        <h2>{{ getMonthAndYear(selectedMonth) | translate }}</h2>
         <button (click)="changeMonth(1)">&gt;</button>
+    </div>
+
+    <div class="calendar-weekdays">
+        <div *ngFor="let day of weekDays">{{ day }}</div>
     </div>
 
     <!-- Отображение дней месяца -->
     <div class="calendar-days">
         <div *ngFor="let day of daysInMonth">
             <!-- Применяем тултип только для текущего дня -->
-            <div [pTooltip]="isCurrentDay(day) ? 'Сегодняшний день' : undefined"
+            <div [pTooltip]="isCurrentDay(day) ? ('today' | translate) : undefined"
                  [class.selected]="isSelectedDay(day)"
                  [class.has-event]="isEventDay(day)"
                  [class.current-day]="isCurrentDay(day)"
+                 [ngClass]="'calendar-day'"
                  (click)="selectDay(day)"> <!-- Обработчик клика -->
                 {{ day }}
             </div>
         </div>
-
     </div>
 </div>
 <br/>
-<p-button (click)="openAddEventModal()" class="add-new-event">Добавить новое событие</p-button>
+
+<p-button (click)="openAddEventModal()" class="add-new-event">
+    {{ 'addNewEvent' | translate }}
+</p-button>
+
 
 <!-- Модальное окно для добавления нового события -->
 <div *ngIf="isModalOpen" class="modal-overlay add-event">
     <div class="modal-content">
-        <h2>New Event for {{ selectedDay | date: 'fullDate' }}</h2>
+        <h2>{{ 'newEventFor' | translate }} {{ getFormattedDate(selectedDay) }}</h2>
         <div class="modal-content-flex">
 
             <div class="calendar-container">
                 <div class="calendar-header">
                     <button (click)="changeMonth(-1)">&lt;</button>
-                    <h2>{{ selectedMonth | date: 'MMMM yyyy' }}</h2>
+                    <h2>{{ getMonthAndYear(selectedMonth) | translate }}</h2>
                     <button (click)="changeMonth(1)">&gt;</button>
                 </div>
 
                 <div class="calendar-days">
                     <div *ngFor="let day of daysInMonth" (click)="selectDay(day)"
-                         [class.selected]="isSelectedDay(day)">
+                         [class.selected]="isSelectedDay(day)" [ngClass]="'calendar-day'">
                         {{ day }}
                     </div>
                 </div>
@@ -48,20 +56,20 @@
 
             <form (ngSubmit)="saveEvent(eventForm)" #eventForm="ngForm">
                 <div class="form-group">
-                    <label [for]="'title' + selectedDay?.getDate()">Title</label>
+                    <label [for]="'title' + selectedDay?.getDate()">{{ 'title' | translate }}</label>
                     <input [id]="'title' + selectedDay?.getDate()"
                            [(ngModel)]="newEventTitle"
                            name="title"
                            required
                            minlength="3"
-                           #title="ngModel" />
+                           #title="ngModel"/>
                     <div *ngIf="title.invalid && title.touched" class="error-message">
-                        Title is required and must be at least 3 characters long.
+                        {{ 'titleRequired' | translate }}
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label [for]="'description' + selectedDay?.getDate()">Description</label>
+                    <label [for]="'description' + selectedDay?.getDate()">{{ 'description' | translate }}</label>
                     <textarea [id]="'description' + selectedDay?.getDate()"
                               [(ngModel)]="newEventDescription"
                               name="description"
@@ -69,38 +77,39 @@
                               rows="3"
                               #description="ngModel"></textarea>
                     <div *ngIf="description.invalid && description.touched" class="error-message">
-                        Description is required.
+                        {{ 'descriptionRequired' | translate }}
+                    </div>
+                </div>
+
+                <!-- Выбор времени -->
+                <div class="form-group">
+                    <label for="startTime">{{ 'startTime' | translate }}</label>
+<!--                    <p-datepicker-->
+<!--                            [(ngModel)]="selectedStartTime"-->
+<!--                            [timeOnly]="true"-->
+<!--                            hourFormat="24"-->
+<!--                            [showIcon]="true"-->
+<!--                            inputId="startTime">-->
+<!--                    </p-datepicker>-->
+
+                    <div *ngIf="!selectedStartTime" class="error-message">
+                        {{ 'startTimeRequired' | translate }}
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label [for]="'startTime' + selectedDay?.getDate()">Start Time</label>
-                    <input [id]="'startTime' + selectedDay?.getDate()"
-                           [(ngModel)]="newEventStartTime"
-                           name="startTime"
-                           type="time"
-                           required
-                           #startTime="ngModel" />
-                    <div *ngIf="startTime.invalid && startTime.touched" class="error-message">
-                        Start Time is required.
+                    <label for="endTime">{{ 'endTime' | translate }}</label>
+<!--                    <p-datepicker [(ngModel)]="selectedEndTime" [timeOnly]="true" hourFormat="24" [showIcon]="true" inputId="endTime">-->
+<!--                    </p-datepicker>-->
+                    <div *ngIf="!selectedEndTime" class="error-message">
+                        {{ 'endTimeRequired' | translate }}
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label [for]="'endTime' + selectedDay?.getDate()">End Time</label>
-                    <input [id]="'endTime' + selectedDay?.getDate()"
-                           [(ngModel)]="newEventEndTime"
-                           name="endTime"
-                           type="time"
-                           required
-                           #endTime="ngModel" />
-                    <div *ngIf="endTime.invalid && endTime.touched" class="error-message">
-                        End Time is required.
-                    </div>
-                </div>
+
                 <div class="actions">
-                    <button type="submit" [disabled]="eventForm.invalid">Add Event</button>
-                    <button type="button" (click)="closeModal()">Cancel</button>
+                    <button type="submit" [disabled]="eventForm.invalid">{{ 'addEvent' | translate }}</button>
+                    <button type="button" (click)="closeModal()">{{ 'cancel' | translate }}</button>
                 </div>
             </form>
         </div>
@@ -111,8 +120,7 @@
     <div *ngFor="let event of selectedDayEvents">
         <div class="event-details-container">
             <div class="event-details-content">
-                <p><strong>{{ selectedDay | date: 'dd/MM/yyyy' }}</strong></p> <!-- Отображаем дату в формате день/месяц/год -->
-
+                <p><strong>{{ selectedDay | date: 'dd/MM/yyyy' }}</strong></p>
                 <h3>{{ event.title }}</h3>
                 <p>{{ event.description }}</p>
                 <p>{{ event.startTime }} - {{ event.endTime }}</p>
@@ -123,25 +131,25 @@
                         pRipple
                         icon="pi pi-pencil"
                         class="p-button-rounded p-button-success mr-2"
-                        (click)="openEditModal(event)"
-                ></button>
+                        (click)="openEditModal(event)">
+                </button>
                 <button
                         pButton
                         pRipple
                         icon="pi pi-trash"
                         class="p-button-rounded p-button-warning"
-                        (click)="deleteEvent(event)"
-                ></button>
+                        (click)="deleteEvent(event)">
+                </button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Сообщение, если нет событий для выбранного дня -->
+<!-- Сообщение о том, что нет событий для выбранного дня -->
 <div *ngIf="selectedDayEvents.length === 0">
     <div class="event-details-container">
         <div class="event-details-content">
-            <p>Нет событий для этого дня.</p>
+            <p>{{ 'noEvents' | translate }}</p>
         </div>
     </div>
 </div>
@@ -149,30 +157,31 @@
 <!-- Модальное окно для редактирования события -->
 <div *ngIf="isEditModalOpen" class="modal-overlay">
     <div class="modal-content">
-        <h2>Edit Event</h2>
+        <h2>{{ 'editEvent' | translate }}</h2>
         <form (ngSubmit)="saveEditedEvent()">
             <div class="form-group">
-                <label for="title">Title</label>
+                <label for="title">{{ 'title' | translate }}</label>
                 <input id="title" [(ngModel)]="editingEvent.title" name="title" required/>
             </div>
 
             <div class="form-group">
-                <label for="description">Description</label>
+                <label for="description">{{ 'description' | translate }}</label>
                 <input id="description" [(ngModel)]="editingEvent.description" name="description" required/>
             </div>
 
             <div class="form-group">
-                <label for="startTime">Start Time</label>
+                <label for="startTime">{{ 'startTime' | translate }}</label>
                 <input id="startTime" [(ngModel)]="editingEvent.startTime" name="startTime" type="time" required/>
             </div>
 
             <div class="form-group">
-                <label for="endTime">End Time</label>
+                <label for="endTime">{{ 'endTime' | translate }}</label>
                 <input id="endTime" [(ngModel)]="editingEvent.endTime" name="endTime" type="time" required/>
             </div>
 
-            <button type="submit">Save Changes</button>
-            <button type="button" (click)="closeEditModal()">Cancel</button>
+            <button type="submit">{{ 'saveChanges' | translate }}</button>
+            <button type="button" (click)="closeEditModal()">{{ 'cancel' | translate }}</button>
         </form>
     </div>
 </div>
+

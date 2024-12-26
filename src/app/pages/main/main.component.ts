@@ -6,7 +6,7 @@ import {TableModule} from 'primeng/table';
 import {ToolbarModule} from 'primeng/toolbar';
 import {Ripple} from 'primeng/ripple';
 import {DialogModule} from 'primeng/dialog';
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {NgClass, NgIf, NgStyle} from '@angular/common';
 import {DropdownModule} from 'primeng/dropdown';
@@ -20,11 +20,10 @@ import {TodosComponent} from "../todos/todos.component";
 import {UsersTasksComponent} from "../users-tasks/users-tasks.component";
 import {SidebarModule} from "primeng/sidebar";
 import {AuditTrailComponent} from "../../components/audit-trail/audit-trail.component";
+import {CalendarComponent} from "../../components/calendar/calendar.component";
 import {DashboardComponent} from "../../components/dashboard/dashboard.component";
-import {User} from "../../interfaces/user";
 import * as XLSX from 'xlsx';
 import {SharedStateService} from "../../services/shared-state.service";
-import {v4 as uuidv4} from 'uuid';
 import {FileUploadModule} from "primeng/fileupload";
 import {AuditTrailService} from "../../services/audit-trail.service";
 import {TranslatePipe, TranslateService} from "@ngx-translate/core";
@@ -32,7 +31,6 @@ import {ChatComponent} from "../../components/chat/chat.component";
 import {CalendarModule} from "primeng/calendar";
 import {Language} from "../../interfaces/language";
 import {TooltipModule} from "primeng/tooltip";
-import {CalendarComponent} from "../../components/calendar/calendar.component";
 
 @Component({
     selector: 'app-main',

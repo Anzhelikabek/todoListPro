@@ -282,3 +282,19 @@ button[type="button"]:hover {
   font-size: 12px;
   margin-top: 5px;
 }
+/* Шаблон для заголовка дней недели */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Календарь с днями месяца */
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+

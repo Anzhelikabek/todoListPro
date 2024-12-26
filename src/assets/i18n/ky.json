@@ -104,5 +104,48 @@
   "userUpdated": "Колдонуучу жаңыртылды",
   "userCreated": "Колдонуучу түзүлдү",
   "currentUserNotDetermined": "Учурдагы колдонуучуну аныктоо мүмкүн болбоду",
-  "taskCreated": "Тапшырма түзүлдү"
+  "taskCreated": "Тапшырма түзүлдү",
+
+  "selectTime": "Убакытты тандаңыз",
+  "hours": "Сааттар",
+  "minutes": "Мүнөттөр",
+  "select": "Тандоо",
+  "noEvents": "Бул күнү окуялар жок.",
+  "editEvent": "Окуяны түзөтүү",
+  "saveChanges": "Өзгөртүүлөрдү сактоо",
+  "addNewEvent": "Жаңы окуя кошуу",
+  "newEventFor": "Жаңы окуя үчүн",
+  "startTime": "Башталуу убактысы",
+  "endTime": "Аягына чыгуу убактысы",
+  "addEvent": "Окуя кошуу",
+  "edit": "Түзөтүү",
+  "titleRequired": "Аталышы милдеттүү жана 3 символдон кем болбошу керек",
+  "descriptionRequired": "Сүрөттөмө милдеттүү",
+  "startTimeRequired": "Башталуу убактысы милдеттүү",
+  "endTimeRequired": "Аягына чыгуу убактысы милдеттүү",
+
+  "weekDays": {
+    "Mon": "Дш",
+    "Tue": "Шк",
+    "Wed": "Шб",
+    "Thu": "Бш",
+    "Fri": "Жм",
+    "Sat": "Сн",
+    "Sun": "Жс"
+  },
+
+  "months": {
+    "January": "Жаңтар",
+    "February": "Февраль",
+    "March": "Март",
+    "April": "Апрель",
+    "May": "Май",
+    "June": "Июнь",
+    "July": "Июль",
+    "August": "Август",
+    "September": "Сентябрь",
+    "October": "Октябрь",
+    "November": "Ноябрь",
+    "December": "Декабрь"
+  }
 }
