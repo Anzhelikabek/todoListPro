@@ -1,23 +1,28 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { MainComponent } from './pages/main/main.component';
-import { UsersComponent } from './pages/users/users.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LoggedInGuard } from './guards/logged-in.guard';
 
 export const routes: Routes = [
   // Доступ к /login только для неавторизованных пользователей
-  { path: 'login', component: LoginComponent, canActivate: [LoggedInGuard] },
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login.component').then(m => m.LoginComponent),
+    canActivate: [LoggedInGuard],
+  },
 
   // Доступ к /register только для неавторизованных пользователей
-  { path: 'register', component: RegisterComponent, canActivate: [LoggedInGuard] },
+  {
+    path: 'register',
+    loadComponent: () => import('./pages/register/register.component').then(m => m.RegisterComponent),
+    canActivate: [LoggedInGuard],
+  },
 
   // Доступ к /main только для авторизованных пользователей
-  { path: 'main', component: MainComponent, canActivate: [AuthGuard] },
-
-  // Доступ к /users только для авторизованных пользователей
-  // { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
+  {
+    path: 'main',
+    loadComponent: () => import('./pages/main/main.component').then(m => m.MainComponent),
+    canActivate: [AuthGuard],
+  },
 
   // Редирект на /login, если путь не указан
   { path: '', redirectTo: '/login', pathMatch: 'full' },
