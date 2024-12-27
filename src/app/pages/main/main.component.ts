@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ToastModule} from 'primeng/toast';
 import {Button, ButtonDirective, ButtonModule} from 'primeng/button';
-import {MessageService} from 'primeng/api';
+import {MenuItem, MessageService} from 'primeng/api';
 import {TableModule} from 'primeng/table';
 import {ToolbarModule} from 'primeng/toolbar';
 import {Ripple} from 'primeng/ripple';
@@ -32,6 +32,7 @@ import {CalendarModule} from "primeng/calendar";
 import {Language} from "../../interfaces/language";
 import {TooltipModule} from "primeng/tooltip";
 import {ProgressSpinnerModule} from "primeng/progressspinner";
+import {MenuModule} from "primeng/menu";
 
 @Component({
     selector: 'app-main',
@@ -68,11 +69,14 @@ import {ProgressSpinnerModule} from "primeng/progressspinner";
         NgStyle,
         CalendarComponent,
         ProgressSpinnerModule,
+        MenuModule,
     ],
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit{
+    isMobile: boolean = false; // Флаг для маленьких экранов
+    isMenuVisible: boolean = false; // Флаг для видимости меню
     userEmail: string | null = '';
     displayModal: boolean = false;
     currentUser: any = ''
@@ -83,6 +87,7 @@ export class MainComponent implements OnInit{
     languages: Language[] = [];
     selectedLanguage: Language | null = null;
     isLoading: boolean = false;
+    items: MenuItem[] | undefined;
 
     constructor(
         private translate: TranslateService,
@@ -110,8 +115,19 @@ export class MainComponent implements OnInit{
         }
         this.applyTheme();
         this.initializeLanguages();
+        this.checkScreenSize(); // Проверяем размер экрана при инициализации
+        window.addEventListener('resize', this.checkScreenSize.bind(this)); // Обновление состояния при изменении размера экрана
+    }
+    checkScreenSize(): void {
+        this.isMobile = window.innerWidth <= 680; // Если ширина экрана меньше или равна 320px, это мобильный экран
     }
 
+    showMenu(): void {
+        this.isMenuVisible = true;
+    }
+    closeMenu(): void {
+        this.isMenuVisible = false;
+    }
     private initializeLanguages() {
         // Инициализация языков
         this.languages = [

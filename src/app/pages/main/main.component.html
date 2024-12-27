@@ -6,46 +6,127 @@
         <div class="grid">
             <div class="col-12">
                 <div class="header-content">
-                    <h1>{{'greeting' | translate}}, {{ userName }}!</h1>
+                    <h1>{{'greeting' | translate}}<span class="main-title">, {{ userName }}</span>!</h1>
                     <div class="buttons">
-                        <div class="custom-dropdown">
-                            <p-dropdown
-                                    [options]="languages"
-                                    [(ngModel)]="selectedLanguage"
-                                    optionLabel="label"
-                                    placeholder="Выберите язык"
-                                    [ngStyle]="{'width': '100%'}"
-                                    (onChange)="onLanguageChange($event.value)">
-                            </p-dropdown>
+                        <!-- Кнопка бургера для мобильных экранов -->
+                        <div *ngIf="isMobile" class="mobile-menu">
+                            <p-button icon="pi pi-bars" class="burger-menu" (click)="showMenu()"></p-button>
                         </div>
-                        <p-button
-                                icon="pi pi-moon"
-                                pTooltip="{{ 'switchTheme' | translate }}"
-                                tooltipPosition="bottom"
-                                (click)="toggleTheme()">
-                        </p-button>
 
-                        <p-button
-                                icon="pi pi-file-excel"
-                                pTooltip="{{ 'exportToExcel' | translate }}"
-                                tooltipPosition="bottom"
-                                (click)="exportToExcel()">
-                        </p-button>
+                        <!-- Модальное окно для мобильного меню -->
+                        <div class="menu-dialog">
+                            <p-dialog [(visible)]="isMenuVisible" [modal]="true" [closable]="true" [style]="{width: '300px'}">
+                                <div class="menu-content">
+                                    <!-- Выбор языка -->
+                                    <div class="language-selection">
+                                        <p-dropdown
+                                                [options]="languages"
+                                                [(ngModel)]="selectedLanguage"
+                                                optionLabel="label"
+                                                placeholder="{{ 'chooseLanguage' | translate }}"
+                                                (onChange)="onLanguageChange($event.value)">
+                                        </p-dropdown>
+                                    </div>
 
-                        <p-button
-                                icon="pi pi-sign-out"
-                                pTooltip="{{ 'logOut' | translate }}"
-                                tooltipPosition="bottom"
-                                class="logout-button"
-                                (click)="onLogout()">
-                        </p-button>
-                        <p-button
-                                type="button"
-                                class="sidebar"
-                                (onClick)="sidebarVisible2 = true"
-                                icon="pi pi-arrow-left"/>
+                                    <!-- Переключение темы -->
+                                    <p-button
+                                            icon="pi pi-moon"
+                                            [label]="'switchTheme' | translate"
+                                            class="p-button-text"
+                                            (click)="toggleTheme()">
+                                    </p-button>
+
+                                    <!-- Экспорт в Excel -->
+                                    <p-button
+                                            icon="pi pi-file-excel"
+                                            [label]="'exportToExcel' | translate"
+                                            class="p-button-text"
+                                            (click)="exportToExcel()">
+                                    </p-button>
+
+                                    <!-- История изменений -->
+                                    <p-button
+                                            icon="pi pi-arrow-left"
+                                            [label]="'historyOfChange' | translate"
+                                            class="p-button-text"
+                                            (onClick)="sidebarVisible2 = true">
+                                    </p-button>
+
+                                    <!-- Выход -->
+                                    <p-button
+                                            icon="pi pi-sign-out"
+                                            [label]="'logOut' | translate"
+                                            class="p-button-text"
+                                            (click)="onLogout()">
+                                    </p-button>
+                                </div>
+                            </p-dialog>
+                        </div>
+
+                        <!-- Обычные кнопки для десктопных экранов -->
+                        <div *ngIf="!isMobile" class="buttons">
+                            <div class="custom-dropdown">
+                                <p-dropdown
+                                        [options]="languages"
+                                        [(ngModel)]="selectedLanguage"
+                                        optionLabel="label"
+                                        placeholder="Выберите язык"
+                                        (onChange)="onLanguageChange($event.value)">
+                                </p-dropdown>
+                            </div>
+                            <p-button
+                                    icon="pi pi-moon"
+                                    pTooltip="{{ 'switchTheme' | translate }}"
+                                    tooltipPosition="bottom"
+                                    (click)="toggleTheme()">
+                            </p-button>
+                            <p-button
+                                    icon="pi pi-file-excel"
+                                    pTooltip="{{ 'exportToExcel' | translate }}"
+                                    tooltipPosition="bottom"
+                                    (click)="exportToExcel()">
+                            </p-button>
+                            <p-button
+                                    icon="pi pi-sign-out"
+                                    pTooltip="{{ 'logOut' | translate }}"
+                                    tooltipPosition="bottom"
+                                    class="logout-button"
+                                    (click)="onLogout()">
+                            </p-button>
+                            <p-button
+                                    type="button"
+                                    class="sidebar"
+                                    (onClick)="sidebarVisible2 = true"
+                                    icon="pi pi-arrow-left"/>
+                        </div>
                     </div>
+
                 </div>
+                <p-sidebar [(visible)]="sidebarVisible2" position="right">
+                    <app-audit-trail></app-audit-trail>
+                </p-sidebar>
+                <p-dialog [(visible)]="displayModal" [modal]="true" [closable]="true" [header]="'exitConfirmation' | translate">
+                    <p>{{'wantToLogOut' | translate}}, <b>{{ userEmail }}</b>?</p>
+                    <ng-template pTemplate="footer">
+                        <button
+                                pButton
+                                pRipple
+                                icon="pi pi-times"
+                                [label]="'no' | translate"
+                                class="p-button-text"
+                                (click)="displayModal = false"
+                        ></button>
+                        <button
+                                pButton
+                                pRipple
+                                icon="pi pi-check"
+                                [label]="'yes' | translate"
+                                class="p-button-text"
+                                (click)="performLogout()"
+                        ></button>
+                    </ng-template>
+                </p-dialog>
+
                 <p-tabView>
                     <p-tabPanel [header]="'myTasks' | translate">
                         <app-todos/>
@@ -56,9 +137,9 @@
                     <p-tabPanel [header]="'tasksUsers' | translate">
                         <app-users-tasks/>
                     </p-tabPanel>
-                    <p-tabPanel [header]="'userAnalytics' | translate">
-                        <app-dashboard/>
-                    </p-tabPanel>
+<!--                    <p-tabPanel [header]="'userAnalytics' | translate">-->
+<!--                        <app-dashboard/>-->
+<!--                    </p-tabPanel>-->
                     <p-tabPanel [header]="'eventsCalendar' | translate">
                         <app-calendar/>
                     </p-tabPanel>

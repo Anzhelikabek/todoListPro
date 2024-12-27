@@ -118,6 +118,36 @@ $light-card-color: #f9f9f9;
     border-color: $dark-border-color;
     color: $dark-text-color;
   }
+
+  .calendar-events .calendar-container {
+    background: $dark-background;
+  }
+  .calendar-events .calendar-header h2{
+    color: $dark-text-color;
+  }
+  .calendar-events .calendar-days .calendar-day{
+    background: $dark-card-color;
+  }
+  .calendar-events .has-event{
+    color: $secondary-color;
+  }
+  .calendar-events .event-details-container{
+    background: $dark-card-color;
+  }
+  .calendar-events .modal-content{
+    background: $dark-card-color;
+  }
+  .calendar-events .modal-content input, .calendar-events .modal-content select, .calendar-events .modal-content textarea{
+    border: 1px solid $dark-border-color;
+    background: $dark-card-color;
+    color: $dark-text-color;
+  }
+  .calendar-events .modal-content input:focus-visible, .calendar-events .modal-content select:focus-visible, .calendar-events .modal-content textarea:focus-visible {
+    outline: 1px solid $secondary-color; /* Стиль, который применяется при фокусе */
+  }
+  .mobile-menu .pi{
+    color: $dark-text-color;
+  }
 }
 
 .light-theme {
@@ -357,9 +387,11 @@ $light-card-color: #f9f9f9;
   max-width: 1140px;
   margin: 0 auto;
 }
-.navbar .container{
+
+.navbar .container {
   width: 100%;
 }
+
 :host ::ng-deep .p-dialog {
   border-radius: 10px;
 }
@@ -387,22 +419,26 @@ $light-card-color: #f9f9f9;
 .field {
   margin-bottom: 15px;
 }
-.add-new-event .p-button{
+
+.add-new-event .p-button {
   box-shadow: 0 2px 10px rgba(0, 19, 143, 0.1) !important;
   z-index: 0;
 }
+
 .status-badge {
   display: inline-block;
   padding: 5px 10px;
   border-radius: 5px;
   text-align: center;
 }
-.custom-dropdown{
+
+.custom-dropdown {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 160px;
 }
+
 .status-completed {
   background-color: $green-color;
   color: $white-color;
@@ -428,6 +464,357 @@ $light-card-color: #f9f9f9;
   width: 50%;
 }
 
+.dashboard .chart-container {
+  width: 100%; /* График будет растягиваться по ширине контейнера */
+  max-width: 700px; /* Максимальная ширина */
+  margin: 0 auto; /* Центрируем график по горизонтали */
+  height: 400px; /* Фиксированная высота */
+}
+
+.mobile-menu .p-button {
+  background: none;
+  color: #333333;;
+  border: none;
+}
+
+.mobile-menu .pi {
+  font-size: 1.3rem;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-content .p-button {
+  width: 100%;
+  text-align: left;
+}
+
+.calendar-events {
+  /* Стиль для контейнера календаря */
+  .calendar-container {
+    background-color: $light-background;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .calendar-header button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .calendar-header button:hover {
+    background-color: #0056b3;
+    color: white;
+
+  }
+
+  .calendar-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+
+  .calendar-days .calendar-day {
+    background-color: #f1f1f1;
+    padding: 9px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .calendar-days .calendar-day:hover {
+    background-color: #ddd;
+  }
+
+  .calendar-days .calendar-day.selected {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .calendar-days .calendar-day.selected:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+
+  .current-day {
+    color: #007bff;
+    font-weight: 600
+
+  }
+
+  /* Стили для формы добавления события */
+  .event-form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+
+  .event-form-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  .event-form-container .form-group {
+    margin-bottom: 15px;
+  }
+
+  .event-form-container input,
+  .event-form-container select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #218838;
+  }
+
+  button[type="button"] {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  button[type="button"]:hover {
+    background-color: #5a6268;
+  }
+
+  /* Стили для списка событий */
+  .event-details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+
+  .event-details-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .event-details-container p {
+    font-size: 1rem;
+    color: #777;
+  }
+
+  .event-options label {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .event-options select {
+    padding: 8px 12px;
+    margin-right: 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+  }
+
+  .event-actions button.delete-button {
+    background-color: #d9534f;
+  }
+
+  .event-actions button.delete-button:hover {
+    background-color: #c9302c;
+  }
+
+  /* Модальное окно для редактирования события */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    z-index: 1000; /* Убедимся, что модальное окно будет выше остальных элементов */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+
+  .add-event .modal-content {
+    width: 800px;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    z-index: 1001;
+  }
+
+  .modal-content h2 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .modal-content-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .add-event .modal-content form {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+
+  .modal-content .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .modal-content input,
+  .modal-content select,
+  .modal-content textarea,
+  {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: none;
+  }
+
+  .modal-content button {
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .modal-content button:hover {
+    background-color: #0056b3;
+  }
+
+  .modal-content button[type="button"] {
+    background-color: #6c757d;
+  }
+
+  .modal-content button[type="button"]:hover {
+    background-color: #5a6268;
+  }
+
+  /* Выделение текущего дня цветом текста без фона */
+  .current-day {
+    color: blue; /* Цвет текста для текущего дня */
+  }
+
+  /* Выделение дня с событием (фон + цвет текста) */
+  .has-event {
+    color: blue; /* Цвет текста */
+    background-color: lightblue; /* Фон для дня с событием */
+  }
+
+
+  .calendar-days div.has-event:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+
+  .add-new-event {
+    display: flex;
+    justify-content: end;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  /* Шаблон для заголовка дней недели */
+  .calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  /* Календарь с днями месяца */
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+
+  .times {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .times p-dropdown {
+    width: 50%;
+  }
+
+  /* Стили для поля времени */
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}
+
 @media screen and (max-width: 870px) {
   .button-group {
     height: 147px;
@@ -437,10 +824,97 @@ $light-card-color: #f9f9f9;
   .buttons .p-button .p-button-label {
     font-size: 12px !important;
   }
+
+  .chart-legend {
+    position: absolute;
+    right: 30px;
+  }
+  .dashboard .chart-container {
+    height: 300px; /* Меньше высота для мобильных устройств */
+  }
 }
 
-@media screen and (max-width: 673px) {
+@media screen and (max-width: 680px) {
   .p-datatable .p-datatable-thead > tr > th {
     font-size: 14px;
+  }
+  .header-content {
+    flex-direction: column;
+  }
+  .dashboard .chart-container {
+    height: 250px; /* Еще меньшая высота для узких экранов */
+  }
+  .p-sidebar-right {
+    width: 100%;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .header-content {
+    flex-direction: row;
+  }
+  .calendar-events {
+    .add-event .modal-content {
+      margin: 0 5px;
+      width: 500px;
+
+    }
+
+    .modal-content-flex {
+      flex-direction: column;
+    }
+
+    .add-event .modal-content form {
+      width: 100%;
+    }
+
+    .calendar-container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .buttons {
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    padding: 10px;
+  }
+  .calendar-container {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .calendar-days .calendar-day {
+    padding: 5px;
+  }
+  .calendar-events {
+    .calendar-container {
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .calendar-days .calendar-day {
+      padding: 5px;
+    }
+
+    .calendar-header button {
+      padding: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main-title {
+    display: none;
+  }
+  .custom-dropdown {
+    display: block;
   }
 }

@@ -20,7 +20,8 @@ export class DashboardComponent implements OnInit {
   roleDistribution: any[] = [];
   usersLast7Days: any[] = [];
   colorScheme = 'cool';
-  view: [number, number] = [700, 400];
+  width = window.innerWidth * 0.8; // 80% ширины экрана
+  height = 400; // Высота по умолчанию
 
   constructor(private sharedStateService: SharedStateService) {}
 

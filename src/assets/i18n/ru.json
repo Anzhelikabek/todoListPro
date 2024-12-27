@@ -118,6 +118,8 @@
   "endTimeRequired": "Время окончания обязательно",
   "eventsCalendar": "Календарь событий",
   "today": "сегодня",
+  "historyOfChange": "История изменений",
+  "chooseLanguage": "Выберите язык",
 
   "weekDays": {
     "Mon": "Пн",

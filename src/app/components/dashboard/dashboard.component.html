@@ -1,7 +1,7 @@
 <div class="dashboard">
     <h2>{{'userDistributionByRole' | translate}}</h2>
     <ngx-charts-pie-chart
-            [view]="view"
+            [view]="[width, height]"
             [results]="roleDistribution"
             [scheme]="colorScheme"
             [legend]="true"
@@ -11,7 +11,7 @@
         <h2>{{'usersAddedInLast7Days' | translate}}</h2>
         <ngx-charts-line-chart
                 *ngIf="usersLast7Days.length > 0"
-                [view]="view"
+                [view]="[width, height]"
                 [results]="usersLast7Days"
                 [scheme]="colorScheme"
                 [legend]="true"

@@ -117,6 +117,8 @@
   "endTimeRequired": "End time is required",
   "eventsCalendar": "Events calendar",
   "today": "today",
+  "historyOfChange": "History of change",
+  "chooseLanguage": "Choose Language",
 
   "weekDays": {
     "Mon": "Mon",
