@@ -13,12 +13,8 @@ import {
   Button,
   ButtonDirective,
   ButtonModule
-} from "./chunk-FJRISX2D.js";
+} from "./chunk-J2PGZZPE.js";
 import "./chunk-OKEL6OKV.js";
-import {
-  Ripple,
-  RippleModule
-} from "./chunk-SMCPN7ER.js";
 import {
   CheckIcon
 } from "./chunk-GG74TZ4D.js";
@@ -26,6 +22,10 @@ import "./chunk-EX6TMLQX.js";
 import {
   BaseIcon
 } from "./chunk-EUEDRJOA.js";
+import {
+  Ripple,
+  RippleModule
+} from "./chunk-SMCPN7ER.js";
 import {
   DomHandler
 } from "./chunk-BUGEQH7Q.js";
