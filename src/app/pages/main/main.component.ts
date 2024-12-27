@@ -27,7 +27,6 @@ import {SharedStateService} from "../../services/shared-state.service";
 import {FileUploadModule} from "primeng/fileupload";
 import {AuditTrailService} from "../../services/audit-trail.service";
 import {TranslatePipe, TranslateService} from "@ngx-translate/core";
-import {ChatComponent} from "../../components/chat/chat.component";
 import {CalendarModule} from "primeng/calendar";
 import {Language} from "../../interfaces/language";
 import {TooltipModule} from "primeng/tooltip";
@@ -63,7 +62,6 @@ import {MenuModule} from "primeng/menu";
         DashboardComponent,
         FileUploadModule,
         TranslatePipe,
-        ChatComponent,
         CalendarModule,
         ReactiveFormsModule,
         NgStyle,
