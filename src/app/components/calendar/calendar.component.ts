@@ -69,8 +69,6 @@ export class CalendarComponent implements OnInit {
     selectedStartMinute: string = "";
     selectedEndHour: string = "";
     selectedEndMinute: string = "";
-    selectedStartTime: Date | null = null;
-    selectedEndTime: Date | null = null;
 
     hours: string[] = [];
     minutes: string[] = [];
@@ -223,7 +221,6 @@ export class CalendarComponent implements OnInit {
     }
 
     // Переключение между месяцами
-    // Переключение между месяцами
     changeMonth(increment: number) {
         const currentMonth = this.selectedMonth.getMonth();
         const newMonth = new Date(this.selectedMonth); // Создаем новый объект Date
@@ -237,14 +234,6 @@ export class CalendarComponent implements OnInit {
         this.updateDaysInMonth(); // Обновляем дни месяца
     }
 
-    changeMonthInModal(direction: number) {
-        this.selectedMonthInModal = new Date(
-            this.selectedMonthInModal.getFullYear(),
-            this.selectedMonthInModal.getMonth() + direction,
-            1,
-        );
-    }
-
     // Выбор дня
     selectDay(day: number) {
         this.selectedDay = new Date(
@@ -256,14 +245,6 @@ export class CalendarComponent implements OnInit {
             (event) =>
                 new Date(event.date).toDateString() ===
                 this.selectedDay?.toDateString(),
-        );
-    }
-
-    selectDayInModal(day: number) {
-        this.selectedDayInModal = new Date(
-            this.selectedMonthInModal.getFullYear(),
-            this.selectedMonthInModal.getMonth(),
-            day,
         );
     }
 
@@ -388,12 +369,6 @@ export class CalendarComponent implements OnInit {
     isSelectedDay(day: number) {
         return this.selectedDay && this.selectedDay.getDate() === day;
     }
-
-    isSelectedDayInModal(day: number) {
-        return this.selectedDayInModal && this.selectedDayInModal.getDate() === day;
-    }
-
-    // Проверка, есть ли событие для дня
     // Проверка, является ли день текущим
     isCurrentDay(day: number): boolean {
         const today = new Date();

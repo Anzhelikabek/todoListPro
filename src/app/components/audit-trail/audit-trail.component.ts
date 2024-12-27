@@ -56,15 +56,6 @@ export class AuditTrailComponent {
         });
     }
 
-    globalFilter(event: any): void {
-        const query = event.target.value.toLowerCase();
-        this.filteredRecords = this.auditRecords.filter((record) =>
-            Object.values(record).some((value) =>
-                value && value.toString().toLowerCase().includes(query)
-            )
-        );
-    }
-
     clearAuditTrail(): void {
         this.auditTrailService.clearAuditTrail().subscribe((success) => {
             if (success) {

@@ -125,9 +125,6 @@ export class MainComponent implements OnInit{
     showMenu(): void {
         this.isMenuVisible = true;
     }
-    closeMenu(): void {
-        this.isMenuVisible = false;
-    }
     private initializeLanguages() {
         // Инициализация языков
         this.languages = [
@@ -214,22 +211,6 @@ export class MainComponent implements OnInit{
                 });
             })
             .catch(err => alert('Error signing out: ' + err.message));
-    }
-
-    onFileSelected(event: any): void {
-        console.log(event)
-        const file = event.target.files[0];
-        if (file && file.name.endsWith('.csv')) {
-            this.selectedFile = file;
-        } else {
-            this.messageService.add({severity: 'error', summary: 'Ошибка', detail: 'Выберите CSV-файл'});
-            this.selectedFile = null;
-        }
-    }
-
-    isDuplicateId(id: string): boolean {
-        const currentUsers = this.sharedStateService['usersSubject'].getValue();
-        return currentUsers.some((user) => user.id === id);
     }
 
     exportToExcel(): void {

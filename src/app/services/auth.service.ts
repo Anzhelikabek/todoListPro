@@ -42,10 +42,6 @@ export class AuthService {
     );
   }
 
-
-  isLoggedIn(): boolean {
-    return this.auth.currentUser !== null; // Проверка авторизации
-  }
   register(email: string, password: string) {
     return createUserWithEmailAndPassword(this.auth, email, password)
         .then((result) => {
@@ -77,22 +73,6 @@ export class AuthService {
           console.error('Login Failed:', error);
           throw error;
         });
-  }
-
-
-  // Метод для входа через Google
-  googleSignIn() {
-    const provider = new GoogleAuthProvider(); // Использование GoogleAuthProvider из Firebase
-    return signInWithPopup(this.auth, provider)
-      .then((result) => {
-        const user = result.user;
-        console.log('Google Sign-In Successful:', user);
-        return user;
-      })
-      .catch((error) => {
-        console.error('Error during Google Sign-In:', error);
-        throw error;
-      });
   }
 
   logout(): Promise<void> {

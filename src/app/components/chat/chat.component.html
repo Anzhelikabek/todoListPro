@@ -1,9 +1,0 @@
-<div>
-    <form [formGroup]="form" (ngSubmit)="submit()">
-        <input formControlName="message" placeholder="Введите сообщение" />
-        <button type="submit">Отправить</button>
-    </form>
-    <ul>
-        <li *ngFor="let msg of messages">{{ msg }}</li>
-    </ul>
-</div>
