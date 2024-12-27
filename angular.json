@@ -11,7 +11,7 @@
           "style": "scss"
         },
         "@schematics/angular:service": {
-          "skipTests": true,
+          "skipTests": true
         }
       },
       "root": "",
@@ -43,7 +43,6 @@
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeicons/primeicons.css"
             ],
-
             "scripts": []
           },
           "configurations": {
@@ -60,13 +59,26 @@
                   "maximumWarning": "4MB"
                 }
               ],
-
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false
             },
             "development": {
-              "optimization": true,
+              "optimization": false,
               "extractLicenses": false,
-              "sourceMap": false,
+              "sourceMap": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumError": "2MB",
+                  "maximumWarning": "1.5MB"
+                },
+                {
+                  "type": "all",
+                  "maximumError": "5MB",
+                  "maximumWarning": "4MB"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
