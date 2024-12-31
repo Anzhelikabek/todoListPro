@@ -796,7 +796,6 @@ $light-card-color: #f9f9f9;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
   }
-
   .times {
     display: flex;
     justify-content: space-between;
@@ -858,7 +857,10 @@ $light-card-color: #f9f9f9;
       width: 500px;
 
     }
-
+    .form-group__times{
+      display: flex;
+      justify-content: space-between;
+    }
     .modal-content-flex {
       flex-direction: column;
     }

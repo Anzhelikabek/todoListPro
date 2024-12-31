@@ -82,32 +82,34 @@
                             {{ 'descriptionRequired' | translate }}
                         </div>
                     </div>
+                    <div class="form-group__times">
 
-                    <div class="form-group">
-                        <label for="startTimeAdd">{{ 'startTime' | translate }}</label>
-                        <input
-                                id="startTimeAdd"
-                                [(ngModel)]="newEventStartTime"
-                                name="startTime"
-                                type="time"
-                                (ngModelChange)="onStartTimeChange()"
-                        />
-                        <div *ngIf="newEventStartTime === '00:00' && editingStartTime" class="error-message">
-                            {{ 'startTimeRequired' | translate }}
+                        <div class="form-group">
+                            <label for="startTimeAdd">{{ 'startTime' | translate }}</label>
+                            <input
+                                    id="startTimeAdd"
+                                    [(ngModel)]="newEventStartTime"
+                                    name="startTime"
+                                    type="time"
+                                    (ngModelChange)="onStartTimeChange()"
+                            />
+                            <div *ngIf="newEventStartTime === '00:00' && editingStartTime" class="error-message">
+                                {{ 'startTimeRequired' | translate }}
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="endTimeAdd">{{ 'endTime' | translate }}</label>
-                        <input
-                                id="endTimeAdd"
-                                [(ngModel)]="newEventEndTime"
-                                name="endTime"
-                                type="time"
-                                (ngModelChange)="onEndTimeChange()"
-                        />
-                        <div *ngIf="newEventEndTime === '00:00' && editingEndTime" class="error-message">
-                            {{ 'endTimeRequired' | translate }}
+                        <div class="form-group">
+                            <label for="endTimeAdd">{{ 'endTime' | translate }}</label>
+                            <input
+                                    id="endTimeAdd"
+                                    [(ngModel)]="newEventEndTime"
+                                    name="endTime"
+                                    type="time"
+                                    (ngModelChange)="onEndTimeChange()"
+                            />
+                            <div *ngIf="newEventEndTime === '00:00' && editingEndTime" class="error-message">
+                                {{ 'endTimeRequired' | translate }}
+                            </div>
                         </div>
                     </div>
                     <div class="actions">
@@ -171,16 +173,19 @@
                     <label for="description">{{ 'description' | translate }}</label>
                     <input id="description" [(ngModel)]="editingEvent.description" name="description" required/>
                 </div>
+                <div class="form-group__times">
+                    <div class="form-group">
+                        <label for="startTime">{{ 'startTime' | translate }}</label>
+                        <input id="startTime" [(ngModel)]="editingEvent.startTime" name="startTime" type="time"
+                               required/>
+                    </div>
 
-                <div class="form-group">
-                    <label for="startTime">{{ 'startTime' | translate }}</label>
-                    <input id="startTime" [(ngModel)]="editingEvent.startTime" name="startTime" type="time" required/>
+                    <div class="form-group">
+                        <label for="endTime">{{ 'endTime' | translate }}</label>
+                        <input id="endTime" [(ngModel)]="editingEvent.endTime" name="endTime" type="time" required/>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="endTime">{{ 'endTime' | translate }}</label>
-                    <input id="endTime" [(ngModel)]="editingEvent.endTime" name="endTime" type="time" required/>
-                </div>
 
                 <button type="submit">{{ 'saveChanges' | translate }}</button>
                 <button type="button" (click)="closeEditModal()">{{ 'cancel' | translate }}</button>
