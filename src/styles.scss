@@ -879,8 +879,9 @@ $light-card-color: #f9f9f9;
     flex-direction: column;
     align-items: baseline;
   }
-
-}
+  .p-dialog {
+    margin: 0 10px;
+}}
 
 @media screen and (max-width: 375px) {
   .container {
