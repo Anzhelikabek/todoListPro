@@ -1,4 +1,5 @@
 <div class="calendar-events">
+    <p-toast></p-toast>
     <!-- Контейнер календаря -->
     <div class="calendar-container">
         <!-- Заголовок с кнопками для изменения месяца -->
@@ -186,5 +187,59 @@
             </form>
         </div>
     </div>
-
 </div>
+
+<!-- Модальное окно подтверждения удаления -->
+<!--<div *ngIf="isDeleteConfirmOpen" class="modal-overlay">-->
+<!--    <div class="modal-content">-->
+<!--        <h2>{{ 'confirmDeletion' | translate }}</h2>-->
+<!--        <p>{{ 'areYouSure' | translate }}</p>-->
+<!--        <div class="actions">-->
+<!--            <button type="button" (click)="deleteEventConfirmed()" class="confirm-button">-->
+<!--                {{ 'yes' | translate }}-->
+<!--            </button>-->
+<!--            <button type="button" (click)="closeDeleteConfirmModal()" class="cancel-button">-->
+<!--                {{ 'no' | translate }}-->
+<!--            </button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<p-dialog [(visible)]="isDeleteConfirmOpen" [modal]="true" [closable]="false" [responsive]="true">-->
+<!--    <h2>{{ 'confirmDeletion' | translate }}</h2>-->
+<!--    <p>{{ 'areYouSure' | translate }}</p>-->
+<!--    <div class="actions">-->
+<!--        <button type="button" (click)="deleteEventConfirmed()" pButton label="{{ 'yes' | translate }}" class="confirm-button"></button>-->
+<!--        <button type="button" (click)="closeDeleteConfirmModal()" pButton label="{{ 'no' | translate }}" class="cancel-button"></button>-->
+<!--    </div>-->
+<!--</p-dialog>-->
+<p-dialog
+        [(visible)]="isDeleteConfirmOpen"
+        [style]="{ width: '400px' }"
+        [header]="'confirmDeletion' | translate"
+        [modal]="true"
+        [closable]="false"
+>
+    <div class="flex align-items-center justify-content-center">
+        <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem;"></i>
+        <span>{{'areYouSure' | translate}}?</span>
+    </div>
+    <ng-template pTemplate="footer">
+        <button
+                pButton
+                pRipple
+                icon="pi pi-times"
+                [label]="'no' | translate"
+                class="p-button-text"
+                (click)="closeDeleteConfirmModal()"
+        ></button>
+        <button
+                pButton
+                pRipple
+                icon="pi pi-check"
+                [label]="'yes' | translate"
+                class="p-button-text"
+                (click)="deleteEventConfirmed()"
+        ></button>
+    </ng-template>
+</p-dialog>

@@ -119,6 +119,14 @@
   "today": "today",
   "historyOfChange": "History of change",
   "chooseLanguage": "Choose Language",
+  "eventAdded": "Event added",
+  "eventUpdated": "Event updated",
+  "eventDeleted": "Event deleted",
+  "formInvalid": "Form is invalid, please correct the errors.",
+  "eventNotFound": "Event not found.",
+  "eventDeleteFailed": "Failed to delete the event.",
+  "confirmDeletion": "Confirm event deletion",
+  "areYouSure": "Are you sure you want to delete this event",
 
   "weekDays": {
     "Mon": "Mon",

@@ -120,6 +120,14 @@
   "today": "сегодня",
   "historyOfChange": "История изменений",
   "chooseLanguage": "Выберите язык",
+  "eventAdded": "Событие добавлено",
+  "eventUpdated": "Событие обновлено",
+  "eventDeleted": "Событие удалено",
+  "formInvalid": "Форма неверна, пожалуйста, исправьте ошибки.",
+  "eventNotFound": "Событие не найдено.",
+  "eventDeleteFailed": "Не удалось удалить событие.",
+  "confirmDeletion": "Подтвердите удаление события",
+  "areYouSure": "Вы уверены, что хотите удалить это событие",
 
   "weekDays": {
     "Mon": "Пн",

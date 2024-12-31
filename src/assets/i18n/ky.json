@@ -127,6 +127,14 @@
   "today": "бүгүн",
   "historyOfChange": "Өзгөрүүлөр тарыхы",
   "chooseLanguage": "Тилди тандаңыз",
+  "eventAdded": "Окуя кошулду",
+  "eventUpdated": "Окуя жаңыртылды",
+  "eventDeleted": "Окуя өчүрүлдү",
+  "formInvalid": "Форма туура эмес, өтүнүчүнүздү оңдоп коюңуз.",
+  "eventNotFound": "Окуя табылбай калды.",
+  "eventDeleteFailed": "Окуяны өчүрүү мүмкүн болбоду.",
+  "confirmDeletion": "Окуяны өчүрүү",
+  "areYouSure": "Сиз чындап эле бул окуяны өчүргүңүз келеби",
 
   "weekDays": {
     "Mon": "Дш",

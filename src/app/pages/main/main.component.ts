@@ -80,7 +80,6 @@ export class MainComponent implements OnInit{
     currentUser: any = ''
     userName: string = ''; // Имя пользователя
     sidebarVisible2: boolean = false;
-    selectedFile: File | null = null; // Хранение выбранного файла
     isDarkTheme = false; // начальное значение светлой темы
     languages: Language[] = [];
     selectedLanguage: Language | null = null;

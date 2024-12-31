@@ -13,8 +13,12 @@ import {
   Button,
   ButtonDirective,
   ButtonModule
-} from "./chunk-J2PGZZPE.js";
+} from "./chunk-FJRISX2D.js";
 import "./chunk-OKEL6OKV.js";
+import {
+  Ripple,
+  RippleModule
+} from "./chunk-SMCPN7ER.js";
 import {
   CheckIcon
 } from "./chunk-GG74TZ4D.js";
@@ -22,10 +26,6 @@ import "./chunk-EX6TMLQX.js";
 import {
   BaseIcon
 } from "./chunk-EUEDRJOA.js";
-import {
-  Ripple,
-  RippleModule
-} from "./chunk-SMCPN7ER.js";
 import {
   DomHandler
 } from "./chunk-BUGEQH7Q.js";
@@ -124,8 +124,8 @@ import {
   ɵɵtextInterpolate2,
   ɵɵviewQuery
 } from "./chunk-6JZVI6Z5.js";
-import "./chunk-Z4GY3YUB.js";
 import "./chunk-WGFE6ZO7.js";
+import "./chunk-Z4GY3YUB.js";
 import {
   timer
 } from "./chunk-MOTLY3TU.js";

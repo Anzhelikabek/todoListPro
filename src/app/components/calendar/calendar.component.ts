@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {
     CommonModule,
     DatePipe,
@@ -6,14 +6,18 @@ import {
     NgForOf,
     NgIf,
 } from "@angular/common";
-import { FormsModule, NgForm } from "@angular/forms";
-import { Button, ButtonDirective } from "primeng/button";
-import { Ripple } from "primeng/ripple";
-import { TooltipModule } from "primeng/tooltip";
-import { TranslatePipe, TranslateService } from "@ngx-translate/core";
-import { InputTextModule } from "primeng/inputtext";
-import { ButtonModule } from "primeng/button";
-import { CalendarModule } from "primeng/calendar"; // Импортируем CalendarModule для p-datepicker
+import {FormsModule, NgForm} from "@angular/forms";
+import {Button, ButtonDirective} from "primeng/button";
+import {Ripple} from "primeng/ripple";
+import {TooltipModule} from "primeng/tooltip";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
+import {InputTextModule} from "primeng/inputtext";
+import {ButtonModule} from "primeng/button";
+import {CalendarModule} from "primeng/calendar";
+import {MessageService} from "primeng/api";
+import {DialogModule} from "primeng/dialog";
+import {ToastModule} from "primeng/toast";
+import {v4 as uuidv4} from 'uuid';
 
 @Component({
     standalone: true,
@@ -34,11 +38,14 @@ import { CalendarModule } from "primeng/calendar"; // Импортируем Cal
         InputTextModule,
         ButtonModule,
         CommonModule,
+        DialogModule,
+        ToastModule,
     ],
     styleUrls: ["./calendar.component.scss"]
 })
 export class CalendarComponent implements OnInit {
     events: Array<{
+        id: string | Uint8Array;
         title: string;
         description: string;
         date: string;
@@ -53,10 +60,8 @@ export class CalendarComponent implements OnInit {
     editingStartTime: boolean = false;  // Флаг для отслеживания изменений
     editingEndTime: boolean = false;
 
-    editingEvent: any = null; // Событие для редактирования
+    editingEvent: any = null;
     isEditModalOpen: boolean = false; // Флаг для отображения модального окна
-    selectedMonthInModal: Date = new Date();
-    selectedDayInModal: Date | null = null;
     selectedDay: Date | null = null; // Дата выбранного дня
     selectedMonth: Date = new Date(); // Текущий месяц
     selectedDaysWithEvents: Set<number> = new Set(); // Хранение дней с событиями
@@ -70,11 +75,13 @@ export class CalendarComponent implements OnInit {
     selectedEndHour: string = "";
     selectedEndMinute: string = "";
 
+    isDeleteConfirmOpen: boolean = false; // Флаг для открытия модального окна
+    eventToDelete: any = null; // Событие, которое нужно удалить
+
     hours: string[] = [];
     minutes: string[] = [];
 
-    constructor(public translate: TranslateService) {
-        console.log(this.newEventStartTime)
+    constructor(public translate: TranslateService, private messageService: MessageService) {
     }
 
     getMonthAndYear(date: Date): string {
@@ -104,12 +111,12 @@ export class CalendarComponent implements OnInit {
 
     loadTimeOptions() {
         // Загружаем часы от 1 до 24
-        this.hours = Array.from({ length: 24 }, (_, i) =>
+        this.hours = Array.from({length: 24}, (_, i) =>
             i < 10 ? "0" + i : "" + i,
         );
 
         // Загружаем минуты от 00 до 59
-        this.minutes = Array.from({ length: 60 }, (_, i) =>
+        this.minutes = Array.from({length: 60}, (_, i) =>
             i < 10 ? "0" + i : "" + i,
         );
     }
@@ -199,7 +206,6 @@ export class CalendarComponent implements OnInit {
     }
 
     // Обновление списка дней в текущем месяце
-    // Обновление списка дней в текущем месяце
     updateDaysInMonth() {
         const daysInMonth = [];
         const firstDayOfMonth = new Date(
@@ -250,34 +256,29 @@ export class CalendarComponent implements OnInit {
 
     // Сохранение нового события
     saveEvent(eventForm: NgForm) {
-        // Проверка на валидность формы
         if (eventForm.valid && this.selectedDay && this.newEventStartTime !== "00:00" && this.newEventEndTime !== "00:00") {
-            console.log(eventForm);
-            // Получаем полную дату (включая месяц и год)
-            const fullDate = new Date(this.selectedDay); // selectedDay уже содержит месяц и год
+            const fullDate = new Date(this.selectedDay);
             fullDate.setHours(0, 0, 0, 0); // Убираем время для точности
 
-            // Создаем новое событие с полной датой
+            // Создаем новое событие с уникальным UUID
             const newEvent = {
+                id: uuidv4(), // Генерируем уникальный UUID
                 title: this.newEventTitle,
                 description: this.newEventDescription,
-                date: fullDate.toISOString(), // Сохраняем полную дату в формате ISO
+                date: fullDate.toISOString(),
                 startTime: this.newEventStartTime,
                 endTime: this.newEventEndTime,
             };
 
-            const selectedStartTime = `${this.selectedStartHour}:${this.selectedStartMinute}`;
-            const selectedEndTime = `${this.selectedEndHour}:${this.selectedEndMinute}`;
-            // Обновляем массив событий (перезаписываем его)
-            this.events = [...this.events, newEvent]; // Это гарантирует, что Angular заметит изменение
-            this.closeModal();
-            this.updateLocalStorage(); // Сохраняем данные в localStorage
+            // Добавляем новое событие в массив
+            this.events = [...this.events, newEvent];
 
-            // Обновляем события для текущего дня
+            // Закрытие модального окна
+            this.closeModal();
+
+            // Обновление событий для выбранного дня
             this.selectedDayEvents = this.events.filter(
-                (event) =>
-                    new Date(event.date).toDateString() ===
-                    this.selectedDay?.toDateString(),
+                (event) => new Date(event.date).toDateString() === this.selectedDay?.toDateString()
             );
 
             // Очистка формы
@@ -285,11 +286,32 @@ export class CalendarComponent implements OnInit {
             this.newEventStartTime = "";
             this.newEventEndTime = "";
             this.selectedDay = null; // Сброс выбора дня
-        }
-        else {
-            alert('Пожалуйста, выберите время');
+
+            // Сохранение событий в localStorage
+            this.updateLocalStorage();
+
+            // Отображаем сообщение об успехе
+            this.translate.get(['success', 'eventAdded']).subscribe(translations => {
+                this.messageService.add({
+                    severity: 'success',
+                    summary: translations['success'],
+                    detail: translations['eventAdded'],
+                    life: 3000
+                });
+            });
+        } else {
+            // Сообщение об ошибке, если форма невалидна
+            this.translate.get(['error', 'formInvalid']).subscribe(translations => {
+                this.messageService.add({
+                    severity: 'error',
+                    summary: translations['error'],
+                    detail: translations['formInvalid'],
+                    life: 3000
+                });
+            });
         }
     }
+
 
     onStartTimeChange() {
         this.editingStartTime = true;
@@ -299,18 +321,18 @@ export class CalendarComponent implements OnInit {
         this.editingEndTime = true;
     }
 
-    // Сохранение отредактированного события
+
     saveEditedEvent() {
         if (this.editingEvent) {
             // Находим индекс редактируемого события и обновляем его
             const index = this.events.findIndex(
                 (e) =>
-                    e.date === this.editingEvent.date &&
-                    e.title === this.editingEvent.title,
+                    e.id === this.editingEvent.id
             );
+            console.log(index)
             if (index !== -1) {
                 // Обновляем событие
-                this.events[index] = { ...this.editingEvent }; // Используем spread оператор, чтобы обновить массив
+                this.events[index] = {...this.editingEvent}; // Используем spread оператор, чтобы обновить массив
 
                 // Принудительно обновляем представление
                 this.events = [...this.events]; // Обновляем массив, чтобы Angular заметил изменение
@@ -327,33 +349,97 @@ export class CalendarComponent implements OnInit {
                         new Date(event.date).toDateString() ===
                         this.selectedDay?.toDateString(),
                 );
+                this.translate.get(['success', 'eventUpdated']).subscribe(translations => {
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: translations['success'],
+                        detail: translations['eventUpdated'],
+                        life: 3000
+                    });
+                });
             }
+        } else {
+            this.translate.get(['error', 'eventNotFound']).subscribe(translations => {
+                this.messageService.add({
+                    severity: 'error',
+                    summary: translations['error'],
+                    detail: translations['eventNotFound'],
+                    life: 3000
+                });
+            });
         }
     }
 
-    // Открытие модального окна для редактирования события
+
     openEditModal(event: any) {
-        this.editingEvent = { ...event }; // Копируем данные для редактирования
+        this.editingEvent = {...event}; // Копируем данные для редактирования
         this.isEditModalOpen = true; // Открываем модальное окно
     }
 
-    // Закрытие модального окна
     closeEditModal() {
         this.isEditModalOpen = false;
         this.editingEvent = null; // Очищаем редактируемое событие
     }
 
-    // Удаление события
     deleteEvent(event: any) {
-        this.events = this.events.filter((e) => e !== event); // Удаляем событие
-        this.updateLocalStorage(); // Обновляем данные в localStorage
-        this.selectedDayEvents = this.events.filter(
-            (e) =>
-                new Date(e.date).toDateString() === this.selectedDay?.toDateString(),
-        );
+        this.openDeleteConfirmModal(event); // Открываем модальное окно подтверждения удаления
     }
 
-    // Обновление данных в localStorage
+    openDeleteConfirmModal(event: any) {
+        this.isDeleteConfirmOpen = true;
+        this.eventToDelete = event; // Сохраняем событие, которое нужно удалить
+    }
+
+    closeDeleteConfirmModal() {
+        this.isDeleteConfirmOpen = false;
+        this.eventToDelete = null; // Сбрасываем выбранное событие
+    }
+
+    deleteEventConfirmed() {
+        try {
+            if (this.eventToDelete) {
+                // Удаляем событие из списка
+                this.events = this.events.filter((e) => e !== this.eventToDelete);
+
+                // Обновляем localStorage
+                this.updateLocalStorage();
+
+                // Отображаем сообщение об успехе
+                this.translate.get(['success', 'eventDeleted']).subscribe(translations => {
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: translations['success'],
+                        detail: translations['eventDeleted'],
+                        life: 3000
+                    });
+                });
+
+                // Обновляем события для выбранного дня
+                this.selectedDayEvents = this.events.filter(
+                    (e) => new Date(e.date).toDateString() === this.selectedDay?.toDateString(),
+                );
+            }
+
+            // Закрываем модальное окно после подтверждения
+            this.isDeleteConfirmOpen = false;
+            this.closeDeleteConfirmModal();
+        } catch (error) {
+            // Если произошла ошибка, отображаем сообщение об ошибке
+            this.translate.get(['error', 'eventDeleteFailed']).subscribe(translations => {
+                this.messageService.add({
+                    severity: 'error',
+                    summary: translations['error'],
+                    detail: translations['eventDeleteFailed'],
+                    life: 3000
+                });
+            });
+
+            // Закрываем модальное окно в случае ошибки
+            this.isDeleteConfirmOpen = false;
+            this.closeDeleteConfirmModal();
+        }
+    }
+
     updateLocalStorage() {
         localStorage.setItem("events", JSON.stringify(this.events)); // Сохраняем события в localStorage
     }
@@ -369,6 +455,7 @@ export class CalendarComponent implements OnInit {
     isSelectedDay(day: number) {
         return this.selectedDay && this.selectedDay.getDate() === day;
     }
+
     // Проверка, является ли день текущим
     isCurrentDay(day: number): boolean {
         const today = new Date();

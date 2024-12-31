@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ButtonDirective} from "primeng/button";
 import {DialogModule} from "primeng/dialog";
 import {DropdownModule} from "primeng/dropdown";
@@ -40,7 +40,7 @@ import {TranslatePipe, TranslateService} from "@ngx-translate/core";
     templateUrl: './todos.component.html',
     styleUrls: ['./todos.component.scss']
 })
-export class TodosComponent {
+export class TodosComponent implements OnInit{
     todoDialog: boolean = false;
     deleteTodoDialog: boolean = false;
     deleteTodosDialog: boolean = false;
@@ -177,7 +177,6 @@ export class TodosComponent {
                             life: 3000
                         });
                     });
-
                 });
             },
             error: (err) => {
@@ -246,7 +245,6 @@ export class TodosComponent {
         });
     }
 
-
     hideDialog() {
         this.todoDialog = false;
         this.submitted = false;
@@ -254,30 +252,17 @@ export class TodosComponent {
 
     saveTodo(): void {
         this.submitted = true;
-
         if (this.todo.name?.trim()) {
             const currentUserEmail = localStorage.getItem('userEmail') || 'Неизвестно';
             console.log('Текущий пользователь (email):', currentUserEmail);
 
             this.sharedStateService.getUsers().subscribe(users => {
-                console.log('Пользователи:', users);
-
                 const currentUser = users.find(user => user.email === currentUserEmail);
                 if (!currentUser) {
                     console.error('Не удалось определить текущего пользователя');
-                    this.translate.get(['error', 'currentUserNotDetermined']).subscribe(translations => {
-                        this.messageService.add({
-                            severity: 'error',
-                            summary: translations['error'],
-                            detail: translations['currentUserNotDetermined'],
-                            life: 3000
-                        });
-                    });
-
                     return;
                 }
 
-                // Устанавливаем userId для новой задачи
                 if (!this.todo.id) {
                     this.todo.userId = currentUser.id;
                 }
@@ -289,39 +274,20 @@ export class TodosComponent {
 
                 saveOperation.subscribe({
                     next: (savedTodo) => {
-                        this.auditTrailService.addAuditRecord({
-                            id: this.sharedStateService.generateId(),
-                            timestamp: new Date(),
-                            action: isUpdate ? 'Обновление' : 'Добавление',
-                            entity: 'Задача',
-                            entityId: savedTodo.id,
-                            performedBy: currentUserEmail,
-                            details: isUpdate
-                                ? `Обновлена задача: ${this.todo.name} для пользователя: ${currentUser.firstName} ${currentUser.lastName}`
-                                : `Добавлена новая задача: ${this.todo.name} для пользователя: ${currentUser.firstName} ${currentUser.lastName}`
-                        });
+                        // Логика обновления списка задач
+                        if (isUpdate) {
+                            this.todos = this.todos.map(todo => todo.id === savedTodo.id ? savedTodo : todo);
+                            this.userTodos = this.userTodos.map(todo => todo.id === savedTodo.id ? savedTodo : todo);
+                        } else {
+                            this.todos.push(savedTodo);
+                            this.userTodos.push(savedTodo);
+                        }
 
-                        this.loadUserTodos();
-                        this.translate.get(['success', 'taskUpdated', 'taskCreated']).subscribe(translations => {
-                            this.messageService.add({
-                                severity: 'success',
-                                summary: translations['success'],
-                                detail: isUpdate ? translations['taskUpdated'] : translations['taskCreated'],
-                                life: 3000
-                            });
-                        });
-
+                        this.loadUserTodos();  // Обновляем задачи после сохранения
+                        console.log('Задача сохранена успешно:', savedTodo);
                     },
                     error: (err) => {
                         console.error('Ошибка сохранения задачи:', err);
-                        this.translate.get(['error', 'taskSaveFailed']).subscribe(translations => {
-                            this.messageService.add({
-                                severity: 'error',
-                                summary: translations['error'],
-                                detail: translations['taskSaveFailed'],
-                                life: 3000
-                            });
-                        });
                     },
                     complete: () => {
                         this.todoDialog = false;
@@ -331,7 +297,6 @@ export class TodosComponent {
             });
         }
     }
-
 
 
 }
