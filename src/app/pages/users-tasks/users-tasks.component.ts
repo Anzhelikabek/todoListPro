@@ -91,8 +91,6 @@ export class UsersTasksComponent {
         });
   }
 
-
-
   ngOnInit() {
     this.initUserPermissions();
     this.initDataStreams();
@@ -349,9 +347,18 @@ export class UsersTasksComponent {
             });
           });
 
+          // Обновляем список задач в todosSubject
+          const currentTodos = this.sharedStateService['todosSubject'].getValue();
+          const updatedTodos = isUpdate
+              ? currentTodos.map((todo) =>
+                  todo.id === this.todo.id ? { ...todo, ...this.todo } : todo
+              )
+              : [...currentTodos, this.todo]; // Добавляем новую задачу, если она не обновляется
+
+          this.sharedStateService.setTodos(updatedTodos);
 
           this.todoDialog = false;
-          this.todo = {};
+          this.todo = {}; // Очистка формы задачи
         },
         error: (err) => {
           console.error('Ошибка сохранения задачи:', err);
@@ -363,9 +370,9 @@ export class UsersTasksComponent {
               life: 3000,
             });
           });
-
         },
       });
     }
   }
+
 }

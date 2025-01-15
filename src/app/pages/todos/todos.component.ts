@@ -105,6 +105,7 @@ export class TodosComponent implements OnInit{
         });
     }
 
+
     loadUserTodos(): void {
         this.sharedStateService.getTodos().subscribe((todos) => {
             this.todos = todos;
@@ -125,6 +126,7 @@ export class TodosComponent implements OnInit{
 
         this.deleteTodosDialog = true;
     }
+
     editTodo(todo: Todo) {
         this.todo = { ...todo };
         this.todoDialog = true;
@@ -193,7 +195,6 @@ export class TodosComponent implements OnInit{
             }
         });
     }
-
 
     confirmDelete(): void {
         const currentUser = localStorage.getItem('userEmail') || 'Неизвестно';
@@ -297,6 +298,4 @@ export class TodosComponent implements OnInit{
             });
         }
     }
-
-
 }
